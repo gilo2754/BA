@@ -1,4 +1,8 @@
-WORK IN PROGRESS....
+WORK IN PROGRESS\\
+%\subsection{Einführung in das Thema (Motivation, zentrale Begriffe etc.)}
+\subsection{Problemstellung}
+Die Unternehmen befürchten Kostenüberschreitungen und Kostenüberschreitungen  
+\\
 Wenn ein Hotel die Vorteile von dem Cloud-Computing hätte, dann könnte dieses folgendermaßen funktionieren:
 \\\\
 ”Heute hatten wir 17 Gäste für unsere derzeit 20 Zimmer. Für die kommende Messe am Wochenende sind wir bereit 500 Gäste zu empfangen. Nach der Messe werden wir mit unseren üblichen 20 Zimmern wie immer gut arbeiten können.”
@@ -8,28 +12,58 @@ Die Verwendung von Cloud-Diensten bringt mit sich viele Vorteile, wie zum Beispi
 \\\\
 Für viele Unternehmen ist eine große Herausforderung, die Kosten von Cloud-Diensten übersichtlich zu halten und Optimierungsmöglichkeit leicht zu erkennen. Zusätzlich besteht das Problem, keine feste Grenze für den Konsum von Cloud-Diensten festlegen zu können, damit man keine unangenehme Überraschung in einer Rechnung bekommt. 
 \\\\
-Diese Bachelorarbeit beschäftigt sich mit dieser Problematik, um herauszufinden, wie Cloud-Nutzer mit den passenden Werkzeugen, die Kosten ihrer Cloud-Dienste überwachen und im Blick halten können. Außerdem sollte untersucht werden, wie Cloud-Nutzer mit der richtigen Auswahl an Diensten ihre Kosten optimieren können.
-\subsection{Einführung in das Thema (Motivation, zentrale Begriffe etc.)}
-\subsection{Hinführung zu den Ergebnissen}
-\subsection{Ggf. Angabe des Schwerpunktes}
-\subsection{Ggf. Einschränkungen darlegen}
-\subsection{Problemstellung}
-\subsection{Zielstellung der Arbeit}
-\subsection{Fragestellung der Arbeit}
+Diese Bachelorarbeit beschäftigt sich mit dieser Problematik, um herauszufinden, wie Firmen/Cloud-Nutzer mit den passenden Werkzeugen, die Kosten ihrer Cloud-Dienste überwachen und im Blick halten können. Außerdem sollte untersucht werden, wie Firmen/Cloud-Nutzer mit der richtigen Auswahl an Diensten ihre Kosten optimieren können.
 
+\subsection{Hinführung zu den Ergebnissen. / Angabe des Schwerpunktes / Einschränkungen darlegen}
+Wie hoch sind die möglichen Einsparungen (\%) durch die Umsetzung der hier skizzierten Maßnahmen?
+\\
+Überwachung und Optimierung
+\\
+In dieser Arbeit werden wir uns auf die Optimierung von x konzentrieren, insbesondere auf a, c und b. Darüber hinaus werden die Optionen für y untersucht.
+\\
+\subsection{Fragestellung und Ziel der Arbeit}
+\begin{quote}
+„Bei der Umfrage von Stratecast Predictions 2018, Frost \& Sullivan, nannten 53 \% der IT-Führungskräfte die Verwaltung der Kosten für den Betrieb von Cloud-Workloads als großes Hindernis.“  
+\footnote{Vgl. u.a. \cite{SP1}}
+\end{quote}
+Ausgehend von dieser Beobachtung untersucht die Arbeit die folgenden Fragen. 
+\begin{itemize}
+    \item
+        Wie kann man denn Kosten bei Cloud-Diensten überwachen und wie lassen sich unerwartete Kosten bei Cloud-Diensten vermeiden? 
+    \item
+        Können Grenzen für das Budget von Cloud-Diensten festgestellt werden?
+\end{itemize}
+%“Forschungsfrage”, “These”, “Hypothese” oder “Annahme”, alle Synonimen
+Meine Hypothese ist, dass Kosten von Cloud-Diensten unter Kontrolle gehalten und
+reduziert werden können, wenn Überwachung- und Optimierungswerkzeuge eingesetzt werden.
+\\\\
+\textbf{Daraus ergeben sich für die Arbeit die folgenden Ziele:}\\ 
+Als erstes wird gezeigt, wie mit Hilfe von bestehenden Werkzeugen unerwartete Kosten von Cloud-Diensten vermieden werden können.\\\\
+Als nächstes wird anhand von Empfehlungen von Cloud-Experten identifiziert, welche Optimierungsmöglichkeiten bestehen.\\
+%Die vorgestellten Werkzeuge werden auf eine Testumgebung eingesetzt und deren Auswirkungen im Bezug auf die Kosten %bewertet.\\
+\newpage
 \subsection{Struktur der Arbeit}
-Dieser Projektbericht ist in folgenden Kapitel unterteilt:
-\textbf{Kapitel 2}
+%Schlüsselbegriffe
+Zunächst wird es eine kurze Einführung in die relevanten Begriffe geben, die für die zu untersuchenden AWS-Cloud-Services wichtig sind.
+
+Dieser Projektbericht ist in folgenden Kapitel unterteilt:\\\\
+%2 Die gängigsten Cloud-Dienste, bei deren Geld verschwendet wird.
+\textbf{In Kapitel 2} werden die Cloud-Dienste vorgestellt, die im Hinblick auf das Kostenmanagement besondere Aufmerksamkeit erfordern.
 \\\\
-\textbf{Kapitel 3}
+%3 Überwachung von Kosten
+%3.1 AWS Cost Explorer und AWS-Kosten- und Nutzungsbericht
+\textbf{In Kapitel 3} werden die Werkzeuge eingeführt, mit denen die Kosten, die Cloud-Dienste verursachen, überwacht werden können. Der AWS-Kosten- und Nutzungsbericht schlüsselt die Nutzung auf Organisationsebene nach Produktcode, Nutzungsart und Betrieb auf. Dadurch erhält man eine bessere Idee, welche Dienste am meisten Ressourcen verbrauchen. Auf diese Weise ist man in der Lage, weitere Maßnahmen zu ergreifen.
 \\\\
-%Benutzeroberfläche
-\textbf{Kapitel 4?} 
+%4 Methoden zur Kostenbremse
+%4.1 S3 Intelligent-Tiering
+%4.2 Instance-Scheduler für EC2 und AWS Reserved-Instance
+Als nächstes wird in \textbf{Kapitel 4?} auf die verfügbaren Werkzeuge zur Optimierung und Limitierung des Konsums von EC2-Instanzen und S3 Speichereinheiten eingegangen. Der AWS Instance Scheduler ist eine Lösung von AWS, die ermöglicht, benutzerdefinierte Start- und Stoppzeitpläne für Amazon EC2- und Relational Datenbanken-Instanzen einfach zu konfigurieren. Die Verwendung von Instance-Scheduler für EC2 kann im Gegensatz zu einer 24-Stunden-Ausführung bis zu 70 \% der Kosten einsparen.
+\\
+AWS Reserved-Instance ermöglicht, die Kapazität von EC2-Instanzen zu reservieren und von einem vergünstigten Tarif zu profitieren. Mit Hilfe von S3 Intelligent-Tiering lässt sich Speicher optimieren, indem die passende Speicherart automatisch nach Kriterien wie Zugriffshäufigkeit verwendet wird.
 \\\\
 %Serveranfragen
-\textbf{Kapitel 5?} 
-\\\\
-\\\\
+Schließlich werden anhand eines Fallbeispiels in \textbf{Kapitel 5?}, die oben genannten Werkzeuge und Techniken in einer kostenlosen Testumgebung getestet. Um die Zuverlässigkeit der Ergebnisse zu gewährleisten, wird alles gemacht, um die Vorher- und Nachher-Szenarien vergleichbar zu machen. Dabei werden die Anzahl der Instanzen und deren Auslastung sowie die Daten auf den Speichereinheiten berücksichtigt.
+ 
 %Qualitätssicherung
 \textbf{Kapitel 6?} 
 \\
