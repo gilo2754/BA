@@ -1,8 +1,9 @@
 WORK IN PROGRESS\\
+%Motivation und Ziele als subsecion?
+%WEITERE QUELLE Für mOTIVATION
+%https://www.gartner.com/smarterwithgartner/4-trends-impacting-cloud-adoption-in-2020
 %\subsection{Einführung in das Thema (Motivation, zentrale Begriffe etc.)}
 \subsection{Problemstellung}
-Die Unternehmen befürchten Kostenüberschreitungen und Kostenüberschreitungen  
-\\
 Wenn ein Hotel die Vorteile von dem Cloud-Computing hätte, dann könnte dieses folgendermaßen funktionieren:
 \\\\
 ”Heute hatten wir 17 Gäste für unsere derzeit 20 Zimmer. Für die kommende Messe am Wochenende sind wir bereit 500 Gäste zu empfangen. Nach der Messe werden wir mit unseren üblichen 20 Zimmern wie immer gut arbeiten können.”
@@ -12,14 +13,14 @@ Die Verwendung von Cloud-Diensten bringt mit sich viele Vorteile, wie zum Beispi
 \\\\
 Für viele Unternehmen ist eine große Herausforderung, die Kosten von Cloud-Diensten übersichtlich zu halten und Optimierungsmöglichkeit leicht zu erkennen. Zusätzlich besteht das Problem, keine feste Grenze für den Konsum von Cloud-Diensten festlegen zu können, damit man keine unangenehme Überraschung in einer Rechnung bekommt. 
 \\\\
-Diese Bachelorarbeit beschäftigt sich mit dieser Problematik, um herauszufinden, wie Firmen/Cloud-Nutzer mit den passenden Werkzeugen, die Kosten ihrer Cloud-Dienste überwachen und im Blick halten können. Außerdem sollte untersucht werden, wie Firmen/Cloud-Nutzer mit der richtigen Auswahl an Diensten ihre Kosten optimieren können.
+Diese Bachelorarbeit beschäftigt sich mit dieser Problematik, um herauszufinden, wie Firmen mit den passenden Werkzeugen, die Kosten ihrer Cloud-Dienste überwachen und im Blick halten können. Außerdem sollte untersucht werden, wie sie mit der richtigen Auswahl an Diensten ihre Kosten optimieren können.
+\newpage
 
 \subsection{Hinführung zu den Ergebnissen. / Angabe des Schwerpunktes / Einschränkungen darlegen}
-Wie hoch sind die möglichen Einsparungen (\%) durch die Umsetzung der hier skizzierten Maßnahmen?
+Nach Angaben von Amazon Web Services ist es möglich bis zu x\% der Kosten für S3, z\% für EC2 und x\% für DB zu sparen.
 \\
-Überwachung und Optimierung
-\\
-In dieser Arbeit werden wir uns auf die Optimierung von x konzentrieren, insbesondere auf a, c und b. Darüber hinaus werden die Optionen für y untersucht.
+Diese Arbeit liegt den Fokus auf die Optimierung der oben genannten Diensten.
+Als Überwachungwerkzeuge für die Kosten werden das A und das B untersucht. 
 \\
 \subsection{Fragestellung und Ziel der Arbeit}
 \begin{quote}
@@ -27,11 +28,13 @@ In dieser Arbeit werden wir uns auf die Optimierung von x konzentrieren, insbeso
 \footnote{Vgl. u.a. \cite{SP1}}
 \end{quote}
 Ausgehend von dieser Beobachtung untersucht die Arbeit die folgenden Fragen. 
+%Gestaltung Seite 28
+%Buch: Die Gestaltung wiss. Arbeiten
 \begin{itemize}
     \item
-        Wie kann man denn Kosten bei Cloud-Diensten überwachen und wie lassen sich unerwartete Kosten bei Cloud-Diensten vermeiden? 
+        Wie können Kosten bei Cloud-Diensten überwacht und wie lassen sich (unerwartete) Kosten bei Cloud-Diensten vermeiden/optimieren? am Beispiel [S3, EC2 und ein DB.]
     \item
-        Können Grenzen für das Budget von Cloud-Diensten festgestellt werden?
+        Welche Grenzen können für das Budget von Cloud-Diensten festgelegt werden?
 \end{itemize}
 %“Forschungsfrage”, “These”, “Hypothese” oder “Annahme”, alle Synonimen
 Meine Hypothese ist, dass Kosten von Cloud-Diensten unter Kontrolle gehalten und
@@ -48,6 +51,10 @@ Zunächst wird es eine kurze Einführung in die relevanten Begriffe geben, die f
 
 Dieser Projektbericht ist in folgenden Kapitel unterteilt:\\\\
 %2 Die gängigsten Cloud-Dienste, bei deren Geld verschwendet wird.
+%Zahlungsmodelle
+\textbf{Kapitel X?} 
+zeigt die verschiedenen Zahlungs-/Preismodelle für Amazon Web Services. 
+\\\\
 \textbf{In Kapitel 2} werden die Cloud-Dienste vorgestellt, die im Hinblick auf das Kostenmanagement besondere Aufmerksamkeit erfordern.
 \\\\
 %3 Überwachung von Kosten
@@ -58,12 +65,9 @@ Dieser Projektbericht ist in folgenden Kapitel unterteilt:\\\\
 %4.1 S3 Intelligent-Tiering
 %4.2 Instance-Scheduler für EC2 und AWS Reserved-Instance
 Als nächstes wird in \textbf{Kapitel 4?} auf die verfügbaren Werkzeuge zur Optimierung und Limitierung des Konsums von EC2-Instanzen und S3 Speichereinheiten eingegangen. Der AWS Instance Scheduler ist eine Lösung von AWS, die ermöglicht, benutzerdefinierte Start- und Stoppzeitpläne für Amazon EC2- und Relational Datenbanken-Instanzen einfach zu konfigurieren. Die Verwendung von Instance-Scheduler für EC2 kann im Gegensatz zu einer 24-Stunden-Ausführung bis zu 70 \% der Kosten einsparen.
-\\
+\\\\
 AWS Reserved-Instance ermöglicht, die Kapazität von EC2-Instanzen zu reservieren und von einem vergünstigten Tarif zu profitieren. Mit Hilfe von S3 Intelligent-Tiering lässt sich Speicher optimieren, indem die passende Speicherart automatisch nach Kriterien wie Zugriffshäufigkeit verwendet wird.
 \\\\
-%Serveranfragen
-Schließlich werden anhand eines Fallbeispiels in \textbf{Kapitel 5?}, die oben genannten Werkzeuge und Techniken in einer kostenlosen Testumgebung getestet. Um die Zuverlässigkeit der Ergebnisse zu gewährleisten, wird alles gemacht, um die Vorher- und Nachher-Szenarien vergleichbar zu machen. Dabei werden die Anzahl der Instanzen und deren Auslastung sowie die Daten auf den Speichereinheiten berücksichtigt.
+%Testumgebung
+%Schließlich werden anhand eines Fallbeispiels in \textbf{Kapitel 5?}, die oben genannten Werkzeuge und Techniken in einer %kostenlosen Testumgebung getestet. Um die Zuverlässigkeit der Ergebnisse zu gewährleisten, wird alles gemacht, um die %Vorher- und Nachher-Szenarien vergleichbar zu machen. Dabei werden die Anzahl der Instanzen und deren Auslastung sowie %die Daten auf den Speichereinheiten berücksichtigt.
  
-%Qualitätssicherung
-\textbf{Kapitel 6?} 
-\\
