@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.20)  13 SEP 2021 17:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.20)  14 SEP 2021 19:16
 entering extended mode
 **c:/Users/Nutzer/Desktop/Code.Lokal/BA/BA_Carlo_Menjivar.tex
 (c:/Users/Nutzer/Desktop/Code.Lokal/BA/BA_Carlo_Menjivar.tex
@@ -726,7 +726,7 @@ LaTeX Info: Redefining \nameref on input line 132.
 \openout4 = `BA_Carlo_Menjivar.out'.
 
  (leereSeite.tex)
-<sources/TH_Koeln_Logo.png, id=146, 1627.07875pt x 881.2925pt>
+<sources/TH_Koeln_Logo.png, id=154, 1627.07875pt x 881.2925pt>
 File: sources/TH_Koeln_Logo.png Graphic file (type png)
 <use sources/TH_Koeln_Logo.png>
 Package pdftex.def Info: sources/TH_Koeln_Logo.png  used on input line 143.
@@ -793,52 +793,52 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \openout6 = `BA_Carlo_Menjivar.lof'.
 
  [4] (chapters/Einleitung.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--6
+Underfull \hbox (badness 10000) in paragraph at lines 6--17
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--17
+Underfull \hbox (badness 10000) in paragraph at lines 6--17
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--17
+Underfull \hbox (badness 10000) in paragraph at lines 6--17
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--17
+Underfull \hbox (badness 10000) in paragraph at lines 6--17
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--17
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 20--25
+Underfull \hbox (badness 10000) in paragraph at lines 6--17
 
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 28.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 35.
+(Font)              <5> on input line 19.
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 26--31
+
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 41.
 (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 40--47
+Underfull \hbox (badness 10000) in paragraph at lines 46--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--47
+Underfull \hbox (badness 10000) in paragraph at lines 46--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--47
+Underfull \hbox (badness 10000) in paragraph at lines 46--53
 
  []
 
@@ -850,60 +850,58 @@ Package fancyhdr Warning: \headheight is too small (14.599pt):
 (fancyhdr)                \addtolength{\topmargin}{-13.25104pt}.
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 52--73
+Underfull \hbox (badness 10000) in paragraph at lines 58--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--73
+Underfull \hbox (badness 10000) in paragraph at lines 58--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--73
+Underfull \hbox (badness 10000) in paragraph at lines 58--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--73
+Underfull \hbox (badness 10000) in paragraph at lines 58--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--73
+Underfull \hbox (badness 10000) in paragraph at lines 58--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--73
+Underfull \hbox (badness 10000) in paragraph at lines 58--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--73
+Underfull \hbox (badness 10000) in paragraph at lines 58--79
 
  []
 
-) [7] (chapters/Grundlagen.tex) (chapters/Zahlungsmodelle.tex) [8] (chapters/Ãœberwachung von Kosten.tex
-
-LaTeX Warning: Citation `RH1' on page 9 undefined on input line 16.
-
-
-LaTeX Warning: Citation `AX1' on page 9 undefined on input line 20.
-
-) [9] (chapters/Optimierung.tex
-
-LaTeX Warning: Citation `SO01' on page 10 undefined on input line 10.
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
+) [7] (chapters/Grundlagen.tex) (chapters/Zahlungsmodelle.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
  []
 
 
-LaTeX Warning: Citation `R01' on page 11 undefined on input line 17.
+Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
-) [11] (chapters/Glossar.tex
+ []
+
+) [8] (chapters/Ãœberwachung von Kosten.tex
+
+LaTeX Warning: Citation `RH1' on page 9 undefined on input line 20.
+
+
+LaTeX Warning: Citation `AX1' on page 9 undefined on input line 24.
+
+) [9] (chapters/Optimierung.tex) [10] (chapters/Glossar.tex
 Underfull \hbox (badness 10000) in paragraph at lines 11--30
 
  []
@@ -938,66 +936,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--30
 
  []
 
-) [12] (chapters/Zusammenfassung.tex
+) [11] (chapters/Zusammenfassung.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
 
-[13]) [14] (chapters/Literaturverzeichnis.tex [15]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 34.
+[12]) [13] (chapters/Quellenverzeichnis.tex
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 35.
  (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 6978) in paragraph at lines 34--35
+Underfull \hbox (badness 6978) in paragraph at lines 35--36
 []\T1/lmr/m/n/12 Bertelsmeier, Bir-git (o. J.): Tipps zum Schrei-b-en ei-n-er Ab-sch-luss-ar-
  []
 
 
-Underfull \hbox (badness 4899) in paragraph at lines 34--35
+Underfull \hbox (badness 4899) in paragraph at lines 35--36
 \T1/lmr/m/n/12 beit. Fach-hoch-schu-le Köln-Campus Gum-mers-bach, In-sti-tut für In-for-ma-
  []
 
 
-Underfull \hbox (badness 2426) in paragraph at lines 35--36
+Underfull \hbox (badness 2426) in paragraph at lines 36--37
 \T1/lmr/m/n/12 schu-le Köln-Campus Gum-mers-bach.[][]$\T1/lmtt/m/n/12 http : / / www . f10 . fh-[]koeln . de / imperia /
  []
 
 
-Underfull \hbox (badness 1005) in paragraph at lines 37--39
+Underfull \hbox (badness 1005) in paragraph at lines 38--40
 []\T1/lmr/m/n/12 Stern, Adam, The Truth About Cloud Pri-cing [][]$\T1/lmtt/m/n/12 https : / / www . forbes . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--39
+Underfull \hbox (badness 10000) in paragraph at lines 38--40
 \T1/lmtt/m/n/12 sites / forbestechcouncil / 2018 / 11 / 16 / the-[]truth-[]about-[]cloud-[]pricing /
  []
 
 
-Underfull \hbox (badness 2772) in paragraph at lines 40--42
-\T1/lmr/m/n/12 Cloud: Hür-den meis-tern, Mehr-wert ma-xi-mie-ren [][]$\T1/lmtt/m/n/12 https : / / www . accenture .
+Underfull \hbox (badness 10000) in paragraph at lines 47--51
+[]\T1/lmr/m/n/12 S3 Intelligent-Tiering Adds Ar-chi-ve Ac-cess Tiers (Ab-ge-ru-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--42
-\T1/lmtt/m/n/12 com / de-[]de / insights / technology / maximize-[]cloud-[]value$[][]\T1/lmr/m/n/12 (Abgerufen am
+Underfull \hbox (badness 10000) in paragraph at lines 47--51
+\T1/lmr/m/n/12 fen am 09. 11 2020) [][]$\T1/lmtt/m/n/12 https : / / aws . amazon . com / de / blogs / aws /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--45
-[]\T1/lmr/m/n/12 AWS In-stan-ce Sche-du-ler [][]$\T1/lmtt/m/n/12 https : / / aws . amazon . com / de / solutions /
+Underfull \hbox (badness 10000) in paragraph at lines 47--51
+\T1/lmtt/m/n/12 s3-[]intelligent-[]tiering-[]adds-[]archive-[]access-[]tiers / # : ~ : text = What %
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 46--48
-\T1/lmtt/m/n/12 de / blogs / aws / s3-[]intelligent-[]tiering-[]adds-[]archive-[]access-[]tiers / # : ~ :
- []
-
-) [16] (chapters/Anhand.tex) [17]
+) [14] (chapters/Anhand.tex) [15]
 Underfull \hbox (badness 10000) in paragraph at lines 258--268
 
  []
 
-[18] (leereSeite.tex) (BA_Carlo_Menjivar.aux)
+[16] (leereSeite.tex) (BA_Carlo_Menjivar.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1005,20 +998,20 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `BA_Carlo_Menjivar.out' has not changed.
-(rerunfilecheck)             Checksum: B56B94FF0DE8C2A5322FF463C6DA80D0;6480.
+(rerunfilecheck)             Checksum: 10D0B962EDAB32CC8CCBC333FEFA57FE;7449.
  ) 
 Here is how much of TeX's memory you used:
- 23732 strings out of 478838
- 426582 string characters out of 2847546
- 731396 words of memory out of 3000000
- 41102 multiletter control sequences out of 15000+600000
+ 23734 strings out of 478838
+ 426618 string characters out of 2847546
+ 731419 words of memory out of 3000000
+ 41105 multiletter control sequences out of 15000+600000
  501275 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,11n,89p,647b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 83i,11n,89p,647b,493s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri7.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on BA_Carlo_Menjivar.pdf (19 pages, 495446 bytes).
+Output written on BA_Carlo_Menjivar.pdf (17 pages, 495769 bytes).
 PDF statistics:
  402 PDF objects out of 1000 (max. 8388607)
- 74 named destinations out of 1000 (max. 500000)
- 298 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 73 named destinations out of 1000 (max. 500000)
+ 314 words of extra memory for PDF output out of 10000 (max. 10000000)
 
