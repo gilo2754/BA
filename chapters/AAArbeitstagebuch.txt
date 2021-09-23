@@ -1,22 +1,41 @@
-#HEUTE ARBEITE ICH AN:
+@Heute {
+https://get.plusserver.com/hubfs/Assets/Webinar/Webinar_Kostenoptimierung_in_AWS.mp4
 -Dieses E-Book lesen
 https://pages.awscloud.com/rs/112-TZM-766/images/Cloud%20Economics%20Ebook_October%202018.pdf
 -SCHREIBEN: "Zahlungsmethode"
+}
 
-#LETZTES MAL HABE ICH
--Video über Optimierung 2016
--LESEN: Buch Gestaltung: Schluss
--Youtube: Zitat und Zusammenfassung
--1. Entwurf des Abstracts
+@Done {
+23.9:
+    -Anpassungen nach Frau Berg
+    -Update Zeitplan
+    -Intro Autoscaling
 
-#Buchmarken:
-Gestaltung, Seite: 39
-Vor/Nachteile der Cloud:
 
-#To-Do:
+past:
+    -Video über Optimierung 2016
+    -LESEN: Buch Gestaltung: Schluss
+    -Youtube: Zitat und Zusammenfassung
+    -1. Entwurf des Abstracts
+}
+
+@Buchmarken{
+    -Gestaltung, Seite: 39
+    -https://www.aws.training/
+}
+
+@To-Do {
 SCHREIBEN: "Zahlungsmethode"
 
-LESEN: "X"
-SCHREIBEN: "X"
+#Nimm was Nützliches von #Video_PlusServer 22:9  
+32:52 Lambda Functions? um Ressources runterzufahren
+38:34 Die Infrastruktur sollte getrennt von der Anwendung sein
 
-
+#Siehe awsReInvent 2018: https://www.youtube.com/watch?v=0XA08hhRVFQ
+#Siehe awsReInvent 2019: Was hat da Lyft gemacht?
+#Best_Practices_Tagging
+#Wo_Pass_Cost_Explorar or cost/ usage reports?
+#Define KPIS? EC2 hourly spending, cost per transaction. Set KPI goals and alarm anomalies
+#Sollte ich die Levels für Cloud-Nutzer präsentieren?(1-5)
+https://www.aws.training/Details/Video?id=74016 (21:23)
+}
