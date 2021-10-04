@@ -26,7 +26,7 @@ Diese Bachelorarbeit beschäftigt sich mit dieser Problematik, um herauszufinden
 AWS wurde unter anderen ausgewählt wegen ihre frühe Präzenz (2006) als Cloud-Anbieter und ihr großes
 Angebot an Dienstliestungen, welche sich an sehr viele Anwendungsfälle anpassen.
 \\
-Eine Recherche von GARTNER behauptet, posisieniert AWS als Markführer in der Magic Quadrant für Cloud-Infrastruktur und Plattform-Services 2021.
+Eine Recherche von Gartner posisieniert AWS als Markführer in der Magic Quadrant für Cloud-Infrastruktur und Plattform-Services 2021.
 \footnote{Vgl. u.a. \cite{G01}}
 
 
@@ -47,9 +47,14 @@ Ausgehend von dieser Beobachtung untersucht die Arbeit die folgenden Fragen.
 %Buch: Die Gestaltung wiss. Arbeiten
 \begin{itemize}
     \item
-        Wie können Kosten bei Cloud-Diensten überwacht und wie lassen sich (unerwartete) Kosten bei Cloud-Diensten vermeiden/optimieren? am Beispiel [S3, EC2 und ein DB.]
+        Wie können Kosten bei Cloud-Diensten überwacht werden und wie lassen sie sich optimieren? 
+        Am Beispiel [S3, EC2 und ein DB.]
     \item
-        Welche Grenzen können für das Budget von Cloud-Diensten festgelegt werden?
+        Welche Maßnahmen sind nötig, um unerwartete höhe Kosten bei Cloud-Diensten zu vermeiden.
+       %Automatisierung, Benachrichtigungen und alles damit man der nidriegte Preis bezahlt
+    \item 
+    Was kann automatisiert werden, um Kosten zu vermeiden, die den Nutzern von Cloud-Diensten entstehen?  
+        % Welche Grenzen können für das Budget von Cloud-Diensten festgelegt werden?
 \end{itemize}
 %“Forschungsfrage”, “These”, “Hypothese” oder “Annahme”, alle Synonimen
 Meine Hypothese ist, dass Kosten von Cloud-Diensten unter Kontrolle gehalten und
@@ -59,27 +64,28 @@ reduziert werden können, wenn Überwachung- und Optimierungswerkzeuge eingesetz
 Als erstes wird gezeigt, wie mit Hilfe von bestehenden Werkzeugen unerwartete Kosten von Cloud-Diensten vermieden werden können.\\\\
 Als nächstes wird anhand von Empfehlungen von Cloud-Experten identifiziert, welche Optimierungsmöglichkeiten bestehen.\\
 %Die vorgestellten Werkzeuge werden auf eine Testumgebung eingesetzt und deren Auswirkungen im Bezug auf die Kosten %bewertet.\\
+\footnote{AWS: Amazon Web Services}
+
 \newpage
 \subsection{Struktur der Arbeit}
 %Schlüsselbegriffe
-Zunächst wird es eine kurze Einführung in die relevanten Begriffe geben, die für die zu untersuchenden AWS-Cloud-Services wichtig sind.
+%Zunächst wird es eine kurze Einführung in die relevanten Begriffe geben, die für die zu untersuchenden AWS-Cloud-Services wichtig sind.
 
 Diese Bachelorarbeit ist in folgenden Kapitel unterteilt:\\\\
 %2 Die gängigsten Cloud-Dienste, bei deren Geld verschwendet wird.
-%Zahlungsmodelle
-\textbf{Kapitel X?} 
-zeigt die verschiedenen Zahlungs-/Preismodelle für Amazon Web Services. 
+\textbf{In Kapitel 3} 
+befasst sich mit dem Begriff Cloud-Economy. Erläutert das Nutzen der Cloud in wirtschaftlichen Sinne und listet Cloud-Dienste einer typischen Software-Anwendung auf. Diese dienen als Grundlage für diese Arbeit. \\\\
+%4 Überwachung von Kosten
+\textbf{Kapitel 4} 
+zeigt die verschiedenen Zahlungs-/Preismodelle für Amazon Web Services. Es werden Kriterien vorgestellt, die helfen, sich für das richtige Preismodell für verschiedene Szenarien zu entscheiden. 
 \\\\
-\textbf{In Kapitel 2} werden die Cloud-Dienste vorgestellt, die im Hinblick auf das Kostenmanagement besondere Aufmerksamkeit erfordern.
-\\\\
-%3 Überwachung von Kosten
-%3.1 AWS Cost Explorer und AWS-Kosten- und Nutzungsbericht
-\textbf{In Kapitel 3} werden die Werkzeuge eingeführt, mit denen die Kosten, die Cloud-Dienste verursachen, überwacht werden können. Der AWS-Kosten- und Nutzungsbericht schlüsselt die Nutzung auf Organisationsebene nach Produktcode, Nutzungsart und Betrieb auf. Dadurch erhält man eine bessere Idee, welche Dienste am meisten Ressourcen verbrauchen. Auf diese Weise ist man in der Lage, weitere Maßnahmen zu ergreifen.
+%5 AWS Cost Explorer und AWS-Kosten- und Nutzungsbericht
+\textbf{In Kapitel 5} werden die Werkzeuge eingeführt, mit denen die Kosten, die Cloud-Dienste verursachen, überwacht werden können. Der AWS-Kosten- und Nutzungsbericht schlüsselt die Nutzung auf Organisationsebene nach Produktcode, Nutzungsart und Betrieb auf. Dadurch erhält man eine bessere Idee, welche Dienste am meisten Ressourcen verbrauchen. Auf diese Weise ist man in der Lage, weitere Maßnahmen zu ergreifen.
 \\\\
 %4 Methoden zur Kostenbremse
 %4.1 S3 Intelligent-Tiering
 %4.2 Instance-Scheduler für EC2 und AWS Reserved-Instance
-Als nächstes wird in \textbf{Kapitel 4?} auf die verfügbaren Werkzeuge zur Optimierung und Limitierung des Konsums von EC2-Instanzen und S3 Speichereinheiten eingegangen. Der AWS Instance Scheduler ist eine Lösung von AWS, die ermöglicht, benutzerdefinierte Start- und Stoppzeitpläne für Amazon EC2- und Relational Datenbanken-Instanzen einfach zu konfigurieren. Die Verwendung von Instance-Scheduler für EC2 kann im Gegensatz zu einer 24-Stunden-Ausführung bis zu 70 \% der Kosten einsparen.
+Als nächstes wird in \textbf{Kapitel 6} auf die verfügbaren Werkzeuge zur Optimierung und Limitierung des Konsums von EC2-Instanzen und S3 Speichereinheiten eingegangen. Der AWS Instance Scheduler ist eine Lösung von AWS, die ermöglicht, benutzerdefinierte Start- und Stoppzeitpläne für Amazon EC2- und Relational Datenbanken-Instanzen einfach zu konfigurieren. Die Verwendung von Instance-Scheduler für EC2 kann im Gegensatz zu einer 24-Stunden-Ausführung bis zu 70 \% der Kosten einsparen.
 \\\\
 AWS Reserved-Instance ermöglicht, die Kapazität von EC2-Instanzen zu reservieren und von einem vergünstigten Tarif zu profitieren. Mit Hilfe von S3 Intelligent-Tiering lässt sich Speicher optimieren, indem die passende Speicherart automatisch nach Kriterien wie Zugriffshäufigkeit verwendet wird.
 \\\\

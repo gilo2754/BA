@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.20)  23 SEP 2021 18:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.20)  25 SEP 2021 14:38
 entering extended mode
 **c:/Users/Nutzer/Desktop/Code.Lokal/BA/BA_Carlo_Menjivar.tex
 (c:/Users/Nutzer/Desktop/Code.Lokal/BA/BA_Carlo_Menjivar.tex
@@ -726,7 +726,7 @@ LaTeX Info: Redefining \nameref on input line 132.
 \openout4 = `BA_Carlo_Menjivar.out'.
 
  (leereSeite.tex)
-<sources/TH_Koeln_Logo.png, id=182, 1627.07875pt x 881.2925pt>
+<sources/TH_Koeln_Logo.png, id=174, 1627.07875pt x 881.2925pt>
 File: sources/TH_Koeln_Logo.png Graphic file (type png)
 <use sources/TH_Koeln_Logo.png>
 Package pdftex.def Info: sources/TH_Koeln_Logo.png  used on input line 143.
@@ -823,56 +823,56 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 50
 (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 55--62
+Underfull \hbox (badness 10000) in paragraph at lines 60--68
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--62
+Underfull \hbox (badness 10000) in paragraph at lines 60--68
+
+ []
+
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 74--94
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--62
-
- []
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 67--88
-
+Overfull \hbox (16.80681pt too wide) in paragraph at lines 74--94
+\T1/lmr/m/n/12 Cloud in wirt-schaft-li-chen Sin-ne und lis-tet Cloud-Dienste ei-ner ty-pi-schen Software-Anwendung
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--88
+Underfull \hbox (badness 10000) in paragraph at lines 74--94
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--88
+Underfull \hbox (badness 10000) in paragraph at lines 74--94
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--88
+Underfull \hbox (badness 10000) in paragraph at lines 74--94
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--88
+Underfull \hbox (badness 10000) in paragraph at lines 74--94
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--88
+Underfull \hbox (badness 10000) in paragraph at lines 74--94
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--88
+Underfull \hbox (badness 10000) in paragraph at lines 74--94
 
  []
 
-) [8] (chapters/Grundlagen.tex) (chapters/Zahlungsmodelle.tex
+) [9] (chapters/Grundlagen.tex) (chapters/Zahlungsmodelle.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--11
 
  []
@@ -897,24 +897,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--21
 
  []
 
-[9]) [10] (chapters/Überwachung von Kosten.tex
+[10]) [11] (chapters/Überwachung von Kosten.tex
 
-LaTeX Warning: Citation `RH1' on page 11 undefined on input line 23.
+LaTeX Warning: Citation `RH1' on page 12 undefined on input line 27.
 
 
-LaTeX Warning: Citation `AX1' on page 11 undefined on input line 27.
+LaTeX Warning: Citation `AX1' on page 12 undefined on input line 31.
 
-) [11] (chapters/Optimierung.tex
+) [12] (chapters/Optimierung.tex
 Underfull \hbox (badness 10000) in paragraph at lines 14--18
 
  []
 
-<sources/AutoCap Unused Capacity.png, id=308, 539.76656pt x 383.93437pt>
+<sources/AutoCap Unused Capacity.png, id=305, 539.76656pt x 383.93437pt>
 File: sources/AutoCap Unused Capacity.png Graphic file (type png)
 <use sources/AutoCap Unused Capacity.png>
 Package pdftex.def Info: sources/AutoCap Unused Capacity.png  used on input line 20.
 (pdftex.def)             Requested size: 377.83401pt x 268.75221pt.
-[12 <./sources/AutoCap Unused Capacity.png>]) [13] (chapters/Zusammenfassung.tex
+[13 <./sources/AutoCap Unused Capacity.png>]) [14] (chapters/Zusammenfassung.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--3
 
  []
@@ -929,42 +929,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
  []
 
-[14]) [15] (chapters/Glossar.tex
-Underfull \hbox (badness 10000) in paragraph at lines 11--30
+[15]) [16] (chapters/Glossar.tex
+Underfull \hbox (badness 10000) in paragraph at lines 11--31
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--30
+Underfull \hbox (badness 10000) in paragraph at lines 11--31
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--30
+Underfull \hbox (badness 10000) in paragraph at lines 11--31
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--30
+Underfull \hbox (badness 10000) in paragraph at lines 11--31
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--30
+Underfull \hbox (badness 10000) in paragraph at lines 11--31
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--30
+Underfull \hbox (badness 10000) in paragraph at lines 11--31
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--30
+Underfull \hbox (badness 10000) in paragraph at lines 11--31
 
  []
 
-) [16] (chapters/Quellenverzeichnis.tex
+) [17] (chapters/Quellenverzeichnis.tex
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 35.
  (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1018,12 +1018,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--53
 [][]$\T1/lmtt/m/n/12 https : / / www . gartner . com / technology / media-[]products / reprints / AWS /
  []
 
-[17]) [18] (chapters/Anhand.tex) [19]
+[18]) [19] (chapters/Anhand.tex) [20]
 Underfull \hbox (badness 10000) in paragraph at lines 260--270
 
  []
 
-[20] (leereSeite.tex) (BA_Carlo_Menjivar.aux)
+[21] (leereSeite.tex) (BA_Carlo_Menjivar.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1031,20 +1031,20 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `BA_Carlo_Menjivar.out' has not changed.
-(rerunfilecheck)             Checksum: 895F532E761EC782A8342F9EF8E968F3;8974.
+(rerunfilecheck)             Checksum: C9B8DB12E1CD4DBD1E292EF6FDC4AA1B;8712.
  ) 
 Here is how much of TeX's memory you used:
- 23774 strings out of 478838
- 427422 string characters out of 2847546
- 732529 words of memory out of 3000000
- 41129 multiletter control sequences out of 15000+600000
+ 23772 strings out of 478838
+ 427373 string characters out of 2847546
+ 732534 words of memory out of 3000000
+ 41127 multiletter control sequences out of 15000+600000
  501275 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,11n,89p,1099b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 83i,11n,89p,1099b,493s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri7.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on BA_Carlo_Menjivar.pdf (21 pages, 587816 bytes).
+Output written on BA_Carlo_Menjivar.pdf (22 pages, 588733 bytes).
 PDF statistics:
- 471 PDF objects out of 1000 (max. 8388607)
+ 467 PDF objects out of 1000 (max. 8388607)
  88 named destinations out of 1000 (max. 500000)
- 375 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 359 words of extra memory for PDF output out of 10000 (max. 10000000)
 
