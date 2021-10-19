@@ -1,11 +1,13 @@
 @Heute {
-https://get.plusserver.com/hubfs/Assets/Webinar/Webinar_Kostenoptimierung_in_AWS.mp4
--Dieses E-Book lesen
-https://pages.awscloud.com/rs/112-TZM-766/images/Cloud%20Economics%20Ebook_October%202018.pdf
--SCHREIBEN: "Zahlungsmethode"
+    Einleitung
 }
 
 @Done {
+15.10:
+
+14.10:
+    -Info für Prof vorbereiten: Beschreibung pro Kap.
+    -Fragen für das Meeting schreiben
 23.9:
     -Anpassungen nach Frau Berg
     -Update Zeitplan
@@ -25,7 +27,16 @@ past:
 }
 
 @To-Do {
-SCHREIBEN: "Zahlungsmethode"
+
+    -mehr über Optimierung und Überwachungstools
+    https://aws.amazon.com/de/economics/resources/
+    
+    -https://get.plusserver.com/hubfs/Assets/Webinar/Webinar_Kostenoptimierung_in_AWS.mp4
+
+    -Dieses E-Book lesen
+    https://pages.awscloud.com/rs/112-TZM-766/images/Cloud%20Economics%20Ebook_October%202018.pdf
+
+    -SCHREIBEN: "Zahlungsmodelle"
 
 #Nimm was Nützliches von #Video_PlusServer 22:9  
 32:52 Lambda Functions? um Ressources runterzufahren
@@ -39,3 +50,5 @@ SCHREIBEN: "Zahlungsmethode"
 #Sollte ich die Levels für Cloud-Nutzer präsentieren?(1-5)
 https://www.aws.training/Details/Video?id=74016 (21:23)
 }
+
+

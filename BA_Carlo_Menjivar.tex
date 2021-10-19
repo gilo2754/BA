@@ -140,8 +140,7 @@ plainpages=false,hypertexnames=false,citecolor=black]{hyperref} % Für Verlinkun
 % Deckblatt
 \pagestyle{empty}
 \begin{titlepage}
-  \includegraphics[scale=0.20]{sources/TH_Koeln_Logo}\\
-  \begin{center}
+  \begin{center}\includegraphics[scale=0.18]{sources/TH_Koeln_Logo}\\
     \Large
     Technische Hochschule Köln\\
     Fakultät für Informatik und Ingenieurwissenschaften\\
@@ -150,9 +149,8 @@ plainpages=false,hypertexnames=false,citecolor=black]{hyperref} % Für Verlinkun
     \textsc{BACHELORARBEIT}\\
     \vspace{1cm} % Vertikaler Abstand von 1cm erzeugen
     \huge
-    Kostenoptimierung für Cloud-Diensten \\
-    \Large
-    Ein wirtschaftlicher Ansatz für Amazon Web Services\\
+    Kostenüberwachung und -optimierung für Cloud-Dienste am Beispiel von Amazon Web Services \\
+    
     \vspace{1cm}
     \large
     Vorgelegt an der TH Köln Campus Gummersbach\\
@@ -162,11 +160,11 @@ plainpages=false,hypertexnames=false,citecolor=black]{hyperref} % Für Verlinkun
     \textsc{Carlo Menjivar} 11117929\\
     \vspace{1cm}
     \begin{tabular}{ll} % Einfache Tabelle ohne Rahmen, mit 2 Spalten erzeugen
-      \textbf{Erster Prüfer:}  & Prof. Dr. Roman Majewski \\
-      \textbf{Zweiter Prüfer:} & <Name des 2. Prüfers>    \\
+      \textbf{Erstprüfer:}  & Prof. Dr. Roman Majewski \\
+      \textbf{Zweitprüfer:} & Thomas Raser\\
     \end{tabular}
     \vspace{1cm}
-    \\Gummersbach, im F<Monat der Abgabe>
+    \\Gummersbach, im Feb<Monat der Abgabe>
   \end{center}
 \end{titlepage}
 \newpage
@@ -211,9 +209,9 @@ plainpages=false,hypertexnames=false,citecolor=black]{hyperref} % Für Verlinkun
 \section{Grundlagen}\label{kap_grundlagen}
 \input{chapters/Grundlagen}
 
-\begin{tcolorbox}[title={Abbildungen, Tabellen \& Co.}]
-  Bei Verwendung von Tabellen und auch Abbildungen beachten Sie bitte, dass diese immer Unter-/Überschriften enthalten (inklusive einer Nummer). Im Textfluss erklären/beschreiben Sie die Abbildung bzw. die Tabelle und nehmen Bezug über einen Verweis auf die Nummer.
-\end{tcolorbox}
+%\begin{tcolorbox}[title={Abbildungen, Tabellen \& Co.}]
+ % Bei Verwendung von Tabellen und auch Abbildungen beachten Sie bitte, dass diese immer Unter-/Überschriften enthalten (inklusive einer Nummer). Im Textfluss erklären/beschreiben Sie die Abbildung bzw. die Tabelle und nehmen Bezug über einen Verweis auf die Nummer.
+%\end{tcolorbox}
 
 
 %Eizelne Kapitel
@@ -221,8 +219,8 @@ plainpages=false,hypertexnames=false,citecolor=black]{hyperref} % Für Verlinkun
 \input{chapters/Zahlungsmodelle}
 \newpage
 
-\section{Überwachung von Kosten}\label{kap_ueberwachungVonKosten }
-\input{chapters/Überwachung von Kosten}
+\section{Kostenüberwachung}\label{kap_kostenüberwachung }
+\input{chapters/Kostenüberwachung}
 \newpage
 
 \section{Optimierungsmöglichkeiten}\label{kap_Optimierung}
@@ -248,7 +246,7 @@ plainpages=false,hypertexnames=false,citecolor=black]{hyperref} % Für Verlinkun
 \renewcommand*\thesection{\Alph{section}} % Nummerierungsart für die Gliederungsebene "section" 
 % auf Großbuchstaben setzen
 \section{Anhang}\label{anhang}
-\input{chapters/Anhand}
+\input{chapters/Anhang}
 
 \newpage
 

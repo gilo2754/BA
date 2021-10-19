@@ -2,93 +2,112 @@
 %WEITERE QUELLE Für mOTIVATION
 %https://www.gartner.com/smarterwithgartner/4-trends-impacting-cloud-adoption-in-2020
 %\subsection{Einführung in das Thema (Motivation, zentrale Begriffe etc.)}
+\subsection{Motivation}
+%WARUM HABE ICH MICH FÜR AWS ENTSCHIEDEN?
+Das Thema Amazon Web Services, kurz AWS, wurde unter anderen ausgewählt wegen ihrer frühen Präsenz (2006) als Cloud-Anbieter und ihr großes Angebot an Dienstleistungen, welche sich an sehr zahlreiche Anwendungsfälle anpassen.
+\\
+Eine Recherche von Gartner positioniert AWS als Markführer in der Magic Quadrant für Cloud-Infrastruktur und Plattform-Services 2021.
+%\footnote
+{\cite{G01}}
+\\\\
+Für viele Unternehmen ist eine große Herausforderung, die Kosten von Cloud-Diensten übersichtlich zu halten und Optimierungsmöglichkeit leicht zu erkennen. Zusätzlich besteht die Gefahr, unangenehme Überraschungen in einer Rechnung zu bekommen, weil keine Grenze für den Konsum von Cloud-Diensten festgelegt wurde. 
+\\\\
+Die Kostenoptimierung für Cloud-Dienste, ist so wichtig, dass wenn keine Optimierungsmaßnahmen ergriffen werden, wird es mit Sicherheit mehr bezahlt werden als bei On-Premise Systeme.
+\\
+\begin{quote}
+    ”Indeed, if you run the cloud the same way you run your on-premise data center, you are almost certain to incur higher expenses. It is necessary to use the following key cloud cost optimization techniques in order to successfully save money on the cloud.”
+{\cite{CCB}}
+\end{quote}
+
 \subsection{Problemstellung}
-Wenn ein Hotel die Vorteile von dem Cloud-Computing hätte, dann könnte dieses folgendermaßen funktionieren:
+
+%Wenn ein Hotel die Vorteile von dem Cloud-Computing hätte, dann könnte dieses folgendermaßen funktionieren:
+\begin{comment}
 \\\\
 ”Heute hatten wir 17 Gäste für unsere derzeit 20 Zimmer. Für die kommende Messe am Wochenende sind wir bereit 500 Gäste zu empfangen. Nach der Messe werden wir mit unseren üblichen 20 Zimmern wie immer gut arbeiten können.”
 Normalerweise bräuchte man eine große Investition zu machen, um solche kurzfristige Nachfrage zu erfüllen. Vergleichbar ist es bei traditionellen IT-Infrastrukturen, mehr Kapazitätsbedarf, würde die Anschaffung von einer neuen Hardware bedeuten.
 \\\\
-Die Verwendung von Cloud-Diensten bringt mit sich viele Vorteile, wie zum Beispiel kurzfristige Erhöhung oder Verringerung der Speicher- und Rechenkapazität oder Zugriff auf unterschiedliche Speicherarten, die genau an individuellen Anwendungsfälle passen. Alle diese Lösungen sind in wenigen Minuten erreichbar. Viele Unternehmen befürchten jedoch, dass der Wechsel von On-Premise zu On-Demand zu hohen Kosten führen könnte.
+\end{comment}
+Die Verwendung von Cloud-Diensten bringt mit sich viele Vorteile, wie zum Beispiel kurzfristige Erhöhung oder Verringerung der Speicher- und Rechenkapazität oder Zugriff auf unterschiedliche Speicherarten, die genau an individuellen Anwendungsfälle passen. Alle diese Lösungen sind in wenigen Minuten erreichbar. 
 \\\\
-Für viele Unternehmen ist eine große Herausforderung, die Kosten von Cloud-Diensten übersichtlich zu halten und Optimierungsmöglichkeit leicht zu erkennen. Zusätzlich besteht das Problem, keine feste Grenze für den Konsum von Cloud-Diensten festlegen zu können, damit man keine unangenehme Überraschung in einer Rechnung bekommt. 
-\\\\
-Die Optimierung der Kosten, die durch Cloud-Dienste entstehen, ist so wichtig, dass wenn keine Optimierungsmaßnahmen ergriffen werden, wird es mit Sicherheit mehr bezahlt werden als bei On-Premise Systeme.
-\\
-\begin{quote}
-    ”Indeed, if you run the cloud the same way you run your on-premise data center, you are almost certain to incur higher expenses. It is necessary to use the following key cloud cost optimization techniques in order to successfully save money on the cloud.”
-\footnote{Vgl. u.a. \cite{CCB}}
-\end{quote}
+Viele Unternehmen befürchten jedoch, dass der Wechsel von On-Premise zu On-Demand zu hohen Kosten führen könnte.
 
-Diese Bachelorarbeit beschäftigt sich mit dieser Problematik, um herauszufinden, wie Firmen mit den passenden Werkzeugen, die Kosten ihrer Cloud-Dienste überwachen und im Blick halten können. Außerdem sollte untersucht werden, wie sie mit der richtigen Auswahl an Diensten ihre Kosten optimieren können.
-\newpage
-\subsection{Motivation}
-%WARUM HABE ICH MICH FÜR AWS ENTSCHIEDEN?
-AWS wurde unter anderen ausgewählt wegen ihre frühe Präzenz (2006) als Cloud-Anbieter und ihr großes
-Angebot an Dienstliestungen, welche sich an sehr viele Anwendungsfälle anpassen.
-\\
-Eine Recherche von Gartner posisieniert AWS als Markführer in der Magic Quadrant für Cloud-Infrastruktur und Plattform-Services 2021.
-\footnote{Vgl. u.a. \cite{G01}}
+\begin{flushleft}
+Diese Bachelorarbeit beschäftigt sich mit dieser Problematik, um herauszufinden, wie Unternehmen mit den passenden Werkzeugen, die Kosten ihrer Cloud-Dienste überwachen und im Blick halten können. 
+Wie mit frühzeitigen Benachrichtigungen, alarmiert wird, wenn Systeme mehr Kosten verursachen als geplant.
+\end{flushleft}
+
+Außerdem sollte untersucht werden, wie sie mit der richtigen Auswahl an Diensten ihre Kosten optimieren können.
+
+\subsection{Darstellung der Ergebnisse und Einschränkungen}
+Nach Angaben von Amazon Web Services ist es möglich bis zu n\% der Kosten für S3 und bis zu 90\% für EC2 zu sparen.
+\footnote{AWS: Amazon Web Services} 
+% und x\% für DB 
+Diese Arbeit legt den Fokus auf die Optimierung der oben genannten Diensten.
+Als Überwachungswerkzeuge für die Kosten werden die AWS CloudWatch, der AWS Cost-Explorer und der AWS Trusted Advisor untersucht. 
 
 
-\subsection{Hinführung zu den Ergebnissen. / Angabe des Schwerpunktes / Einschränkungen darlegen}
-Nach Angaben von Amazon Web Services ist es möglich bis zu x\% der Kosten für S3, z\% für EC2 und x\% für DB zu sparen.
-
-
-Diese Arbeit liegt den Fokus auf die Optimierung der oben genannten Diensten.
-Als Überwachungwerkzeuge für die Kosten werden das A und das B untersucht. 
-\\
 \subsection{Fragestellung und Ziel der Arbeit}
 \begin{quote}
 „Bei der Umfrage von Stratecast Predictions 2018, Frost \& Sullivan, nannten 53 \% der IT-Führungskräfte die Verwaltung der Kosten für den Betrieb von Cloud-Workloads als großes Hindernis.“  
-\footnote{Vgl. u.a. \cite{SP1}}
+{\cite{SP1}}
 \end{quote}
+
+\begin{flushleft}
 Ausgehend von dieser Beobachtung untersucht die Arbeit die folgenden Fragen. 
+\end{flushleft}
+
 %Gestaltung Seite 28
 %Buch: Die Gestaltung wiss. Arbeiten
 \begin{itemize}
     \item
         Wie können Kosten bei Cloud-Diensten überwacht werden und wie lassen sie sich optimieren? 
-        Am Beispiel [S3, EC2 und ein DB.]
+        Am Beispiel von Speicherservice S3 und EC2-Instanzen.
     \item
         Welche Maßnahmen sind nötig, um unerwartete höhe Kosten bei Cloud-Diensten zu vermeiden.
        %Automatisierung, Benachrichtigungen und alles damit man der nidriegte Preis bezahlt
     \item 
-    Was kann automatisiert werden, um Kosten zu vermeiden, die den Nutzern von Cloud-Diensten entstehen?  
+        Was kann automatisiert werden, um Kosten zu vermeiden, die den Nutzern von Cloud-Diensten verursachen.  
         % Welche Grenzen können für das Budget von Cloud-Diensten festgelegt werden?
 \end{itemize}
 %“Forschungsfrage”, “These”, “Hypothese” oder “Annahme”, alle Synonimen
 Meine Hypothese ist, dass Kosten von Cloud-Diensten unter Kontrolle gehalten und
 reduziert werden können, wenn Überwachung- und Optimierungswerkzeuge eingesetzt werden.
 \\\\
-\textbf{Daraus ergeben sich für die Arbeit die folgenden Ziele:}\\ 
-Als erstes wird gezeigt, wie mit Hilfe von bestehenden Werkzeugen unerwartete Kosten von Cloud-Diensten vermieden werden können.\\\\
-Als nächstes wird anhand von Empfehlungen von Cloud-Experten identifiziert, welche Optimierungsmöglichkeiten bestehen.\\
-%Die vorgestellten Werkzeuge werden auf eine Testumgebung eingesetzt und deren Auswirkungen im Bezug auf die Kosten %bewertet.\\
-\footnote{AWS: Amazon Web Services}
 
 \newpage
+\textbf{Daraus ergeben sich für die Arbeit die folgenden Ziele:}\\ 
+\begin{itemize}
+    \item
+        Als Erstes wird gezeigt, wie mithilfe von bestehenden Werkzeugen  die Kosten von Cloud-Diensten überwacht werden können.\\
+    \item
+        Als Nächstes wird anhand von Empfehlungen von Cloud-Experten identifiziert, welche Optimierungsmöglichkeiten bestehen.\\
+\end{itemize}
+
+%Die vorgestellten Werkzeuge werden auf eine Testumgebung eingesetzt und deren Auswirkungen im Bezug auf die Kosten %bewertet.\\
+
 \subsection{Struktur der Arbeit}
 %Schlüsselbegriffe
 %Zunächst wird es eine kurze Einführung in die relevanten Begriffe geben, die für die zu untersuchenden AWS-Cloud-Services wichtig sind.
 
-Diese Bachelorarbeit ist in folgenden Kapitel unterteilt:\\\\
+Diese Bachelorarbeit ist in folgenden Kapiteln unterteilt:\\\\
 %2 Die gängigsten Cloud-Dienste, bei deren Geld verschwendet wird.
 \textbf{In Kapitel 3} 
-befasst sich mit dem Begriff Cloud-Economy. Erläutert das Nutzen der Cloud in wirtschaftlichen Sinne und listet Cloud-Dienste einer typischen Software-Anwendung auf. Diese dienen als Grundlage für diese Arbeit. \\\\
+befasst sich mit dem Begriff Cloud-Economy und erläutert das Nutzen der Cloud im wirtschaftlichen Sinne. Diese dienen als Grundlage für diese Arbeit. \\\\
 %4 Überwachung von Kosten
 \textbf{Kapitel 4} 
-zeigt die verschiedenen Zahlungs-/Preismodelle für Amazon Web Services. Es werden Kriterien vorgestellt, die helfen, sich für das richtige Preismodell für verschiedene Szenarien zu entscheiden. 
+zeigt die verschiedenen Zahlungsmodelle für Amazon Web Services. 
+\\
+Es werden Kriterien vorgestellt, die helfen, sich für das richtige Zahlungsmodell für verschiedene Szenarien zu entscheiden. 
 \\\\
 %5 AWS Cost Explorer und AWS-Kosten- und Nutzungsbericht
-\textbf{In Kapitel 5} werden die Werkzeuge eingeführt, mit denen die Kosten, die Cloud-Dienste verursachen, überwacht werden können. Der AWS-Kosten- und Nutzungsbericht schlüsselt die Nutzung auf Organisationsebene nach Produktcode, Nutzungsart und Betrieb auf. Dadurch erhält man eine bessere Idee, welche Dienste am meisten Ressourcen verbrauchen. Auf diese Weise ist man in der Lage, weitere Maßnahmen zu ergreifen.
+\textbf{In Kapitel 5} werden die Werkzeuge eingeführt, die zur Überwachung der Kosten von Cloud-Diensten eingesetzt werden können.
 \\\\
 %4 Methoden zur Kostenbremse
 %4.1 S3 Intelligent-Tiering
 %4.2 Instance-Scheduler für EC2 und AWS Reserved-Instance
-Als nächstes wird in \textbf{Kapitel 6} auf die verfügbaren Werkzeuge zur Optimierung und Limitierung des Konsums von EC2-Instanzen und S3 Speichereinheiten eingegangen. Der AWS Instance Scheduler ist eine Lösung von AWS, die ermöglicht, benutzerdefinierte Start- und Stoppzeitpläne für Amazon EC2- und Relational Datenbanken-Instanzen einfach zu konfigurieren. Die Verwendung von Instance-Scheduler für EC2 kann im Gegensatz zu einer 24-Stunden-Ausführung bis zu 70 \% der Kosten einsparen.
-\\\\
-AWS Reserved-Instance ermöglicht, die Kapazität von EC2-Instanzen zu reservieren und von einem vergünstigten Tarif zu profitieren. Mit Hilfe von S3 Intelligent-Tiering lässt sich Speicher optimieren, indem die passende Speicherart automatisch nach Kriterien wie Zugriffshäufigkeit verwendet wird.
-\\\\
+\textbf{In Kapitel 6} auf Optimierungsmaßnahmen, (Benachrichtigungen von relevanten Ergebnissen) und Limitierung des Konsums von Cloud-Diensten, insbesondere auf EC2-Instanzen.
+
 %Testumgebung
 %Schließlich werden anhand eines Fallbeispiels in \textbf{Kapitel 5?}, die oben genannten Werkzeuge und Techniken in einer %kostenlosen Testumgebung getestet. Um die Zuverlässigkeit der Ergebnisse zu gewährleisten, wird alles gemacht, um die %Vorher- und Nachher-Szenarien vergleichbar zu machen. Dabei werden die Anzahl der Instanzen und deren Auslastung sowie %die Daten auf den Speichereinheiten berücksichtigt.
  
