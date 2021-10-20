@@ -1,7 +1,10 @@
-Das nächste Grundlagenkapitel listet Erfolgschancen für Unternehmen auf, die Cloud-Dienste nutzen. 
+Das nächste Grundlagenkapitel listet Erfolgschancen für Unternehmen auf, die Cloud-Dienste in ihre Geschäftsprozesse integrieren.
 
-Es wird erklärt warum die Kostenoptimierung und -überwachung relevant für Unternehmen sind.
-\\\\
+\begin{flushleft}
+      Es wird erklärt warum die Kostenoptimierung und -überwachung relevant für Unternehmen sind.
+\end{flushleft}
+
+
 Die Optimierungsergebnisse können zu folgenden Ergebnissen führen.
 \begin{itemize}
       \item
@@ -9,48 +12,79 @@ Die Optimierungsergebnisse können zu folgenden Ergebnissen führen.
       \item
             Eine beachtliche Erhöhung der (finanziellen) Rentabilität im Unternehmen.
       \item
-            Eine geringere Unsicherheit, bei der Umsetzung von cloudbasierte Systemen.
+            Eine geringere Unsicherheit, bei der Umsetzung von cloudbasierten Systemen.
       \item
             ...
 \end{itemize}
 
-%Basandose en "Vor- und Nachteile der Nutzung von Cloud-Diensten (mit mobilen Endgeräten) in Organisationen und deren Einfluss auf die Nachhaltigeit"
+%Basandose en "Vor- und Nachteile der Nutzung von Cloud-Diensten (mit mobilen Endgeräten) in Organisationen und deren Einfluss auf die Nachhaltigkeit"
 % Debería aclarar los aspectos principales de mi BA
 % En mi caso: 
 
 %1-Cuales son los miedos, razones y oportunidades para las empresas en la NUBE?
 
-\subsection{Risiken und Oportunitäten der Cloud...}\label{subsec_UabsGrund2}
-Vor- und Nachteile / ?
-%2- 
-%Was ist die Cloud?
-%Wozu die Cloud?
-%Welche Dienste gibt es allgemein in der Cloud?
+%\subsection{Risiken und Oportunitäten der Cloud...}\label{subsec_UabsGrund2}
+%Vor- und Nachteile / ?
 
 \subsection{Ökonomie des Cloud Computing}\label{subsec_UabsGrund3}
 %Was bietet die Cloud den Unternehmen?
 %Economics of Cloud Computing
 %https://d1.awsstatic.com/whitepapers/introduction-to-aws-cloud-economics-final.pdf
+[to check:]
+\begin{flushleft}
+      {
+            Cloud Economics auf Englisch, basiert auf das On-Demand Prinzip basiert,
+            gibt die Flexibilität, Rechnerkapazität je nach Bedarf entweder manuell oder automatisch anzupassen.
+            Es entfallen große Investitionen in Hardware, wie bei On-Premise-Systemen.
+            Durch den Verzicht auf Hardware entfallen die Kosten für Reparatur, Wartung und eventuell damit verbundene Lizenzen, und im Falle von Systemen, die dies benötigen, entfällt der Bedarf an zuständigem Personal.
+
+            Die Nutzung dieser Dienste ist innerhalb weniger Minuten und selbstständig möglich (Selbsbedienung). }
+\end{flushleft}
+
+Grafik der Kosten On-Premise/Demand?
+
 \subsection{Skalierbarkeit}
+Mit Auto Scaling ist es möglich sicherzustellen, dass die Anzahl der Amazon Server-Instanzen während
+Nachfragespitzen nahtlos hochskaliert werden, um die Leistung aufrechtzuerhalten, und in
+Nachfrageflauten automatisch reduziert wird, um die Kosten zu minimieren.
+Auf diese Weise kann es weniger Zeit mit der Verwaltung von IT-Ressourcen verbracht werden und sich mehr auf ihr Geschäft konzentrieren können.
+\\\\
+Das war der Fall von Walgreens in der USA.
+Sie haben unter anderen 750 virtuelle Maschinen und SAP HANA auf Azure Instanzen migriert.
+
+\begin{quote}
+      „One of the key reasons for moving to Azure was so that we could take advantage of the scalability that SAP HANA is capable of„
+      \\
+      Dan Regalado: Vice President of Global Technology Transformation and Strategic Partnerships Walgreens Boots Alliance
+            {\cite{AZ01}}
+\end{quote}
 
 \subsection{Flexibilität und Agilität}
 
 \subsection{Selbstbedienung}
 
 \subsection{Keine Vorabkosten}
+%https://aws.amazon.com/de/ec2/pricing/
+Amazon Web Services bietet ein Pay-as-you-go-Modell für Ressourcen in On-Demand Zahlungsmodel.
+Diese werden nach einen bestimmter Einheit wie GB/Stunde berechnet für Speichereinheiten. 
+\\
+Im Fall von Server-Instanzen wird es ein Stundensatz auf der Grundlage der Servereigenschaften festgelegt.  
 
+Hier einige Beispiele von EC2-Instanzen l.
 
-Was haben diese Punkte mit der BA zu tun?
+\begin{center}
+      \includegraphics[scale=0.4]{sources/On-Demand-Pläne für Amazon EC2}\label{fig:OnDemand_Preise}\\
+      \textbf{Abbildung \autoref{fig:OnDemand_Preise}:} On-Demand Preise für Amazon EC2
+      \footnote{Vgl. u.a.\cite{AMZ01}}
+  \end{center}
+
 \begin{comment}
 Advantages of Cloud Technology
 As the technology has matured over the last decade, companies are moving to the
 cloud to lower costs, reduce complexity, and increase flexibility. The cloud
 provides scalable and powerful compute solutions, low-cost, reliable storage, and
 
-
-
-
-addition, cloud technologies can be used to deploy solutions quickly and costeffectively around the world and on any device.
+addition, cloud technologies can be used to deploy solutions quickly and cost effectively around the world and on any device.
 When you decouple from the data center, you’ll be able to:
 x Decrease your TCO: Eliminate many of the costs related to building and
 maintaining a data center or colocation deployment. Pay for only the
@@ -78,11 +112,8 @@ security, offering best practices to ensure you’re compliant, no matter what
 your industry.
 \end{comment}
 
-
-
-
-\subsection{Was ist EC2? To Review}\label{subsec_UabsGrund4}
-Man kann HW und SW auswählen
+%\subsection{Was ist EC2? To Review}\label{subsec_UabsGrund4}
+%Man kann HW und SW auswählen
 
 
 % Amazon video Cloud Eco.: https://www.youtube.com/watch?v=kUNBx1MTwxw
