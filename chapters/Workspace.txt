@@ -1,1 +1,26 @@
+Was macht jedes Werkzeug?
+https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html
 
+-Features in Billing and Cost Management
+The Billing and Cost Management service provides features that you can use to do the following:
+
+Estimate and plan your AWS costs
+
+Receive alerts if your costs exceed a threshold that you set
+
+Assess your biggest investments in AWS resources
+
+Simplify your accounting if you work with multiple AWS accounts
+
+
+-Analyzing Costs with Cost Explorer
+The AWS Billing and Cost Management console includes the no-cost Cost Explorer tool for viewing your AWS cost data as a graph. With Cost Explorer, you can filter graphs by values such as API operation, Availability Zone, AWS service, custom cost allocation tag, Amazon EC2 instance type, purchase option, AWS Region, usage type, usage type group, and more. If you use consolidated billing, you can also filter by member account. In addition, you can see a forecast of future costs based on your historical cost data.
+
+-AWS Budgets
+https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html
+You can use AWS Budgets to track your AWS usage and costs. Budgets use the cost visualization provided by Cost Explorer to show you the status of your budgets. This provides forecasts of your estimated costs and tracks your AWS usage, including your free tier usage. You can also use budgets to create Amazon Simple Notification Service (Amazon SNS) notifications that tell you when you go over your budgeted amounts, or when your estimated costs exceed your budgets.
+
+INTERESANTE:
+Savings Plans utilization budgets – Define a utilization threshold and receive alerts when the usage of your Savings Plans falls below that threshold. This lets you see if your Savings Plans are unused or under-utilized.
+
+DEBERIA HACER UN CAPITULO EXTRA PARA ACCIONES?

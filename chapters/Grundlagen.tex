@@ -30,24 +30,25 @@ Die Optimierungsergebnisse können zu folgenden Ergebnissen führen.
 %Was bietet die Cloud den Unternehmen?
 %Economics of Cloud Computing
 %https://d1.awsstatic.com/whitepapers/introduction-to-aws-cloud-economics-final.pdf
-[to check:]
+[TO CHECK:]
 \begin{flushleft}
       {
             Cloud Economics auf Englisch, basiert auf das On-Demand Prinzip basiert,
             gibt die Flexibilität, Rechnerkapazität je nach Bedarf entweder manuell oder automatisch anzupassen.
             Es entfallen große Investitionen in Hardware, wie bei On-Premise-Systemen.
-            Durch den Verzicht auf Hardware entfallen die Kosten für Reparatur, Wartung und eventuell damit verbundene Lizenzen, und im Falle von Systemen, die dies benötigen, entfällt der Bedarf an zuständigem Personal.
+            Durch den Verzicht auf Hardware entfallen die Kosten für Reparatur, Wartung und eventuell damit verbundene Lizenzen. Der Cloud-Anbieter übernimmt viele Verwaltungsaufgaben. Das führt zu einer Abnahme der nötigen Fachkraft 
 
-            Die Nutzung dieser Dienste ist innerhalb weniger Minuten und selbstständig möglich (Selbsbedienung). }
+            Die Nutzung dieser Dienste ist innerhalb weniger Minuten und in unabhängiger Weise möglich (Selbsbedienung). }
 \end{flushleft}
 
 Grafik der Kosten On-Premise/Demand?
 
-\subsection{Skalierbarkeit}
-Mit Auto Scaling ist es möglich sicherzustellen, dass die Anzahl der Amazon Server-Instanzen während
-Nachfragespitzen nahtlos hochskaliert werden, um die Leistung aufrechtzuerhalten, und in
-Nachfrageflauten automatisch reduziert wird, um die Kosten zu minimieren.
-Auf diese Weise kann es weniger Zeit mit der Verwaltung von IT-Ressourcen verbracht werden und sich mehr auf ihr Geschäft konzentrieren können.
+\subsubsection{Skalierbarkeit}
+Um die Leistung aufrecht zu halten und in Nachfragerückgänge diese zu reduziert,  ist es möglich die Rechenkapazität  automatisch hoch und runter zu skalieren.
+
+Mit Auto Scaling wird sichergestellt, dass die Anzahl der Amazon Server-Instanzen während
+Nachfragespitzen nahtlos hochskaliert werden und damit Kosten minimieren.
+Auf diese Weise kann es weniger Zeit mit der Verwaltung von IT-Ressourcen verbracht werden und sich mehr auf wesentliche Geschäftsaktivitäten konzentrieren können.
 \\\\
 Das war der Fall von Walgreens in der USA.
 Sie haben unter anderen 750 virtuelle Maschinen und SAP HANA auf Azure Instanzen migriert.
@@ -56,19 +57,46 @@ Sie haben unter anderen 750 virtuelle Maschinen und SAP HANA auf Azure Instanzen
       „One of the key reasons for moving to Azure was so that we could take advantage of the scalability that SAP HANA is capable of„
       \\
       Dan Regalado: Vice President of Global Technology Transformation and Strategic Partnerships Walgreens Boots Alliance
-            {\cite{AZ01}}
+            {\cite{AZU01}}
 \end{quote}
 
-\subsection{Flexibilität und Agilität}
+\subsubsection{Flexibilität und Agilität}
+In der Amazon Web Services gibt es im Allgemeinen eine Auswahl zwischen folgenden Optionen.
+\begin{itemize}
+      \item
+            Aus verschiedenen Betriebssystemen, mit und ohne Lizenzierung.
+      \item
+            Zwischen die meistverbreitete Programmiersprachen unter anderen Java, C++, Go, JavaScript Python und mehr.
+      \item
+            Hosting von statischen Webseiten und Webanwendungen.
+      \item
+            Populäre relationale und nicht relationale Datenbanken.
+      \item
+            Vielfältige Hardware-Konfigurationen.
+            
+\end{itemize}
+\begin{flushleft}
+      Durch die Vielzahl der verfügbaren Optionen ist es möglich, Prototypen oder Experimente in kurzer Zeit durchzuführen.
+      Die neue Entwicklung kann auf dem Markt mit echtem Kundenfeedback getestet werden.
+\\
+      Je nach ihrer Akzeptanz im Markt ist es möglich, sinnvolle Entscheidungen zu treffen.
+      Wenn die Neuentwicklung nicht erfolgreich war, fallen keine Kosten an, da die genutzten Dienste vollständig stillgelegt werden können.
+\end{flushleft}
+{\cite{AMZ03, AMZ04}}
 
-\subsection{Selbstbedienung}
+\subsubsection{Selbstbedienung}
+Mit geringem Aufwand ist es möglich, Cloud-Dienste eigenständig zu nutzen. Dies ist ein zweischneidiges Schwert.
+MACHT DAS SINN?
+Zum einen werden keine Vermittler benötigt, um die gewünschten Dienste einzurichten. Andererseits besteht die Gefahr, dass hohe Kosten entstehen.
 
-\subsection{Keine Vorabkosten}
+USE CASE WHEREE THIS HAPPEND
+
+\subsubsection{Keine Vorabkosten}
 %https://aws.amazon.com/de/ec2/pricing/
 Amazon Web Services bietet ein Pay-as-you-go-Modell für Ressourcen in On-Demand Zahlungsmodel.
-Diese werden nach einen bestimmter Einheit wie GB/Stunde berechnet für Speichereinheiten. 
+Diese werden nach einen bestimmter Einheit wie GB/Stunde berechnet für Speichereinheiten.
 \\
-Im Fall von Server-Instanzen wird es ein Stundensatz auf der Grundlage der Servereigenschaften festgelegt.  
+Im Fall von Server-Instanzen wird es ein Stundensatz auf der Grundlage der Servereigenschaften festgelegt.
 
 Hier einige Beispiele von EC2-Instanzen l.
 
@@ -76,7 +104,7 @@ Hier einige Beispiele von EC2-Instanzen l.
       \includegraphics[scale=0.4]{sources/On-Demand-Pläne für Amazon EC2}\label{fig:OnDemand_Preise}\\
       \textbf{Abbildung \autoref{fig:OnDemand_Preise}:} On-Demand Preise für Amazon EC2
       \footnote{Vgl. u.a.\cite{AMZ01}}
-  \end{center}
+\end{center}
 
 \begin{comment}
 Advantages of Cloud Technology

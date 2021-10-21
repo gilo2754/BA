@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.20)  20 OCT 2021 19:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.20)  21 OCT 2021 14:06
 entering extended mode
 **c:/Users/Nutzer/Desktop/Code.Lokal/BA/BA_Carlo_Menjivar.tex
 (c:/Users/Nutzer/Desktop/Code.Lokal/BA/BA_Carlo_Menjivar.tex
@@ -615,7 +615,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip73
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 132.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 133.
  (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
@@ -625,24 +625,24 @@ File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 ) (BA_Carlo_Menjivar.aux)
 \openout1 = `BA_Carlo_Menjivar.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -701,7 +701,7 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 132.
+Package hyperref Info: Link coloring ON on input line 133.
 (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
@@ -711,9 +711,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count325
 )
-LaTeX Info: Redefining \ref on input line 132.
-LaTeX Info: Redefining \pageref on input line 132.
-LaTeX Info: Redefining \nameref on input line 132.
+LaTeX Info: Redefining \ref on input line 133.
+LaTeX Info: Redefining \pageref on input line 133.
+LaTeX Info: Redefining \nameref on input line 133.
  (BA_Carlo_Menjivar.out) (BA_Carlo_Menjivar.out)
 \@outlinefile=\write4
 \openout4 = `BA_Carlo_Menjivar.out'.
@@ -722,35 +722,35 @@ LaTeX Info: Redefining \nameref on input line 132.
 <sources/TH_Koeln_Logo.png, id=178, 1627.07875pt x 881.2925pt>
 File: sources/TH_Koeln_Logo.png Graphic file (type png)
 <use sources/TH_Koeln_Logo.png>
-Package pdftex.def Info: sources/TH_Koeln_Logo.png  used on input line 143.
+Package pdftex.def Info: sources/TH_Koeln_Logo.png  used on input line 144.
 (pdftex.def)             Requested size: 292.86154pt x 158.6258pt.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 162.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 163.
  (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 162.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 163.
  (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 162.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 163.
  (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 162.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 163.
  (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 162.
+(Font)              <14.4> on input line 163.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 162.
+(Font)              <10> on input line 163.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 162.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 162.
+(Font)              <7> on input line 163.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 163.
  (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 162.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 163.
  (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -842,17 +842,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 93--110
  []
 
 [7]) [8] (chapters/Grundlagen.tex
-Underfull \hbox (badness 10000) in paragraph at lines 47--54
+Underfull \hbox (badness 10000) in paragraph at lines 49--55
 
  []
 
-[9]
-<sources/On-Demand-Pläne für Amazon EC2.png, id=288, 805.50937pt x 560.0925pt>
+[9] [10]
+<sources/On-Demand-Pläne für Amazon EC2.png, id=297, 805.50937pt x 560.0925pt>
 File: sources/On-Demand-Pläne für Amazon EC2.png Graphic file (type png)
 <use sources/On-Demand-Pläne für Amazon EC2.png>
-Package pdftex.def Info: sources/On-Demand-Pläne für Amazon EC2.png  used on input line 76.
+Package pdftex.def Info: sources/On-Demand-Pläne für Amazon EC2.png  used on input line 104.
 (pdftex.def)             Requested size: 322.19803pt x 224.03302pt.
- [10 <./sources/On-Demand-Pläne für Amazon EC2.png>]) (chapters/Zahlungsmodelle.tex
+ [11 <./sources/On-Demand-Pläne für Amazon EC2.png>]) (chapters/Zahlungsmodelle.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--13
 
  []
@@ -872,7 +872,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--23
 
  []
 
-[11]) [12] (chapters/Kostenüberwachung.tex) [13] (chapters/Optimierung.tex
+[12]) [13] (chapters/Kostenüberwachung.tex) [14] (chapters/Optimierung.tex
 Underfull \hbox (badness 10000) in paragraph at lines 15--19
 
  []
@@ -882,12 +882,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--19
 
  []
 
-<sources/AutoCap Unused Capacity.png, id=313, 539.76656pt x 383.93437pt>
+<sources/AutoCap Unused Capacity.png, id=321, 539.76656pt x 383.93437pt>
 File: sources/AutoCap Unused Capacity.png Graphic file (type png)
 <use sources/AutoCap Unused Capacity.png>
 Package pdftex.def Info: sources/AutoCap Unused Capacity.png  used on input line 24.
 (pdftex.def)             Requested size: 377.83401pt x 268.75221pt.
-[14 <./sources/AutoCap Unused Capacity.png>]) [15] (chapters/Zusammenfassung.tex
+[15 <./sources/AutoCap Unused Capacity.png>]) [16] (chapters/Zusammenfassung.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--3
 
  []
@@ -902,7 +902,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
  []
 
-) [16] (chapters/Glossar.tex
+) [17] (chapters/Glossar.tex
 Underfull \hbox (badness 10000) in paragraph at lines 11--31
 
  []
@@ -937,101 +937,96 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--31
 
  []
 
-) [17] (chapters/Quellenverzeichnis.tex
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 35.
+) [18] (chapters/Quellenverzeichnis.tex
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 36.
  (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 6978) in paragraph at lines 35--36
-[]\T1/lmr/m/n/12 Bertelsmeier, Bir-git (o. J.): Tipps zum Schrei-b-en ei-n-er Ab-sch-luss-ar-
+Underfull \hbox (badness 10000) in paragraph at lines 35--37
+[][]$\T1/lmtt/m/n/12 https : / / www . accenture . com / de-[]de / insights / technology /
  []
 
 
-Underfull \hbox (badness 4899) in paragraph at lines 35--36
-\T1/lmr/m/n/12 beit. Fach-hoch-schu-le K�ln-Campus Gum-mers-bach, In-sti-tut f�r In-for-ma-
+Underfull \hbox (badness 10000) in paragraph at lines 38--41
+[][]$\T1/lmtt/m/n/12 https : / / www . aws . training / Details / Video ? id = 16387$[][] \T1/lmr/m/n/12 (Ab-ge-ru-fen am
  []
 
 
-Underfull \hbox (badness 2426) in paragraph at lines 36--37
-\T1/lmr/m/n/12 schu-le K�ln-Campus Gum-mers-bach.[][]$\T1/lmtt/m/n/12 http : / / www . f10 . fh-[]koeln . de / imperia /
+Underfull \hbox (badness 10000) in paragraph at lines 42--45
+[][]$\T1/lmtt/m/n/12 https : / / aws . amazon . com / de / ec2 / pricing / on-[]demand/$[][] \T1/lmr/m/n/12 (Ab-ge-ru-fen am
  []
 
 
-Underfull \hbox (badness 1005) in paragraph at lines 38--40
-[]\T1/lmr/m/n/12 Stern, Adam, The Truth About Cloud Pri-cing [][]$\T1/lmtt/m/n/12 https : / / www . forbes . com /
+Underfull \hbox (badness 10000) in paragraph at lines 56--58
+[][]$\T1/lmtt/m/n/12 https : / / aws . amazon . com / de / solutions / implementations /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 38--40
-\T1/lmtt/m/n/12 sites / forbestechcouncil / 2018 / 11 / 16 / the-[]truth-[]about-[]cloud-[]pricing /
+Overfull \hbox (114.23904pt too wide) in paragraph at lines 60--63
+[][]$\T1/lmtt/m/n/12 https : / / aws . amazon . com / de / blogs / aws / s3-[]intelligent-[]tiering-[]adds-[]archive-[]access-[]tiers /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--50
-\T1/lmtt/m/n/12 de / blogs / aws / s3-[]intelligent-[]tiering-[]adds-[]archive-[]access-[]tiers / # : ~ :
+Underfull \hbox (badness 10000) in paragraph at lines 64--67
+[][]$\T1/lmtt/m/n/12 https : / / customers . microsoft . com / en-[]us / story /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--54
-[]\T1/lmr/m/n/12 Magic Qua-drant f�r Cloud-Infrastruktur und Plattform-Services
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--54
-[][]$\T1/lmtt/m/n/12 https : / / www . gartner . com / technology / media-[]products / reprints / AWS /
- []
-
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 59--62
-[]\T1/lmr/m/n/12 AWS On-Demand In-stan-ces [][]$\T1/lmtt/m/n/12 https : / / aws . amazon . com / de / ec2 / pricing /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--68
-[]\T1/lmr/m/n/12 Microsoft Cu-sto-mer Story-Walgreens Boots Al-lian-ce de-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--68
-\T1/lmr/m/n/12 li-vers su-pe-ri-or cu-sto-mer ser-vice with SAP so-lu-ti-ons on
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--68
-\T1/lmr/m/n/12 Azu-re [][]$\T1/lmtt/m/n/12 https : / / customers . microsoft . com / en-[]us / story /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--68
+Underfull \hbox (badness 10000) in paragraph at lines 64--67
 \T1/lmtt/m/n/12 792289-[]walgreens-[]boots-[]alliance-[]retailers-[]azure-[]sap-[]migration$[][]
  []
 
-) [19] (chapters/Anhang.tex
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 68--70
+[][]$\T1/lmtt/m/n/12 http : / / lwibs01 . gm . fh-[]koeln . de / blogs / bertelsmeier / files / 2008 / 05 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--73
+[][]$\T1/lmtt/m/n/12 http : / / www . f10 . fh-[]koeln . de / imperia / md / content / pdfs / studium / tipps /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--77
+[][]$\T1/lmtt/m/n/12 https : / / www . gartner . com / technology / media-[]products / reprints / AWS /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--80
+[][]$\T1/lmtt/m/n/12 https : / / www . forbes . com / sites / forbestechcouncil / 2018 / 11 / 16 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--80
+\T1/lmtt/m/n/12 the-[]truth-[]about-[]cloud-[]pricing / ?sh = 1f37bba42f33$[][]\T1/lmr/m/n/12 (Ver�ffentlicht am
+ []
+
+) [20] (chapters/Anhang.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
 
-) [20]
-Underfull \hbox (badness 10000) in paragraph at lines 258--268
+) [21]
+Underfull \hbox (badness 10000) in paragraph at lines 259--269
 
  []
 
-[21] (leereSeite.tex) (BA_Carlo_Menjivar.aux)
+[22] (leereSeite.tex) (BA_Carlo_Menjivar.aux)
 Package rerunfilecheck Info: File `BA_Carlo_Menjivar.out' has not changed.
-(rerunfilecheck)             Checksum: 465DD41C5C8CE28C1D91463BA878C0FF;8111.
+(rerunfilecheck)             Checksum: D0744B04429F7CE86B0594AEC27A6336;8175.
  ) 
 Here is how much of TeX's memory you used:
- 23768 strings out of 478838
- 427578 string characters out of 2847546
- 732436 words of memory out of 3000000
- 41127 multiletter control sequences out of 15000+600000
+ 23773 strings out of 478838
+ 427649 string characters out of 2847546
+ 732528 words of memory out of 3000000
+ 41129 multiletter control sequences out of 15000+600000
  489748 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,11n,89p,1099b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on BA_Carlo_Menjivar.pdf (22 pages, 615793 bytes).
+Output written on BA_Carlo_Menjivar.pdf (23 pages, 618174 bytes).
 PDF statistics:
- 461 PDF objects out of 1000 (max. 8388607)
- 85 named destinations out of 1000 (max. 500000)
+ 469 PDF objects out of 1000 (max. 8388607)
+ 88 named destinations out of 1000 (max. 500000)
  372 words of extra memory for PDF output out of 10000 (max. 10000000)
 

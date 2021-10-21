@@ -1,5 +1,5 @@
 @Heute {
-    Grundlagen: Skalierbarkeit
+    Grundlagen: Skalierbarkeit, Agilität, Flex.
 }
 
 @Done {
