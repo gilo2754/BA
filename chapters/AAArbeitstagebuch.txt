@@ -1,8 +1,10 @@
 @Heute {
-    Grundlagen: Skalierbarkeit, Agilität, Flex.
+    22:10: Werkzeuge 
 }
 
 @Done {
+21.10:  
+    -Grundlagen: Skalierbarkeit, Agilität, Flex.
 19.10:  
     -Einleitung
 14.10:
