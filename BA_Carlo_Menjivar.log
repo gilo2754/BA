@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.20)  25 OCT 2021 19:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.20)  28 OCT 2021 11:17
 entering extended mode
 **c:/Users/Nutzer/Desktop/Code.Lokal/BA/BA_Carlo_Menjivar.tex
 (c:/Users/Nutzer/Desktop/Code.Lokal/BA/BA_Carlo_Menjivar.tex
@@ -1057,7 +1057,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 265--275
 
 [23] (leereSeite.tex) (BA_Carlo_Menjivar.aux)
 Package rerunfilecheck Info: File `BA_Carlo_Menjivar.out' has not changed.
-(rerunfilecheck)             Checksum: 5D9CE0DB0FB4E4E3CE36627ED959B7B2;8782.
+(rerunfilecheck)             Checksum: ED4BFF6EAB60A8AD9DF2BB8320C77C7E;8615.
  ) 
 Here is how much of TeX's memory you used:
  23788 strings out of 478838
@@ -1068,7 +1068,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  83i,12n,89p,1099b,493s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on BA_Carlo_Menjivar.pdf (24 pages, 626186 bytes).
+Output written on BA_Carlo_Menjivar.pdf (24 pages, 625964 bytes).
 PDF statistics:
  491 PDF objects out of 1000 (max. 8388607)
  93 named destinations out of 1000 (max. 500000)

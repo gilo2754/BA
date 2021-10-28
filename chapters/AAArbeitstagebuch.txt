@@ -1,8 +1,11 @@
 @Heute {
-    22:10: Werkzeuge 
+    28:10: Allgemeine Überprüfung 
 }
 
 @Done {
+    25-27 Okt:Einige Einrtäge wurden nicht gespeichert.
+    Deswegen immer auf GitHub überprüfen.
+
 21.10:  
     -Grundlagen: Skalierbarkeit, Agilität, Flex.
 19.10:  
