@@ -1,9 +1,10 @@
 @Heute {
+    29:10:
     28:10: Allgemeine Überprüfung 
 }
 
 @Done {
-    25-27 Okt:Einige Einrtäge wurden nicht gespeichert.
+    25-27 Okt: Einige Einträge wurden nicht gespeichert.
     Deswegen immer auf GitHub überprüfen.
 
 21.10:  
@@ -17,7 +18,7 @@
     -Anpassungen nach Frau Berg
     -Update Zeitplan
     -Intro Autoscaling
-past:
+DAVOR:
     -Video über Optimierung 2016
     -LESEN: Buch Gestaltung: Schluss
     -Youtube: Zitat und Zusammenfassung
