@@ -1,9 +1,12 @@
 @Heute {
-    02:11:
-    
+03:11: Seite 49  
+https://books.google.de/books?id=Dp__DwAAQBAJ&pg=PA29&lpg=PA29&dq=Increase+efficiencies:+Use+automation+to+reduce+or+eliminate+IT+management+activities+that+waste+time+and+resources.&source=bl&ots=T5WqfT25mA&sig=ACfU3U07DOMve0GX-NA9RL4tw6HQbE6OLg&hl=es-419&sa=X&ved=2ahUKEwiq5p7FqfnzAhWx8bsIHabrAEMQ6AF6BAgfEAM#v=onepage&q&f=false
+   
 }
 
 @Done {
+02:11: Mehr on demand+2 Begriffe
+
 28:10: Allgemeine Überprüfung 
 
 25-27 Okt: Einige Einträge wurden nicht gespeichert.
