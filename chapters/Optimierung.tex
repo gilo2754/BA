@@ -25,6 +25,19 @@ Die graue Zone entspricht ungenutzte Kapazität einer EC2-Instanz. Dies bedeutet
     \textbf{Abbildung \autoref{fig:AutoSca_Unused_Capacity}:} Ungenutzte Ressourcen
     \footnote{Vgl. u.a.\cite{AMZ01}}
 \end{center}
+TODO:Es gibt verschiedene Möglichkeiten für die Auto-Skalierung.
+\\
+- Maintain current Instance Levels: kann die spezifizierte oder minimale Anzahl von laufenden Instanzen zu jeder Zeit konfiguriert werden.
+\\
+- Manual Scaling: Es wird benötigt, die minimale, die maximale oder die gewünschte Kapazität Ihrer Auto-Scaling-Gruppe zu definieren. Dies ist nützlich für sehr seltene Ereignisse. 
+\\
+- Scheduled Scaling: Wenn dies genau bekannt ist, muss die Anzahl der Instanzen in der Gruppe verringert oder erhöht werden. Wie bei Ereignissen wie Weihnachten oder Black Friday.
+\\
+- Dynamic Scaling: DIESES WOLLEN WIE ERKLÄREN
+Mehrere Dienste bieten standardmäßig kostenlose Metriken für Ressourcen wie EC2, EBS und RDS-DB-Instanzen.
+\\
+Zu erklären: cooldown period and scaling policy.
+
 
 \subsubsection{Automatisiere das Hoch- und Herunterfahren von Dev/Test Umgebungen}
 Grund: weil i.d.R., kein Entwickler 24/7 arbeitet.
@@ -38,8 +51,7 @@ Grund: nicht alle Dateien brauchen eine hohe Verfügbarkeit.
 \subsubsection{Automatisierung mit Lambda Funktionen}
 Grund: einmal programmiert, funktioniert es für immer.
 \\(To-Do:) Möglichkeiten untersuchen, bewerten und die passende Auswählen.
-\subsubsection{Benachrigungen, wenn x\% Kapazität unterschreiten wurde}
-Grund: um relevante Ereignisse nicht zu verpassen und rechtzeitig Maßnahmen zu ergreifen
+
 %Limitierung 
 %Quotas setzen? erweitern oder reduzieren / benachrichtigen aber auch eine Aktion durchführen 
 
@@ -69,7 +81,8 @@ warum ist das empfehlungswert?
 \subsubsection{VERKAUFE DEINE Ungenutzte Kapazität in RI Marketplace}
 
 
-
-  
+%Kombination
+%https://spot.io/blog/effective-utilization-of-aws-savings-plans-and-ec2-spot-instances/#a1
+%https://www.youtube.com/watch?v=X_7pnzPlESs
 
  

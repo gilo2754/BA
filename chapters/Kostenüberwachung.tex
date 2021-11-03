@@ -1,8 +1,8 @@
 Das Hauptziel dieses Kapitels besteht darin, Transparenz über die Kosten zu schaffen.
 
-Es werden Dienste versucht zu identifizieren, die Ressourcen verschwenden.
+Es werden Dienste versucht zu identifizieren, die Optimierungspotenzial haben. 
 \\
-Las razones pueden ser el simple hecho de haber olvidado apagar una instancia.
+%Las razones pueden ser el simple hecho de haber olvidado apagar una instancia.
 \subsection{Werkzeuge}
 (To-Do: Intro)\\
 
@@ -19,8 +19,42 @@ Es sollte gezeigt werden, die Arten/Kategorien von Kunden, die kostenlosen Zugan
 %https://aws.amazon.com/de/cloudwatch/pricing/
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingStarted.html
 
-Amazon CloudWatch ermöglicht die Überwachung der Leistung von Diensten. Es ist relevant für alle die Cloud-Dienste verbrauchen, wie DevOps-Manager, Ingenieure und Entwickler. Dieses Werkzeug sammelt operative Daten für die Analyse und Entscheidungsfindung.
-\\
+Amazon CloudWatch ermöglicht die Überwachung der Leistung von Reourcen, auch bei Ressourcen, die über verschiedene Regionen verteilt sind. 
+
+%Es ist relevant für alle die Cloud-Dienste verbrauchen, wie DevOps-Manager, Ingenieure und Entwickler[IST DIESER SATZ RELEVANT ODER EINFACH FÜLLUNG?]. 
+
+CloudWatch sammelt operative Daten für die Verlaufsanalysen und die Entscheidungsfindung.
+
+Eine der Metriken, die mit Amazon CloudWatch überwacht werden kann, ist die CPU-Last von EC2-Instanzen. 
+Basierend auf einem Prozentsatz der CPU-Last können Alarme?Benachrichtigungen?[WELCHES WORT?] und Aktionen konfiguriert werden
+\\\\
+Zum Beispiel die automatische Einrichtung neuer Instanzen zur Deckung des Kapazitätsbedarfs\footnote{\cite{AWS1}, Seite 185}. 
+Diese Art von Aktionen werden im Kapitel 7 Optimierungsmöglichkeiten behandelt.
+\\\\
+\textbf{Visualisierung}\\
+Mit CloudWatch-Dashboards können Metriken und historische Daten auf einem einzigen Dashboard nebeneinander grafisch dargestellt werden
+{\cite{AWZ12}.
+
+%\begin{center}
+  %    \includegraphics[scale=0.7]{sources/Name}%\label{fig:Name}\\
+   %   \textbf{Abbildung \autoref{fig:Name}:} 
+   %   Name
+    %  %\footnote{Vgl. u.a.\cite{AMZ01}}
+ % \end{center}
+%\\\\
+\textbf{Alarme?Benachrichtigungen?}\\
+%https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html
+Mit CloudWatch können Alarme einrichtet werden, die durch Metriken wie die CPU-Last und auch Gebühren auf AWS-Rechnungen ausgelöst werden.
+
+Benachrichtigt zu werden ist es wichtig, um relevante Ereignisse nicht zu verpassen und rechtzeitig Maßnahmen zu ergreifen.
+\\\\
+BEISPIEL VON BILLING ALARM
+%https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html
+Autoscaling group seted with cooldown periods to avoid too much instances to by launched.
+
+
+
+
 Most popular parts of CloudWatch:
 %https://youtu.be/k7wuIrHU4UY?t=785
 \\
@@ -36,11 +70,12 @@ Events: para on/off EC2
 Lo que nos interesa es "Billing"
 
 
-Para EC2 podemos ver la carga a CPU y luego escalar.
+Para EC2, podemos ver la carga a CPU y luego escalar.
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingStarted.html
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html
-%https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html
+
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html
+
 
 \subsubsection{AWS Cost-Explorer}
 ...
