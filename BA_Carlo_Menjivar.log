@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.20)  3 NOV 2021 19:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.20)  4 NOV 2021 16:35
 entering extended mode
 **"c:/Users/Nutzer/Dropbox/2. TH Koeln und mehr/9.0 AbschlussDinge/BachelorArbeit/BA/BA_Carlo_Menjivar.tex"
 (c:/Users/Nutzer/Dropbox/2. TH Koeln und mehr/9.0 AbschlussDinge/BachelorArbeit/BA/BA_Carlo_Menjivar.tex
@@ -622,11 +622,7 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count317
 \l__pdf_internal_box=\box79
-) (BA_Carlo_Menjivar.aux
-
-LaTeX Warning: Label `fig:AutoSca_Unused_Capacity' multiply defined.
-
-)
+) (BA_Carlo_Menjivar.aux)
 \openout1 = `BA_Carlo_Menjivar.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
@@ -902,29 +898,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
  []
 
 
-LaTeX Warning: Citation `AWZ12' on page 15 undefined on input line 36.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--37
+Underfull \hbox (badness 10000) in paragraph at lines 26--37
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--37
+Underfull \hbox (badness 10000) in paragraph at lines 26--37
 
  []
 
-<sources/AutoCap Unused Capacity.png, id=346, 539.76656pt x 383.93437pt>
-File: sources/AutoCap Unused Capacity.png Graphic file (type png)
-<use sources/AutoCap Unused Capacity.png>
-Package pdftex.def Info: sources/AutoCap Unused Capacity.png  used on input line 38.
-(pdftex.def)             Requested size: 377.83401pt x 268.75221pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--37
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--49
+
+ []
+
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 48--53
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-[16 <./sources/AutoCap Unused Capacity.png>]) [17] (chapters/Optimierung.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 62.
+(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Overfull \hbox (125.90248pt too wide) in paragraph at lines 61--64
+\T1/lmr/m/n/12 Targets sind die Res-sour-cen[][][][][]https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/EventTypes.html,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--79
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--79
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--79
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--79
+
+ []
+
+[16]) [17] (chapters/Optimierung.tex
 Underfull \hbox (badness 10000) in paragraph at lines 15--19
 
  []
@@ -934,11 +965,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--19
 
  []
 
+<sources/AutoCap Unused Capacity.png, id=377, 539.76656pt x 383.93437pt>
 File: sources/AutoCap Unused Capacity.png Graphic file (type png)
 <use sources/AutoCap Unused Capacity.png>
 Package pdftex.def Info: sources/AutoCap Unused Capacity.png  used on input line 24.
 (pdftex.def)             Requested size: 377.83401pt x 268.75221pt.
-[18]) [19] (chapters/Zusammenfassung.tex
+[18 <./sources/AutoCap Unused Capacity.png>]) [19] (chapters/Zusammenfassung.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--3
 
  []
@@ -999,10 +1031,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--244
  []
 
 [21] (chapters/Quellenverzeichnis.tex
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 36.
- (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
 Underfull \hbox (badness 10000) in paragraph at lines 35--37
 [][]$\T1/lmtt/m/n/12 https : / / www . accenture . com / de-[]de / insights / technology /
  []
@@ -1043,67 +1071,82 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--83
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--87
+Underfull \hbox (badness 10000) in paragraph at lines 85--88
 [][]$\T1/lmtt/m/n/12 https : / / aws . amazon . com / de / cloudwatch / features/$[][] \T1/lmr/m/n/12 (Ab-ge-ru-fen am
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--91
+Underfull \hbox (badness 10000) in paragraph at lines 91--94
+[][]$\T1/lmtt/m/n/12 https : / / docs . aws . amazon . com / AmazonCloudWatch / latest / events / cwe-[]ug .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--99
+[][]$\T1/lmtt/m/n/12 https : / / docs . aws . amazon . com / AmazonCloudWatch / latest / monitoring /
+ []
+
+
+Underfull \hbox (badness 2837) in paragraph at lines 96--99
+\T1/lmtt/m/n/12 acw-[]ug . pdf # CloudWatch _ Automatic _ Dashboards _ Focus _ Service$[][] \T1/lmr/m/n/12 (Ab-ge-ru-fen
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--103
 [][]$\T1/lmtt/m/n/12 https : / / books . google . de / books ? id = Dp _ _DwAAQBAJ & lpg = PA29 & ots =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--91
+Underfull \hbox (badness 10000) in paragraph at lines 100--103
 \T1/lmtt/m/n/12 T5WqfT25mA & dq = Increase % 20efficiencies % 3A % 20Use % 20automation % 20to %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--91
+Underfull \hbox (badness 10000) in paragraph at lines 100--103
 \T1/lmtt/m/n/12 20reduce % 20or % 20eliminate % 20IT % 20management % 20activities % 20that %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--91
+Underfull \hbox (badness 10000) in paragraph at lines 100--103
 \T1/lmtt/m/n/12 20waste % 20time % 20and % 20resources . &pg = PA29 # v = onepage & q & f = false$[][] \T1/lmr/m/n/12 (Ab-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--95
+Underfull \hbox (badness 10000) in paragraph at lines 104--107
 [][]$\T1/lmtt/m/n/12 https : / / customers . microsoft . com / en-[]us / story /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--95
+Underfull \hbox (badness 10000) in paragraph at lines 104--107
 \T1/lmtt/m/n/12 792289-[]walgreens-[]boots-[]alliance-[]retailers-[]azure-[]sap-[]migration$[][]
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 96--98
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 108--110
 [][]$\T1/lmtt/m/n/12 http : / / lwibs01 . gm . fh-[]koeln . de / blogs / bertelsmeier / files / 2008 / 05 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
 [][]$\T1/lmtt/m/n/12 http : / / www . f10 . fh-[]koeln . de / imperia / md / content / pdfs / studium / tipps /
  []
 
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 102--105
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--117
 [][]$\T1/lmtt/m/n/12 http : / / d0 . awsstatic . com / analyst-[]reports / IDC _ Business _ Value _ of _ AWS _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--109
+Underfull \hbox (badness 10000) in paragraph at lines 118--122
 [][]$\T1/lmtt/m/n/12 https : / / www . gartner . com / technology / media-[]products / reprints / AWS /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--113
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
 [][]$\T1/lmtt/m/n/12 https : / / www . forbes . com / sites / forbestechcouncil / 2018 / 11 / 16 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--113
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
 \T1/lmtt/m/n/12 the-[]truth-[]about-[]cloud-[]pricing / ?sh = 1f37bba42f33$[][]\T1/lmr/m/n/12 (Veröffentlicht am
  []
 
@@ -1118,31 +1161,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 265--275
  []
 
 [26] (leereSeite.tex) (BA_Carlo_Menjivar.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `BA_Carlo_Menjivar.out' has not changed.
-(rerunfilecheck)             Checksum: 2933C381F3F56DE7EA45795157D5C62A;8228.
- )
-(\end occurred inside a group at level 1)
-
-### simple group (level 1) entered at line 36 ({)
-### bottom level 
+(rerunfilecheck)             Checksum: 51AC167AE3A833EC4BB9ADDEB0D791CD;8228.
+ ) 
 Here is how much of TeX's memory you used:
- 23802 strings out of 478838
- 429117 string characters out of 2847546
- 733852 words of memory out of 3000000
- 41142 multiletter control sequences out of 15000+600000
- 489748 words of font info for 86 fonts, out of 8000000 for 9000
+ 23813 strings out of 478838
+ 429234 string characters out of 2847546
+ 732869 words of memory out of 3000000
+ 41145 multiletter control sequences out of 15000+600000
+ 490067 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,12n,89p,1145b,580s stack positions out of 5000i,500n,10000p,200000b,80000s
-{C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on BA_Carlo_Menjivar.pdf (27 pages, 644067 bytes).
+ 83i,12n,89p,1145b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
+{C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Nutzer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
+Output written on BA_Carlo_Menjivar.pdf (27 pages, 677641 bytes).
 PDF statistics:
- 532 PDF objects out of 1000 (max. 8388607)
- 104 named destinations out of 1000 (max. 500000)
+ 562 PDF objects out of 1000 (max. 8388607)
+ 111 named destinations out of 1000 (max. 500000)
  372 words of extra memory for PDF output out of 10000 (max. 10000000)
 

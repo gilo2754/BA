@@ -1,10 +1,13 @@
 @Heute {
-03:11: Seite 49  
-https://books.google.de/books?id=Dp__DwAAQBAJ&pg=PA29&lpg=PA29&dq=Increase+efficiencies:+Use+automation+to+reduce+or+eliminate+IT+management+activities+that+waste+time+and+resources.&source=bl&ots=T5WqfT25mA&sig=ACfU3U07DOMve0GX-NA9RL4tw6HQbE6OLg&hl=es-419&sa=X&ved=2ahUKEwiq5p7FqfnzAhWx8bsIHabrAEMQ6AF6BAgfEAM#v=onepage&q&f=false
-   
+5.11: Vervollständige 6.1.1 CloudWatch
+6.11: 1 Seite über Explorer
+7.11: 6.1.2 C-Explorer abschließen
 }
 
 @Done {
+4.11: Schreib 1 Seite über CloudWatch
+
+03:11: Seite 49  AWS Certified Solutions Architect - Professional Complete Study Guide
 02:11: Mehr on demand+2 Begriffe
 
 28:10: Allgemeine Überprüfung 

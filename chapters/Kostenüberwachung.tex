@@ -6,7 +6,6 @@ Es werden Dienste versucht zu identifizieren, die Optimierungspotenzial haben.
 \subsection{Werkzeuge}
 (To-Do: Intro)\\
 
-
 Welche Metriken und Informationen lassen sich mit den hier erwähnten Werkzeuge finden?
 Welche Kosten sind mit der Nutzung dieser Werkzeuge verbunden?
 
@@ -19,22 +18,27 @@ Es sollte gezeigt werden, die Arten/Kategorien von Kunden, die kostenlosen Zugan
 %https://aws.amazon.com/de/cloudwatch/pricing/
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingStarted.html
 
-Amazon CloudWatch ermöglicht die Überwachung der Leistung von Reourcen, auch bei Ressourcen, die über verschiedene Regionen verteilt sind. 
-
+Amazon CloudWatch ermöglicht die Überwachung der Leistung von Resources, auch bei Ressourcen, die über verschiedene Regionen verteilt sind. 
 %Es ist relevant für alle die Cloud-Dienste verbrauchen, wie DevOps-Manager, Ingenieure und Entwickler[IST DIESER SATZ RELEVANT ODER EINFACH FÜLLUNG?]. 
 
-CloudWatch sammelt operative Daten für die Verlaufsanalysen und die Entscheidungsfindung.
+CloudWatch sammelt operative Daten für die Verlaufsanalysen und die Entscheidungsfindung in Bezug auf Optimierung und Fehlerbehebung..
 
 Eine der Metriken, die mit Amazon CloudWatch überwacht werden kann, ist die CPU-Last von EC2-Instanzen. 
 Basierend auf einem Prozentsatz der CPU-Last können Alarme?Benachrichtigungen?[WELCHES WORT?] und Aktionen konfiguriert werden
 \\\\
-Zum Beispiel die automatische Einrichtung neuer Instanzen zur Deckung des Kapazitätsbedarfs\footnote{\cite{AWS1}, Seite 185}. 
-Diese Art von Aktionen werden im Kapitel 7 Optimierungsmöglichkeiten behandelt.
+Zum Beispiel die automatische Einrichtung neuer Instanzen zur Deckung des Kapazitätsbedarfs
+\footnote{\cite{AWS1}, Seite 185}. 
+Diese Art von Aktionen werden im Kapitel 7 Optimierungsmöglichkeiten tiefer behandelt.
 \\\\
-\textbf{Visualisierung}\\
-Mit CloudWatch-Dashboards können Metriken und historische Daten auf einem einzigen Dashboard nebeneinander grafisch dargestellt werden
-{\cite{AWZ12}.
+Im Folgenden werden die grundlegenden Bereiche und Begriffe von CloudWatch erläutert und wie sie zur Überwachung von Informationen über AWS-Ressourcen verwendet werden können.
+\\\\
+\textbf{Visualisierung/ Dashboards}\\
+Mit Cloud-Watch Dashboards können Boards[BESSERE FORMULIERUNG] mit relevanten Metriken angelegt werden. Sie ermöglichen eine umfassende Visualisierung der Metriken der Ressourcen in der AWS-Umgebung/Infrastruktur. Durch die Boards[PASSENDES WORT], können direkt auch Alarmen erstellt werden. Für die Einrichtung der Alarme ist kein technisches Wissen benötigt\footnote{\cite{AMZ14}, Seite 28}.
 
+Die von CloudWatch gesammelte Informationen sind nicht nur relevant für System-Administratoren, es könnten auch für andere Personen innerhalb oder außerhalb der Organisation relevant sein.
+Für sollte Fällen bietet CloudWatch die Möglichkeit, eine gemeinsame Sicht auf kritische Ressourcen- und Anwendungsmessungen zu generieren. 
+Dies ermöglicht einen schnelleren Kommunikationsfluss in Echtzeit.\footnote{\cite{AMZ14}, Seite 18 und 39}. 
+\\
 %\begin{center}
   %    \includegraphics[scale=0.7]{sources/Name}%\label{fig:Name}\\
    %   \textbf{Abbildung \autoref{fig:Name}:} 
@@ -42,35 +46,46 @@ Mit CloudWatch-Dashboards können Metriken und historische Daten auf einem einzi
     %  %\footnote{Vgl. u.a.\cite{AMZ01}}
  % \end{center}
 %\\\\
+
+\textbf{Metriken} \\
+
+\textbf{Logs} \\
+\textbf{Events} \\
+Bei CloudWatch ist ein Event eine Änderung bei einer Ressource in der AWS-Umgebung. 
+AWS-Ressourcen können Events erzeugen, wenn sich ihr Status ändert. 
+
+Beispielsweise, ein Event wird erzeugt, wenn Amazon EC2 Auto Scaling, Instanzen startet oder beendet \footnote{\cite{AMZ13}, Seite 1}. 
+
+\textbf{Regel} \\
+
+\textbf{Target} \\
+Targets sind die Ressourcen, die aufgerufen werden, wenn eine Regel ausgelöst wird.
+EC2 instances, AWS Lambda functions und Amazon SNS topics sind unter anderem mögliche Targets\footnote{\cite{AMZ13}, Seite 2}.
+%Alle zugelassene Ressourcen \footnote\url{https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/EventTypes.html}
+
 \textbf{Alarme?Benachrichtigungen?}\\
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html
-Mit CloudWatch können Alarme einrichtet werden, die durch Metriken wie die CPU-Last und auch Gebühren auf AWS-Rechnungen ausgelöst werden.
+Mit CloudWatch können Alarme einrichtet werden, die durch Metriken wie die CPU-Last und auch Gebühren[ANDERES WORT] auf AWS-Rechnungen ausgelöst werden.
 
 Benachrichtigt zu werden ist es wichtig, um relevante Ereignisse nicht zu verpassen und rechtzeitig Maßnahmen zu ergreifen.
 \\\\
 BEISPIEL VON BILLING ALARM
+\\\\
+%This could be a good example
+%https://youtu.be/__knpcBRLHg?t=770
+\\\\
 %https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html
 Autoscaling group seted with cooldown periods to avoid too much instances to by launched.
 
-
-
-
-Most popular parts of CloudWatch:
+%Most popular parts of CloudWatch:
 %https://youtu.be/k7wuIrHU4UY?t=785
-\\
-Dashboards:
-\\
-Alarms: notificar o actuar
-\\
-Metrics
-\\
-Logs
-\\
+
 Events: para on/off EC2
 Lo que nos interesa es "Billing"
 
-
 Para EC2, podemos ver la carga a CPU y luego escalar.
+% LINKS :
+
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingStarted.html
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html
 
