@@ -29,18 +29,19 @@ Kostenoptimierung für Cloud-Dienste ist ein wichtiger Punkt, da man ohne Optimi
 Normalerweise bräuchte man eine große Investition zu machen, um solche kurzfristige Nachfrage zu erfüllen. Vergleichbar ist es bei traditionellen IT-Infrastrukturen, mehr Kapazitätsbedarf, würde die Anschaffung von einer neuen Hardware bedeuten.
 \\\\
 \end{comment}
-Die Verwendung von Cloud-Diensten bringt viele Vorteile mit sich. Zum Beispiel kurzfristige Erhöhung oder Verringerung der Speicher- und Rechenkapazität, sowie Zugriff auf unterschiedliche Speicherarten, die genau an individuellen Anwendungsfälle angepasst sind. Alle diese Lösungen sind in wenigen Minuten einsatzfertig. 
+Die Verwendung von Cloud-Diensten bringt viele Vorteile mit sich. Zum Beispiel kurzfristige Erhöhung oder Verringerung der Speicher- und Rechenkapazität, sowie Zugriff auf unterschiedliche Speicherarten, die genau an individuelle Anwendungsfälle angepasst sind. All diese Lösungen sind in wenigen Minuten einsatzfertig. 
 \\\\
 %Viele Unternehmen befürchten jedoch, dass der Wechsel von On-Premise zu On-Demand zu hohen Kosten führen könnte.
-In einer Umfrage haben circa 50\% der Unternehmen die Verwaltung der Kosten für den Betrieb von Cloud-Workloads als großes Hindernis genannt. Mehr als die Hälfte der Befrachter haben geäußert, Schwierigkeiten zu haben, alle Kosten für Cloud-Workloads zu erklären. 
+In einer Umfrage haben circa 50\% der Unternehmen die Verwaltung der Kosten für den Betrieb von Cloud-Workloads als großes Hindernis genannt. Mehr als die Hälfte der Befrachter haben geäußert, Schwierigkeiten zu haben, alle Kosten für Cloud-Workloads zu rechtfertigen. 
 \begin{quote}
     „In its Stratecast Predictions 2018, Frost \& Sullivan noted that 53\% of IT leaders surveyed cited “managing costs to run cloud workloads” as a huge obstacle, and over 50\% have difficulty justifying the expenses of some public cloud workloads.“  
     {\cite{SP1}}
     \end{quote}
 
 \begin{flushleft}
-Diese Bachelorarbeit beschäftigt sich mit ebendieser Problematik, um herauszufinden, wie Unternehmen mit den passenden Werkzeugen, die Kosten ihrer Cloud-Dienste überwachen und im Blick halten können. 
-Zum Beispiel wie mit frühzeitigen Benachrichtigungen alarmiert wird, wenn Systeme mehr Kosten verursachen als geplant.
+Diese Bachelorarbeit beschäftigt sich mit ebendieser Problematik, um herauszufinden, wie Unternehmen mit den passenden Werkzeugen die Kosten ihrer Cloud-Dienste überwachen und im Blick behalten können. 
+
+Zum Beispiel können frühzeitige Benachrichtigungen alarmieren, wenn Ressourcen mehr Kosten verursachen als geplant.
 \\
 Außerdem sollte untersucht werden, wie sie mit der richtigen Auswahl an Diensten ihre Kosten optimieren können.
 \end{flushleft}
@@ -60,12 +61,12 @@ In dieser Arbeit wird versucht, die folgenden Fragen beantworten.
         Welche Maßnahmen sind nötig, um unerwartet hohe Kosten bei Cloud-Diensten zu vermeiden.
        %Automatisierung, Benachrichtigungen und alles damit man der nidriegte Preis bezahlt
     \item 
-        Was kann automatisiert werden, um Kosten zu vermeiden, die den Nutzern von Cloud-Diensten verursachen.  
+        Was kann automatisiert werden, um Kosten zu vermeiden, die Nutzer von Cloud-Diensten verursachen.  
         % Welche Grenzen können für das Budget von Cloud-Diensten festgelegt werden?
 \end{itemize}
 %“Forschungsfrage”, “These”, “Hypothese” oder “Annahme”, alle Synonimen
 Meine Hypothese ist, dass Kosten von Cloud-Diensten unter Kontrolle gehalten und
-reduziert werden können, wenn Überwachung- und Optimierungswerkzeuge eingesetzt werden.
+reduziert werden können, wenn Überwachungs- und Optimierungswerkzeuge eingesetzt werden.
 \\\\
 
 \subsection{Zielsetzung}
@@ -84,14 +85,14 @@ Nach Angaben von Amazon Web Services ist es möglich bis zu 90\% für EC2 zu spa
 {\cite{AMZ08,AMZ09}} 
 % und x\% für DB 
 \\
-Diese Arbeit legt den Fokus auf die Optimierung der oben genannten Diensten.
+Diese Arbeit legt den Fokus auf die Optimierung der oben genannten Dienste.
 Als Überwachungswerkzeuge für die Kosten werden die AWS CloudWatch, der AWS Cost-Explorer und der AWS Trusted Advisor untersucht. 
 
 \subsection{Struktur der Arbeit}
 %Schlüsselbegriffe
 %Zunächst wird es eine kurze Einführung in die relevanten Begriffe geben, die für die zu untersuchenden AWS-Cloud-Services wichtig sind.
 
-Diese Bachelorarbeit ist in folgenden Kapiteln unterteilt:\\\\
+Diese Bachelorarbeit ist in folgende Kapitel unterteilt:\\\\
 %2 Die gängigsten Cloud-Dienste, bei deren Geld verschwendet wird.
 \textbf{Kapitel 3} 
 befasst sich mit dem Begriff Cloud-Economy und erläutert das Nutzen der Cloud im wirtschaftlichen Sinne. Diese dienen als Grundlage für diese Arbeit. \\\\
@@ -99,7 +100,7 @@ befasst sich mit dem Begriff Cloud-Economy und erläutert das Nutzen der Cloud i
 \textbf{Kapitel 4} 
 zeigt die verschiedenen Zahlungsmodelle für Amazon Web Services. 
 \\
-Es werden Kriterien vorgestellt, die helfen, sich für das richtige Zahlungsmodell für verschiedene Szenarien zu entscheiden. 
+Es werden Kriterien vorgestellt, die helfen, sich für das richtige Zahlungsmodell bei verschiedenen Szenarien zu entscheiden. 
 \\\\
 %5 AWS Cost Explorer und AWS-Kosten- und Nutzungsbericht
 \textbf{In Kapitel 5} werden die Werkzeuge eingeführt, die zur Überwachung der Kosten von Cloud-Diensten eingesetzt werden können.
@@ -107,7 +108,7 @@ Es werden Kriterien vorgestellt, die helfen, sich für das richtige Zahlungsmode
 %4 Methoden zur Kostenbremse
 %4.1 S3 Intelligent-Tiering
 %4.2 Instance-Scheduler für EC2 und AWS Reserved-Instance
-\textbf{Kapitel 6} befasst sich mit Optimierungsmaßnahme insbesondere für EC2-Instanzen und S3 Speichereinheiten.
+\textbf{Kapitel 6} befasst sich mit Optimierungsmaßnahmen insbesondere für EC2-Instanzen und S3 Speichereinheiten.
 
 %Testumgebung
 %Schließlich werden anhand eines Fallbeispiels in \textbf{Kapitel 5?}, die oben genannten Werkzeuge und Techniken in einer %kostenlosen Testumgebung getestet. Um die Zuverlässigkeit der Ergebnisse zu gewährleisten, wird alles gemacht, um die %Vorher- und Nachher-Szenarien vergleichbar zu machen. Dabei werden die Anzahl der Instanzen und deren Auslastung sowie %die Daten auf den Speichereinheiten berücksichtigt.
