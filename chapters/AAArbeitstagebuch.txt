@@ -61,6 +61,8 @@ DAVOR:
 #Define KPIS? EC2 hourly spending, cost per transaction. Set KPI goals and alarm anomalies
 #Sollte ich die Levels für Cloud-Nutzer präsentieren?(1-5)
 https://www.aws.training/Details/Video?id=74016 (21:23)
+
+#Ist_der_Begriff_Mandant_definiert ?
 }
 
 
