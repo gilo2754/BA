@@ -1,6 +1,7 @@
 @Heute {
 
 11.11: Feedback Berg/Caro + wie mache ich weiter?
+
 12.11: Trusted advisor 1/2
 12.11: Trusted advisor 2/2
 13.11: Auto Scaling Group+Abends free

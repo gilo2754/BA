@@ -5,11 +5,8 @@ Darüber hinaus ist es mit Werkzeugen wie CloudWatch möglich, die Abschaltung b
 
 Durch die Verwendung von Tags ist es möglich, die Ressourcen nach Aspekten/Kriterien wie Region, Umgebung, Projekt, Art der Ressource usw. zu visualisieren, was es ermöglicht, die Kosten auf den von der Organisation festgelegten Ebenen zu verfolgen. Es könnte zum Beispiel ein Szenario entstehen, in dem eine Abteilung innerhalb der Organisation mehr Kosten verursacht als andere. In erster Linie ist dies nur bemerkenswert anhand eines Anstiegs der von Amazon generierten Rechnung, aber um den Grund für diesen Anstieg genauer zu verstehen, muss die Ursache für diesen Anstieg untersuchen. Werkzeuge wie Cost Explorer machen diese Art von Analyse möglich.
 
-TRUSTED ADVISOR?
-
-
+TRUSTED ADVISOR??
 %Zu diesem Zweck werden Werkzeuge vorgestellt, die die Überwachung aktiver Ressourcen ermöglichen.
-
 %Welche Kosten sind mit der Nutzung dieser Werkzeuge verbunden?
 %Es sollte gezeigt werden, die Arten/Kategorien von Kunden, die kostenlosen Zugang zu diesen Werkzeuge haben?
 %WAS MIT AWS Budgets? AWS Bill and cost Man.?
@@ -18,14 +15,14 @@ TRUSTED ADVISOR?
 %https://aws.amazon.com/de/cloudwatch/pricing/
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingStarted.html
 
-Amazon CloudWatch ermöglicht die Überwachung der Leistung von Resources, auch bei Ressourcen, die über verschiedene Regionen verteilt sind. 
+Amazon CloudWatch ermöglicht die Überwachung der Leistung von Resources, auch bei Ressourcen, die über verschiedene Regionen verteilt sind.
 CloudWatch sammelt operative Daten für die Verlaufsanalysen und die Entscheidungsfindung in Bezug auf Optimierung und Fehlerbehebung.
 
-Eine der Metriken, die mit Amazon CloudWatch überwacht werden kann, ist die CPU-Last von EC2-Instanzen. 
+Eine der Metriken, die mit Amazon CloudWatch überwacht werden kann, ist die CPU-Last von EC2-Instanzen.
 Basierend auf einem Prozentsatz der CPU-Last können Alarme?Benachrichtigungen?[WELCHES WORT?] und Aktionen konfiguriert werden
 \\\\
 Zum Beispiel, eine dieser Aktionen ist die automatische Einrichtung neuer Instanzen zur Deckung des Kapazitätsbedarfs
-\footnote{\cite{AWS1}, Seite 185}. 
+\footnote{\cite{AWS1}, Seite 185}.
 Diese Art von Aktionen werden im Kapitel 7 Optimierungsmöglichkeiten tiefer behandelt.
 \\\\
 Im Folgenden werden die grundlegenden Bereiche und Begriffe von CloudWatch erläutert und wie sie zur Überwachung von Informationen über AWS-Ressourcen verwendet werden.
@@ -34,15 +31,15 @@ Im Folgenden werden die grundlegenden Bereiche und Begriffe von CloudWatch erlä
 Mit Cloud-Watch Dashboards können Boards[BESSERE FORMULIERUNG] mit relevanten Metriken angelegt werden. Sie ermöglichen eine umfassende Visualisierung von Metriken der Ressourcen in der AWS-Umgebung. Durch die Boards[PASSENDES WORT?], können auch Alarmen erstellt werden. Für die Einrichtung der Alarme ist kein technisches Wissen benötigt\footnote{\cite{AMZ14}, Seite 28}.
 
 Die von CloudWatch gesammelte Informationen sind nicht nur relevant für System-Administratoren, es könnten auch für andere Personen innerhalb oder außerhalb der Organisation relevant sein.
-Für sollte Fällen bietet CloudWatch die Möglichkeit, eine gemeinsame Sicht auf kritische Ressourcen- und Anwendungsmessungen zu generieren. 
+Für sollte Fällen bietet CloudWatch die Möglichkeit, eine gemeinsame Sicht auf kritische Ressourcen- und Anwendungsmessungen zu generieren.
 Dies ermöglicht einen schnelleren Kommunikationsfluss in Echtzeit. Die Zugriffsverwaltung für geteilte Dashboards wird über AWS Identity and Access Management abgewickelt\footnote{\cite{AMZ14}, Seite 18 und 39}.
 \\
 %\begin{center}
-  %    \includegraphics[scale=0.7]{sources/Name}%\label{fig:Name}\\
-   %   \textbf{Abbildung \autoref{fig:Name}:} 
-   %   Name
-    %  %\footnote{Vgl. u.a.\cite{AMZ01}}
- % \end{center}
+%    \includegraphics[scale=0.7]{sources/Name}%\label{fig:Name}\\
+%   \textbf{Abbildung \autoref{fig:Name}:} 
+%   Name
+%  %\footnote{Vgl. u.a.\cite{AMZ01}}
+% \end{center}
 %\\\\
 
 \textbf{Metriken} \\
@@ -52,19 +49,19 @@ Metriken bleiben wie folgt verfügbar:\\
 Auflösung/Zeitraum: \\
 1 Minute - 15 Tage\\
 5 Minuten - 63 Tage.\\
-1 Stunde - 15 Monate 
+1 Stunde - 15 Monate
 \footnote{\cite{AMZ15}, Wie lange werden die verfügbaren Metriken aufbewahrt?}
 
 Ein Beispiel für eine Metrik ist die stündliche durchschnittliche Anzahl von Anfragen für eine bestimmte API, die wir in unserer Umgebung haben könnten.
 Für eine detailliertere Überwachung ist es möglich, benutzerdefinierte Metriken zu konfigurieren, die eine Auflösung von bis zu 1 Sekunde zulassen. Ein praktisches Beispiel für benutzerdefinierte Metriken ist die Messung der Ladezeit einer Website.
-[EIN BEISPIEL MIT BEZUG AUF K:OPTIMIERUNG?oder WIESO IST DIE AUFLÖSUNG RELEVANT?]
+      [EIN BEISPIEL MIT BEZUG AUF K:OPTIMIERUNG?oder WIESO IST DIE AUFLÖSUNG RELEVANT?]
 
 %\textbf{Logs} \\ BRAUCHE ICH DAS?
 \textbf{Ereignisse / Events} \\
-Bei CloudWatch ist ein Ereignis eine Änderung bei einer Ressource in der AWS-Umgebung. 
-AWS-Ressourcen können Ereignisse erzeugen, wenn sich ihr Status ändert. 
+Bei CloudWatch ist ein Ereignis eine Änderung bei einer Ressource in der AWS-Umgebung.
+AWS-Ressourcen können Ereignisse erzeugen, wenn sich ihr Status ändert.
 
-Beispielsweise, ein Ereignis wird erzeugt, wenn Amazon EC2 Auto Scaling, Instanzen startet oder beendet \footnote{\cite{AMZ13}, Seite 1}. 
+Beispielsweise, ein Ereignis wird erzeugt, wenn Amazon EC2 Auto Scaling, Instanzen startet oder beendet \footnote{\cite{AMZ13}, Seite 1}.
 
 \textbf{Regel} \\
 Eine Regel ordnet eintreffende Ereignisse zu und leitet diese zur Verarbeitung an Ziele weiter.
@@ -112,7 +109,7 @@ WEIL ....
 
 \subsection{AWS Cost-Explorer}
 Mit Cost Explorer können Kosten der letzten 12 Monate und eine Schätzung der Kosten des laufenden Monats visualisiert werden. Darüber hinaus wird eine Kostenprognose für die nächsten Monate erstellt. Die Prognose basieren auf den in den vergangenen Monaten Kosten.
-Die Nutzung des Cost Explorers ist kostenlos, nur API-Aufrufe sind kostenpflichtig \foonote{https://aws.amazon.com/de/aws-cost-management/pricing/}.
+Die Nutzung des Cost Explorers ist kostenlos, nur API-Aufrufe sind kostenpflichtig \footnote{https://aws.amazon.com/de/aws-cost-management/pricing/}.
 \\
 Es gibt drei Arten von Berichten, die der Cost Explorer bereitstellt:
 \\
@@ -120,10 +117,49 @@ Daten der aktuellen und der vergangenen 13 Monate anzeigen
 \\
 Prognostizieren Sie Ihre voraussichtlichen Kosten
 \\
-Empfehlungen zu Reserved Instances 
+Empfehlungen zu Reserved Instances
 \\
 ...
 
+%Mio:
+%Conocer clos costos en un periodo de tiempo nos permite %saber si estamos en el camino correcto para alcanzar las %metas trazadas al inicio del periodo/proyecto y tomar %las medidas adecuadas para que al final del periodo/%proyecto tengamos resultados satisfactorios.
+
+Es gibt drei Arten von Berichten, die der Cost Explorer bereitstellt:
+-reporting on the usage and cost incurred in the past 12 months.
+Bericht über die Nutzung und die in den letzten 12 Monaten entstandenen Kosten
+
+-forecasting how much you are going to spend in the next three months based on your past usage
+Dient zur Planung
+
+- and getting recommendations as well on the type of instances to use.
+Reservations/Recommendations
+%t.ly/6bvZ
+Amazon analysiert die bisherige Nutzung der Instanzen und gibt Empfehlungen zur Kostensenkung durch den Wechsel von EC2-Instanzen zu reservierten Instanzen.
+Amazon generiert Empfehlungen automatisch, indem es die Nutzung der EC2-Instanzen analysiert.
+Diese ignorieren Kapazität, die bereits von anderen reservierten Instanzen abgedeckt wurden.
+
+%___________________________________________________________________________________________________________
+%Eine allgemeine Übersicht kann verschafft werden indem die mehr benutzte Ressourcen/Dienstleistungen./ fünf wichtigsten Kostentrends
+% https://youtu.be/3peNAKB3VxA?t=223
+
+
+AWS Cost Explorer Budgets show actual spend vs budget by month.
+Filter by budgets, tags and tax,
+region, instances, usage type, cost category
+
+Create budgets is part of the best practices.
+
+Create a report for…
+Die Kosten vorhersehbar machen
+
+Wiederverwendung gespeicherter Berichte. Welche Vorteile?
+
+
+Da kann man sehen wie viele Stunden an RI und an On-Demand pro Tag/Monat verbraucht wurden.
+
+-	Informationen um Schätzungen handelt, die von den tatsächlichen Kosten für den Abrechnungszeitraum abweichen können. %https://youtu.be/3peNAKB3VxA?t=705
+-	Kann ich die Usage von S3 Einheiten und analysieren, wie häufig diese zugegriffen werden %https://youtu.be/pjrKDkzbas8?t=2425
+-	Man könnte herausfinden, ob die RIs tatsächlich günstiger als ON-Demand sind. Wenn die RIs sind „konvertierbar“ und teurer als On-Demand, könnte man sich dafür entscheiden diese in was umzuwandeln, was genutzt wird. %https://youtu.be/pjrKDkzbas8?t=3385
 
 %(How to use Spots and on-demand)
 %detect CPU Utilization, with Amazon CloudWatch
@@ -138,57 +174,20 @@ Empfehlungen zu Reserved Instances
 \textbf{Die 5 Kategorien von dem Trusted Advisor:}
 
 \begin{itemize}
-  \item
-        Kostenoptimierung
+      \item
+            Kostenoptimierung
 
-  \item
-        Leistung
-  \item
-        Sicherheit
-  \item
-        Fehlertoleranz
-  \item
-        Leistungsgrenzen.
+      \item
+            Leistung
+      \item
+            Sicherheit
+      \item
+            Fehlertoleranz
+      \item
+            Leistungsgrenzen.
 \end{itemize}\textbf{}
-Mio:
-Conocer los costos en un periodo de tiempo nos permite saber si estamos en el camino correcto para alcanzar las metas trazadas al inicio del periodo/proyecto y tomar las medidas adecuadas para que al final del periodo/proyecto tengamos resultados satisfactorios.
 
-Es gibt drei Arten von Berichten, die der Cost Explorer bereitstellt:
--reporting on the usage and cost incurred in the past 12 months.
-Bericht über die Nutzung und die in den letzten 12 Monaten entstandenen Kosten
-
--forecasting how much you are going to spend in the next three months based on your past usage
-Dient zur Planung  
-
-- and getting recommendations as well on the type of instances to use.
-Reservations/Recommendations 
-%t.ly/6bvZ
-Amazon analysiert die bisherige Nutzung der Instanzen und gibt Empfehlungen zur Kostensenkung durch den Wechsel von EC2-Instanzen zu reservierten Instanzen.
-Amazon generiert Empfehlungen automatisch, indem es die Nutzung der EC2-Instanzen analysiert. 
-Diese ignorieren Kapazität, die bereits von anderen reservierten Instanzen abgedeckt wurden.
-
-%___________________________________________________________________________________________________________
-%Eine allgemeine Übersicht kann verschafft werden indem die mehr benutzte Ressourcen/Dienstleistungen./ fünf wichtigsten Kostentrends
-% https://youtu.be/3peNAKB3VxA?t=223
-
-
-AWS Cost Explorer Budgets show actual spend vs budget by month.
-Filter by budgets, tags and tax,
-region, instances, usage type, cost category 
-
-Create budgets is part of the best practices.
-
-Create a report for…
-Die Kosten vorhersehbar machen
-
-Wiederverwendung gespeicherter Berichte. Welche Vorteile?
-
- 
-Da kann man sehen wie viele Stunden an RI und an On-Demand pro Tag/Monat verbraucht wurden.
-
--	Informationen um Schätzungen handelt, die von den tatsächlichen Kosten für den Abrechnungszeitraum abweichen können. %https://youtu.be/3peNAKB3VxA?t=705
--	Kann ich die Usage von S3 Einheiten und analysieren, wie häufig diese zugegriffen werden %https://youtu.be/pjrKDkzbas8?t=2425
--	Man könnte herausfinden, ob die RIs tatsächlich günstiger als ON-Demand sind. Wenn die RIs sind „konvertierbar“ und teurer als On-Demand, könnte man sich dafür entscheiden diese in was umzuwandeln, was genutzt wird. %https://youtu.be/pjrKDkzbas8?t=3385
+[ABSCHLUSS DES KAPITELS/Überbrückung FÜR DAS KOMMENDE KAPITEL]
 
 %IST taging EINE STRATEGIE?
 %\subsubsection{Für Speicher?}
