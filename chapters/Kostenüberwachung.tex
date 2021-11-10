@@ -1,20 +1,20 @@
-Das Hauptziel dieses Kapitels besteht darin, Transparenz über die Kosten zu schaffen.
+(CHECK/VERBESSERN Version 10.11)\\
+In diesem Kapitel werden Werkzeuge vorgestellt, mit denen Budgets mit Alarmen erstellt werden, diese informieren, wenn ein bestimmter Prozentsatz des festgelegten Budgets überschritten wurde. Die Erstellung von Budgets trägt zu einer besseren Planung-/Prognose- und Kostenkontrolle. ZITAT?
+Die Aktivierung von Alarmen[PASSENDES WORT?] ist eine der Maßnahmen, die es uns ermöglichen, auf aktive Ressourcen aufmerksam zu werden, die möglicherweise noch laufen, weil man vergessen hat, sie abzuschalten.
+Darüber hinaus ist es mit Werkzeugen wie CloudWatch möglich, die Abschaltung bestimmter Dienste zu automatisieren, wenn eine Budgetschwelle überschritten wurde.
 
-Es werden Dienste versucht zu identifizieren, die Optimierungspotenzial haben. 
-\\
-%Las razones pueden ser el simple hecho de haber olvidado apagar una instancia.
-\subsection{Werkzeuge}
-(To-Do: Intro)\\
+Durch die Verwendung von Tags ist es möglich, die Ressourcen nach Aspekten/Kriterien wie Region, Umgebung, Projekt, Art der Ressource usw. zu visualisieren, was es ermöglicht, die Kosten auf den von der Organisation festgelegten Ebenen zu verfolgen. Es könnte zum Beispiel ein Szenario entstehen, in dem eine Abteilung innerhalb der Organisation mehr Kosten verursacht als andere. In erster Linie ist dies nur bemerkenswert anhand eines Anstiegs der von Amazon generierten Rechnung, aber um den Grund für diesen Anstieg genauer zu verstehen, muss die Ursache für diesen Anstieg untersuchen. Werkzeuge wie Cost Explorer machen diese Art von Analyse möglich.
 
-Welche Metriken und Informationen lassen sich mit den hier erwähnten Werkzeuge finden?
-Welche Kosten sind mit der Nutzung dieser Werkzeuge verbunden?
+TRUSTED ADVISOR?
 
 
-Es sollte gezeigt werden, die Arten/Kategorien von Kunden, die kostenlosen Zugang zu diesen Werkzeuge haben?
+%Zu diesem Zweck werden Werkzeuge vorgestellt, die die Überwachung aktiver Ressourcen ermöglichen.
 
+%Welche Kosten sind mit der Nutzung dieser Werkzeuge verbunden?
+%Es sollte gezeigt werden, die Arten/Kategorien von Kunden, die kostenlosen Zugang zu diesen Werkzeuge haben?
 %WAS MIT AWS Budgets? AWS Bill and cost Man.?
 
-\subsubsection{AWS CloudWatch}
+\subsection{AWS CloudWatch}
 %https://aws.amazon.com/de/cloudwatch/pricing/
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingStarted.html
 
@@ -82,7 +82,6 @@ Die Ziele einer Regel müssen sich in derselben Region wie die Regel befinden
 Benachrichtigt zu werden ist es wichtig, um relevante Ereignisse nicht zu verpassen und rechtzeitig Maßnahmen zu ergreifen. Mit CloudWatch können Alarme einrichtet werden, die durch Metriken wie die CPU-Last und auch Gebühren[ANDERES WORT] auf AWS-Rechnungen ausgelöst werden.
 
 Benachrichtigungen können durch Amazon SNS oder zu einer E-Mail-Adresse geschickt werden.[NUR?]
-
 %\\\\
 \\\\
 %This could be a good example %https://youtu.be/__knpcBRLHg?t=770
@@ -111,15 +110,29 @@ AWS CloudWatch empfängt Abrechnungsmetriken für alle Ressourcen. Auf der Grund
 Obwohl Auto-Scaling dafür sorgt, die Rechenkapazität dynamisch anzupassen, ist es von größter Wichtigkeit, über Änderungen in der Infrastruktur informiert zu sein, ohne die Dashboards manuell überprüfen zu müssen.
 WEIL ....
 
-\subsubsection{AWS Cost-Explorer}
+\subsection{AWS Cost-Explorer}
+Mit Cost Explorer können Kosten der letzten 12 Monate und eine Schätzung der Kosten des laufenden Monats visualisiert werden. Darüber hinaus wird eine Kostenprognose für die nächsten Monate erstellt. Die Prognose basieren auf den in den vergangenen Monaten Kosten.
+Die Nutzung des Cost Explorers ist kostenlos, nur API-Aufrufe sind kostenpflichtig \foonote{https://aws.amazon.com/de/aws-cost-management/pricing/}.
+\\
+Es gibt drei Arten von Berichten, die der Cost Explorer bereitstellt:
+\\
+Daten der aktuellen und der vergangenen 13 Monate anzeigen
+\\
+Prognostizieren Sie Ihre voraussichtlichen Kosten
+\\
+Empfehlungen zu Reserved Instances 
+\\
 ...
+
+
 %(How to use Spots and on-demand)
 %detect CPU Utilization, with Amazon CloudWatch
 
-\subsubsection{AWS Trusted advisor}
+\subsection{AWS Trusted advisor}
 %https://aws.amazon.com/de/premiumsupport/technology/trusted-advisor/
 %Kunden von AWS Basic Support und AWS Developer Support können auf grundlegende Sicherheitsprüfungen und alle Prüfungen für Servicekontingente zugreifen. Kunden von AWS Business Support und AWS Enterprise Support können auf alle Prüfungen zugreifen, einschließlich Kostenoptimierung, Sicherheit, Fehlertoleranz, Leistung und Servicekontingente. 
 %was macht dieses?
+%AWS Trusted Advisor: This helps you know more about idle or underutilized resources.
 
 %\begin{quote}
 \textbf{Die 5 Kategorien von dem Trusted Advisor:}
@@ -137,6 +150,45 @@ WEIL ....
   \item
         Leistungsgrenzen.
 \end{itemize}\textbf{}
+Mio:
+Conocer los costos en un periodo de tiempo nos permite saber si estamos en el camino correcto para alcanzar las metas trazadas al inicio del periodo/proyecto y tomar las medidas adecuadas para que al final del periodo/proyecto tengamos resultados satisfactorios.
+
+Es gibt drei Arten von Berichten, die der Cost Explorer bereitstellt:
+-reporting on the usage and cost incurred in the past 12 months.
+Bericht über die Nutzung und die in den letzten 12 Monaten entstandenen Kosten
+
+-forecasting how much you are going to spend in the next three months based on your past usage
+Dient zur Planung  
+
+- and getting recommendations as well on the type of instances to use.
+Reservations/Recommendations 
+%t.ly/6bvZ
+Amazon analysiert die bisherige Nutzung der Instanzen und gibt Empfehlungen zur Kostensenkung durch den Wechsel von EC2-Instanzen zu reservierten Instanzen.
+Amazon generiert Empfehlungen automatisch, indem es die Nutzung der EC2-Instanzen analysiert. 
+Diese ignorieren Kapazität, die bereits von anderen reservierten Instanzen abgedeckt wurden.
+
+%___________________________________________________________________________________________________________
+%Eine allgemeine Übersicht kann verschafft werden indem die mehr benutzte Ressourcen/Dienstleistungen./ fünf wichtigsten Kostentrends
+% https://youtu.be/3peNAKB3VxA?t=223
+
+
+AWS Cost Explorer Budgets show actual spend vs budget by month.
+Filter by budgets, tags and tax,
+region, instances, usage type, cost category 
+
+Create budgets is part of the best practices.
+
+Create a report for…
+Die Kosten vorhersehbar machen
+
+Wiederverwendung gespeicherter Berichte. Welche Vorteile?
+
+ 
+Da kann man sehen wie viele Stunden an RI und an On-Demand pro Tag/Monat verbraucht wurden.
+
+-	Informationen um Schätzungen handelt, die von den tatsächlichen Kosten für den Abrechnungszeitraum abweichen können. %https://youtu.be/3peNAKB3VxA?t=705
+-	Kann ich die Usage von S3 Einheiten und analysieren, wie häufig diese zugegriffen werden %https://youtu.be/pjrKDkzbas8?t=2425
+-	Man könnte herausfinden, ob die RIs tatsächlich günstiger als ON-Demand sind. Wenn die RIs sind „konvertierbar“ und teurer als On-Demand, könnte man sich dafür entscheiden diese in was umzuwandeln, was genutzt wird. %https://youtu.be/pjrKDkzbas8?t=3385
 
 %IST taging EINE STRATEGIE?
 %\subsubsection{Für Speicher?}

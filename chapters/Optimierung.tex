@@ -1,7 +1,9 @@
 %Cloud-Computing Basics a Non tech. intro.
 %Seite 163
 % Wie werden die Informationen die Benutzer gezeigt und wie können sie diese manipulieren
-	
+Mit CWatch wurde es gezeigt, ob man On-Demand zu RI wechweseln sollte.
+
+
 Teil der Information, die mit den Überwachungswerkzeuge gesammelt wurde, bilden die Grundlage für die Optimierungsmaßnahmen.
 
 %\subsection{Cloud-Dienste, bei deren Geld verschwendet wird}
@@ -9,8 +11,8 @@ Teil der Information, die mit den Überwachungswerkzeuge gesammelt wurde, bilden
 
 \subsection{Optimierungsmaßnahmen}
 
-%auto Scaling  
 \subsubsection{Auto Scaling Group }
+%THIS!!! t.ly/vrCO
 %https://youtu.be/qYHR_V1lvNU?t=900
 Auto Scaling ist es hilfreich, um die richtige Anzahl von EC2 Instanzen zur Verfügung zu haben, um die Anwendungslast abzudecken.
 \\\\
@@ -40,10 +42,11 @@ Zu erklären: cooldown period and scaling policy.
 
 
 \subsubsection{Automatisiere das Hoch- und Herunterfahren von Dev/Test Umgebungen}
+%https://www.linkedin.com/learning/monitoring-aws-with-cloudwatch/autoscaling-using-alarms?autoAdvance=true&autoSkip=true&autoplay=true&resume=false&u=79182202
 Grund: weil i.d.R., kein Entwickler 24/7 arbeitet.
 Wie?: mit Tagging, Lambda oder mit Auto Scaling Groups.
 %Wann ist es sinnvoll Systeme runterzufahren 
-
+HIER LESEN {\cite{CCB}, Seite 153}
 \subsubsection{(auto) Tiering }
 Grund: nicht alle Dateien brauchen eine hohe Verfügbarkeit.
 %Tiering, aber automatisch

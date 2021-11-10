@@ -1,16 +1,14 @@
 Die Wahl des Zahlungsmodells für EC2-Instanzen ist von entscheidender Bedeutung, um den besten Preis zu erzielen.
-
+%EC2 and RDS(DB) spend are often on of the main portions of your overall AWS Bill t.ly/Mqwn
 Die von Amazon Web Services angebotenen Zahlungsmodelle werden im Folgenden dargestellt.
 \\\\
 Die On-Demand-Option %erfordert
-beinhaltet keine langfristigen Verpflichtungen, sie ist daher die teuerste Alternative, die auf Stundenbasis berechnet wird. Die Modelle Saving Plans und Reserved Instances erfordern den Abschluss von Verträgen über 1 oder 3 Jahre, um günstige Preise zu erhalten.
-\\
-EC2-Spot-Instanzen sind die billigste Option, haben aber den Nachteil, dass ihre Verfügbarkeit nicht immer garantiert ist.
+beinhaltet keine langfristigen Verpflichtungen, sie ist daher die teuerste Alternative, die auf Stundenbasis berechnet wird. Die Modelle Saving Plans und Reserved Instances erfordern den Abschluss von Verträgen über 1 oder 3 Jahre, um günstige Preise zu erhalten. EC2-Spot-Instanzen sind die billigste Option, haben aber den Nachteil, dass ihre Verfügbarkeit nicht immer garantiert ist.
 \\\\
-Jedes Zahlungsmodell hat seine Vor- und Nachteile und eignet sich für unterschiedliche Anwendungsfälle. Gute Ergebnisse können auch durch die Kombination mehrerer Zahlungsmodelle erzielt werden.
+Jedes Zahlungsmodell hat seine Vor- und Nachteile und eignet sich für unterschiedliche Anwendungsfälle. Gute Ergebnisse können auch durch die Kombination mehrerer Zahlungsmodelle erzielt werden. Dies wird in Unterkapitel 5.4 behandelt.
 \\\\
-( noch in Arbeit =>)
-Vor- und Nachteile noch tabellarisch aufzulisten!!
+In dieser Arbeit wird nicht darauf eingegangen, wie die richtige Server-Instanz ausgewählt werden sollte, da die Auswahl von individuellen Anforderungen abhängt, die von Fall zu Fall unterschiedlich sind. Im Allgemeinen, um die beste Leistung zu erzielen, wird empfohlen, Instanzen so nahe wie möglich an den anderen Ressourcen, mit denen sie kommunizieren werden, und an der Mehrzahl der Endnutzer, die die Dienste in Anspruch nehmen werden, zu platzieren.
+%Vor- und Nachteile noch tabellarisch aufzulisten??
 %https://youtu.be/Q5wSvUVPyYY?t=678
 
 %On-Demand
@@ -29,7 +27,12 @@ Hier einige Beispiele von EC2-Instanzen im On-Demand Zahlungsmodell.
     \textbf{Abbildung \autoref{fig:OnDemand_Preise}:} On-Demand Preise für Amazon EC2
         {\cite{AMZ02}}
 \end{center}
+Der Preis für dieses Modell variiert je nach Instanztyp, Region und der übertragenen Datenmenge. 
+Die aktuellen Preise für die verschiedenen Regionen sind auf der Amazon-Website in der Sektion EC2 - On-Demand-Preise\footnote{https://aws.amazon.com/de/ec2/pricing/on-demand/} zu finden.
+In der Abbildung 5.1 werden die für die Region Ohio verfügbaren Linux-Instanzen gezeigt. Je Es ist zu beachten, dass Instanzen mit denselben Eigenschaften, aber in verschiedenen Regionen, unterschiedliche Preise haben können.
+
 \subsection{Reservierte Instanzen und Saving Plans}
+%t.ly/JUWq
 %https://www.youtube.com/watch?v=c_zlPQimrvY
 \begin{flushleft}
     Die Zahlungsmodelle Reservierte Instanzen und Saving Plans sind sich sehr ähnlich. Beide kommen mit einer gleichbleibenden  Nutzungsverpflichtung, die in \$-€/Stunden gemessen wird.
@@ -83,16 +86,37 @@ AUCH FÜR RIs?
 WANN SAVING PLANS? 
 
 %3 Arten von S. Plans: Compute and EC2 Instance
+\subsubsection{Vorauszahlung}
+Zusätzlich gibt es bei Saving Plans und reservierten Instanzen die Option im Voraus zu zahlen.
+Im Gegenzug wird ein niedrigerer Preis angeboten.
 
+Amazon bietet drei verschiedene Optionen an:\\ 
+keine, teilweise und vollständige Vorauszahlung.
+
+Bei teilweiser Vorauszahlung ist eine Anzahlung von etwa 50\% zu leisten.
+
+(To-Do: wie viel kann in den verschiedenen Szenarien eingespart werden).
 
 \subsection{Versteigerung? / Spot Instanzen }
-EC2 Spot-Instances bieten die Möglichkeit aus ungenutzter EC2-Instances zu profitieren.
+EC2 Spot-Instances bieten die Möglichkeit aus von anderen Nutzern ungenutzter EC2-Instances zu profitieren.
 Mit einem Preisvorteil von bis zu 90 \% gegenüber normalen On-Demand-Instanzen sind Spot-Instanzen ideal für fehlertolerante Anwendungen wie auf Containern ausgeführte Workloads, CI/CD, Bigdata-Anwendungen und ähnliches.
-EC2 Spot-Instances können mit On-Demand, Reserved Instances und Saving-Plans kombiniert werden, um sowohl feste als auch dynamische Last abzudecken.
+[IST DER SATZ ZU LANG?]
+\\
 %unterbrechbar
+Es ist zu beachten, dass Spot-Instanzen jederzeit unterbrochen werden können, entweder weil der konfigurierte Maximalpreis überschritten wurde oder weil die Instanz nicht mehr verfügbar ist. Dies geschieht, wenn der Instanzanbieter die Instanz erneut anfordert. Falls eine Spot-Instanz unterbrochen wird, benachrichtigt Amazon EC2 2 Minuten im Voraus. Dieses Ereignis ist verfügbar auf CloudWatch.
+\\
+Daher sollten kritische Anwendungen nicht nur mit EC2 Spot-Instanzen laufen.
+
+Um von der Preisvorteile der Spot-Instanzen zu profitieren und Ausfälle zu vermeiden, sollten in Kombination weitere Zahlungsmodelle verwenden werden.
+\\
+Zum Beispiel eine Kombination aus Spot-Instanzen für die erwarteten Last und On-Demand-Instanzen für die dynamischen Last.
 %https://aws.amazon.com/de/ec2/spot/pricing/
+
+%SET MAX PRICE
+
+%2 OPTIONEN: LOWEST PRICE OR DIVERSIFIED ACROSS n POOLS TO AVOID DOWNS https://www.linkedin.com/learning/aws-automation-and-optimization/request-spot-instances-part-2?autoAdvance=true&autoSkip=true&autoplay=true&resume=false&u=79182202
 \subsection{Wann welches Zahlungsmodell?}
-(To-Do:) Was sind die Kriterien für die Auswahl eines oder mehrerer Zahlungsmodelle?
+(To-Do:) Was sind die Kriterien oder Vor- und Nachteile? für die Auswahl eines oder mehrerer Zahlungsmodelle?
 %MACH EINE SCHÖNE GRAFIK
 %https://youtu.be/mKEdhmJ2udA?t=79
 
@@ -100,9 +124,3 @@ EC2 Spot-Instances können mit On-Demand, Reserved Instances und Saving-Plans ko
 %Automate the selection to get the best price
 %https://spot.io/aws-cost-optimization-calculator/
 
-\subsection{Vorauszahlung}
-Zusätzlich zu den oben beschriebenen Zahlungsmodellen motivieren einige Anbieter von Cloud-Diensten, im Voraus zu zahlen, im Austausch bieten sie bessere Preise. Dies ist bei Amazon der Fall, das derzeit (2021) drei verschiedene Optionen anbietet: keine, teilweise und vollständige Vorauszahlung.
-
-Bei teilweiser Vorauszahlung ist eine Anzahlung von etwa 50\% zu leisten.
-
-(To-Do: wie viel kann in den verschiedenen Szenarien eingespart werden).
