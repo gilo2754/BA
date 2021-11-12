@@ -51,8 +51,8 @@ Auflösung/Zeitraum: \\
 5 Minuten - 63 Tage.\\
 1 Stunde - 15 Monate
 \footnote{\cite{AMZ15}, Wie lange werden die verfügbaren Metriken aufbewahrt?}
-
-Ein Beispiel für eine Metrik ist die stündliche durchschnittliche Anzahl von Anfragen für eine bestimmte API, die wir in unserer Umgebung haben könnten.
+ 
+Zum Beispiel kann der Durchschnitt von einer bestimmten API pro Stunde untersucht werden.
 Für eine detailliertere Überwachung ist es möglich, benutzerdefinierte Metriken zu konfigurieren, die eine Auflösung von bis zu 1 Sekunde zulassen. Ein praktisches Beispiel für benutzerdefinierte Metriken ist die Messung der Ladezeit einer Website.
       [EIN BEISPIEL MIT BEZUG AUF K:OPTIMIERUNG?oder WIESO IST DIE AUFLÖSUNG RELEVANT?]
 
@@ -79,10 +79,7 @@ Die Ziele einer Regel müssen sich in derselben Region wie die Regel befinden
 Benachrichtigt zu werden ist es wichtig, um relevante Ereignisse nicht zu verpassen und rechtzeitig Maßnahmen zu ergreifen. Mit CloudWatch können Alarme einrichtet werden, die durch Metriken wie die CPU-Last und auch Gebühren[ANDERES WORT] auf AWS-Rechnungen ausgelöst werden.
 
 Benachrichtigungen können durch Amazon SNS oder zu einer E-Mail-Adresse geschickt werden.[NUR?]
-%\\\\
-\\\\
 %This could be a good example %https://youtu.be/__knpcBRLHg?t=770
-\\\\
 %https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html
 Autoscaling group seted with cooldown periods to avoid too much instances to by launched.
 
@@ -108,31 +105,21 @@ Obwohl Auto-Scaling dafür sorgt, die Rechenkapazität dynamisch anzupassen, ist
 WEIL ....
 
 \subsection{AWS Cost-Explorer}
-Mit Cost Explorer können Kosten der letzten 12 Monate und eine Schätzung der Kosten des laufenden Monats visualisiert werden. Darüber hinaus wird eine Kostenprognose für die nächsten Monate erstellt. Die Prognose basieren auf den in den vergangenen Monaten Kosten.
+Mit Cost Explorer können Kosten der letzten 12 Monate und eine Schätzung der Kosten des laufenden Monats visualisiert werden. Darüber hinaus wird eine Kostenprognose für die nächsten Monate erstellt. Die Prognose basieren auf die Kosten der vergangenen Monaten.
 Die Nutzung des Cost Explorers ist kostenlos, nur API-Aufrufe sind kostenpflichtig \footnote{https://aws.amazon.com/de/aws-cost-management/pricing/}.
 \\
-Es gibt drei Arten von Berichten, die der Cost Explorer bereitstellt:
-\\
-Daten der aktuellen und der vergangenen 13 Monate anzeigen
-\\
-Prognostizieren Sie Ihre voraussichtlichen Kosten
-\\
-Empfehlungen zu Reserved Instances
-\\
-...
-
 %Mio:
 %Conocer clos costos en un periodo de tiempo nos permite %saber si estamos en el camino correcto para alcanzar las %metas trazadas al inicio del periodo/proyecto y tomar %las medidas adecuadas para que al final del periodo/%proyecto tengamos resultados satisfactorios.
-
 Es gibt drei Arten von Berichten, die der Cost Explorer bereitstellt:
 -reporting on the usage and cost incurred in the past 12 months.
 Bericht über die Nutzung und die in den letzten 12 Monaten entstandenen Kosten
-
--forecasting how much you are going to spend in the next three months based on your past usage
-Dient zur Planung
-
+\\
+-forecasting how much you are going to spend in the next three months based on your past usage.
+Prognostizieren Sie Ihre voraussichtlichen Kosten.
+Dient zur Planung...
+\\
 - and getting recommendations as well on the type of instances to use.
-Reservations/Recommendations
+Empfehlungen zu Reserved Instances.
 %t.ly/6bvZ
 Amazon analysiert die bisherige Nutzung der Instanzen und gibt Empfehlungen zur Kostensenkung durch den Wechsel von EC2-Instanzen zu reservierten Instanzen.
 Amazon generiert Empfehlungen automatisch, indem es die Nutzung der EC2-Instanzen analysiert.
@@ -141,29 +128,21 @@ Diese ignorieren Kapazität, die bereits von anderen reservierten Instanzen abge
 %___________________________________________________________________________________________________________
 %Eine allgemeine Übersicht kann verschafft werden indem die mehr benutzte Ressourcen/Dienstleistungen./ fünf wichtigsten Kostentrends
 % https://youtu.be/3peNAKB3VxA?t=223
-
-
+\textbf{Aktuelle Budgets vs erwartet}
+\begin{comment}
 AWS Cost Explorer Budgets show actual spend vs budget by month.
-Filter by budgets, tags and tax,
-region, instances, usage type, cost category
-
-Create budgets is part of the best practices.
-
-Create a report for…
+Filter by budgets, tags and tax, region, instances, usage type, cost category
 Die Kosten vorhersehbar machen
-
 Wiederverwendung gespeicherter Berichte. Welche Vorteile?
 
-
 Da kann man sehen wie viele Stunden an RI und an On-Demand pro Tag/Monat verbraucht wurden.
-
 -	Informationen um Schätzungen handelt, die von den tatsächlichen Kosten für den Abrechnungszeitraum abweichen können. %https://youtu.be/3peNAKB3VxA?t=705
 -	Kann ich die Usage von S3 Einheiten und analysieren, wie häufig diese zugegriffen werden %https://youtu.be/pjrKDkzbas8?t=2425
 -	Man könnte herausfinden, ob die RIs tatsächlich günstiger als ON-Demand sind. Wenn die RIs sind „konvertierbar“ und teurer als On-Demand, könnte man sich dafür entscheiden diese in was umzuwandeln, was genutzt wird. %https://youtu.be/pjrKDkzbas8?t=3385
 
 %(How to use Spots and on-demand)
 %detect CPU Utilization, with Amazon CloudWatch
-
+\end{comment}
 \subsection{AWS Trusted advisor}
 %https://aws.amazon.com/de/premiumsupport/technology/trusted-advisor/
 %Kunden von AWS Basic Support und AWS Developer Support können auf grundlegende Sicherheitsprüfungen und alle Prüfungen für Servicekontingente zugreifen. Kunden von AWS Business Support und AWS Enterprise Support können auf alle Prüfungen zugreifen, einschließlich Kostenoptimierung, Sicherheit, Fehlertoleranz, Leistung und Servicekontingente. 
@@ -171,8 +150,8 @@ Da kann man sehen wie viele Stunden an RI und an On-Demand pro Tag/Monat verbrau
 %AWS Trusted Advisor: This helps you know more about idle or underutilized resources.
 
 %\begin{quote}
-\textbf{Die 5 Kategorien von dem Trusted Advisor:}
-
+      %t.ly/4caG
+Amazon Trusted-Advisor gibt Empfehlungen in den folgenden Kategorien:
 \begin{itemize}
       \item
             Kostenoptimierung
@@ -190,16 +169,5 @@ Da kann man sehen wie viele Stunden an RI und an On-Demand pro Tag/Monat verbrau
 [ABSCHLUSS DES KAPITELS/Überbrückung FÜR DAS KOMMENDE KAPITEL]
 
 %IST taging EINE STRATEGIE?
-%\subsubsection{Für Speicher?}
-%\subsubsection{Für VMs?}
-%\subsubsection{Für DB?}
-
-% \footnote{Vgl. u.a. \cite{RH1}}
-%\end{quote}
-
-%\begin{quote}
-%  xxx
-%\end{quote}\footnote{Vgl. u.a. \cite{AX1}}
-
 %I could compute the cost of a query, user, transaction
 % https://youtu.be/qYHR_V1lvNU?t=375
