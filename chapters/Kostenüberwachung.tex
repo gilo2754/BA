@@ -125,11 +125,14 @@ Amazon analysiert die bisherige Nutzung der Instanzen und gibt Empfehlungen zur 
 Amazon generiert Empfehlungen automatisch, indem es die Nutzung der EC2-Instanzen analysiert.
 Diese ignorieren Kapazität, die bereits von anderen reservierten Instanzen abgedeckt wurden.
 
-%___________________________________________________________________________________________________________
+%________________________________________________________________________________________________
 %Eine allgemeine Übersicht kann verschafft werden indem die mehr benutzte Ressourcen/Dienstleistungen./ fünf wichtigsten Kostentrends
 % https://youtu.be/3peNAKB3VxA?t=223
-\textbf{Aktuelle Budgets vs erwartet}
+\textbf{Bugdetplanung}\\
+Die Prognose der kommenden Kosten, dienen zu einer guter operativen Bugdetplanung.
 
+
+\textbf{Aktuelle Budgets vs erwartet}\\
 
 \subsection{AWS Trusted advisor}
 %https://aws.amazon.com/de/premiumsupport/technology/trusted-advisor/
@@ -138,10 +141,13 @@ Diese ignorieren Kapazität, die bereits von anderen reservierten Instanzen abge
 %AWS Trusted Advisor: This helps you know more about idle or underutilized resources.
 
 AWS Trusted Advisor ist ein Werkzeug, welches hilft, Kosten zu senken, die Systemverfügbarkeit und -leistung zu verbessern und die Sicherheit zu erhöhen. Es analysiert die Nutzung des AWS-Kontos und gibt Best-Practice-Empfehlungen.
-
+In dieser Arbeit werden die Kategorien Leistungsgrenzen und Kostenoptimierung betrachtet, da diese am relevansten für die für die vorliegende Themen.
 %Diese Arbeit legt den Schwerpunkt auf Empfehlungen zur Optimierung.
 \textbf{Kostenoptimierung}\\
-Die Empfehlungen zur Kostenoptimierung konzentrieren sich auf Möglichkeiten zur Kostensenkung, indem ungenutzte Ressourcen hervorgehoben werden. So werden beispielsweise EC2-Instanzen mit geringer Auslastung und nicht zugewiesene Elastic IP-Adressen überprüft. 
+Die Empfehlungen zur Kostenoptimierung konzentrieren sich auf Möglichkeiten zur Kostensenkung, indem ungenutzte Ressourcen hervorgehoben werden. 
+\\
+Sollten EC2-Instanzen mit geringer Auslastung gefunden werden, wird es diese bei Trusted Advisor signalisiert. Denn diese Instanzen verbrauchen Ressourcen und können terminiert oder pausiert werden. 
+Nicht zugewiesene Elastic IP-Adressen erzeugen Kosten. Diese können gegebenenfalls von Trusted Advisor gefunden werden. %t.ly/nYiv
 
 \textbf{Leistungsgrenzen}\\
 In dieser Kategorie werden Empfehlungen zur Vermeidung von Grenzwertüberschreitungen hervorgehoben.
@@ -149,8 +155,23 @@ Es wird zum Beispiel nach einer Nutzung gesucht, die mehr als 80 \% des Leistung
 
 Sich dieser Grenzen bewusst zu sein, gibt die Möglichkeit, rechtzeitig zu handeln und es trägt zu Kostenüberwachung bei.
 
-[ABSCHLUSS DES KAPITELS/Überbrückung FÜR DAS KOMMENDE KAPITEL]
+\textbf{Summary/Fazit}\\
+%[ABSCHLUSS DES KAPITELS/Überbrückung FÜR DAS KOMMENDE KAPITEL]}
+% CloudWatch
+In diesem Kapitel wurde gezeigt, wie es mit CloudWatch möglich ist, Alarme auf Basis von Ereignissen einzurichten. Diese Alarme kommunizieren mit Amazon SNS [IWO ERKLÄREN WAS DAS IST;Für Kommunikation innerhalb von AWS] oder externen E-Mail-Adressen. Im nächsten Kapitel wird CloudWatch erneut behandelt. Diesmal nicht als Überwachungswerkzeug, sondern als Optimierungswerkzeug zur Erstellung von Aktionen. Dazu war es notwendig, die Rolle der von CloudWatch gesammelten Metriken zu verstehen, die die Grundlage für die Verwaltung von Aktionen wie Auto-Scaling-Gruppen bilden. 
+%Cost Explorer
+Aus dem Blickwinkel des Kostenmanagements wurde gezeigt, wie man mit dem Cost Explorer die Kosten der letzten 12 Monate analysieren, eine Einschätzung der Kosten im aktuellen Monat und eine Prognose für die nächsten Monate erhalten kann. Es ist möglich, die Kosten nach Tags und anderen Filtern zu trennen. Diese Informationen dient unter anderem zur Erstellung einer operativen Budgetplanung mit genaueren Daten.
+%Trusted Advisor
+Darüber hinaus wurde Trusted Advisor vorgestellt, die konkrete Optimierungsempfehlungen gibt und warnet über Leistungsgrenzen.
 
+
+\begin{comment}
+En este capitulo se  mostró de qué manera es posible con CloudWatch configurar alarmas basadas en eventos. Dichas alarmas comunican con Amazon SNS o direcciones de correo externas. En el capiulo siguiente se volverá a tematizar CloudWatch. Esta vez no como herramienta de monitoneo, sino de optimizacion para crear acciones ??? Para ello fue necesario entender que papel juegan las metricas recolectadas por CloudWatch, las cuales son la base para manejar los grupos Auto-Scaling. 
+
+Desde la perspectiva del manejo de costos, se mostró como con Cost Explorer es posible analizar los costos de los ultimos 12 meses, tener un calculo de los costos en el mes actual y recibir un pronostico de los proximos meses. Teniendo la posibilidad de separar los costos por medio de Tags y otros filtros. Dicha información contribuye a poder crear una planificacion de presupuestos operativa basada en datos de gran presicion.
+
+Además se presentaron herramientas como Trusted Advisor las cuales brindan recomendaciones concretas sobre optimizacion y alertan si limites que se acercan a su umbral máximo. 
+\end{comment}
 
 \begin{comment}
 AWS Cost Explorer Budgets show actual spend vs budget by month.
