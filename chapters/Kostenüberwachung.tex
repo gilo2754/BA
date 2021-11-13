@@ -129,6 +129,29 @@ Diese ignorieren Kapazität, die bereits von anderen reservierten Instanzen abge
 %Eine allgemeine Übersicht kann verschafft werden indem die mehr benutzte Ressourcen/Dienstleistungen./ fünf wichtigsten Kostentrends
 % https://youtu.be/3peNAKB3VxA?t=223
 \textbf{Aktuelle Budgets vs erwartet}
+
+
+\subsection{AWS Trusted advisor}
+%https://aws.amazon.com/de/premiumsupport/technology/trusted-advisor/
+%Kunden von AWS Basic Support und AWS Developer Support können auf grundlegende Sicherheitsprüfungen und alle Prüfungen für Servicekontingente zugreifen. Kunden von AWS Business Support und AWS Enterprise Support können auf alle Prüfungen zugreifen, einschließlich Kostenoptimierung, Sicherheit, Fehlertoleranz, Leistung und Servicekontingente. 
+%was macht dieses?
+%AWS Trusted Advisor: This helps you know more about idle or underutilized resources.
+
+AWS Trusted Advisor ist ein Werkzeug, welches hilft, Kosten zu senken, die Systemverfügbarkeit und -leistung zu verbessern und die Sicherheit zu erhöhen. Es analysiert die Nutzung des AWS-Kontos und gibt Best-Practice-Empfehlungen.
+
+%Diese Arbeit legt den Schwerpunkt auf Empfehlungen zur Optimierung.
+\textbf{Kostenoptimierung}\\
+Die Empfehlungen zur Kostenoptimierung konzentrieren sich auf Möglichkeiten zur Kostensenkung, indem ungenutzte Ressourcen hervorgehoben werden. So werden beispielsweise EC2-Instanzen mit geringer Auslastung und nicht zugewiesene Elastic IP-Adressen überprüft. 
+
+\textbf{Leistungsgrenzen}\\
+In dieser Kategorie werden Empfehlungen zur Vermeidung von Grenzwertüberschreitungen hervorgehoben.
+Es wird zum Beispiel nach einer Nutzung gesucht, die mehr als 80 \% des Leistungsgrenzwerten für wichtige Dienste beträgt, wie  Amazon EC2, Auto Scaling, Elastic Block Store, Simple Email Service, AWS CloudFormation.
+
+Sich dieser Grenzen bewusst zu sein, gibt die Möglichkeit, rechtzeitig zu handeln und es trägt zu Kostenüberwachung bei.
+
+[ABSCHLUSS DES KAPITELS/Überbrückung FÜR DAS KOMMENDE KAPITEL]
+
+
 \begin{comment}
 AWS Cost Explorer Budgets show actual spend vs budget by month.
 Filter by budgets, tags and tax, region, instances, usage type, cost category
@@ -143,31 +166,6 @@ Da kann man sehen wie viele Stunden an RI und an On-Demand pro Tag/Monat verbrau
 %(How to use Spots and on-demand)
 %detect CPU Utilization, with Amazon CloudWatch
 \end{comment}
-\subsection{AWS Trusted advisor}
-%https://aws.amazon.com/de/premiumsupport/technology/trusted-advisor/
-%Kunden von AWS Basic Support und AWS Developer Support können auf grundlegende Sicherheitsprüfungen und alle Prüfungen für Servicekontingente zugreifen. Kunden von AWS Business Support und AWS Enterprise Support können auf alle Prüfungen zugreifen, einschließlich Kostenoptimierung, Sicherheit, Fehlertoleranz, Leistung und Servicekontingente. 
-%was macht dieses?
-%AWS Trusted Advisor: This helps you know more about idle or underutilized resources.
-
-%\begin{quote}
-      %t.ly/4caG
-Amazon Trusted-Advisor gibt Empfehlungen in den folgenden Kategorien:
-\begin{itemize}
-      \item
-            Kostenoptimierung
-
-      \item
-            Leistung
-      \item
-            Sicherheit
-      \item
-            Fehlertoleranz
-      \item
-            Leistungsgrenzen.
-\end{itemize}\textbf{}
-
-[ABSCHLUSS DES KAPITELS/Überbrückung FÜR DAS KOMMENDE KAPITEL]
-
 %IST taging EINE STRATEGIE?
 %I could compute the cost of a query, user, transaction
 % https://youtu.be/qYHR_V1lvNU?t=375
