@@ -20,12 +20,20 @@ Auto Scaling ist es hilfreich, um die richtige Anzahl von EC2 Instanzen zur Verf
 
 Folgende Abbildung zeigt das Verhältnis von einer Anwendung über eine Woche ohne Auto Scaling.
 Die graue Zone entspricht ungenutzte Kapazität einer EC2-Instanz. Dies bedeutet, es wird für ungenutzte Ressourcen bezahlt.
-\begin{center}
+%\begin{center}
     %TODO: selbst das Bild zu erzeugen, um eine bessere Qualität zu bekommen
-    \includegraphics[scale=0.7]{sources/AutoCap Unused Capacity}\label{fig:AutoSca_Unused_Capacity}\\
-    \textbf{Abbildung \autoref{fig:AutoSca_Unused_Capacity}:} Ungenutzte Ressourcen
+  %  \includegraphics[scale=0.7]{sources/AutoCap Unused Capacity}\label{fig:AutoSca_Unused_Capacity}\\
+ %   \textbf{Abbildung \autoref{fig:AutoSca_Unused_Capacity}:} Ungenutzte Ressourcen
+  % \footnote{Vgl. u.a.\cite{AMZ01}}
+%\end{center}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.7]{sources/AutoCap Unused Capacity}
+    \caption{}\label{fig:AutoSca_Unused_Capacity} Ungenutzte Ressourcen
     \footnote{Vgl. u.a.\cite{AMZ01}}
-\end{center}
+  \end{figure}
+  BESCHREIBUNG DER ABB.
 TODO:Es gibt verschiedene Möglichkeiten für die Auto-Skalierung.
 \\
 - Maintain current Instance Levels: kann die spezifizierte oder minimale Anzahl von laufenden Instanzen zu jeder Zeit konfiguriert werden.

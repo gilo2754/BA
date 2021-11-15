@@ -150,17 +150,17 @@ Es werden die Kategorien Leistungsgrenzen und Kostenoptimierung betrachtet, da d
 
 Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen November 2021) für Konten in den Plänen Developer oder Basic Support kostenlos sind. Prüfungen für die Kategorie Leistungsgrenzen sind kostenlos.
 
-Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt. \\
+Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{https://aws.amazon.com/de/premiumsupport/technology/trusted-advisor/}. \\
 ES MUSS GEPRÜFT WERDEN, OB ES SINNVOLL IST, FÜR DIE OBEN GENANNTEN SUPPORT-PLÄNEN ZU ZAHLEN.
 
-\begin{center}
-      \includegraphics[scale=0.7]{sources/TH_Koeln_Logo}
-      \label{fig:AWS Trusted Advisor Kategorien}\\
-      \textbf{Abbildung \autoref{fig:AWS_Trusted_Advisor_Kategorien}:} AWS Trusted Advisor Kategorien
-      %\footnote{Vgl. u.a.\cite{AMZ01}}
-  \end{center}
-  Abbildung X zeigt die 5 Kategorien von Trusted Advisor mit jeweils 3 Arten von Indikatoren. 
-  Die Indikatoren zeigen an, welche Kontrollen durchgeführt wurden.
+  \begin{figure}
+      \centering
+      \includegraphics[scale=0.4]{sources/AWS_Trusted_Advisor_Kategorien}
+      \caption{}\label{fig:AWS_Trusted_Advisor_Kategorien} AWS Trusted Advisor Kategorien
+    \end{figure}
+
+  Die \autoref{fig:AWS_Trusted_Advisor_Kategorien} zeigt die 5 Kategorien von Trusted Advisor mit jeweils 3 Arten von Indikatoren. 
+  Die Indikatoren zeigen an, welche Prüfungen durchgeführt wurden.
   
   Grün bedeutet, dass keine Fehler oder zu prüfenden Empfehlungen vorhanden sind. Warnungen werden durch orangefarbene Indikatoren und Fehler durch rote Indikatoren angezeigt.
   
@@ -187,7 +187,7 @@ In diesem Kapitel wurde gezeigt, wie es mit CloudWatch möglich ist, Alarme auf 
 %Cost Explorer
 Aus dem Blickwinkel des Kostenmanagements wurde gezeigt, wie man mit dem Cost Explorer die Kosten der letzten 12 Monate analysieren, eine Einschätzung der Kosten im aktuellen Monat und eine Prognose für die nächsten Monate erhalten kann. Es ist möglich, die Kosten nach Tags und anderen Filtern zu trennen. Diese Informationen dient unter anderem zur Erstellung einer operativen Budgetplanung mit genaueren Daten.
 %Trusted Advisor
-Darüber hinaus wurde Trusted Advisor vorgestellt, die konkrete Optimierungsempfehlungen gibt und warnet über Leistungsgrenzen.
+Darüber hinaus wurde Trusted Advisor vorgestellt, die konkrete Optimierungsempfehlungen gibt und warnet über Leistungsgrenzen. Dies kann mit erheblichen Kosten verbunden sein und ist daher nicht für alle Arten von Unternehmen unmittelbar attraktiv. 
 [WAS KOMMT IN NÄCHTEN KAP.?]
 
 \begin{comment}
@@ -196,6 +196,8 @@ En este capitulo se  mostró de qué manera es posible con CloudWatch configurar
 Desde la perspectiva del manejo de costos, se mostró como con Cost Explorer es posible analizar los costos de los ultimos 12 meses, tener un calculo de los costos en el mes actual y recibir un pronostico de los proximos meses. Teniendo la posibilidad de separar los costos por medio de Tags y otros filtros. Dicha información contribuye a poder crear una planificacion de presupuestos operativa basada en datos de gran presicion.
 
 Además se presentaron herramientas como Trusted Advisor las cuales brindan recomendaciones concretas sobre optimizacion y alertan si limites que se acercan a su umbral máximo. 
+
+Este puede representar costos consideradable y que por lo tanto no lo hacen directamente atractivo para todo tipo de empresas. 
 \end{comment}
 
 \begin{comment}
