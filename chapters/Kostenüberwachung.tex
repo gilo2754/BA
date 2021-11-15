@@ -1,9 +1,10 @@
 (CHECK/VERBESSERN Version 10.11)\\
 In diesem Kapitel werden Werkzeuge vorgestellt, mit denen Budgets mit Alarmen erstellt werden, diese informieren, wenn ein bestimmter Prozentsatz des festgelegten Budgets überschritten wurde. Die Erstellung von Budgets trägt zu einer besseren Planung-/Prognose- und Kostenkontrolle. ZITAT?
-Die Aktivierung von Alarmen[PASSENDES WORT?] ist eine der Maßnahmen, die es uns ermöglichen, auf aktive Ressourcen aufmerksam zu werden, die möglicherweise noch laufen, weil man vergessen hat, sie abzuschalten.
-Darüber hinaus ist es mit Werkzeugen wie CloudWatch möglich, die Abschaltung bestimmter Dienste zu automatisieren, wenn eine Budgetschwelle überschritten wurde.
+Die Einstellung von Alarmen für relevante Ereignisse wie im Fall einer Budgetüberschreitung oder dem Start einer Instanz.
 
-Durch die Verwendung von Tags ist es möglich, die Ressourcen nach Aspekten/Kriterien wie Region, Umgebung, Projekt, Art der Ressource usw. zu visualisieren, was es ermöglicht, die Kosten auf den von der Organisation festgelegten Ebenen zu verfolgen. Es könnte zum Beispiel ein Szenario entstehen, in dem eine Abteilung innerhalb der Organisation mehr Kosten verursacht als andere. In erster Linie ist dies nur bemerkenswert anhand eines Anstiegs der von Amazon generierten Rechnung, aber um den Grund für diesen Anstieg genauer zu verstehen, muss die Ursache für diesen Anstieg untersuchen. Werkzeuge wie Cost Explorer machen diese Art von Analyse möglich.
+Darüber hinaus ist es mit Werkzeugen wie CloudWatch möglich, die Abschaltung bestimmter Dienste zu automatisieren, wenn eine Budgetschwelle überschritten wurde. Diese Maßnahmen werden in dem Kapitel über die Optimierung behandelt.
+
+Durch die Verwendung von Tags ist es möglich, die Ressourcen nach Kriterien wie Region, Umgebung, Projekt, Art der Ressource usw. zu visualisieren, was es ermöglicht, die Kosten auf den von der Organisation festgelegten Ebenen zu verfolgen. Es könnte zum Beispiel ein Szenario entstehen, in dem eine Abteilung innerhalb der Organisation mehr Kosten verursacht als andere. In erster Linie ist dies nur bemerkenswert anhand eines Anstiegs der von Amazon generierten Rechnung, aber um den Grund für diesen Anstieg genauer zu verstehen, muss die Ursache für diesen Anstieg untersuchen. Werkzeuge wie Cost Explorer machen diese Art von Analyse möglich.
 
 TRUSTED ADVISOR??
 %Zu diesem Zweck werden Werkzeuge vorgestellt, die die Überwachung aktiver Ressourcen ermöglichen.
@@ -96,7 +97,7 @@ Autoscaling group seted with cooldown periods to avoid too much instances to by 
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html
 
 %BEISPIEL VON BILLING ALARM
-\subsubsection{Fakturierungsalarms mit CloudWatch}
+\subsubsection{Fakturierungsalarme mit CloudWatch}
 %Seite 145 Amazon CloudWatch - Benutzerhandbuch
 AWS CloudWatch empfängt Abrechnungsmetriken für alle Ressourcen. Auf der Grundlage dieser Metriken ist es daher möglich, Regeln zu erstellen, die bei Überschreitung des geplanten Budgets einen Alarm auslösen.
 [KANN MAN NUR Total Estimated Charge verwenden ODER KÖNNTE MAN NACH PROJEKTE TRENNEN?]
@@ -136,17 +137,35 @@ Die Prognose der kommenden Kosten, dienen zu einer guter operativen Bugdetplanun
 
 \textbf{Aktuelle Budgets vs erwartet}\\
 
-\subsection{AWS Trusted advisor}
+\subsection{AWS Trusted Advisor}
+%https://www.youtube.com/watch?v=i0IkKN9NoPk
 %https://aws.amazon.com/de/premiumsupport/technology/trusted-advisor/
 %Kunden von AWS Basic Support und AWS Developer Support können auf grundlegende Sicherheitsprüfungen und alle Prüfungen für Servicekontingente zugreifen. Kunden von AWS Business Support und AWS Enterprise Support können auf alle Prüfungen zugreifen, einschließlich Kostenoptimierung, Sicherheit, Fehlertoleranz, Leistung und Servicekontingente. 
 %was macht dieses?
 %AWS Trusted Advisor: This helps you know more about idle or underutilized resources.
 
-AWS Trusted Advisor ist ein Werkzeug, welches hilft, Kosten zu senken, Systemverfügbarkeit und -leistung zu verbessern und Sicherheit zu erhöhen. Es analysiert die Nutzung des AWS-Kontos und gibt Best-Practice-Empfehlungen.
+AWS Trusted Advisor ist ein Werkzeug, das entwickelt wurde, um Kosten zu senken, um Systemverfügbarkeit und -leistung zu verbessern und um Sicherheit zu erhöhen. Es analysiert die Nutzung des AWS-Kontos und gibt Best-Practice-Empfehlungen.
 %Diese Arbeit legt den Schwerpunkt auf Empfehlungen zur Optimierung.
 Es werden die Kategorien Leistungsgrenzen und Kostenoptimierung betrachtet, da diese am relevanten für die vorliegende Arbeit sind.
-[BILD DER KATEGORIEN]
-\\
+
+Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen November 2021) für Konten in den Plänen Developer oder Basic Support kostenlos sind. Prüfungen für die Kategorie Leistungsgrenzen sind kostenlos.
+
+Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt. \\
+ES MUSS GEPRÜFT WERDEN, OB ES SINNVOLL IST, FÜR DIE OBEN GENANNTEN SUPPORT-PLÄNEN ZU ZAHLEN.
+
+\begin{center}
+      \includegraphics[scale=0.7]{sources/TH_Koeln_Logo}
+      \label{fig:AWS Trusted Advisor Kategorien}\\
+      \textbf{Abbildung \autoref{fig:AWS_Trusted_Advisor_Kategorien}:} AWS Trusted Advisor Kategorien
+      %\footnote{Vgl. u.a.\cite{AMZ01}}
+  \end{center}
+  Abbildung X zeigt die 5 Kategorien von Trusted Advisor mit jeweils 3 Arten von Indikatoren. 
+  Die Indikatoren zeigen an, welche Kontrollen durchgeführt wurden.
+  
+  Grün bedeutet, dass keine Fehler oder zu prüfenden Empfehlungen vorhanden sind. Warnungen werden durch orangefarbene Indikatoren und Fehler durch rote Indikatoren angezeigt.
+  
+  Diese Empfehlungen sind eine Zusammenfassung auf hohem Niveau. Sie sind ein Startpunkt für die Untersuchung von Ressourcen mit Hilfe anderer Werkzeuge wie CloudWatch oder Cost Explorer.
+
 \textbf{Kostenoptimierung}\\
 Die Empfehlungen zur Kostenoptimierung konzentrieren sich auf Möglichkeiten zur Kostensenkung, indem ungenutzte Ressourcen hervorgehoben werden. 
 \\
