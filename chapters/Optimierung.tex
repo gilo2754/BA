@@ -2,24 +2,23 @@
 %Seite 163
 % Wie werden die Informationen die Benutzer gezeigt und wie können sie diese manipulieren
 
-Mit dem Explorer wurden Ressourcen gefunden, die Möglichkeiten zur Optimierung bieten.?
-Mit CloudWatch wurde es gezeigt, ob man On-Demand zu reservierten Instanzen wechweseln sollte.
-
 Die mit den Überwachungswerkzeuge gesammelte Informationen, bilden die Grundlage für die Optimierungsmaßnahmen.[HIER KONKRETER WERDEN]
+In diesem Kapitel werden wir die mit Hilfe der Werkzeuge gesammelten Informationen nutzen, um über die am besten geeigneten Optimierungsmaßnahmen zu entscheiden.
 
-\subsection{Optimierungsmaßnahmen}
-
-\subsubsection{Auto Scaling Group }
+\subsection{Auto Scaling}% Group }
 %t.ly/CXs3 Linked In auf DE
+%t.ly/1nka
 %THIS!!! t.ly/vrCO
 %https://youtu.be/qYHR_V1lvNU?t=900
-Auto Scaling ist es hilfreich, um die richtige Anzahl von EC2 Instanzen zur Verfügung zu haben, um die Anwendungslast abzudecken.
+Auto Scaling ist es hilfreich, um die richtige Anzahl von EC2 Instanzen zur Verfügung zu haben, um die Anwendungslast dynamisch abzudecken.
 \\\\
 %https://www.youtube.com/watch?v=yC5nRYS2IYI En Espaniol
 %https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#policy-creating-asg-console
 
-Folgende Abbildung zeigt das Verhältnis von einer Anwendung über eine Woche ohne Auto Scaling.
-Die graue Zone entspricht ungenutzte Kapazität einer EC2-Instanz. Dies bedeutet, es wird für ungenutzte Ressourcen bezahlt.
+Die \autoref{fig:AutoSca_Unused_Capacity} zeigt das wechselnde Verhalten einer Beispielanwendung, die vor allem unter der Woche Ressourcen verbraucht. Am Wochenende sinkt die Nachfrage nach Rechnerkapazität auf weniger als 25 \%. 
+
+Die gelben Säulen stellen die tägliche genutzte Rechenkapazität dar.
+Die graue Zone entspricht ungenutzte Rechenkapazität. 
 %\begin{center}
     %TODO: selbst das Bild zu erzeugen, um eine bessere Qualität zu bekommen
   %  \includegraphics[scale=0.7]{sources/AutoCap Unused Capacity}\label{fig:AutoSca_Unused_Capacity}\\
@@ -27,39 +26,42 @@ Die graue Zone entspricht ungenutzte Kapazität einer EC2-Instanz. Dies bedeutet
   % \footnote{Vgl. u.a.\cite{AMZ01}}
 %\end{center}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[scale=0.7]{sources/AutoCap Unused Capacity}
-    \caption{}\label{fig:AutoSca_Unused_Capacity} Ungenutzte Ressourcen
-    \footnote{Vgl. u.a.\cite{AMZ01}}
+    \includegraphics[scale=0.6]{sources/AutoCap Unused Capacity}
+    \caption{}\label{fig:AutoSca_Unused_Capacity} Ungenutzte Rechenkapazität. \\
+    Quelle: Eigene Darstellung. 
+    %\footnote{\cite{AMZ01}}
   \end{figure}
-  BESCHREIBUNG DER ABB.
-TODO:Es gibt verschiedene Möglichkeiten für die Auto-Skalierung.
-\\
-- Maintain current Instance Levels: kann die spezifizierte oder minimale Anzahl von laufenden Instanzen zu jeder Zeit konfiguriert werden.
-\\
-- Manual Scaling: Es wird benötigt, die minimale, die maximale oder die gewünschte Kapazität Ihrer Auto-Scaling-Gruppe zu definieren. Dies ist nützlich für sehr seltene Ereignisse. 
-\\
-- Scheduled Scaling: Wenn dies genau bekannt ist, muss die Anzahl der Instanzen in der Gruppe verringert oder erhöht werden. Wie bei Ereignissen wie Weihnachten oder Black Friday.
-\\
-- Dynamic Scaling: DIESES WOLLEN WIE ERKLÄREN
-Mehrere Dienste bieten standardmäßig kostenlose Metriken für Ressourcen wie EC2, EBS und RDS-DB-Instanzen.
-\\
-Zu erklären: cooldown period and scaling policy.
+
+%Zu erklären: cooldown period and scaling policy.
 
 
-\subsubsection{Automatisiere das Hoch- und Herunterfahren von Instanzen}
-%https://www.linkedin.com/learning/monitoring-aws-with-cloudwatch/autoscaling-using-alarms?autoAdvance=true&autoSkip=true&autoplay=true&resume=false&u=79182202
-Grund: weil i.d.R., kein Entwickler 24/7 arbeitet.
-Wie?: mit Tagging, Lambda oder mit Auto Scaling Groups.
+\subsubsection{Zeitgesteuerte Skalierung}
+%WE für Dev und Beta
+In einem On-Premise-System macht es möglicherweise keinen Unterschied bei den Kosten, wenn die Instanzen aktiv bleiben. 
+Im Gegensatz dazu ist es bei On-Demand-Zahlungsmodelle sinnvoll Zeiträume zu definieren, in denen die Instanzen abgeschaltet werden sollen.
+
+Bei Systemen, die nur tagsüber und unter der Woche in Betrieb sein müssen, kann dies eine Einsparung von zu 67\% bedeuten.  Wenn zum Beispiel Test- und Beta-Umgebungen von Montag bis Freitag von 7 bis 20 Uhr laufen.
+
+% Automatisiere das Hoch- und Herunterfahren von Instanzen
+% https://www.linkedin.com/learning/monitoring-aws-with-cloudwatch/autoscaling-using-alarms?autoAdvance=true&autoSkip=true&autoplay=true&resume=false&u=79182202
+
+% Grund: weil i.d.R., kein Entwickler 24/7 arbeitet.
+% Wie?: mit Tagging, Lambda oder mit Auto Scaling Groups.
 %Wann ist es sinnvoll Systeme runterzufahren 
-HIER LESEN {\cite{CCB}, Seite 153}
+%HIER LESEN {\cite{CCB}, Seite 153}
 
-\subsubsection{(auto) Tiering }
+
+%Weihnachten und BackFriday
+Wenn der Zeitpunkt einer großen Nachfrage bekannt ist, kann eine Erhöhung der Rechnerkapazität geplant werden, um Überlastungen zu vermeiden.
+Beispiele für solche Zeitpunkte oder Zeiträume sind unter anderem Black-Friday, vor und während Weihnachten und Cyber-Monday.
+
+\subsection{(auto) Tiering }
 Grund: nicht alle Dateien brauchen eine hohe Verfügbarkeit.
 %Tiering, aber automatisch
 
-\subsubsection{Automatisierung mit Lambda Funktionen}
+\subsection{Automatisierung mit Lambda Funktionen}
 Grund: einmal programmiert, funktioniert es für immer.
 \\(To-Do:) Möglichkeiten untersuchen, bewerten und die passende Auswählen.
 
@@ -89,7 +91,7 @@ It provides built-in code monitoring and logging via Amazon CloudWatch.
 %Do not use your DB for saving BLOB
 warum ist das empfehlungswert?
 
-\subsubsection{VERKAUFE DEINE Ungenutzte Kapazität in RI Marketplace}
+\subsection{VERKAUFE DEINE Ungenutzte Kapazität in RI Marketplace}
 
 
 %Kombination

@@ -37,13 +37,6 @@ Die von CloudWatch gesammelte Informationen sind nicht nur relevant für System-
 Für sollte Fällen bietet CloudWatch die Möglichkeit, eine gemeinsame Sicht auf kritische Ressourcen- und Anwendungsmessungen zu generieren.
 Dies ermöglicht einen schnelleren Kommunikationsfluss in Echtzeit. Die Zugriffsverwaltung für geteilte Dashboards wird über AWS Identity and Access Management abgewickelt\footnote{\cite{AMZ14}, Seite 18 und 39}.
 \\
-%\begin{center}
-%    \includegraphics[scale=0.7]{sources/Name}%\label{fig:Name}\\
-%   \textbf{Abbildung \autoref{fig:Name}:} 
-%   Name
-%  %\footnote{Vgl. u.a.\cite{AMZ01}}
-% \end{center}
-%\\\\
 
 \textbf{Metriken} \\
 Eine Metrik stellt eine Reihe von Daten über die Leistung einer Ressource in zeitlicher Reihenfolge dar. Standardmäßig werden viele kostenlose Metriken an CloudWatch übermittelt.
@@ -165,10 +158,10 @@ ES MUSS GEPRÜFT WERDEN, OB ES SINNVOLL IST, FÜR DIE OBEN GENANNTEN SUPPORT-PL�
   Grün bedeutet, dass keine Fehler oder zu prüfenden Empfehlungen vorhanden sind. Warnungen werden durch orangefarbene Indikatoren und Fehler durch rote Indikatoren angezeigt.
   
   Diese Empfehlungen sind eine Zusammenfassung auf hohem Niveau. Sie sind ein Startpunkt für die Untersuchung von Ressourcen mit Hilfe anderer Werkzeuge wie CloudWatch oder Cost Explorer.
+\\\\
 
 \textbf{Kostenoptimierung}\\
 Die Empfehlungen zur Kostenoptimierung konzentrieren sich auf Möglichkeiten zur Kostensenkung, indem ungenutzte Ressourcen hervorgehoben werden. 
-\\
 Sollten EC2-Instanzen mit geringer Auslastung gefunden werden, wird es diese bei Trusted Advisor signalisiert. Denn diese Instanzen verbrauchen Ressourcen und können terminiert oder pausiert werden. 
 Nicht zugewiesene Elastic IP-Adressen erzeugen Kosten. Diese können gegebenenfalls von Trusted Advisor gefunden werden. %t.ly/nYiv
 \\
@@ -179,6 +172,22 @@ Es wird zum Beispiel nach einer Nutzung gesucht, die mehr als 80 \% des Leistung
 
 Sich dieser Grenzen bewusst zu sein, gibt die Möglichkeit, rechtzeitig zu handeln und es trägt zu Kostenüberwachung bei.
 [SAGEN OB DIESE GRENZE DIE GLEICHE WIE BEI CloudWatch SIND]
+[ZEIGE BEISPIELE FueR Empfehlungen]\\
+Bei der Erwägung von Trusted-Advisor ist zu überlegen, ob es kosteneffizient ist, für Pläne zu zahlen, die den Zugang zu allen Empfehlungen des Trusted Advisors ermöglichen. Das übergeordnete Ziel dieser Arbeit ist es, die Entstehung der Kosten auf eine praktikable Weise zu verstehen (Kostenüberwachung). Dies, um Optimierungsmaßnahmen zu ermöglichen. 
+\\
+Es wäre nicht sinnvoll, Kosten für Plänen wie Geschäfts- oder Enterprise Support zu übernehmen, wenn diese die möglichen Einsparungen übersteigen.  Die Vorteile von Geschäfts- oder Enterprise Support-Plänen beschränken sich nicht auf Kosteneinsparungen und Kostenbegrenzung, sondern tragen auch zur Sicherheit und Leistung bei. Jedes Unternehmen muss selbst entscheiden, ob es diese Informationen benötigt.
+WIE TRIFFT MAN EINE ENTSCHEIDUNG IM UNTERNEHMEN? MODELLE?
+\\
+\textbf{Eigene Überlegungen der Verfasser:} \\
+Überlegung 1: \\
+Es kann in Erwägung gezogen werden, für einen begrenzten Zeitraum von 3 Monaten einen Support-Plan zu bezahlen, um aus den gegebenen Empfehlungen zu lernen. Oder Business-Plan alle 6 Monate für 1 Monat zu aktivieren. Diese sind Überlegungen der Verfasser dieser Arbeit. 
+
+Überlegung 2: \\ 
+Ein Berater für eine Prüfung und Optimierung der Ressourcen kann in Deutschland zwischen x und b Dollar kosten. Dies ist nur eine Alternative zu den Plänen des Trusted-Advisor. Ein Berater, der alle 5 Kategorien abdeckt, könnte 555-999 kosten. Das sagt der Berater Juanito von der Firma XXX.
+[WIE KANN ICH DIESE ÜBERLEGUNGEN RICHTIG DARSTELLEN?]
+
+
+
 
 \textbf{Summary/Fazit}\\
 %[ABSCHLUSS DES KAPITELS/Überbrückung FÜR DAS KOMMENDE KAPITEL]}
