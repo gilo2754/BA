@@ -3,15 +3,23 @@
 % Wie werden die Informationen die Benutzer gezeigt und wie können sie diese manipulieren
 
 Die mit den Überwachungswerkzeuge gesammelte Informationen, bilden die Grundlage für die Optimierungsmaßnahmen.[HIER KONKRETER WERDEN]
-In diesem Kapitel werden wir die mit Hilfe der Werkzeuge gesammelten Informationen nutzen, um über die am besten geeigneten Optimierungsmaßnahmen zu entscheiden.
-
+In diesem Kapitel werden die mit Hilfe der Werkzeuge gewonnenen Informationen genutzt, um über die am besten geeigneten Optimierungsmaßnahmen zu entscheiden.[VERSTÄNDLICH?]
+%La mayoria de las medidas de opmimizacion se centran en las instancias EC2, pues como antes mencionado representan la gran mayoria de los servicios que comprenden los gastos en nuestras facturas.
 \subsection{Auto Scaling}% Group }
 %t.ly/CXs3 Linked In auf DE
 %t.ly/1nka
 %THIS!!! t.ly/vrCO
 %https://youtu.be/qYHR_V1lvNU?t=900
 Auto Scaling ist es hilfreich, um die richtige Anzahl von EC2 Instanzen zur Verfügung zu haben, um die Anwendungslast dynamisch abzudecken.
-\\\\
+\\
+Beispiele für eine veränderte Nutzung von Applikationen finden sich bei Tinder und OkCupid, zwei der größten Dating-Plattformen. Die \autoref{fig:Use_by_hour_netflix_OkCupid_tinder} zeigt die Nutzungsspitzen bei den genannten Applikationen. Dieses wechselnde Verhalten wirkt sich unmittelbar auf die zu verschiedenen Tageszeiten benötigte Rechenkapazität aus und macht eine dynamische Skalierung der Rechenkapazität erforderlich. Touches sind die Anzahl der Klicks, Swipes oder einfachen Interaktionen mit der Applikation.
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.6]{sources/Use_by_hour_netflix_OkCupid_tinder}
+  \caption{}\label{fig:Use_by_hour_netflix_OkCupid_tinder} Die Nutzung von Tinder, OkCupid und Netflix pro Stunde.  
+  %Quelle: Eigene Darstellung. 
+  {\cite{SCOUT1}}
+\end{figure}
 %https://www.youtube.com/watch?v=yC5nRYS2IYI En Espaniol
 %https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#policy-creating-asg-console
 
@@ -35,7 +43,7 @@ Die graue Zone entspricht ungenutzte Rechenkapazität.
   \end{figure}
 
 %Zu erklären: cooldown period and scaling policy.
-
+%Macht die Nutzung von Spor-Instanzen so einfach wie nie zuvor ?
 
 \subsubsection{Zeitgesteuerte Skalierung}
 %WE für Dev und Beta
@@ -56,6 +64,7 @@ Bei Systemen, die nur tagsüber und unter der Woche in Betrieb sein müssen, kan
 %Weihnachten und BackFriday
 Wenn der Zeitpunkt einer großen Nachfrage bekannt ist, kann eine Erhöhung der Rechnerkapazität geplant werden, um Überlastungen zu vermeiden.
 Beispiele für solche Zeitpunkte oder Zeiträume sind unter anderem Black-Friday, vor und während Weihnachten und Cyber-Monday.
+\subsubsection{Dynamisches Auto Scaling}
 
 \subsection{(auto) Tiering }
 Grund: nicht alle Dateien brauchen eine hohe Verfügbarkeit.
