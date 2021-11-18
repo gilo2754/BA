@@ -6,7 +6,7 @@ Die mit den Überwachungswerkzeuge gesammelte Informationen, bilden die Grundlag
 In diesem Kapitel werden die mit Hilfe der Werkzeuge gewonnenen Informationen genutzt, um über die am besten geeigneten Optimierungsmaßnahmen zu entscheiden.[VERSTÄNDLICH?]
 %La mayoria de las medidas de opmimizacion se centran en las instancias EC2, pues como antes mencionado representan la gran mayoria de los servicios que comprenden los gastos en nuestras facturas.
 
-\subsection{Automatische Skalierung}
+\subsection{EC2 Automatische Skalierung}
 %t.ly/CXs3 Linked In auf DE          %t.ly/1nka          %THIS!!! t.ly/vrCO
 %https://youtu.be/qYHR_V1lvNU?t=900
 Auto Scaling ist es hilfreich, um die richtige Anzahl von EC2 Instanzen zur Verfügung zu haben, um die Anwendungslast dynamisch abzudecken.
@@ -52,14 +52,14 @@ Bei Systemen, die nur tagsüber und unter der Woche in Betrieb sein müssen, kan
 \textbf{Produktive Umgebungen??}
 Wenn der Zeitpunkt einer hohen Nachfrage bekannt ist, kann eine Erhöhung der Rechnerkapazität geplant werden, um Überlastungen zu vermeiden.
 
-Beispiele für solche Zeiträumen sind Weihnachten, Cyber-Monday und Black Friday. 
-
+Beispiele für solche Zeiträume sind Weihnachten, Cyber-Monday und Black Friday. 
+[STATISTIK?]
 
 \subsubsection{Dynamische automatische Skalierung / Dynamisches Auto Scaling}
 %Intro mit Beispiel
 Es kann jedoch zu schnelle und kontinuierliche Änderungen im Verhalten von Applikationen geben, bei denen es sinnvoller ist, Metriken zur Anpassung der Skalierung der Rechenkapazität festzulegen.
 
-Beispiele für eine veränderte Nutzung von Applikationen finden sich bei Tinder und OkCupid, zwei der größten Dating-Plattformen. Die \autoref{fig:Use_by_hour_netflix_OkCupid_tinder} zeigt die Nutzungsspitzen bei den genannten Applikationen. Dieses wechselnde Verhalten wirkt sich unmittelbar auf die zu verschiedenen Tageszeiten benötigte Rechenkapazität aus und macht eine dynamische Skalierung der Rechenkapazität erforderlich. 
+Beispiele für eine veränderte Nutzung von Applikationen finden sich bei Tinder und OkCupid, zwei der größten Dating-Applikationen in den vereinigten staaten. Die \autoref{fig:Use_by_hour_netflix_OkCupid_tinder} zeigt die Nutzungsspitzen bei den genannten Applikationen. Dieses wechselnde Verhalten wirkt sich unmittelbar auf die zu verschiedenen Tageszeiten benötigte Rechenkapazität aus und macht eine dynamische Skalierung der Rechenkapazität erforderlich, wenn das Ziel darin besteht, die Verschwendung von Ressourcen zu vermeiden oder zu verringern. 
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.33]{sources/Use_by_hour_netflix_OkCupid_tinder}
@@ -72,8 +72,8 @@ Beispiele für eine veränderte Nutzung von Applikationen finden sich bei Tinder
 Weitere Beispiele für solche Zeitpunkte sind das Feierabend, Mittagspause und beim Abendessen, wenn es um Applikationen für Unterhaltung und Online-Shopping geht.
 \\
 %HIER erkläre ich wie genau AutoScaling funktioniert und was dafür nötig ist (Metriken)
-Die für die automatische Skalierung erforderlichen Metriken wurden bereits im Kapitel Überwachungswerkzeuge erwähnt. Eine der Metriken, die von Optimierungsexperten [PASST?]empfohlen werden, ist die CPU- Nutzung. 
-
+Die für die automatische Skalierung erforderlichen Metriken wurden bereits im Kapitel Überwachungswerkzeuge erwähnt. Eine der Metriken, die von Optimierungsexperten [PASST?]benutzt wird, ist die gesamte CPU-Auslastung. 
+Um die CPU-Auslastung als Metrik zu verwenden, werden mindestens zwei Schwellenwerte definiert. Eine für die Erhöhung von Rechenkapazität (Scale-Out) und eine für das Verringern von Rechenkapazität (Scale-In).
 
 
 \subsubsection{Voraussagende Skalierung / Predective Scaling ??}
@@ -84,7 +84,7 @@ Anders als Zeitgesteuerte Skalierung ist es nicht notwendig, die Verhaltensmuste
 [SOLLTE DAS ZITIERT WERDEN?]
 %https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-dg.pdf#ec2-auto-scaling-predictive-scaling
 
-\subsubsection{ Manual Scaling REVIEW}
+\subsubsection{ Manual Scaling REVIEWEN}
 Wenn aufgrund von Bedingungen, die in der Konfiguration unserer Auto-Scaling-Gruppe nicht berücksichtigt sind, mehr Rechenkapazität benötigt wird, ist es möglich, die Rechenkapazität manuell zu ändern. Die minimale, die maximale oder die gewünschte Kapazität der Auto-Scaling-Gruppe kann verändert werden,, ohne dass aktive Instanzen unterbrochen werden müssen.
 
 
@@ -94,11 +94,44 @@ Wenn aufgrund von Bedingungen, die in der Konfiguration unserer Auto-Scaling-Gru
 
 
 
-\subsection{(auto) Tiering }
-Grund: nicht alle Dateien brauchen eine hohe Verfügbarkeit.
-%Tiering, aber automatisch
+\subsection{S3 Optimierung}
 
-\subsection{Automatisierung mit Lambda Funktionen}
+\subsubsection{Richtige Speicherklassen wählen}
+Um die Speicherkosten zu optimieren, ist es daher notwendig, die richtige Speicherklassen für die jeweilige Applikation wählen. Um die richtige Wahl zu treffen, müssen die Anforderungen der Applikation verstanden werden. Klinische Patientendaten und eine Instagram-Story unterscheiden sich in der Zugriffshäufigkeit auf diese Daten und in der Länge der Aufbewahrungszeit[PASSENDES WORT?].
+
+Amazon bietet verschiedene Speicherklassen an, die sich im Preis und in der Häufigkeit des Zugriffs auf die Objekte unterscheiden. Objekte sind in Behältern enthalten, die Buckets genannt werden.
+[ABB Speicherklasse ->Eigenschaften der Anwendung?]
+
+%WICHTIG IST DIE GRÖSSE MEINE DATEIEN UND DIE ANZAHL.
+%weil SO WERDEN DIE PREISE FÜR VERSCHIEBUNG BERECHNET.
+%(Object size distribution )
+
+\subsubsection{Intelligent Auto Tiering}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{comment}
+\subsubsection{Automatisierung mit Lambda Funktionen}
 Grund: einmal programmiert, funktioniert es für immer.
 \\(To-Do:) Möglichkeiten untersuchen, bewerten und die passende Auswählen.
 
@@ -107,7 +140,7 @@ Grund: einmal programmiert, funktioniert es für immer.
 
 %Turning stuffs OFF
 %Lambda
-\begin{comment}
+
 AWS Lambda is a compute service. You can use it to run code without provisioning or managing servers. Lambda runs your code on a high-availability compute infrastructure. It operates and maintains all of the compute resources, including server and operating system maintenance, capacity provisioning and automatic scaling, code monitoring, and logging. With Lambda, you can run code for almost any type of application or backend service. 
 
 Some benefits of using Lambda include the following:

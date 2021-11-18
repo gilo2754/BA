@@ -1,12 +1,22 @@
 @Heute {
 Auto Scaling+Abends free
  Alle Kapitel wurden anfangen
- 17.11: 
-16.11: Weiter mit EC2 Optimierung+ non-Tech-Intro(157)
+23.11:
+22.11:
+21.11: 
+20.11:REVISION Kap1 done
+19.11:
+
+18.11: complete auto Tiering
+-Intelligent Auto Tiering
+-Richtige S.Klasse
+
 
 }
 
 @Done {
+17.11: Part of Auto Scaling and start Auto Tiering
+16.11: Weiter mit EC2 Optimierung+ Predictive Scaling
 15.11: T.Advisor+Auto-Scaling 1/2
 14.11: solo PP
 13.11: Kap. Tools komplett!!! So so + Fazit
@@ -44,7 +54,7 @@ DAVOR:
 }
 
 @To-Do {
-   
+    -non-Tech(157-165) für die Intro
     
     -mehr über Optimierung und Überwachungstools
     https://aws.amazon.com/de/economics/resources/
@@ -72,6 +82,17 @@ https://www.aws.training/Details/Video?id=74016 (21:23)
 
 # Add AWS Organizations
 # Explain Tagging(Cost allocation Tags) Best Practices https://youtu.be/pjrKDkzbas8?t=1335
+
+TODO:
+https://youtu.be/9BlsFNBnKHc
+-Launch templates determines what will launch!
+https://youtu.be/9BlsFNBnKHc?t=628
+Load Balancer mit eigenem Bild
+-SE tiene que considerar la lentitud con la que se escala!
+-Separar Scale upp y down lo suficiente.
+-What is Target Tracking?
+
+
 }
 
 
