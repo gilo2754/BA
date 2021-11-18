@@ -101,18 +101,27 @@ Um die Speicherkosten zu optimieren, ist es daher notwendig, die richtige Speich
 
 Amazon bietet verschiedene Speicherklassen an, die sich im Preis und in der Häufigkeit des Zugriffs auf die Objekte unterscheiden. Objekte sind in Behältern enthalten, die Buckets genannt werden.
 [ABB Speicherklasse ->Eigenschaften der Anwendung?]
-
+LIFE-CYCLE-POLICIES
 %WICHTIG IST DIE GRÖSSE MEINE DATEIEN UND DIE ANZAHL.
 %weil SO WERDEN DIE PREISE FÜR VERSCHIEBUNG BERECHNET.
 %(Object size distribution )
 
 \subsubsection{Intelligent Auto Tiering}
+Intelligent Auto Tiering verschiebt Daten auf der Grundlage von Zugriffsmustern. Diese Speicherklasse ist ideal für Daten mit wechselnden oder unbekannten Zugriffsmustern. 
+Wie die Senior Product Manager für S3 Ruhi Dang erklärt, einige Unternehmen haben weder die Zeit noch die finanziellen Möglichkeiten, eine Person einzustellen, die ihre Daten sortiert und in die richtige Art von Speicher einordnet. Intelligent Auto Tiering ist eine attraktative Lösung für Firmen, die jährlich weniger als \$100,000 für Speicher ausgeben \footnote{\cite{AMZ16}, Minute: 21:12}.
+%Ach von Jessie Felix gesagt https://www.youtube.com/watch?v=IOT41L_adSw
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.5]{sources/S3_IntLifeCycle}
+  \caption[Funktionsweise von Intelligent-Tiering]{}\label{fig:S3_IntLifeCycle} Funktionsweise von Intelligent-Tiering\\
+  MACH DIR EINE ÄHLICHE ABER DEINES
+  %Quelle: Eigene Darstellung. 
+  %{\cite{SCOUT1}}
+\end{figure}
 
 
-
-
-
-
+IDEAL FUR DATA LAKES,DATA SCIENCE /MACHINES LEARNING
 
 
 
@@ -138,7 +147,6 @@ Grund: einmal programmiert, funktioniert es für immer.
 %Limitierung 
 %Quotas setzen? erweitern oder reduzieren / benachrichtigen aber auch eine Aktion durchführen 
 
-%Turning stuffs OFF
 %Lambda
 
 AWS Lambda is a compute service. You can use it to run code without provisioning or managing servers. Lambda runs your code on a high-availability compute infrastructure. It operates and maintains all of the compute resources, including server and operating system maintenance, capacity provisioning and automatic scaling, code monitoring, and logging. With Lambda, you can run code for almost any type of application or backend service. 
@@ -152,17 +160,14 @@ It provides built-in code monitoring and logging via Amazon CloudWatch.
 \end{comment}
 
 %Data Pipeline
-%CloudWatch
 
 %Economic Performance?
 %QUEUES
 
 %NEVER forget your availability requirements, trying to optimize, first availability THEN cost...
 %Do not use your DB for saving BLOB
-warum ist das empfehlungswert?
 
-\subsection{VERKAUFE DEINE Ungenutzte Kapazität in RI Marketplace}
-
+%\subsection{VERKAUFE DEINE Ungenutzte Kapazität in RI Marketplace}
 
 %Kombination
 %https://spot.io/blog/effective-utilization-of-aws-savings-plans-and-ec2-spot-instances/#a1
