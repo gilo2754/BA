@@ -175,13 +175,13 @@ plainpages=false,hypertexnames=false,citecolor=black, urlcolor=blue]{hyperref}
 \end{titlepage}
 \newpage
 
-\section{Abstract}\label{kap_Abstract}
+\section*{Abstract}\label{kap_Abstract}
+\addcontentsline{toc}{section}{Abstract} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen
 \input{chapters/Abstract}
 \newpage
 
 % Inhaltsverzeichnis
 \tableofcontents
-
 \newpage
 \pagestyle{fancy} % Kopf- und Fußzeilen aktivieren (=> Paket "fancyhdr")
 
@@ -202,7 +202,8 @@ plainpages=false,hypertexnames=false,citecolor=black, urlcolor=blue]{hyperref}
 \listoffigures
 \newpage
 
-\section{Abkürzungsverzeichnis}\label{kap_Abkuerzungen}
+\section*{Abkürzungsverzeichnis}\label{kap_Abkuerzungen}
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen
 \input{chapters/Abkürzungsverzeichnis}
 \newpage
 
@@ -239,13 +240,16 @@ plainpages=false,hypertexnames=false,citecolor=black, urlcolor=blue]{hyperref}
 \newpage
 
 %Temporär, danach sollten wir das Package glossaries benutzen
-\section{Glossar}\label{kap_glossar}
+\section*{Glossar}\label{kap_glossar}
+\addcontentsline{toc}{section}{Glossar} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen
 \input{chapters/Glossar}
 \newpage
 
 
 
-\section{Quellenverzeichnis}\label{kap_quellenverzeichnis}
+\section*{Quellenverzeichnis}\label{kap_quellenverzeichnis}
+\addcontentsline{toc}{section}{Quellenverzeichnis} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen
+
 \input{chapters/Quellenverzeichnis}
 \newpage
 

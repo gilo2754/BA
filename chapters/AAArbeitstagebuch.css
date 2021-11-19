@@ -4,17 +4,13 @@
 22.11:
 21.11: 
 20.11:REVISION Kap1 done
-19.11:
-
-18.11: complete auto Tiering
--Intelligent Auto Tiering
--Richtige S.Klasse
-
-
+19.11: Ask for review: Caro, Marvin und Sascha+Plan und Start Review
 }
 
 @Done {
-17.11: Part of Auto Scaling and start Auto Tiering
+18.11: continue auto Tiering
+    -Intelligent Auto Tiering
+    -Richtige S.Klasse17.11: Part of Auto Scaling and start Auto Tiering
 16.11: Weiter mit EC2 Optimierung+ Predictive Scaling
 15.11: T.Advisor+Auto-Scaling 1/2
 14.11: solo PP
@@ -53,6 +49,8 @@ DAVOR:
 }
 
 @To-Do {
+
+    -Research why is monitoring important. Why companies do this?
     -non-Tech(157-165) für die Intro
     
     -mehr über Optimierung und Überwachungstools
