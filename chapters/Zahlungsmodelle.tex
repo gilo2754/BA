@@ -1,9 +1,9 @@
-Die Wahl des Zahlungsmodells für EC2-Instanzen ist von entscheidender Bedeutung, um den besten Preis zu erzielen.
+Die Nutzung von EC2-Instanzen ist mit einem Zahlungsmodell verbunden. Die Wahl des Zahlungsmodells ist von entscheidender Bedeutung, um den besten Preis für EC2-Instanzen zu erzielen.
 %EC2 and RDS(DB) spend are often on of the main portions of your overall AWS Bill t.ly/Mqwn
 Die von Amazon Web Services angebotenen Zahlungsmodelle werden im Folgenden dargestellt.
 \\\\
-Die On-Demand-Option %erfordert
-beinhaltet keine langfristigen Verpflichtungen, sie ist daher die teuerste Alternative, die auf Stundenbasis berechnet wird. Die Modelle Saving Plans und Reserved Instances erfordern den Abschluss von Verträgen über 1 oder 3 Jahre, um günstige Preise zu erhalten. EC2-Spot-Instanzen sind die billigste Option, haben aber den Nachteil, dass ihre Verfügbarkeit nicht immer garantiert ist.
+Das On-Demand-Modell  %erfordert
+beinhaltet keine langfristigen Verpflichtungen, sie ist daher die teuerste Alternative, die auf Stundenbasis berechnet wird. Die Modelle Saving Plans und Reserved Instances erfordern den Abschluss von Verträgen über 1 oder 3 Jahre, um günstige Preise zu erhalten. EC2-Spot-Instanzen sind das billigste Modell , haben aber den Nachteil, dass ihre Verfügbarkeit nicht immer garantiert ist.
 \\\\
 Jedes Zahlungsmodell hat seine Vor- und Nachteile und eignet sich für unterschiedliche Anwendungsfälle. Gute Ergebnisse können auch durch die Kombination mehrerer Zahlungsmodelle erzielt werden[SAG DER CLOUD-EXPERT/FIRMA]. Dies wird in Unterkapitel \ref{sssec:num3.4} behandelt.[WIRD ES?]
 \\\\
@@ -18,13 +18,6 @@ Bei diesem Zahlungsmodell besteht keine Notwendigkeit, ein festes Anfangsbudget 
 Dieses Modell eignet sich für Projekte, bei denen nicht viel vorhersehbar ist und die Möglichkeit besteht, dass das Projekt in kurzer Zeit abgeschlossen sein wird, so dass es keinen Sinn macht, eine langfristige Verpflichtung einzugehen.
 \\
 Hier einige Beispiele von EC2-Instanzen im On-Demand Zahlungsmodell.
-
-%\begin{center}
- %   \includegraphics[scale=0.4]{sources/On-Demand-Pläne für Amazon EC2}\label{fig:OnDemand_Preise}\\
-   % \textbf{Abbildung \autoref{fig:OnDemand_Preise}:} On-Demand Preise für Amazon EC2
- %       {\cite{AMZ02}}
-%\end{center}
-
 \begin{figure}
     \centering
     \includegraphics[scale=0.4]{sources/On-Demand-Pläne für Amazon EC2}\label{fig:OnDemand_Preise}\\
@@ -32,10 +25,11 @@ Hier einige Beispiele von EC2-Instanzen im On-Demand Zahlungsmodell.
     \label{fig:OnDemand_Preise}  On-Demand Preise für Amazon EC2 {\cite{AMZ02}}
   \end{figure}
 
+  WARUM IST DIESE ABB.?
 
 Der Preis für dieses Modell variiert je nach Instanztyp, Region und der übertragenen Datenmenge. 
 Die aktuellen Preise für die verschiedenen Regionen sind auf der Amazon-Website in der Sektion EC2 - On-Demand-Preise\footnote{https://aws.amazon.com/de/ec2/pricing/on-demand/} zu finden.
-In der Abbildung 5.1 werden die für die Region Ohio verfügbaren Linux-Instanzen gezeigt. Je Es ist zu beachten, dass Instanzen mit denselben Eigenschaften, aber in verschiedenen Regionen, unterschiedliche Preise haben können.
+In der Abbildung 5.1 werden die für die Region Ohio verfügbaren Linux-Instanzen gezeigt. Es ist zu beachten, dass Instanzen mit denselben Eigenschaften, aber in verschiedenen Regionen, unterschiedliche Preise haben können.
 
 \subsection{Reservierte Instanzen und Saving Plans}
 %t.ly/JUWq
@@ -71,25 +65,11 @@ Die ersten beiden Optionen in der obigen Tabelle, die Saving Plans, unterscheide
 
 Bei den EC2-Instance Saving Plans hingegen muss eine Instance-Familie in einer bestimmten Region ausgewählt werden.  Dies reduziert automatisch die Kosten für die ausgewählte Instanz-Familie in der jeweiligen Region, unabhängig von Availability Zone, Größe, Betriebssystem oder Mandant.
 \\
-REVIEW{
+Die Festlegung eines festen Stundensatzes über einen langen Zeitraum bietet die Möglichkeit, künftige Kosten zu planen[ZITAT/BASIERT AUF...]
 \\
-Die Festlegung eines festen Stundensatzes über einen langen Zeitraum bietet die Möglichkeit, künftige Kosten zu planen.}
-\\
-Folgenden Kriterien definieren den Preis von EC2-Instanzen bei Saving Plans:
-\\
-- Vertraglaufzeit
-\\
-- Vorabzahlung
-\\
-- Betriebssystem
-\\
-- Region
-\\
-- Mandant
-\\
+%Folgenden Kriterien definieren den Preis von EC2-Instanzen bei Saving Plans:
+%Vertraglaufzeit, Vorabzahlung, Betriebssystem,Region, Mandant
 AUCH FÜR RIs?
-
-WANN SAVING PLANS? 
 
 %3 Arten von S. Plans: Compute and EC2 Instance
 \subsubsection{Vorauszahlung}
@@ -103,32 +83,39 @@ Bei teilweiser Vorauszahlung ist eine Anzahlung von etwa 50\% zu leisten.
 
 (To-Do: wie viel kann in den verschiedenen Szenarien eingespart werden).
 
-\subsection{Versteigerung? / Spot Instanzen }
+\subsection{Spot Instanzen }
 EC2 Spot-Instances bieten die Möglichkeit aus von anderen Nutzern ungenutzter EC2-Instances zu profitieren.
 Mit einem Preisvorteil von bis zu 90 \% gegenüber normalen On-Demand-Instanzen sind Spot-Instanzen ideal für fehlertolerante Anwendungen wie auf Containern ausgeführte Workloads, CI/CD, Bigdata-Anwendungen und ähnliches.
-[IST DER SATZ ZU LANG?]
-\\
-%unterbrechbar
-Es ist zu beachten, dass Spot-Instanzen jederzeit unterbrochen werden können, entweder weil der konfigurierte Maximalpreis überschritten wurde oder weil die Instanz nicht mehr verfügbar ist. Dies geschieht, wenn der Instanzanbieter die Instanz erneut anfordert. Falls eine Spot-Instanz unterbrochen wird, benachrichtigt Amazon EC2 2 Minuten im Voraus. Dieses Ereignis ist verfügbar auf CloudWatch.
+\\\\
+\subsubsection{Unterbrechbarkeit}
+Es ist zu beachten, dass Spot-Instanzen jederzeit unterbrochen werden können.   
+
+Einer der Gründe ist die Preisüberschreitung[RICHTIG?] der Instanz. Wenn Spot-Instanzen angefordert werden, wird einen Maximalpreis festgelegt. Sollte der Preis der Instanz höher als das eingegebener Maximalpreis, wird die Instanz für die aktuelle Einstellung nicht mehr verfügbar sein.
+
+Ein anderes Szenario ist, wenn der Instanzanbieter die Instanz erneut anfordert. Falls eine Spot-Instanz unterbrochen wird, benachrichtigt Amazon EC2 2 Minuten im Voraus. Dieses Ereignis ist verfügbar auf CloudWatch und es kann einen Alarm dafür eingestellt werden.
 \\
 Daher sollten kritische Anwendungen nicht nur mit EC2 Spot-Instanzen laufen.
-
-Um von der Preisvorteile der Spot-Instanzen zu profitieren und Ausfälle zu vermeiden, sollten in Kombination weitere Zahlungsmodelle verwenden werden.
-\\
-Zum Beispiel eine Kombination aus Spot-Instanzen für die erwarteten Last und On-Demand-Instanzen für die dynamischen Last.
+%Um von der Preisvorteile der Spot-Instanzen zu profitieren und Ausfälle zu vermeiden, sollten in Kombination weitere Zahlungsmodelle verwenden werden.
+%\\
+%Zum Beispiel eine Kombination aus Spot-Instanzen für die erwarteten Last und On-Demand-Instanzen für die dynamischen Last.
 %https://aws.amazon.com/de/ec2/spot/pricing/
-
-%SET MAX PRICE
 
 %2 OPTIONEN: LOWEST PRICE OR DIVERSIFIED ACROSS n POOLS TO AVOID DOWNS https://www.linkedin.com/learning/aws-automation-and-optimization/request-spot-instances-part-2?autoAdvance=true&autoSkip=true&autoplay=true&resume=false&u=79182202
 \subsection{Wann welches Zahlungsmodell?} \label{sssec:num3.4}
-(To-Do:) Was sind die Kriterien oder Vor- und Nachteile? für die Auswahl eines oder mehrerer Zahlungsmodelle?
-%MACH EINE SCHÖNE GRAFIK
+(To-Do:) Was sind die Kriterien oder Vor- und Nachteile? für die Auswahl eines oder mehrerer Zahlungsmodelle? WANN SAVING PLANS? 
+MACH EINE SCHÖNE GRAFIK
+
+%To read planned at 21.11:
+%https://www.virtana.com/blog/demystifying-terminology-aws-instances/
+%https://www.pcapps.com/services/aws-reserved-vs-on-demand-instances/
+%https://jaychapel.medium.com/aws-reserved-instances-versus-on-demand-which-is-better-e7f77f1f9582
+%https://www.cloudhealthtech.com/blog/aws-reserved-instances-vs-on-demand#:~:text=In%20terms%20of%20compute%20options,of%20an%20On%20Demand%20instance.
+
 %https://youtu.be/mKEdhmJ2udA?t=79
-
-
 %Automate the selection to get the best price
 %https://spot.io/aws-cost-optimization-calculator/
-
-
 [ABSCHLUSS DES KAPITELS/Überbrückung FÜR DAS KOMMENDE KAPITEL]
+\\
+In diesem Kapitel wurden die verschiedenen Zahlungsmodelle für EC2-Instanzen untersucht. Es wurden Hinweise für die Auswahl des richtigen Zahlungsmodells in verschiedenen Szenarien gegeben. Dies wurde erklärt, um die Preisvorteile[RICHTIG?] von den Zahlungsmodellen zu nutzen. 
+%En el capitulo monitoreo de costes  se mostrarán herramientas como X(CloudWatch) con las que podremos verificar si la desicion realizada fue la correcta. Para el modelo de pago On-Demand no hay ninguna redccion de los costos, pero existen medidas para aun asi reducir el uso de las instancias. Dichas medidas seran profundizadas en capitulo medidas de optimizacion
+Im Kapitel Kostenüberwachung wird X(CloudWatch?) vorgestellt, mit dem überprüft werden kann, ob das ausgewählte Zahlungmodell tatsächlich das Richtig für die Anwendungsfall ist. Für das On-Demand-Zahlungsmodell gibt es keine Kostenreduzierung, aber es gibt Maßnahmen, um die Nutzung von Instanzen zu reduzieren. Auf diese Maßnahmen wird im Kapitel über Optimierungsmaßnahmen näher eingegangen.
