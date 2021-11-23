@@ -29,13 +29,13 @@ Hier einige Beispiele von EC2-Instanzen im On-Demand Zahlungsmodell.
 
 Der Preis für dieses Modell variiert je nach Instanztyp, Region und der übertragenen Datenmenge. 
 Die aktuellen Preise für die verschiedenen Regionen sind auf der Amazon-Website in der Sektion EC2 - On-Demand-Preise\footnote{https://aws.amazon.com/de/ec2/pricing/on-demand/} zu finden.
-In der Abbildung 5.1 werden die für die Region Ohio verfügbaren Linux-Instanzen gezeigt. Es ist zu beachten, dass Instanzen mit denselben Eigenschaften, aber in verschiedenen Regionen, unterschiedliche Preise haben können.
+In der \autoref{fig:OnDemand_Preise} werden die für die Region Ohio verfügbaren Linux-Instanzen gezeigt. Es ist zu beachten, dass Instanzen mit denselben Eigenschaften, aber in verschiedenen Regionen, unterschiedliche Preise haben können.
 
 \subsection{Reservierte Instanzen und Saving Plans}
 %t.ly/JUWq
 %https://www.youtube.com/watch?v=c_zlPQimrvY
 \begin{flushleft}
-    Die Zahlungsmodelle Reservierte Instanzen und Saving Plans sind sich sehr ähnlich. Beide kommen mit einer gleichbleibenden  Nutzungsverpflichtung, die in \$-€/Stunden gemessen wird.
+    Die Zahlungsmodelle Reservierte Instanzen und Saving Plans sind sich sehr ähnlich. Beide kommen mit einer gleichbleibenden  Nutzungsverpflichtung, die in €/Stunden gemessen wird.
 
     Um die reduzierten Preise  zu bekommen, müssen Verträge 1 oder 3 Jahre abgeschlossen werden.
 
@@ -70,14 +70,12 @@ Die Festlegung eines festen Stundensatzes über einen langen Zeitraum bietet die
 %Folgenden Kriterien definieren den Preis von EC2-Instanzen bei Saving Plans:
 %Vertraglaufzeit, Vorabzahlung, Betriebssystem,Region, Mandant
 AUCH FÜR RIs?
-
 %3 Arten von S. Plans: Compute and EC2 Instance
 \subsubsection{Vorauszahlung}
 Zusätzlich gibt es bei Saving Plans und reservierten Instanzen die Option im Voraus zu zahlen.
 Im Gegenzug wird ein niedrigerer Preis angeboten.
 
-Amazon bietet drei verschiedene Optionen an:\\ 
-keine, teilweise und vollständige Vorauszahlung.
+Amazon bietet drei verschiedene Optionen an. Diese sind teilweise, keine oder vollständige Vorauszahlung.
 
 Bei teilweiser Vorauszahlung ist eine Anzahlung von etwa 50\% zu leisten.
 
@@ -86,7 +84,7 @@ Bei teilweiser Vorauszahlung ist eine Anzahlung von etwa 50\% zu leisten.
 \subsection{Spot Instanzen }
 EC2 Spot-Instances bieten die Möglichkeit aus von anderen Nutzern ungenutzter EC2-Instances zu profitieren.
 Mit einem Preisvorteil von bis zu 90 \% gegenüber normalen On-Demand-Instanzen sind Spot-Instanzen ideal für fehlertolerante Anwendungen wie auf Containern ausgeführte Workloads, CI/CD, Bigdata-Anwendungen und ähnliches.
-\\\\
+\\
 \subsubsection{Unterbrechbarkeit}
 Es ist zu beachten, dass Spot-Instanzen jederzeit unterbrochen werden können.   
 
@@ -102,8 +100,16 @@ Daher sollten kritische Anwendungen nicht nur mit EC2 Spot-Instanzen laufen.
 
 %2 OPTIONEN: LOWEST PRICE OR DIVERSIFIED ACROSS n POOLS TO AVOID DOWNS https://www.linkedin.com/learning/aws-automation-and-optimization/request-spot-instances-part-2?autoAdvance=true&autoSkip=true&autoplay=true&resume=false&u=79182202
 \subsection{Wann welches Zahlungsmodell?} \label{sssec:num3.4}
-(To-Do:) Was sind die Kriterien oder Vor- und Nachteile? für die Auswahl eines oder mehrerer Zahlungsmodelle? WANN SAVING PLANS? 
-MACH EINE SCHÖNE GRAFIK
+%Vor- und Nachteile? 
+Die folgende Tabelle fasst die Eigenschaften der Zahlungsmodelle für Instanzen zusammen und listet typische Applikationen je nach Zahlungsmodell auf.
+Abb. AKTUELL?
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.6]{sources/Vergleich_der_Zahlungsmodelle}\label{fig:Vergleich_der_Zahlungsmodelle}\\
+    \caption[Vergleich der Zahlungsmodelle]{}
+    \label{fig:Vergleich_der_Zahlungsmodelle}  Vergleich der Zahlungsmodelle \\
+    Quelle: Eigene Darstellung.
+  \end{figure}
 
 %To read planned at 21.11:
 %https://www.virtana.com/blog/demystifying-terminology-aws-instances/
@@ -114,9 +120,8 @@ MACH EINE SCHÖNE GRAFIK
 %https://youtu.be/mKEdhmJ2udA?t=79
 %Automate the selection to get the best price
 %https://spot.io/aws-cost-optimization-calculator/
-[ABSCHLUSS DES KAPITELS/Überbrückung FÜR DAS KOMMENDE KAPITEL]
+\textbf{Summary/Fazit}
 \\\\
-BRAUCHT DAS FAZIT EIN TITEL?
-\\\\In diesem Kapitel wurden die verschiedenen Zahlungsmodelle für EC2-Instanzen untersucht. Es wurden Hinweise für die Auswahl des richtigen Zahlungsmodells in verschiedenen Szenarien gegeben. Dies wurde erklärt, um die Preisvorteile[RICHTIG?] von den Zahlungsmodellen zu nutzen. 
+In diesem Kapitel wurden die verschiedenen Zahlungsmodelle für EC2-Instanzen untersucht. Es wurden Hinweise für die Auswahl des richtigen Zahlungsmodells in verschiedenen Szenarien gegeben. Dies wurde erklärt, um die Preisvorteile[RICHTIG?] von den Zahlungsmodellen zu nutzen. 
 %En el capitulo monitoreo de costes  se mostrarán herramientas como X(CloudWatch) con las que podremos verificar si la desicion realizada fue la correcta. Para el modelo de pago On-Demand no hay ninguna redccion de los costos, pero existen medidas para aun asi reducir el uso de las instancias. Dichas medidas seran profundizadas en capitulo medidas de optimizacion
-Im Kapitel Kostenüberwachung wird X(CloudWatch?) vorgestellt, mit dem überprüft werden kann, ob das ausgewählte Zahlungmodell tatsächlich das Richtige für die Anwendungsfall ist/war. Für das On-Demand-Zahlungsmodell gibt es keine Kostenreduzierung, aber es gibt Maßnahmen, um die Nutzung von Instanzen zu reduzieren. Auf diese Maßnahmen wird im Kapitel über Optimierungsmaßnahmen näher eingegangen.
+Im Kapitel Kostenüberwachung wird X(CloudWatch?) vorgestellt, mit dem überprüft werden kann, ob das ausgewählte Zahlungsmodell tatsächlich das Richtige für den betreffenden Anwendungsfall ist. Für das On-Demand-Zahlungsmodell gibt es keine Kostenreduzierung, aber es gibt Maßnahmen, um die Nutzung von Instanzen zu reduzieren. Auf diese Maßnahmen wird im Kapitel über Optimierungsmaßnahmen näher eingegangen.

@@ -1,17 +1,44 @@
+@Offen { [Grafik der Kosten On-Premise/Demand?]
+Preis IT-Infra
+Grundlagen Server/Storage
+Daniel Peña 
+Fazit/Abschluss Kap 2
+Gute Ergebnisse können auch durch die Kombination mehrerer Zahlungsmodell
+Bleibt die Abb. On-Demand?
+TRUSTED ADVISOR(Einleitung)??Mehr lesen
+Relevanz von Metriken S.18
+drei Arten von Berichten C.Explorer
+Bugdetplanung
+Beispiele Trusted Ad.
+Handlungsempfehlungen formulieren und plazieren
+Opti. Einleitung
+Stat:Weihnachten, Cyber-Monday
+Stat-Feierabend, Mittagspause und beim Abendessen
+Predective Scaling 
+
+Speicherklasse+Abb. 
+Int.Tiering+Abb.
+
+AM ENDE:
+Spot Marketplace
+2T: 7 Punkte Zusammenfassung
+Einleitung umformulieren
+}
 @Heute {
 STEHE ICH GUT IM PLAN?
 -------
+
 30.11:
 29.11:
 28.11:
 27.11: 1/2
 26.11
 25.11: Tagging als Überwachungstool schreiben
-24.11
-23.11: Rev. abschließen + 1 Seite?
+24.11+Marvin S.10
 }
 
 @Done {
+23.11: Rev. abschließen + 1 Seite+Vergleich der Zahlungsmodelle-Abb.+Abb Tools
 22.11:Rev. bis zum S.23
 21.11: Nichts
 20.11:REVISION Kap2 done. Bis zum S.14
@@ -57,7 +84,7 @@ DAVOR:
 }
 
 @To-Do {
-
+-Selecting the right EC2, would drivee to saving costs
     -Research why is monitoring important. Why companies do this?
     -non-Tech(157-165) für die Intro
     
@@ -97,7 +124,7 @@ Load Balancer mit eigenem Bild
 -SE tiene que considerar la lentitud con la que se escala!
 -Separar Scale upp y down lo suficiente.
 -What is Target Tracking?
-
+-Eigene Berechnungen als XLS hochladen?
 
 }
 
