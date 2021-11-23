@@ -1,28 +1,21 @@
-@Offen { [Grafik der Kosten On-Premise/Demand?]
-Preis IT-Infra
-Grundlagen Server/Storage
-Daniel Peña 
-Fazit/Abschluss Kap 2
-Gute Ergebnisse können auch durch die Kombination mehrerer Zahlungsmodell
+@Offen { 
+#Not-much-important:
+[Grafik der Kosten On-Premise/Demand?]
 Bleibt die Abb. On-Demand?
-TRUSTED ADVISOR(Einleitung)??Mehr lesen
-Relevanz von Metriken S.18
-drei Arten von Berichten C.Explorer
-Bugdetplanung
-Beispiele Trusted Ad.
-Handlungsempfehlungen formulieren und plazieren
-Opti. Einleitung
+Preis IT-Infra
+Daniel Peña 
 Stat:Weihnachten, Cyber-Monday
-Stat-Feierabend, Mittagspause und beim Abendessen
 Predective Scaling 
+Stat-Feierabend, Mittagspause und beim Abendessen
 
-Speicherklasse+Abb. 
-Int.Tiering+Abb.
+#AM_ENDE_Dezember:
+02./03.12: 2Tage: Einleitung umformulieren+7 Punkte Zusammenfassung
+04.12: Handlungsempfehlungen formulieren und plazieren
+?? Tagging als Überwachungstool schreiben
+?? Spot Marketplace
 
-AM ENDE:
-Spot Marketplace
-2T: 7 Punkte Zusammenfassung
-Einleitung umformulieren
+#Important+#Urgent
+
 }
 @Heute {
 STEHE ICH GUT IM PLAN?
@@ -30,15 +23,15 @@ STEHE ICH GUT IM PLAN?
 
 30.11:
 29.11:
-28.11:
-27.11: 1/2
-26.11
-25.11: Tagging als Überwachungstool schreiben
-24.11+Marvin S.10
+28.11:Gute Ergebnisse können auch durch die Kombination mehrerer Zahlungsmodell+Relevanz von Metriken S.18
+27.11: 1/2 Tag{Grundlagen Server/Storage}
+26.11: Beispiele Trusted Ad.+Fazit/Abschluss_Kap2+Opti. Einleitung
+25.11: +Marvin S.10+drei Arten von Berichten C.Explorer+TRUSTED ADVISOR(Einleitung)??Mehr lesen
+24.11: Int.Tiering+Abb.?+Speicherklasse+Abb.+Bugdetplanung
 }
 
 @Done {
-23.11: Rev. abschließen + 1 Seite+Vergleich der Zahlungsmodelle-Abb.+Abb Tools
+23.11: Rev. abschließen + 2 Seiten+Vergleich der Zahlungsmodelle-Abb.+Abb Tools
 22.11:Rev. bis zum S.23
 21.11: Nichts
 20.11:REVISION Kap2 done. Bis zum S.14
