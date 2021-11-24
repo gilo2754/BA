@@ -1,3 +1,4 @@
+
 @Offen { 
 #Not-much-important:
 [Grafik der Kosten On-Premise/Demand?]
@@ -8,15 +9,19 @@ Stat:Weihnachten, Cyber-Monday
 Predective Scaling 
 Stat-Feierabend, Mittagspause und beim Abendessen
 
-#AM_ENDE_Dezember:
+#Important+#Urgent
+?
+}
+
+@AM_ENDE_Dezember {
 02./03.12: 2Tage: Einleitung umformulieren+7 Punkte Zusammenfassung
 04.12: Handlungsempfehlungen formulieren und plazieren
 ?? Tagging als Überwachungstool schreiben
 ?? Spot Marketplace
-
-#Important+#Urgent
-
 }
+
+
+
 @Heute {
 STEHE ICH GUT IM PLAN?
 -------
@@ -26,11 +31,13 @@ STEHE ICH GUT IM PLAN?
 28.11:Gute Ergebnisse können auch durch die Kombination mehrerer Zahlungsmodell+Relevanz von Metriken S.18
 27.11: 1/2 Tag{Grundlagen Server/Storage}
 26.11: Beispiele Trusted Ad.+Fazit/Abschluss_Kap2+Opti. Einleitung
-25.11: +Marvin S.10+drei Arten von Berichten C.Explorer+TRUSTED ADVISOR(Einleitung)??Mehr lesen
-24.11: Int.Tiering+Abb.?+Speicherklasse+Abb.+Bugdetplanung
+25.11: +Marvin S.10 + drei Arten von Berichten C.Explorer+TRUSTED ADVISOR(Einleitung)??Mehr lesen
++Speicherklasse_Abb.+Bugdetplanung
+
 }
 
 @Done {
+24.11: Lifecycle Policies+Int.Tiering+Abb.?
 23.11: Rev. abschließen + 2 Seiten+Vergleich der Zahlungsmodelle-Abb.+Abb Tools
 22.11:Rev. bis zum S.23
 21.11: Nichts

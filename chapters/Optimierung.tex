@@ -104,28 +104,93 @@ Um die Speicherkosten zu optimieren, ist es daher notwendig, die richtige Speich
 
 Amazon bietet verschiedene Speicherklassen an, die sich im Preis und in der Häufigkeit des Zugriffs auf die Objekte unterscheiden. Objekte sind in Behältern enthalten, die Buckets genannt werden.
 [ABB Speicherklasse ->Eigenschaften der Anwendung?]
-LIFE-CYCLE-POLICIES
+Wenn bekannt ist, dass die Daten über einen längeren Zeitraum gespeichert werden müssen. Falls die Anforderungen der Applikation dies vorschreiben oder für den Fall dass, per Gesetz auf die Informationen in der Zukunft zugegriffen werden muss.
+\\
+Zusätzlich, wenn auf die Daten nicht häufig zugegriffen wird, sind Glacier und Glacier Deep Archive passende Speicherklassen. Die Entscheidung ist jedoch nicht immer so einfach und die Umstände können sich schnell ändern. Hinzu kommt, dass nicht alle Daten in einer Applikation immer die gleichen Zugriffsmuster haben. Für solche Fälle ist es möglich, Regeln zu definieren, die Dateien zwischen verschiedenen Speicherklassen abhängig von ihrem Alter übertragen.
+
+\subsubsection{Lebenszyklus-Konfiguration/Lifecycle Policies}
+Eine S3-Lebenszykluskonfiguration beschreibt in einer XML-Datei Regeln und Aktionen für die Manipulation von Objekten.
+\\\\
+Aktionen wie das Verschieben von Objekten verursachen Kosten. Einige von ihnen werden in \autoref{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} für die Berechnung der Speicherkosten verwendet.
+\\
+%Beim Verschieben nach S3 Intelligent-Tiering, S3 Standard – Infrequent Access und S3 One Zone – Infrequent Access: %\$0.01\\
+%S3 Glacier: \$0.036\\
+%S3 Glacier Deep Archiv: \$0.06\\
+%Datenabfrage am 24.11.2
+%{\cite{AMZ09}}
+%\\
+Um konkretere Regeln zu zu definieren, ist es möglich Tags zu verwenden und somit eine Unterscheidung zwischen Objekten mit verschiedenen Tags zu treffen.
+Es ist zum Beispiel möglich, alle Objekte mit dem Tag: Dev nach 45 Tagen nach Standard Infrequent Access und nach 120 Tagen nach S3 Glacier zu verschieben.
+
+\begin{lstlisting}
+  <LifecycleConfiguration>
+  <Rule>
+    <ID>example-id</ID>
+    
+ <Filter>
+      <Tag>
+         <Key>key</Key>
+         <Value>Dev</Value>
+      </Tag>
+</Filter>
+
+    <Status>Enabled</Status>
+    <Transition>
+      <Days>45</Days>
+      <StorageClass>STANDARD_IA</StorageClass>
+    </Transition>
+    <Transition>
+      <Days>120</Days>
+      <StorageClass>GLACIER</StorageClass>
+    </Transition>
+    <Expiration>
+      <Days>365</Days>
+    </Expiration>
+  </Rule>
+</LifecycleConfiguration>
+\end{lstlisting}
+%\footnote{
+  Angepasster Code auf Basis der Beispiele auf Seite 701 in 
+Amazon Simple Storage Service - User Guide, \cite{AMZ18}
+%}
+
+Zur Veranschaulichung (der gezeigten Informationen[OHNE ODER DAMIT?]) wird davon ausgegangen, dass ein Sicherheitsunternehmen, das Sicherheitsvideos speichern muss, im Durchschnitt 120 TB an Videos speichern muss. Viele von ihnen werden mindestens 5 Jahre lang aufbewahrt, falls sie vor Gericht als Beweismittel dienen. Ungefähr 50\% der Videos werden mindestens einmal im Monat überprüft und müssen laut Gesetz sofort zugänglich sein. Die Software des Unternehmens speichert die Videos in S3-Buckets und hat eine durchschnittliche Größe von 3,4 GB.
+\\
+Im Folgenden werden die Speicherkosten für ein Szenario berechnet, bei dem nur S3 Standard verwendet wird. Als nächstes wird die Kombination von S3 Standard Infrequent Access, S3 Glacier und S3 Standard für ein Szenario betrachtet, in dem die Dateien je nach Alter verschoben werden. Im letzten Szenario müssen die Kosten für den Übergang[RICHTIGES WORT?] zwischen Speicherklassen berücksichtigt werden.
+\\
+Zur Vereinfachung der Berechnung wird angenommen, dass 20\% der Dateien in S3 Standard Infrequent Access und 30\% in S3 Glacier gespeichert werden.
+\\
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.75]{sources/Kostenvergleich_Nutzung_unt_Speicherklassen}
+  \caption[Kostenvergleich durch Nutzung von unterschiedlichen Speicherklassen]{}\label{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} 
+  Kostenvergleich durch Nutzung von unterschiedlichen Speicherklassen.  \\
+  Quelle: Eigene Darstellung. S3 Stundensätze: {\cite{AMZ09}}\\
+Der Punkt wurde als Dezimaltrennzeichen und das Komma als Tausendertrennzeichen verwendet.
+\end{figure}
+\\
+Bei der Berechnung wurden die Kosten für das Verschieben von Dateien zwischen Speicherklassen berücksichtigt. 
+Anhand der Berechnungen lässt sich erkennen, 
+
+Anhand der Berechnungen  Sie sehen, dass ein Einsparungspotenzial von rund 1.000 Dollar pro Monat besteht, indem die notwendigen Regeln aufgestellt werden, um einen Teil der Dateien in anderen Speicherklassen zu verschieben, welche niedrigere Preise bieten.
+
 %WICHTIG IST DIE GRÖSSE MEINE DATEIEN UND DIE ANZAHL.
 %weil SO WERDEN DIE PREISE FÜR VERSCHIEBUNG BERECHNET.
 %(Object size distribution )
-
 \subsubsection{Intelligent-Tiering}
-Intelligent-Tiering verschiebt Daten auf der Grundlage von Zugriffsmustern. Diese Speicherklasse ist ideal für Daten mit wechselnden oder unbekannten Zugriffsmustern. 
+Intelligent-Tiering verschiebt Dateien auf der Grundlage von Zugriffsmustern. Diese Speicherklasse ist ideal für Daten mit wechselnden oder unbekannten Zugriffsmustern. 
 Wie die Senior Product Manager für S3 Ruhi Dang erklärt, einige Unternehmen haben weder die Zeit noch die finanziellen Möglichkeiten, eine Person einzustellen, die ihre Daten sortiert und in die richtige Speicherklasse einordnet. Intelligent Auto Tiering ist eine attraktive Lösung für Unternehmen, die jährlich weniger als \$100,000 für Speicher ausgeben \footnote{\cite{AMZ16}, Minute: 21:12}.
 %Ach von Jessie Felix gesagt https://www.youtube.com/watch?v=IOT41L_adSw
 
+\autoref{fig:S3_IntLifeCycle} zeigt, wie die Dateien in Abhängigkeit davon, ob auf sie zugegriffen wurde oder nicht, verschieben werden. 
 \begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.5]{sources/S3_IntLifeCycle}
+  \includegraphics[scale=0.7]{sources/S3_IntLifeCycle}
   \caption[Funktionsweise von Intelligent-Tiering]{}\label{fig:S3_IntLifeCycle} Funktionsweise von Intelligent-Tiering\\
-  MACH DIR EINE ÄHLICHE ABER DEINES MIT ANWENDUNGSFÄLLE PRO S.KLASSE / Doppelt in Einleitung?
-  %Quelle: Eigene Darstellung. 
+  Quelle: Eigene Darstellung. 
   %{\cite{SCOUT1}}
 \end{figure}
-
-
-IDEAL FUR DATA LAKES,DATA SCIENCE /MACHINES LEARNING
-
+Wird ein Datei zu einem späteren Zeitpunkt aus der Ebene der seltenen Zugriffe aufgerufen, wird es automatisch in eine Speicherklasse der häufigen Zugriffe zurückversetzt.
 
 
 
