@@ -6,11 +6,13 @@
 \addcontentsline{toc}{subsection}{Motivation}
 %WARUM HABE ICH MICH FÜR AWS ENTSCHIEDEN?
 %Wie viele Firmen wechseln von On-Premise zu Cloud in DE jährlich?
+Die zunehmende Digitalisierung von Geschäftsmodellen, die auch durch die Corona-Pandemie vorangetrieben wird{\cite{STA3}}, lässt Cloud-basierte Applikationen an Bedeutung gewinnen. Dies wird auch von 48\% der befragten Handelsunternehmen im Jahr 2021 bestätigt{\cite{STA2}}. Als direkte Folge davon steigt die Nachfrage nach Server- und Speicherkapazität. 
+
 Amazon Web Services, kurz AWS, wurden unter anderem als Fallbeispiel für diese Arbeit ausgewählt wegen seiner frühen Präsenz (2006) als Cloudanbieter und seines großen Angebotes an Dienstleistungen, welche für zahlreiche Anwendungsfälle geeignet sind.
 \\
-Eine Recherche von Gartner positioniert AWS als Marktführer in der Magic Quadrant für Cloud-Infrastruktur und Plattform-Services 2021.
-%\footnote
-{\cite{G01}}
+%Die relevanten Cloudanbieter weltweit sind AWS, Google, Telekom und Microsoft.
+Eine Recherche von Gartner positioniert AWS als Marktführer in der Magic Quadrant\footnote{Der Magic Quadrant ist eine zweidimensionale Matrix mit vier Quadranten. Jeder Quadrant steht für einen Unternehmenstypus im Markt. Im Uhrzeigersinn von links unten beginnend sind dies: Niche Players, Challengers, Leader und Visionaries.} für Cloud-Infrastruktur und Plattform-Services 2021{\cite{G01}}.
+\\\\
 \begin{comment} GELÖSCHT, WEIL DIESE EINE BEHAUPTUNG IST (25.10.2021)
 \\\\
 Für viele Unternehmen ist eine große Herausforderung, die Kosten von Cloud-Diensten übersichtlich zu halten und Optimierungsmöglichkeit leicht zu erkennen. Zusätzlich besteht die Gefahr, unangenehme Überraschungen in einer Rechnung zu bekommen, weil keine Grenze für den Konsum von Cloud-Diensten festgelegt wurde. 
@@ -48,45 +50,28 @@ Zum Beispiel können frühzeitige Benachrichtigungen alarmieren, wenn Ressourcen
 \\
 Außerdem sollte untersucht werden, wie sie mit der richtigen Auswahl an Diensten ihre Kosten optimieren können.
 \end{flushleft}
-
-\subsection*{Fragestellung}
-\addcontentsline{toc}{subsection}{Fragestellung}
+%\subsection*{Fragestellung}
+%\addcontentsline{toc}{subsection}{Fragestellung}
 
 \begin{flushleft}
-In dieser Arbeit wird versucht, die folgenden Fragen beantworten. 
+In dieser Arbeit wird versucht zu beantworten, wie Kosten bei Cloud-Diensten überwacht werden können. Auf Grundlage dieser Information werden Optimierungsmöglichkeiten gesucht. Es wird untersucht, welche Maßnahmen nötig sind, um unerwartet hohe Kosten bei Cloud-Diensten zu vermeiden.Darüber hinaus werden Empfehlungen von Cloud-Experten berücksichtigt, um Kosten von Cloud-Diensten zu minimieren. 
+Diese Arbeit entwickelt sich am Beispiel von S3 Speichereinheiten und EC2-Instanzen. 
 \end{flushleft}
 
-%Gestaltung Seite 28
-%Buch: Die Gestaltung wiss. Arbeiten
-\begin{itemize}
-    \item
-        Wie können Kosten bei Cloud-Diensten überwacht werden und wie lassen sie sich optimieren? 
-        Am Beispiel von S3 Speichereinheiten und EC2-Instanzen.
-    \item
-        Welche Maßnahmen sind nötig, um unerwartet hohe Kosten bei Cloud-Diensten zu vermeiden.
-       %Automatisierung, Benachrichtigungen und alles damit man der nidriegte Preis bezahlt
-    \item 
-        Was kann automatisiert werden, um Kosten zu vermeiden, die Nutzer von Cloud-Diensten verursachen.  
-        % Welche Grenzen können für das Budget von Cloud-Diensten festgelegt werden?
-\end{itemize}
-%“Forschungsfrage”, “These”, “Hypothese” oder “Annahme”, alle Synonimen
-Meine Hypothese ist, dass Kosten von Cloud-Diensten unter Kontrolle gehalten und
-reduziert werden können, wenn Überwachungs- und Optimierungswerkzeuge eingesetzt werden.
-\\\\
 
 \subsection*{Zielsetzung}
 \addcontentsline{toc}{subsection}{Zielsetzung}
-
-\textbf{Daraus ergeben sich für die Arbeit die folgenden Ziele:}\\ 
-\begin{itemize}
-    \item
-        Als Erstes wird gezeigt, wie mithilfe von bestehenden Werkzeugen  die Kosten von Cloud-Diensten überwacht werden können.
-    \item
-        Als Nächstes wird anhand von Empfehlungen von Cloud-Experten identifiziert, welche Optimierungsmöglichkeiten bestehen.\\
-\end{itemize}
+Die vorliegende Arbeit betrachtet die von AWS angebotenen Überwachungswerkzeuge, um ein tiefergehendes Verständnis der Entstehung von Kosten durch die Nutzung von Cloud-Diensten zu gewährleisten. Mit den von AWS zur Verfügung gestellten Maßnahmen sollen die Nutzung und damit die Kosten von Cloud-Diensten reduziert werden.
+%\textbf{Daraus ergeben sich für die Arbeit die folgenden Ziele:}%\\ 
+%\%begin{itemize}
+ %   \item
+ %       Als Erstes wird gezeigt, wie mithilfe von bestehenden %Werkzeugen  die Kosten von Cloud-Diensten überwacht %werden können.
+  %  \item
+ %       Als Nächstes wird anhand von Empfehlungen von Cloud-Experten identifiziert, welche Optimierungsmöglichkeiten bestehen.\\
+%\end{itemize}
 
 %Die vorgestellten Werkzeuge werden auf eine Testumgebung eingesetzt und deren Auswirkungen im Bezug auf die Kosten %bewertet.\\
-
+\begin{comment}
 \subsection*{Einschränkungen}
 \addcontentsline{toc}{subsection}{Einschränkungen}
 
@@ -97,11 +82,10 @@ An zweiter Stelle stehen S3-Speichereinheiten, weil sie einen erheblichen Teil d
 %Nach Angaben von Amazon Web Services ist es möglich bis zu 90% für EC2 zu sparen, wenn EC2 Spot-Instanzen benutzt werden. 
 %Eine Preisreduzierung für Speichereinheiten ist möglich, wenn die richtige Speicherart ausgewählt wird. 
 {\cite{AMZ08,AMZ09}} 
-% und x\% für DB 
 \\
 Diese Arbeit legt den Fokus auf die Optimierung der oben genannten Dienste.
 Als Überwachungswerkzeuge für die Kosten werden die AWS CloudWatch, der AWS Cost-Explorer und der AWS Trusted Advisor untersucht. 
-
+\end{comment}
 \subsection*{Struktur der Arbeit}
 \addcontentsline{toc}{subsection}{Struktur der Arbeit}
 

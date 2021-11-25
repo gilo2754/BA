@@ -2,8 +2,8 @@
 %Seite 163
 % Wie werden die Informationen die Benutzer gezeigt und wie können sie diese manipulieren
 
-Die mit den Überwachungswerkzeuge gesammelte Informationen, bilden die Grundlage für die Optimierungsmaßnahmen.[HIER KONKRETER WERDEN]
-In diesem Kapitel werden die mit Hilfe der Werkzeuge gewonnenen Informationen genutzt[INOF X FUER WERKZEUG 1...], um über die am besten geeigneten Optimierungsmaßnahmen zu entscheiden.[VERSTÄNDLICH?]
+Die mit den Überwachungswerkzeuge gesammelte Informationen, bilden die Grundlage für die Optimierungsmaßnahmen.[KONKRETER WERDEN]
+In diesem Kapitel werden die mit Hilfe der Werkzeuge gewonnenen Informationen genutzt[INFO X FUER WERKZEUG 1...], um über die am besten geeigneten Optimierungsmaßnahmen zu entscheiden.
 %La mayoria de las medidas de opmimizacion se centran en las instancias EC2, pues como antes mencionado representan la gran mayoria de los servicios que comprenden los gastos en nuestras facturas.
 
 \subsection{EC2 Automatische Skalierung}
@@ -33,8 +33,7 @@ Die graue Zone entspricht ungenutzte Rechenkapazität und beträgt etwa ein Drit
 
 \subsubsection{Zeitgesteuerte Skalierung}
 %WE für Dev und Beta
-\textbf{Nicht produktive Umgebungen??}
-
+\textbf{Nicht produktive Umgebungen}\\
 In einem On-Premise-System macht es möglicherweise keinen Unterschied bei den Kosten, wenn die Instanzen aktiv bleiben. 
 Im Gegensatz dazu ist es bei On-Demand-Zahlungsmodelle sinnvoll Zeiträume zu definieren, in denen Instanzen abgeschaltet werden können, um den Verbrauch an Ressourcen zu reduzieren.
 
@@ -57,11 +56,12 @@ Der Stundensatz wurde am 23.11.2021 mit dem AWS Pricing Calculator{\cite{AMZ17} 
 %HIER LESEN {\cite{CCB}, Seite 153}
 %Weihnachten und BackFriday
 \\\\
-\textbf{Produktive Umgebungen??}\\
+\textbf{Produktive Umgebungen}\\
 Wenn der Zeitpunkt einer hohen Nachfrage bekannt ist, kann eine Erhöhung der Rechnerkapazität geplant werden, um Überlastungen zu vermeiden.
 
 Beispiele für solche Zeiträume sind Weihnachten, Cyber-Monday und Black Friday. 
-[STATISTIK?https://de.statista.com/statistik/daten/studie/1076963/umfrage/ausgaben-an-black-friday-und-cyber-monday-in-deutschland/]
+[STATISTIK und ERKLÄTUNG t.ly/0Tth]
+%https://de.statista.com/statistik/daten/studie/1076963/umfrage/ausgaben-an-black-friday-und-cyber-monday-in-deutschland/]
 
 \subsubsection{Dynamische automatische Skalierung / Dynamisches Auto Scaling}
 %Intro mit Beispiel
@@ -77,40 +77,38 @@ Beispiele für eine veränderte Nutzung von Applikationen finden sich bei Tinder
   \\Mit Touches sind die Anzahl der Klicks, Swipes oder einfachen Interaktionen mit der Applikation gemeint.
 \end{figure}
 
-Weitere Beispiele für solche Zeitpunkte sind das Feierabend, Mittagspause und beim Abendessen, wenn es um Applikationen für Unterhaltung und Online-Shopping geht[ZITAT/BELEG?].
-\\
+%Weitere Beispiele für solche Zeitpunkte sind das Feierabend, Mittagspause und beim Abendessen, wenn es um Applikationen für Unterhaltung und Online-Shopping geht[ZITAT/BELEG?].
+%\\
 %HIER erkläre ich wie genau AutoScaling funktioniert und was dafür nötig ist (Metriken)
-Die für die automatische Skalierung erforderlichen Metriken wurden bereits im Kapitel Überwachungswerkzeuge erwähnt. Eine der Metriken, die von Optimierungsexperten/Cloudexperten [WELCHES?]benutzt wird, ist die gesamte CPU-Auslastung[BELEG]. 
+Die für die automatische Skalierung erforderlichen Metriken wurden bereits im Kapitel Überwachungswerkzeuge erwähnt. Eine der Metriken, die von Cloudexperten [Telefonat mit Deepak von der Einheit CIS[Cloud Capgemini]]benutzt wird, ist die gesamte CPU-Auslastung. 
 Um die CPU-Auslastung als Metrik zu verwenden, werden mindestens zwei Schwellenwerte definiert. Eine für die Erhöhung von Rechenkapazität, Scale-Out genannt und eine für das Verringern von Rechenkapazität bezeichnet als Scale-In.
 
 \subsubsection{ Manual Scaling }
-CHECK/23.11\\
+%CHECK/23.11\\
 Für die Konfiguration einer Auto-Scaling-Gruppe werden die minimale, maximale und gewünschte Anzahl von Instanzen definiert. Wenn aufgrund von Bedingungen, die in der Konfiguration einer Auto-Scaling-Gruppe nicht berücksichtigt wurden mehr Rechenkapazität benötigt wird, ist es möglich, die Rechenkapazität manuell zu steuern. Dies geschieht, ohne dass die aktiven Instanzen unterbrochen werden.
 
-\subsubsection{Voraussagende Skalierung / Predective Scaling ??}
+\subsubsection{Predective Scaling}%Voraussagende Skalierung / 
 Voraussagende Skalierung oder Predictive Scaling auf Englisch, nutzt maschinelles Lernen, um den Kapazitätsbedarf auf der Grundlage historischer Daten von CloudWatch vorherzusagen. Mit Hilfe der Predictive Scaling kann es die Kapazität vor der erwarteten Auslastung bereitstellen, im Gegensatz zur dynamischen Skalierung, die reaktiv ist. 
 Für Instanzen, die viel Zeit für die Initialisierung benötigen kann die Zeit zwischen dem Beginn des Nachfrageanstiegs und der Initialisierung der Instanz vermieden oder verkürzt werden.
-[DIAGRAMM]
+[EIGENES DIAGRAMM]
 Anders als Zeitgesteuerte Skalierung ist es nicht notwendig, die Verhaltensmuster der Anwendungen zu analysieren.
-[SOLLTE DAS ZITIERT WERDEN?]
+%[SOLLTE DAS ZITIERT WERDEN?]
 %https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-dg.pdf#ec2-auto-scaling-predictive-scaling
-
-
-
 
 \subsection{S3 Optimierung}
 
-\subsubsection{Richtige Speicherklassen wählen}
+\subsubsection{Die richtige Speicherklassen wählen}
 Um die Speicherkosten zu optimieren, ist es daher notwendig, die richtige Speicherklassen für die jeweilige Applikation wählen. Um die richtige Wahl zu treffen, müssen die Anforderungen der Applikation verstanden werden. Klinische Patientendaten und eine Instagram-Story unterscheiden sich in der Zugriffshäufigkeit auf diese Daten und in der Länge der Aufbewahrungszeit[PASSENDES WORT?].
 
 Amazon bietet verschiedene Speicherklassen an, die sich im Preis und in der Häufigkeit des Zugriffs auf die Objekte unterscheiden. Objekte sind in Behältern enthalten, die Buckets genannt werden.
 [ABB Speicherklasse ->Eigenschaften der Anwendung?]
-Wenn bekannt ist, dass die Daten über einen längeren Zeitraum gespeichert werden müssen. Falls die Anforderungen der Applikation dies vorschreiben oder für den Fall dass, per Gesetz auf die Informationen in der Zukunft zugegriffen werden muss.
-\\
+Wenn Daten über einen längeren Zeitraum gespeichert werden müssen, weil die Anforderungen der Applikation dies vorschreiben oder für den Fall dass, per Gesetz auf die Informationen in der Zukunft zugegriffen werden muss.
+%\\
+[UMFORMULIEREN]
 Zusätzlich, wenn auf die Daten nicht häufig zugegriffen wird, sind Glacier und Glacier Deep Archive passende Speicherklassen. Die Entscheidung ist jedoch nicht immer so einfach und die Umstände können sich schnell ändern. Hinzu kommt, dass nicht alle Daten in einer Applikation immer die gleichen Zugriffsmuster haben. Für solche Fälle ist es möglich, Regeln zu definieren, die Dateien zwischen verschiedenen Speicherklassen abhängig von ihrem Alter übertragen.
 
-\subsubsection{Lebenszyklus-Konfiguration/Lifecycle Policies}
-Eine S3-Lebenszykluskonfiguration beschreibt in einer XML-Datei Regeln und Aktionen für die Manipulation von Objekten.
+\subsubsection{Lebenszyklus-Konfiguration}
+Eine S3-Lebenszykluskonfiguration oder lifecycle policy beschreibt in einer XML-Datei Regeln und Aktionen für die Manipulation von Objekten.
 \\\\
 Aktionen wie das Verschieben von Objekten verursachen Kosten. Einige von ihnen werden in \autoref{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} für die Berechnung der Speicherkosten verwendet.
 \\
@@ -149,11 +147,10 @@ Es ist zum Beispiel möglich, alle Objekte mit dem Tag: Dev nach 45 Tagen nach S
     </Expiration>
   </Rule>
 </LifecycleConfiguration>
-\end{lstlisting}
-%\footnote{
-  Angepasster Code auf Basis der Beispiele auf Seite 701 in 
+
+Angepasster Code auf Basis der Beispiele auf Seite 701 in 
 Amazon Simple Storage Service - User Guide, \cite{AMZ18}
-%}
+\end{lstlisting}
 
 Zur Veranschaulichung (der gezeigten Informationen[OHNE ODER DAMIT?]) wird davon ausgegangen, dass ein Sicherheitsunternehmen, das Sicherheitsvideos speichern muss, im Durchschnitt 120 TB an Videos speichern muss. Viele von ihnen werden mindestens 5 Jahre lang aufbewahrt, falls sie vor Gericht als Beweismittel dienen. Ungefähr 50\% der Videos werden mindestens einmal im Monat überprüft und müssen laut Gesetz sofort zugänglich sein. Die Software des Unternehmens speichert die Videos in S3-Buckets und hat eine durchschnittliche Größe von 3,4 GB.
 \\
@@ -182,7 +179,7 @@ Anhand der Berechnungen  Sie sehen, dass ein Einsparungspotenzial von rund 1.000
 Intelligent-Tiering verschiebt Dateien auf der Grundlage von Zugriffsmustern. Diese Speicherklasse ist ideal für Daten mit wechselnden oder unbekannten Zugriffsmustern. 
 Wie die Senior Product Manager für S3 Ruhi Dang erklärt, einige Unternehmen haben weder die Zeit noch die finanziellen Möglichkeiten, eine Person einzustellen, die ihre Daten sortiert und in die richtige Speicherklasse einordnet. Intelligent Auto Tiering ist eine attraktive Lösung für Unternehmen, die jährlich weniger als \$100,000 für Speicher ausgeben \footnote{\cite{AMZ16}, Minute: 21:12}.
 %Ach von Jessie Felix gesagt https://www.youtube.com/watch?v=IOT41L_adSw
-
+\\\\
 \autoref{fig:S3_IntLifeCycle} zeigt, wie die Dateien in Abhängigkeit davon, ob auf sie zugegriffen wurde oder nicht, verschieben werden. 
 \begin{figure}[h!]
   \centering
@@ -207,7 +204,7 @@ Wird ein Datei zu einem späteren Zeitpunkt aus der Ebene der seltenen Zugriffe 
 
 
 
-
+%COMMENTS
 \begin{comment}
 \subsubsection{Automatisierung mit Lambda Funktionen}
 Grund: einmal programmiert, funktioniert es für immer.
