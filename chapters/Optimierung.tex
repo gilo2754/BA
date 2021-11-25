@@ -41,7 +41,7 @@ Im Gegensatz dazu ist es bei On-Demand-Zahlungsmodelle sinnvoll Zeiträume zu de
 Bei Systemen, die nur tagsüber und unter der Woche in Betrieb sein müssen, kann dies eine Einsparung von zu 67\% bedeuten.  Wenn zum Beispiel Test- und Beta-Umgebungen von Montag bis Freitag von 7 bis 20 Uhr laufen würden.
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.7]{sources/Einsparung_Zeitgesteuerte_Skalierung}
+  \includegraphics[scale=0.6]{sources/Einsparung_Zeitgesteuerte_Skalierung}
   \caption[Berechnung für ein nicht produktives Umgebung mit Zeitgesteuerte Skalierung]{}
   \label{fig:Einsparung_Zeitgesteuerte_Skalierung} Berechnung für ein nicht-produktive Umgebung mit Zeitgesteuerte Skalierung. \\
   Quelle: Eigene Darstellung. 
@@ -70,7 +70,7 @@ Es kann jedoch zu schnelle und kontinuierliche Änderungen im Verhalten von Appl
 Beispiele für eine veränderte Nutzung von Applikationen finden sich bei Tinder und OkCupid, zwei der größten Dating-Applikationen in den vereinigten staaten. Die \autoref{fig:Use_by_hour_netflix_OkCupid_tinder} zeigt die Nutzungsspitzen bei den genannten Applikationen. Dieses wechselnde Verhalten wirkt sich unmittelbar auf die zu verschiedenen Tageszeiten benötigte Rechenkapazität aus und macht eine dynamische Skalierung der Rechenkapazität erforderlich, wenn das Ziel darin besteht, die Verschwendung von Ressourcen zu vermeiden oder zu verringern. 
 \begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.33]{sources/Use_by_hour_netflix_OkCupid_tinder}
+  \includegraphics[scale=0.4]{sources/Use_by_hour_netflix_OkCupid_tinder}
   \caption[Nutzung von Tinder, OkCupid und Netflix pro Stunde]{}\label{fig:Use_by_hour_netflix_OkCupid_tinder} Nutzung von Tinder, OkCupid und Netflix pro Stunde.  
   %Quelle: Eigene Darstellung. 
   {\cite{SCOUT1}}
@@ -83,7 +83,8 @@ Weitere Beispiele für solche Zeitpunkte sind das Feierabend, Mittagspause und b
 Die für die automatische Skalierung erforderlichen Metriken wurden bereits im Kapitel Überwachungswerkzeuge erwähnt. Eine der Metriken, die von Optimierungsexperten/Cloudexperten [WELCHES?]benutzt wird, ist die gesamte CPU-Auslastung[BELEG]. 
 Um die CPU-Auslastung als Metrik zu verwenden, werden mindestens zwei Schwellenwerte definiert. Eine für die Erhöhung von Rechenkapazität, Scale-Out genannt und eine für das Verringern von Rechenkapazität bezeichnet als Scale-In.
 
-\subsubsection{ Manual Scaling CHECK/23.11}
+\subsubsection{ Manual Scaling }
+CHECK/23.11\\
 Für die Konfiguration einer Auto-Scaling-Gruppe werden die minimale, maximale und gewünschte Anzahl von Instanzen definiert. Wenn aufgrund von Bedingungen, die in der Konfiguration einer Auto-Scaling-Gruppe nicht berücksichtigt wurden mehr Rechenkapazität benötigt wird, ist es möglich, die Rechenkapazität manuell zu steuern. Dies geschieht, ohne dass die aktiven Instanzen unterbrochen werden.
 
 \subsubsection{Voraussagende Skalierung / Predective Scaling ??}
