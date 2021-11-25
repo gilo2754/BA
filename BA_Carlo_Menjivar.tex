@@ -173,7 +173,7 @@ plainpages=false,hypertexnames=false,citecolor=black, urlcolor=blue]{hyperref}
       \textbf{Zweitprüfer:} & Thomas Raser\\
     \end{tabular}
     \vspace{1cm}
-    \\Gummersbach, im Feb<Monat der Abgabe>
+    \\Gummersbach, 1x Feb 2021
   \end{center}
 \end{titlepage}
 \newpage
@@ -210,22 +210,15 @@ plainpages=false,hypertexnames=false,citecolor=black, urlcolor=blue]{hyperref}
 \input{chapters/Abkürzungsverzeichnis}
 \newpage
 
-% INFO: Querverweise auf Gliederungselemente, Abbildungen 
-%       & Tabellen setzen:
-%
-% Voraussetzung: Gesetzte Referenzmarke mit dem Befehl: \label{marke}
-% 
-% Referenzierung erfolgt dann mittels dem Befehl:
-% \ref{marke}
-
-\section{Einleitung}\label{kap_einleitung}
+\section*{Einleitung}\label{kap_einleitung}
+\addcontentsline{toc}{section}{Einleitung} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen
 \input{chapters/Einleitung}
 \newpage
 
+%Eizelne Kapitel mit Nummerierung
 \section{Grundlagen}\label{kap_grundlagen}
 \input{chapters/Grundlagen}
 
-%Eizelne Kapitel
 \section{Zahlungsmodelle}\label{kap_zahlungsmodelle}
 \input{chapters/Zahlungsmodelle}
 \newpage
@@ -238,7 +231,8 @@ plainpages=false,hypertexnames=false,citecolor=black, urlcolor=blue]{hyperref}
 \input{chapters/Optimierung}
 \newpage
 
-\section{Zusammenfassung und Ausblick}\label{kap_zusammfAusbl}
+\section*{Zusammenfassung und Ausblick}\label{kap_zusammfAusbl}
+\addcontentsline{toc}{section}{Zusammenfassung und Ausblick} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen
 \input{chapters/Zusammenfassung}
 \newpage
 

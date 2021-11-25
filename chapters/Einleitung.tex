@@ -1,11 +1,12 @@
 %Motivation und Ziele als subsecion?
 %WEITERE QUELLE Für mOTIVATION
 %https://www.gartner.com/smarterwithgartner/4-trends-impacting-cloud-adoption-in-2020
-%\subsection{Einführung in das Thema (Motivation, zentrale Begriffe etc.)}
-\subsection{Motivation}
+%\subsection*{Einführung in das Thema (Motivation, zentrale Begriffe etc.)}
+\subsection*{Motivation}
+\addcontentsline{toc}{subsection}{Motivation}
 %WARUM HABE ICH MICH FÜR AWS ENTSCHIEDEN?
 %Wie viele Firmen wechseln von On-Premise zu Cloud in DE jährlich?
-Amazon Web Services, kurz AWS, wurde unter anderem für diese Arbeit ausgewählt wegen seiner frühen Präsenz (2006) als Cloudanbieter und seines großen Angebotes an Dienstleistungen, welche für zahlreiche Anwendungsfälle geeignet sind.
+Amazon Web Services, kurz AWS, wurden unter anderem als Fallbeispiel für diese Arbeit ausgewählt wegen seiner frühen Präsenz (2006) als Cloudanbieter und seines großen Angebotes an Dienstleistungen, welche für zahlreiche Anwendungsfälle geeignet sind.
 \\
 Eine Recherche von Gartner positioniert AWS als Marktführer in der Magic Quadrant für Cloud-Infrastruktur und Plattform-Services 2021.
 %\footnote
@@ -21,7 +22,8 @@ Kostenoptimierung für Cloud-Dienste ist ein wichtiger Punkt, da man ohne Optimi
     \footnote{{\cite{CCB}}, Seite 152}
 \end{quote}
 
-\subsection{Problemstellung}
+\subsection*{Problemstellung}
+\addcontentsline{toc}{subsection}{Problemstellung}
 
 %Wenn ein Hotel die Vorteile von dem Cloud-Computing hätte, dann könnte dieses folgendermaßen funktionieren:
 \begin{comment}
@@ -33,7 +35,7 @@ Normalerweise bräuchte man eine große Investition zu machen, um solche kurzfri
 Die Verwendung von Cloud-Diensten bringt viele Vorteile mit sich. Zum Beispiel kurzfristige Erhöhung oder Verringerung der Speicher- und Rechenkapazität, sowie Zugriff auf unterschiedliche Speicherarten, die genau an individuelle Anwendungsfälle angepasst sind. All diese Lösungen sind in wenigen Minuten einsatzfertig. 
 \\\\
 %Viele Unternehmen befürchten jedoch, dass der Wechsel von On-Premise zu On-Demand zu hohen Kosten führen könnte.
-In einer Umfrage haben circa 50\% der Unternehmen die Verwaltung der Kosten für den Betrieb von Cloud-Workloads als großes Hindernis genannt. Mehr als die Hälfte der Befrachter haben geäußert, Schwierigkeiten zu haben, alle Kosten für Cloud-Workloads zu rechtfertigen. 
+In einer Umfrage haben circa 50\% der Unternehmen die Verwaltung der Kosten für den Betrieb von Cloud-Workloads als großes Hindernis genannt. Mehr als die Hälfte der Befragten haben geäußert, dass sie Schwierigkeiten haben, alle Kosten für Cloud-Workloads zu rechtfertigen.
 \begin{quote}
     „In its Stratecast Predictions 2018, Frost \& Sullivan noted that 53\% of IT leaders surveyed cited “managing costs to run cloud workloads” as a huge obstacle, and over 50\% have difficulty justifying the expenses of some public cloud workloads.“  
     {\cite{SP1}}
@@ -47,7 +49,9 @@ Zum Beispiel können frühzeitige Benachrichtigungen alarmieren, wenn Ressourcen
 Außerdem sollte untersucht werden, wie sie mit der richtigen Auswahl an Diensten ihre Kosten optimieren können.
 \end{flushleft}
 
-\subsection{Fragestellung}
+\subsection*{Fragestellung}
+\addcontentsline{toc}{subsection}{Fragestellung}
+
 \begin{flushleft}
 In dieser Arbeit wird versucht, die folgenden Fragen beantworten. 
 \end{flushleft}
@@ -70,7 +74,9 @@ Meine Hypothese ist, dass Kosten von Cloud-Diensten unter Kontrolle gehalten und
 reduziert werden können, wenn Überwachungs- und Optimierungswerkzeuge eingesetzt werden.
 \\\\
 
-\subsection{Zielsetzung}
+\subsection*{Zielsetzung}
+\addcontentsline{toc}{subsection}{Zielsetzung}
+
 \textbf{Daraus ergeben sich für die Arbeit die folgenden Ziele:}\\ 
 \begin{itemize}
     \item
@@ -81,8 +87,10 @@ reduziert werden können, wenn Überwachungs- und Optimierungswerkzeuge eingeset
 
 %Die vorgestellten Werkzeuge werden auf eine Testumgebung eingesetzt und deren Auswirkungen im Bezug auf die Kosten %bewertet.\\
 
-\subsection{Einschränkungen}
-Der Schwerpunkt dieser Arbeit liegt auf EC2-Instanzen, da diese in der Regel den größten Anteil an der Rechnung ausmacht.
+\subsection*{Einschränkungen}
+\addcontentsline{toc}{subsection}{Einschränkungen}
+
+Der Schwerpunkt dieser Arbeit liegt auf EC2-Instanzen, da diese in der Regel den größten Anteil an der Rechnung ausmachen.
 An zweiter Stelle stehen S3-Speichereinheiten, weil sie einen erheblichen Teil der Kosten darstellen.
 %STATISTEN DIE DAS BELEGEN?
 
@@ -94,7 +102,9 @@ An zweiter Stelle stehen S3-Speichereinheiten, weil sie einen erheblichen Teil d
 Diese Arbeit legt den Fokus auf die Optimierung der oben genannten Dienste.
 Als Überwachungswerkzeuge für die Kosten werden die AWS CloudWatch, der AWS Cost-Explorer und der AWS Trusted Advisor untersucht. 
 
-\subsection{Struktur der Arbeit}
+\subsection*{Struktur der Arbeit}
+\addcontentsline{toc}{subsection}{Struktur der Arbeit}
+
 %Schlüsselbegriffe
 %Zunächst wird es eine kurze Einführung in die relevanten Begriffe geben, die für die zu untersuchenden AWS-Cloud-Services wichtig sind.
 

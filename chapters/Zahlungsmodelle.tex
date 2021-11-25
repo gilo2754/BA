@@ -2,12 +2,15 @@ Die Nutzung von EC2-Instanzen ist mit einem Zahlungsmodell verbunden. Die Wahl d
 %EC2 and RDS(DB) spend are often on of the main portions of your overall AWS Bill t.ly/Mqwn
 Die von Amazon Web Services angebotenen Zahlungsmodelle werden im Folgenden dargestellt.
 \\\\
-Das On-Demand-Modell  %erfordert
-beinhaltet keine langfristigen Verpflichtungen, sie ist daher die teuerste Alternative, die auf Stundenbasis berechnet wird. Die Modelle Saving Plans und Reserved Instances erfordern den Abschluss von Verträgen über 1 oder 3 Jahre, um günstige Preise zu erhalten. EC2-Spot-Instanzen sind das billigste Modell , haben aber den Nachteil, dass ihre Verfügbarkeit nicht immer garantiert ist.
+Das On-Demand-Modell beinhaltet keine langfristigen Verpflichtungen, es ist daher die teuerste Alternative, die auf Stundenbasis berechnet wird. Die Modelle Saving Plans und Reserved Instances erfordern den Abschluss von Verträgen über ein oder drei Jahre, um günstige Preise zu erhalten. EC2-Spot-Instanzen sind das kostengünstigste Modell , haben aber den Nachteil, dass ihre Verfügbarkeit nicht immer garantiert ist.
 \\\\
-Jedes Zahlungsmodell hat seine Vor- und Nachteile und eignet sich für unterschiedliche Anwendungsfälle. Gute Ergebnisse können auch durch die Kombination mehrerer Zahlungsmodelle erzielt werden[SAG DER CLOUD-EXPERT/FIRMA]. Dies wird in Unterkapitel \ref{sssec:num3.4} behandelt.[WIRD ES?]
+Jedes Zahlungsmodell hat seine Vor- und Nachteile und eignet sich für unterschiedliche Anwendungsfälle. Gute Ergebnisse können auch durch die Kombination mehrerer Zahlungsmodelle erzielt werden[SAG DER CLOUD-EXPERT/FIRMA]. Dies wird in Unterkapitel \ref{sssec:num2.4} behandelt.[WIRD ES?]
 \\\\
-In dieser Arbeit wird nicht darauf eingegangen, wie die richtige Server-Instanz ausgewählt werden sollte, da die Auswahl von individuellen Anforderungen abhängt, die von Fall zu Fall unterschiedlich sind. Im Allgemeinen, um die beste Leistung zu erzielen, wird empfohlen, Instanzen so nahe wie möglich an den anderen Ressourcen, mit denen sie kommunizieren werden, und an der Mehrzahl der Endnutzer, die die Dienste in Anspruch nehmen werden, zu platzieren.
+In dieser Arbeit wird nicht darauf eingegangen, wie die richtige Server-Instanz ausgewählt werden sollte, da die Auswahl von individuellen Anforderungen abhängt, die von Fall zu Fall unterschiedlich sind. 
+
+Im Allgemeinen wird empfohlen Instanzen so nahe wie möglich an den Ressourcen\footnote{Mit Ressourcen sind Cloud-Dienste gemeint}[ERKLÄRUNG NÖTIG?], mit denen sie kommunizieren werden, zu platzieren. 
+Die beste Leistung wird außerdem angestrebt, indem sich diese Instanzen in räumlicher Nähe zur Mehrzahl der Endnutzer, befinden. 
+
 %Vor- und Nachteile noch tabellarisch aufzulisten??
 %https://youtu.be/Q5wSvUVPyYY?t=678
 
@@ -27,7 +30,7 @@ Hier einige Beispiele von EC2-Instanzen im On-Demand Zahlungsmodell.
 
   WARUM IST DIESE ABB.?
 
-Der Preis für dieses Modell variiert je nach Instanztyp, Region und der übertragenen Datenmenge. 
+Der Preis für dieses Modell variiert je nach Instanz Typ, Region und der übertragenen Datenmenge. 
 Die aktuellen Preise für die verschiedenen Regionen sind auf der Amazon-Website in der Sektion EC2 - On-Demand-Preise\footnote{https://aws.amazon.com/de/ec2/pricing/on-demand/} zu finden.
 In der \autoref{fig:OnDemand_Preise} werden die für die Region Ohio verfügbaren Linux-Instanzen gezeigt. Es ist zu beachten, dass Instanzen mit denselben Eigenschaften, aber in verschiedenen Regionen, unterschiedliche Preise haben können.
 
@@ -99,7 +102,7 @@ Daher sollten kritische Anwendungen nicht nur mit EC2 Spot-Instanzen laufen.
 %https://aws.amazon.com/de/ec2/spot/pricing/
 
 %2 OPTIONEN: LOWEST PRICE OR DIVERSIFIED ACROSS n POOLS TO AVOID DOWNS https://www.linkedin.com/learning/aws-automation-and-optimization/request-spot-instances-part-2?autoAdvance=true&autoSkip=true&autoplay=true&resume=false&u=79182202
-\subsection{Wann welches Zahlungsmodell?} \label{sssec:num3.4}
+\subsection{Wahl des Zahlungsmodells} \label{sssec:num2.4}
 %Vor- und Nachteile? 
 Die folgende Tabelle fasst die Eigenschaften der Zahlungsmodelle für Instanzen zusammen und listet typische Applikationen je nach Zahlungsmodell auf.
 Abb. AKTUELL?
