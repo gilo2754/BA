@@ -1,3 +1,12 @@
+Isa Kommentare 26.11:
+-Ich glaube es waere besser eine klarere gliederung der einzelnen kapitel in einleitung, haupttext und Fazit zu haben
+Ist das jetzt nicht gemacht? wenn nicht, wie kann ich das machen?
+
+
+
+
+
+
 Was macht jedes Werkzeug?
 https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html
 

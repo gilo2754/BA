@@ -24,7 +24,7 @@ Die graue Zone entspricht ungenutzte Rechenkapazität und beträgt etwa ein Drit
     \includegraphics[scale=0.5]{sources/AutoCap Unused Capacity}
     \caption[Ungenutzte Rechenkapazität ohne automatische Skalierung]{}
     \label{fig:AutoSca_Unused_Capacity} Ungenutzte Rechenkapazität ohne automatische Skalierung. \\
-    Quelle: Eigene Darstellung. 
+    Quelle: Eigene Darstellung mit [fiktiven?] Angaben. 
     %\footnote{\cite{AMZ01}}
   \end{figure}
 
@@ -90,7 +90,7 @@ Für die Konfiguration einer Auto-Scaling-Gruppe werden die minimale, maximale u
 \subsubsection{Predective Scaling}%Voraussagende Skalierung / 
 Voraussagende Skalierung oder Predictive Scaling auf Englisch, nutzt maschinelles Lernen, um den Kapazitätsbedarf auf der Grundlage historischer Daten von CloudWatch vorherzusagen. Mit Hilfe der Predictive Scaling kann es die Kapazität vor der erwarteten Auslastung bereitstellen, im Gegensatz zur dynamischen Skalierung, die reaktiv ist. 
 Für Instanzen, die viel Zeit für die Initialisierung benötigen kann die Zeit zwischen dem Beginn des Nachfrageanstiegs und der Initialisierung der Instanz vermieden oder verkürzt werden.
-[EIGENES DIAGRAMM]
+[(EIGENES) DIAGRAMM]
 Anders als Zeitgesteuerte Skalierung ist es nicht notwendig, die Verhaltensmuster der Anwendungen zu analysieren.
 %[SOLLTE DAS ZITIERT WERDEN?]
 %https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-dg.pdf#ec2-auto-scaling-predictive-scaling
@@ -153,7 +153,7 @@ Amazon Simple Storage Service - User Guide, \cite{AMZ18}
 \end{lstlisting}
 
 Zur Veranschaulichung (der gezeigten Informationen[OHNE ODER DAMIT?]) wird davon ausgegangen, dass ein Sicherheitsunternehmen, das Sicherheitsvideos speichern muss, im Durchschnitt 120 TB an Videos speichern muss. Viele von ihnen werden mindestens 5 Jahre lang aufbewahrt, falls sie vor Gericht als Beweismittel dienen. Ungefähr 50\% der Videos werden mindestens einmal im Monat überprüft und müssen laut Gesetz sofort zugänglich sein. Die Software des Unternehmens speichert die Videos in S3-Buckets und hat eine durchschnittliche Größe von 3,4 GB.
-\\
+\\\\
 Im Folgenden werden die Speicherkosten für ein Szenario berechnet, bei dem nur S3 Standard verwendet wird. Als nächstes wird die Kombination von S3 Standard Infrequent Access, S3 Glacier und S3 Standard für ein Szenario betrachtet, in dem die Dateien je nach Alter verschoben werden. Im letzten Szenario müssen die Kosten für den Übergang[RICHTIGES WORT?] zwischen Speicherklassen berücksichtigt werden.
 \\
 Zur Vereinfachung der Berechnung wird angenommen, dass 20\% der Dateien in S3 Standard Infrequent Access und 30\% in S3 Glacier gespeichert werden.
@@ -168,13 +168,12 @@ Der Punkt wurde als Dezimaltrennzeichen und das Komma als Tausendertrennzeichen 
 \end{figure}
 \\
 Bei der Berechnung wurden die Kosten für das Verschieben von Dateien zwischen Speicherklassen berücksichtigt. 
-Anhand der Berechnungen lässt sich erkennen, 
-
-Anhand der Berechnungen  Sie sehen, dass ein Einsparungspotenzial von rund 1.000 Dollar pro Monat besteht, indem die notwendigen Regeln aufgestellt werden, um einen Teil der Dateien in anderen Speicherklassen zu verschieben, welche niedrigere Preise bieten.
+Anhand der Berechnungen lässt sich erkennen, dass ein Einsparungspotenzial von rund 1.000 Dollar pro Monat besteht, indem die notwendigen Regeln aufgestellt werden, um einen Teil der Dateien in anderen Speicherklassen zu verschieben, welche niedrigere Preise bieten.
 
 %WICHTIG IST DIE GRÖSSE MEINE DATEIEN UND DIE ANZAHL.
 %weil SO WERDEN DIE PREISE FÜR VERSCHIEBUNG BERECHNET.
 %(Object size distribution )
+\newpage
 \subsubsection{Intelligent-Tiering}
 Intelligent-Tiering verschiebt Dateien auf der Grundlage von Zugriffsmustern. Diese Speicherklasse ist ideal für Daten mit wechselnden oder unbekannten Zugriffsmustern. 
 Wie die Senior Product Manager für S3 Ruhi Dang erklärt, einige Unternehmen haben weder die Zeit noch die finanziellen Möglichkeiten, eine Person einzustellen, die ihre Daten sortiert und in die richtige Speicherklasse einordnet. Intelligent Auto Tiering ist eine attraktive Lösung für Unternehmen, die jährlich weniger als \$100,000 für Speicher ausgeben \footnote{\cite{AMZ16}, Minute: 21:12}.
@@ -185,7 +184,7 @@ Wie die Senior Product Manager für S3 Ruhi Dang erklärt, einige Unternehmen ha
   \centering
   \includegraphics[scale=0.7]{sources/S3_IntLifeCycle}
   \caption[Funktionsweise von Intelligent-Tiering]{}\label{fig:S3_IntLifeCycle} Funktionsweise von Intelligent-Tiering\\
-  Quelle: Eigene Darstellung. 
+  Quelle: Eigene Darstellung
   %{\cite{SCOUT1}}
 \end{figure}
 Wird ein Datei zu einem späteren Zeitpunkt aus der Ebene der seltenen Zugriffe aufgerufen, wird es automatisch in eine Speicherklasse der häufigen Zugriffe zurückversetzt.

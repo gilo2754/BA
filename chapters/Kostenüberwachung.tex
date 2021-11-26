@@ -1,15 +1,25 @@
 %(CHECK Version/Carlo 21.11)\\
-In diesem Kapitel werden Werkzeuge vorgestellt, mit denen Budgets mit Alarmen erstellt werden, diese informieren, wenn ein bestimmter Prozentsatz des festgelegten Budgets überschritten wurde. Die Erstellung von Budgets trägt zu einer besseren Planung-/Prognose- und Kostenkontrolle. [ZITAT?]
+In diesem Kapitel werden Werkzeuge vorgestellt, mit denen Budgets mit Alarmen erstellt werden, diese informieren die Nutzer, wenn ein bestimmter Prozentsatz des festgelegten Budgets überschritten wurde. Die Erstellung von Budgets trägt zu einer besseren Planung-/Prognose- und Kostenkontrolle. [WEIL, Cost Controlling]
 Die Einstellung von Alarmen für relevante Ereignisse wie im Fall einer Budgetüberschreitung oder dem Start einer Instanz[IST GUT WEIL/TRÄG ZU...BEI].
 
-Darüber hinaus ist es mit Werkzeugen wie CloudWatch möglich, die Abschaltung bestimmter Dienste zu automatisieren, wenn eine Budgetschwelle überschritten wurde. Diese Maßnahmen werden in dem Kapitel über die Optimierung behandelt.
-
-Durch die Verwendung von Tags ist es möglich, die Ressourcen nach Kriterien wie Region, Umgebung, Projekt, Art der Ressource usw. zu visualisieren, dies %es
-ermöglicht, Kosten auf den von der Organisation festgelegten Ebenen zu verfolgen. 
-[DIAGRAMM: BUDGET PRO ABTEILUNG]\\
-Es könnte zum Beispiel ein Szenario entstehen, in dem eine Abteilung innerhalb der Organisation mehr Kosten verursacht als andere. In erster Linie ist dies nur bemerkenswert anhand eines Anstiegs der von Amazon generierten Rechnung, aber um den Grund für diesen Anstieg genauer zu verstehen, muss ihre Ursache untersucht werden. Werkzeuge wie Cost-Explorer machen diese Art von Analyse möglich.
-
+Darüber hinaus ist es mit Werkzeugen wie CloudWatch möglich, die Abschaltung bestimmter Dienste zu automatisieren, wenn eine Budgetschwelle überschritten wurde. Diese Maßnahmen werden in dem nächsten Kapitel genauer behandelt.
 [TRUSTED ADVISOR fehlt noch in der Einleitung]
+[SOLLTE AB HIER EINE NEUE UNTERKAPITEL ANFANGEN? zb. TAGS ZUR TRENNUNG DER Ressourcen]
+Durch die Verwendung von Tags ist es möglich, die Ressourcen nach Kriterien wie Region, Umgebung, Projekt, Art der Ressource usw. zu visualisieren, dies %es
+ermöglicht, Kosten auf den von der Organisation festgelegten Ebenen zu verfolgen.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.4]{sources/Kosten_Ueber_Abteilungen}
+  \caption[Trennung der Kosten durch Tags]{}
+  \label{fig:Kosten_Ueber_Abteilungen} 
+  Trennung der Kosten durch Tags.\\
+  Die Angaben dienen nur als Beispiel und entsprechen nicht einer echten Infrastruktur.
+  %\cite{AMZ20}
+\end{figure}
+
+Es könnte zum Beispiel ein Szenario entstehen, in dem eine Abteilung innerhalb einer Organisation mehr Kosten verursacht als Andere. Dies ist nur durch den Anstieg der von Amazon generierten Rechnung, aber um den Grund für diesen Anstieg genauer zu verstehen, muss ihre Ursache untersucht werden. Werkzeuge wie Cost-Explorer machen diese Art von Analyse möglich.
+
 %Zu diesem Zweck werden Werkzeuge vorgestellt, die die Überwachung aktiver Ressourcen ermöglichen.
 %Welche Kosten sind mit der Nutzung dieser Werkzeuge verbunden?
 %Es sollte gezeigt werden, die Arten/Kategorien von Kunden, die kostenlosen Zugang zu diesen Werkzeuge haben?
@@ -25,10 +35,9 @@ CloudWatch sammelt operative Daten für die Verlaufsanalysen und die Entscheidun
 CloudWatch beschränkt sich nicht nur darauf, Daten aus der AWS-Umgebung zu empfangen.  Externe CloudWatch fähige/kompatible[WELCHES?] Metriken sind ebenfalls zugelassen und können für eine einheitliche Analyse aggregiert werden.
 
 Eine der Metriken, die mit Amazon CloudWatch überwacht werden kann, ist die CPU-Auslastung von EC2-Instanzen.
-Basierend auf einem Prozentsatz der CPU-Auslastung können Alarme?Benachrichtigungen?[WELCHES WORT?] und Aktionen konfiguriert werden
+Basierend auf einem Prozentsatz der CPU-Auslastung können Benachrichtigungen und Aktionen konfiguriert werden
 \\
-Eine dieser Aktionen ist die automatische Einrichtung neuer Instanzen zur Deckung des Kapazitätsbedarfs
-\footnote{\cite{AWS1}, Seite 185}.
+Eine dieser Aktionen ist die automatische Einrichtung neuer Instanzen zur Deckung des Kapazitätsbedarfs\footnote{\cite{AWS1}, Seite 185}.
 Diese Art von Aktionen werden im Kapitel ~\ref{kap_Optimierung} Optimierungsmaßnahmen tiefer behandelt.
 \\\\
 Im Folgenden werden die grundlegenden Bereiche und Begriffe von CloudWatch erläutert und wie sie zur Überwachung von Informationen über AWS-Ressourcen verwendet werden.
@@ -49,11 +58,11 @@ Für eine detailliertere Überwachung ist es möglich, benutzerdefinierte Metrik
 % MIT BEZUG AUF K:OPTIMIERUNG?oder WIESO IST DIE AUFLÖSUNG RELEVANT?]
 %\textbf{Logs} \\ BRAUCHE ICH DAS?
 \\\\
-\textbf{Ereignisse / Events} 
+\textbf{Ereignisse} 
 \\
-Bei CloudWatch ist ein Ereignis eine Änderung bei einer Ressource in der AWS-Umgebung.
+Bei CloudWatch wird eine Änderung bei einer Ressource in der AWS-Umgebung Ereignis genannt. 
 AWS-Ressourcen können Ereignisse erzeugen, wenn sich ihr Status ändert.
-Beispielsweise, ein Ereignis wird erzeugt, wenn Amazon EC2 Auto Scaling, Instanzen gestartet oder beendet wird\footnote{\cite{AMZ13}, Seite 1} oder wenn eine bestimmte Menge an Speicherplatz in einem Bucket erreicht wurde.
+Beispielsweise, wird ein Ereignis erzeugt, wenn Amazon EC2 Auto Scaling, Instanzen gestartet oder beendet werden\footnote{\cite{AMZ13}, Seite 1} oder wenn eine bestimmte Menge an Speicherplatz in einem Bucket erreicht wurde.
 \\\\
 \textbf{Regel} \\
 Eine Regel ordnet eintreffende Ereignisse zu und leitet diese zur Verarbeitung an Ziele weiter.
@@ -66,9 +75,9 @@ Die Ziele einer Regel müssen sich in derselben Region wie die Regel befinden
 \footnote{\cite{AMZ13}, Seite 2}.
 %Alle zugelassene Ressourcen \footnote\url{https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/EventTypes.html}
 \\\\
-\textbf{Alarme und Benachrichtigungen}\\
+\textbf{Benachrichtigungen}\\
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html
-Benachrichtigt zu werden ist es wichtig, um relevante Ereignisse nicht zu verpassen und rechtzeitig Maßnahmen zu ergreifen. Mit CloudWatch können Alarme eingerichtet werden, die durch Metriken wie die CPU-Auslastung und auch Gebühren[PASSENDES WORT?] auf AWS-Rechnungen ausgelöst werden.
+Benachrichtigt zu werden ist wichtig, um relevante Ereignisse nicht zu verpassen und rechtzeitig Maßnahmen zu ergreifen. Mit CloudWatch können Alarme eingerichtet werden, die durch Metriken wie die CPU-Auslastung und auch Gebühren[PASSENDES WORT?] auf AWS-Rechnungen ausgelöst werden.
 Benachrichtigungen können durch Amazon SNS\footnote{Amazon SNS ist ein Dienst, der die Benachrichtigung an Personen und an Applikationen ermöglicht. https://aws.amazon.com/de/sns/} oder zu einer E-Mail-Adresse geschickt werden.
 %AUCH PER SLACK ODER ÄHNLICHES
 \\\\
@@ -83,10 +92,10 @@ Benachrichtigungen können durch Amazon SNS\footnote{Amazon SNS ist ein Dienst, 
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html
 \textbf{Visualisierung von Metriken}\\
 Mit Cloud-Watch Dashboards können [BESSERE FORMULIERUNG] relevante Metriken grafisch dargestellt werden. %Sie ermöglichen eine umfassende Visualisierung von Metriken der Ressourcen in der AWS-Umgebung. 
-Durch die Dashboards[PASSENDES WORT?] können auch Alarmen erstellt werden. Für die Einrichtung der Alarme ist kein technisches Wissen benötigt\footnote{\cite{AMZ14}, Seite 28}.
+Durch die Dashboards können auch Benachrichtigungen erstellt werden. Für die Einrichtung der Benachrichtigungen ist kein technisches Wissen nötig\footnote{\cite{AMZ14}, Seite 28}.
 %Die von CloudWatch gesammelte Informationen sind nicht nur für System-Administratoren relevant.
 Die in den Dashboards enthaltenen Informationen sind nicht nur für ihre Autoren von Relevanz.
-Weitere Personen innerhalb oder außerhalb der Organisation können Zugriff auf Dashboards mit nutzliche Informationen bekommen, um Prozesse zu beschleunigen[VORTEILE DES OPTIMIERUNGSPROZESS VERWEISEN] oder Probleme schneller zu beheben[USE CASE].
+Weitere Personen innerhalb oder außerhalb der Organisation können Zugriff auf Dashboards mit nützlichen Informationen bekommen, um Prozesse zu beschleunigen[VORTEILE DES OPTIMIERUNGSPROZESS VERWEISEN] oder Probleme schneller zu beheben[USE CASE].
 
 Dies ermöglicht einen schnelleren Kommunikationsfluss in Echtzeit[Fach Informationsmanagement: (Schwachstellenanalyse) IuM Technik/Check Book KCrmar]. Die Zugriffsverwaltung für geteilte Dashboards wird über AWS Identity and Access Management abgewickelt\footnote{\cite{AMZ14}, Seite 18 und 39}[UND?].
 \\\\
@@ -96,10 +105,10 @@ AWS CloudWatch empfängt Abrechnungsmetriken von alle Ressourcen. Auf der Grundl
 %[KANN MAN NUR Total Estimated Charge verwenden ODER KÖNNTE MAN NACH PROJEKTE TRENNEN?]
 [BEZUG AUF PROJEKTMANAGEMENT/Kostenkontrolle?]
 
-\subsubsection{Alarm bei Hoch- und Runterfahren von EC2-Instanzen}
+\subsubsection{Benachrichtigung bei Hoch- und Runterfahren von EC2-Instanzen}
 Obwohl Auto-Scaling dafür sorgt, die Rechenkapazität dynamisch anzupassen, ist es von größter Wichtigkeit, über Änderungen in der Infrastruktur informiert zu sein, ohne die Dashboards manuell überprüfen zu müssen.
 [WEIL ....]
-
+\\\\
 \subsection{AWS Cost-Explorer}
 Mit Cost-Explorer können Kosten der letzten 12 Monate und eine Schätzung der Kosten des laufenden Monats visualisiert werden. Darüber hinaus wird eine Kostenprognose für die nächsten Monate erstellt. Die Prognose basieren auf die Kosten der vergangenen Monaten.
 Die Nutzung des Cost-Explorers ist kostenlos, nur API-Aufrufe sind kostenpflichtig \footnote{https://aws.amazon.com/de/aws-cost-management/pricing/}.
@@ -108,7 +117,8 @@ Die Nutzung des Cost-Explorers ist kostenlos, nur API-Aufrufe sind kostenpflicht
 %Conocer clos costos en un periodo de tiempo nos permite %saber si estamos en el camino correcto para alcanzar las %metas trazadas al inicio del periodo/proyecto y tomar %las medidas adecuadas para que al final del periodo/%proyecto tengamos resultados satisfactorios.
 Es gibt drei Arten von Berichten, die der Cost-Explorer bereitstellt:
 
-- Bericht über die Nutzung und die in den letzten 12 Monaten entstandenen Kosten.[NUTZUNG DES BERICHTSer kommenden drei Monaten.NUTZUNG DES BERICHTS]\\
+- Bericht über die Nutzung und die in den letzten 12 Monaten entstandenen Kosten.[NUTZUNG DES BERICHTS]\\
+-Prognose der Kosten der kommenden drei Monaten.[NUTZUNG DES BERICHTS]\\
 - Empfehlungen zu Reserved Instances.[NUTZUNG DES BERICHTS]\\
 Amazon analysiert die bisherige Nutzung der Instanzen und gibt Empfehlungen zur Kostensenkung durch den Wechsel von EC2-Instanzen zu reservierten Instanzen. Diese ignorieren Kapazität, die bereits von anderen reservierten Instanzen abgedeckt wurden.
 
@@ -139,11 +149,12 @@ Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfun
 Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{https://aws.amazon.com/de/premiumsupport/technology/trusted-advisor/}. \\
 %ES MUSS GEPRÜFT WERDEN, OB ES SINNVOLL IST, FÜR DIE OBEN GENANNTEN SUPPORT-PLÄNEN ZU ZAHLEN.
 
-  \begin{figure}
+  \begin{figure}[h!]
       \centering
       \includegraphics[scale=0.4]{sources/AWS_Trusted_Advisor_Kategorien}
       \caption[AWS Trusted Advisor Kategorien]{}
-      \label{fig:AWS_Trusted_Advisor_Kategorien} AWS Trusted Advisor Kategorien
+      \label{fig:AWS_Trusted_Advisor_Kategorien} 
+      AWS Trusted Advisor Kategorien\cite{AMZ20}
     \end{figure}
 
   Die \autoref{fig:AWS_Trusted_Advisor_Kategorien} zeigt die 5 Kategorien von Trusted Advisor mit jeweils 3 Arten von Indikatoren. 
@@ -180,7 +191,9 @@ Die \autoref{fig:ÜberwachungswerkzeugeNachVerwendung} fasst die Überwachungswe
   \centering
   \includegraphics[scale=0.6]{sources/ÜberwachungswerkzeugeNachVerwendung}
   \caption[Überwachungswerkzeuge gemäß ihrer Verwendung]{}
-  \label{fig:ÜberwachungswerkzeugeNachVerwendung} Überwachungswerkzeuge gemäß ihrer Verwendung
+  \label{fig:ÜberwachungswerkzeugeNachVerwendung} 
+  Überwachungswerkzeuge gemäß ihrer Verwendung\\
+  Eigene Darstellung\cite{AMZ12, AMZ20, AMZ21}. 
 \end{figure}
 [NOCH NICHT VOLLSTÄNDIG]
 
@@ -196,11 +209,11 @@ Ein Berater für eine Prüfung und Optimierung der Ressourcen kann in Deutschlan
 \textbf{Fazit}\\
 %[ABSCHLUSS DES KAPITELS/Überbrückung FÜR DAS KOMMENDE KAPITEL]}
 % CloudWatch
-In diesem Kapitel wurde gezeigt, wie es mit CloudWatch möglich ist, Alarme auf Basis von Ereignissen einzurichten, die mit Amazon SNS oder externen E-Mail-Adressen kommunizieren. Im nächsten Kapitel wird CloudWatch erneut behandelt. Diesmal nicht als Überwachungswerkzeug, sondern als Optimierungswerkzeug zur Erstellung von automatisierte Aktionen/Reaktionen. Dazu war es notwendig, die Rolle der von CloudWatch gesammelten Metriken zu verstehen, die die Grundlage für die Verwaltung von Aktionen wie Auto-Scaling-Gruppen bilden. 
+In diesem Kapitel wurde gezeigt, dass es mit CloudWatch möglich ist, Alarme auf Basis von Ereignissen einzurichten, die mit Amazon SNS oder externen E-Mail-Adressen kommunizieren. Im nächsten Kapitel wird CloudWatch erneut behandelt. Diesmal nicht als Überwachungswerkzeug, sondern als Optimierungswerkzeug zur Erstellung von automatisierte Aktionen/Reaktionen. Dazu war es notwendig, die Rolle der von CloudWatch gesammelten Metriken zu verstehen, die die Grundlage für die Verwaltung von Aktionen wie Auto-Scaling-Gruppen bilden. 
 %Cost Explorer
-Aus dem Blickwinkel des Kostenmanagements wurde gezeigt, wie man mit dem Cost-Explorer die Kosten der letzten 12 Monate analysieren, eine Einschätzung der Kosten im aktuellen Monat und eine Prognose für die nächsten Monate erhalten kann. Es ist möglich, die Kosten nach Tags und anderen Filtern zu trennen. Diese Informationen dient unter anderem zur Erstellung einer operativen Budgetplanung mit genaueren Daten.
+Aus dem Blickwinkel des Kostenmanagements wurde gezeigt, dass mit Cost-Explorer eine Analyse von Kosten der letzten 12 Monate, eine Einschätzung der Kosten im aktuellen Monat und eine Prognose für die nächsten Monate möglich ist. Kosten können nach Tags und anderen Filtern getrennt werden. Diese Informationen dient unter anderem zur Erstellung einer operativen Budgetplanung mit genaueren Daten.
 %Trusted Advisor
-Darüber hinaus wurde Trusted Advisor vorgestellt, die konkrete Optimierungsempfehlungen gibt und warnet über Leistungsgrenzen. Dies kann mit erheblichen Kosten verbunden sein und ist daher nicht für alle Arten von Unternehmen unmittelbar attraktiv. 
+Darüber hinaus wurde Trusted Advisor vorgestellt, die konkrete Optimierungsempfehlungen gibt und warnt über Leistungsgrenzen. Dies kann mit erheblichen Kosten verbunden sein und ist daher nicht für alle Arten von Unternehmen unmittelbar attraktiv. Obwohl sich nicht alle Unternehmen die Prüfungen von Trusted Advisor leisten können, sollten die kostenlosen Empfehlungen im Überwachungs- und Optimierungsplan berücksichtigt werden.
 [WAS KOMMT IN NÄCHTEN KAP.?]
 
 \begin{comment}
@@ -210,7 +223,7 @@ Desde la perspectiva del manejo de costos, se mostró como con Cost-Explorer es 
 
 Además se presentaron herramientas como Trusted Advisor las cuales brindan recomendaciones concretas sobre optimizacion y alertan si limites que se acercan a su umbral máximo. 
 
-Este puede representar costos consideradable y que por lo tanto no lo hacen directamente atractivo para todo tipo de empresas. 
+Este puede representar costos consideradable y que por lo tanto no lo hacen directamente atractivo para todo tipo de empresas.
 \end{comment}
 
 \begin{comment}

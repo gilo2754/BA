@@ -6,8 +6,8 @@
 \addcontentsline{toc}{subsection}{Motivation}
 %WARUM HABE ICH MICH FÜR AWS ENTSCHIEDEN?
 %Wie viele Firmen wechseln von On-Premise zu Cloud in DE jährlich?
-Die zunehmende Digitalisierung von Geschäftsmodellen, die auch durch die Corona-Pandemie vorangetrieben wird{\cite{STA3}}, lässt Cloud-basierte Applikationen an Bedeutung gewinnen. Dies wird auch von 48\% der befragten Handelsunternehmen im Jahr 2021 bestätigt{\cite{STA2}}. Als direkte Folge davon steigt die Nachfrage nach Server- und Speicherkapazität. 
-
+Die zunehmende Digitalisierung von Geschäftsmodellen, die auch durch die Corona-Pandemie vorangetrieben wird{\cite{STA3}}, lässt Cloud-basierte Applikationen an Bedeutung gewinnen{\cite{STA2}}. Als direkte Folge davon steigt die Nachfrage nach Server- und Speicherkapazität.
+%Dies wird auch von 48\% der befragten Handelsunternehmen im Jahr 2021 bestätigt.
 Amazon Web Services, kurz AWS, wurden unter anderem als Fallbeispiel für diese Arbeit ausgewählt wegen seiner frühen Präsenz (2006) als Cloudanbieter und seines großen Angebotes an Dienstleistungen, welche für zahlreiche Anwendungsfälle geeignet sind.
 \\
 %Die relevanten Cloudanbieter weltweit sind AWS, Google, Telekom und Microsoft.
@@ -44,18 +44,11 @@ In einer Umfrage haben circa 50\% der Unternehmen die Verwaltung der Kosten für
     \end{quote}
 
 \begin{flushleft}
-Diese Bachelorarbeit beschäftigt sich mit ebendieser Problematik, um herauszufinden, wie Unternehmen mit den passenden Werkzeugen die Kosten ihrer Cloud-Dienste überwachen und im Blick behalten können. 
-
-Zum Beispiel können frühzeitige Benachrichtigungen alarmieren, wenn Ressourcen mehr Kosten verursachen als geplant.
+Diese Bachelorarbeit beschäftigt sich mit ebendieser Problematik, um herauszufinden, wie Unternehmen mit den passenden Werkzeugen die Kosten ihrer Cloud-Dienste überwachen und im Blick behalten können. Zum Beispiel können frühzeitige Benachrichtigungen alarmieren, wenn Ressourcen mehr Kosten verursachen als geplant.
 \\
-Außerdem sollte untersucht werden, wie sie mit der richtigen Auswahl an Diensten ihre Kosten optimieren können.
-\end{flushleft}
-%\subsection*{Fragestellung}
-%\addcontentsline{toc}{subsection}{Fragestellung}
-
-\begin{flushleft}
-In dieser Arbeit wird versucht zu beantworten, wie Kosten bei Cloud-Diensten überwacht werden können. Auf Grundlage dieser Information werden Optimierungsmöglichkeiten gesucht. Es wird untersucht, welche Maßnahmen nötig sind, um unerwartet hohe Kosten bei Cloud-Diensten zu vermeiden.Darüber hinaus werden Empfehlungen von Cloud-Experten berücksichtigt, um Kosten von Cloud-Diensten zu minimieren. 
-Diese Arbeit entwickelt sich am Beispiel von S3 Speichereinheiten und EC2-Instanzen. 
+Außerdem sollte untersucht werden, wie mit der richtigen Auswahl an Diensten Kosten optimiert werden. 
+In dieser Arbeit wird versucht zu beantworten, wie Kosten bei Cloud-Diensten überwacht werden können. Auf Grundlage dieser Information werden
+Optimierungsmöglichkeiten gesucht. Es wird untersucht, welche Maßnahmen nötig sind, um unerwartet hohe Kosten bei Cloud-Diensten zu vermeiden. Darüber hinaus werden Empfehlungen von Cloud-Experten berücksichtigt, um Kosten von Cloud-Diensten zu minimieren. Diese Arbeit untersucht speziell S3-Speichereinheiten und EC2-Server-Instanzen.
 \end{flushleft}
 
 
@@ -95,15 +88,14 @@ Als Überwachungswerkzeuge für die Kosten werden die AWS CloudWatch, der AWS Co
 Diese Bachelorarbeit ist in folgende Kapitel unterteilt:\\\\
 %2 Die gängigsten Cloud-Dienste, bei deren Geld verschwendet wird.
 \textbf{Kapitel~\ref{kap_grundlagen}} 
-befasst sich mit dem Begriff Cloud-Economy und erläutert das Nutzen der Cloud im wirtschaftlichen Sinne. Diese dienen als Grundlage für diese Arbeit. \\\\
+befasst sich mit dem Begriff Cloud-Economy und erläutert das Potenzial der Cloud-Diensten im wirtschaftlichen Sinne. Die Cloud-Dienste EC2-Instanzen und S3 Speichereinheiten werden ebenfalls kurz erklärt. %Diese dienen als Grundlage für diese Arbeit. 
+\\\\
 %4 Überwachung von Kosten
 \textbf{Kapitel~\ref{kap_zahlungsmodelle}} 
-zeigt die verschiedenen Zahlungsmodelle für Amazon Web Services. 
-\\
-Es werden Kriterien vorgestellt, die helfen, sich für das richtige Zahlungsmodell bei verschiedenen Szenarien zu entscheiden. 
+zeigt die verschiedenen Zahlungsmodelle für EC2-Instanzen. Es werden Kriterien vorgestellt, die helfen sollen, sich für das richtige Zahlungsmodell bei verschiedenen Szenarien zu entscheiden. 
 \\\\
 %5 AWS Cost Explorer und AWS-Kosten- und Nutzungsbericht
-\textbf{In Kapitel~\ref{kap_kostenüberwachung }} werden die Werkzeuge eingeführt, die zur Überwachung der Kosten von Cloud-Diensten eingesetzt werden können.
+\textbf{In Kapitel~\ref{kap_kostenüberwachung }} werden die Werkzeuge eingeführt, die zur Überwachung der Kosten von Cloud-Diensten eingesetzt werden.
 \\\\
 %4 Methoden zur Kostenbremse
 %4.1 S3 Intelligent-Tiering
