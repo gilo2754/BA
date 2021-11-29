@@ -14,7 +14,7 @@ ermöglicht, Kosten auf den von der Organisation festgelegten Ebenen zu verfolge
   \caption[Trennung der Kosten durch Tags]{}
   \label{fig:Kosten_Ueber_Abteilungen} 
   Trennung der Kosten durch Tags.\\
-  Die Angaben dienen nur als Beispiel und entsprechen nicht einer echten Infrastruktur.
+  Die Angaben dienen nur als Beispiel und entsprechen keiner realen IT-Infrastruktur.
   %\cite{AMZ20}
 \end{figure}
 
@@ -28,17 +28,7 @@ Es könnte zum Beispiel ein Szenario entstehen, in dem eine Abteilung innerhalb 
 \subsection{AWS CloudWatch}
 %https://aws.amazon.com/de/cloudwatch/pricing/
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingStarted.html
-
-Amazon CloudWatch ermöglicht die Überwachung der Leistung von Resources, auch bei Ressourcen, die über verschiedene Regionen verteilt sind.
-CloudWatch sammelt operative Daten für die Verlaufsanalysen und die Entscheidungsfindung in Bezug auf Optimierung und Fehlerbehebung.
-
-CloudWatch beschränkt sich nicht nur darauf, Daten aus der AWS-Umgebung zu empfangen.  Externe CloudWatch fähige/kompatible[WELCHES?] Metriken sind ebenfalls zugelassen und können für eine einheitliche Analyse aggregiert werden.
-
-Eine der Metriken, die mit Amazon CloudWatch überwacht werden kann, ist die CPU-Auslastung von EC2-Instanzen.
-Basierend auf einem Prozentsatz der CPU-Auslastung können Benachrichtigungen und Aktionen konfiguriert werden
-\\
-Eine dieser Aktionen ist die automatische Einrichtung neuer Instanzen zur Deckung des Kapazitätsbedarfs\footnote{\cite{AWS1}, Seite 185}.
-Diese Art von Aktionen werden im Kapitel ~\ref{kap_Optimierung} Optimierungsmaßnahmen tiefer behandelt.
+Amazon CloudWatch ermöglicht die Überwachung der Leistung von Resources, auch bei Ressourcen, die über verschiedene Regionen verteilt sind. CloudWatch sammelt operative Daten für die Verlaufsanalysen und die Entscheidungsfindung in Bezug auf Optimierung und Fehlerbehebung. CloudWatch beschränkt sich nicht nur darauf, Daten aus der AWS-Umgebung zu empfangen. Externe Metriken, die mit CloudWatch kompatibel sind, können für eine einheitliche Analyse aggregiert werden. Eine der Metriken, die mit Amazon CloudWatch überwacht werden kann, ist die CPU-Auslastung von EC2-Instanzen. Basierend auf einem Prozentsatz der CPU-Auslastung können Benachrichtigungen und Aktionen konfiguriert werden. Eine dieser Aktionen ist die automatische Einrichtung neuer Instanzen zur Deckung des Kapazitätsbedarfs\footnote{\cite{AWS1}, Seite 185}. Diese Art von Aktionen werden im Kapitel ~\ref{kap_Optimierung} tiefer behandelt.
 \\\\
 Im Folgenden werden die grundlegenden Bereiche und Begriffe von CloudWatch erläutert und wie sie zur Überwachung von Informationen über AWS-Ressourcen verwendet werden.
 \\\\
@@ -91,7 +81,7 @@ Benachrichtigungen können durch Amazon SNS\footnote{Amazon SNS ist ein Dienst, 
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html
 \textbf{Visualisierung von Metriken}\\
-Mit Cloud-Watch Dashboards können [BESSERE FORMULIERUNG] relevante Metriken grafisch dargestellt werden. %Sie ermöglichen eine umfassende Visualisierung von Metriken der Ressourcen in der AWS-Umgebung. 
+Mit Cloud-Watch Dashboards können relevante Metriken grafisch dargestellt werden. %[BESSERE FORMULIERUNG] %Sie ermöglichen eine umfassende Visualisierung von Metriken der Ressourcen in der AWS-Umgebung. 
 Durch die Dashboards können auch Benachrichtigungen erstellt werden. Für die Einrichtung der Benachrichtigungen ist kein technisches Wissen nötig\footnote{\cite{AMZ14}, Seite 28}.
 %Die von CloudWatch gesammelte Informationen sind nicht nur für System-Administratoren relevant.
 Die in den Dashboards enthaltenen Informationen sind nicht nur für ihre Autoren von Relevanz.
@@ -110,8 +100,7 @@ Obwohl Auto-Scaling dafür sorgt, die Rechenkapazität dynamisch anzupassen, ist
 [WEIL ....]
 \\\\
 \subsection{AWS Cost-Explorer}
-Mit Cost-Explorer können Kosten der letzten 12 Monate und eine Schätzung der Kosten des laufenden Monats visualisiert werden. Darüber hinaus wird eine Kostenprognose für die nächsten Monate erstellt. Die Prognose basieren auf die Kosten der vergangenen Monaten.
-Die Nutzung des Cost-Explorers ist kostenlos, nur API-Aufrufe sind kostenpflichtig \footnote{https://aws.amazon.com/de/aws-cost-management/pricing/}.
+Mit Cost-Explorer können Kosten der letzten 12 Monate und eine Schätzung der Kosten des laufenden Monats visualisiert werden. Darüber hinaus wird eine Kostenprognose für die nächsten Monate erstellt. Die Prognose basieren auf die Kosten der vergangenen Monaten. Die Nutzung des Cost-Explorers ist kostenlos, nur API-Aufrufe sind kostenpflichtig \footnote{https://aws.amazon.com/de/aws-cost-management/pricing/}.
 \\
 %Mio:
 %Conocer clos costos en un periodo de tiempo nos permite %saber si estamos en el camino correcto para alcanzar las %metas trazadas al inicio del periodo/proyecto y tomar %las medidas adecuadas para que al final del periodo/%proyecto tengamos resultados satisfactorios.
@@ -119,22 +108,22 @@ Es gibt drei Arten von Berichten, die der Cost-Explorer bereitstellt:
 
 - Bericht über die Nutzung und die in den letzten 12 Monaten entstandenen Kosten.[NUTZUNG DES BERICHTS]\\
 -Prognose der Kosten der kommenden drei Monaten.[NUTZUNG DES BERICHTS]\\
-- Empfehlungen zu Reserved Instances.[NUTZUNG DES BERICHTS]\\
+- Empfehlungen zu reservierten Instanzen.[NUTZUNG DES BERICHTS]\\
 Amazon analysiert die bisherige Nutzung der Instanzen und gibt Empfehlungen zur Kostensenkung durch den Wechsel von EC2-Instanzen zu reservierten Instanzen. Diese ignorieren Kapazität, die bereits von anderen reservierten Instanzen abgedeckt wurden.
-
-[NUTZUNG EINZELNE BERICHTE(3)/INFOS MACHEN? PM/Controlling]
+%[NUTZUNG EINZELNE BERICHTE(3)/INFOS MACHEN? PM/Controlling]
 %%t.ly/6bvZ
 %_________________________________________________________________________
 %Eine allgemeine Übersicht kann verschafft werden indem die mehr benutzte Ressourcen/Dienstleistungen./ fünf wichtigsten Kostentrends
 % https://youtu.be/3peNAKB3VxA?t=223
-\textbf{Budgetplanung}\\
+\subsubsection*{Budgetplanung}
 Durch die Möglichkeit, die in den letzten Monaten angefallenen Kosten nach Ressourcen, Projekt oder Abteilung zu trennen, ist es möglich, operative Budgetplanung mit Genauigkeit durchzuführen. 
 \begin{quote}
 Bei der operativen Planung wird von einem Zeithorizont von einem Jahr ausgegangen. Hier liegt der Fokus darauf, Ressourcen konkret zuzuweisen und detailreicher zu planen. Welche Mittel werden wofür verwendet und welche kurz- und mittelfristigen Ziele sollen durch diesen Mitteleinsatz erreicht werden.\cite{BUD1}
 \end{quote}
-
-
 %\textbf{Aktuelle Budgets vs erwartet}\\
+
+%\subsubsection*{Budgetplanung}
+%Einer der Standardberichte im AWS Cost Explorer enthält die Kosten in Dollar/Euro und die Nutzung von EC2-Instanzen in Stunden pro Monat. Mit diesen Informationen können Sie die Kosten für eine bestimmte Dienstleistung berechnen. 
 
 \subsection{AWS Trusted Advisor}
 %https://www.youtube.com/watch?v=i0IkKN9NoPk
@@ -143,40 +132,26 @@ Bei der operativen Planung wird von einem Zeithorizont von einem Jahr ausgegange
 %was macht dieses?
 %AWS Trusted Advisor: This helps you know more about idle or underutilized resources.
 
-AWS Trusted Advisor ist ein Werkzeug, das entwickelt wurde, um Kosten zu senken, um Systemverfügbarkeit und -leistung zu verbessern und um Sicherheit zu erhöhen. Es analysiert die Nutzung des AWS-Kontos und gibt Best-Practice-Empfehlungen.
-%Diese Arbeit legt den Schwerpunkt auf Empfehlungen zur Optimierung.
-Es werden die Kategorien Leistungsgrenzen und Kostenoptimierung insbesondere betrachtet, da diese am relevanten für die vorliegende Arbeit sind.
-
-Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen November 2021) für Konten in den Plänen Developer und Basic Support kostenlos sind. Prüfungen für die Kategorie Leistungsgrenzen sind kostenlos.
-
-Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{https://aws.amazon.com/de/premiumsupport/technology/trusted-advisor/}. \\
+AWS Trusted Advisor ist ein Werkzeug, das entwickelt wurde, um Kosten zu senken, um Systemverfügbarkeit und -leistung zu verbessern und um Sicherheit zu erhöhen. Es analysiert die Nutzung des AWS-Kontos und gibt Best-Practice-Empfehlungen. Es werden die Kategorien Leistungsgrenzen und Kostenoptimierung insbesondere betrachtet, da diese am relevanten für die vorliegende Arbeit sind. Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen November 2021) für Konten in den Plänen Developer und Basic Support kostenlos sind. Prüfungen für die Kategorie Leistungsgrenzen sind kostenlos. Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{https://aws.amazon.com/de/premiumsupport/technology/trusted-advisor/}. \\
 %ES MUSS GEPRÜFT WERDEN, OB ES SINNVOLL IST, FÜR DIE OBEN GENANNTEN SUPPORT-PLÄNEN ZU ZAHLEN.
 
-  \begin{figure}[h!]
+\begin{figure}[h!]
       \centering
       \includegraphics[scale=0.4]{sources/AWS_Trusted_Advisor_Kategorien}
       \caption[AWS Trusted Advisor Kategorien]{}
       \label{fig:AWS_Trusted_Advisor_Kategorien} 
       AWS Trusted Advisor Kategorien\cite{AMZ20}
-    \end{figure}
-
-  Die \autoref{fig:AWS_Trusted_Advisor_Kategorien} zeigt die 5 Kategorien von Trusted Advisor mit jeweils 3 Arten von Indikatoren. 
-  Die Indikatoren zeigen an, welche Prüfungen durchgeführt wurden.
-  
-  Grün bedeutet, dass keine Fehler oder zu prüfenden Empfehlungen vorhanden sind. Warnungen werden durch orangefarbene Indikatoren und Fehler durch rote Indikatoren angezeigt.
-  
-  Diese Empfehlungen sind eine Zusammenfassung auf hohem Niveau. Sie sind ein Startpunkt für die Untersuchung von Ressourcen mit Hilfe anderer Werkzeuge wie CloudWatch oder Cost-Explorer.%[ODER?].
+\end{figure}
+Die \autoref{fig:AWS_Trusted_Advisor_Kategorien} zeigt die fünf Kategorien von Trusted Advisor mit jeweils 3 Arten von Indikatoren. Die Indikatoren zeigen an, welche Prüfungen durchgeführt wurden. Grün bedeutet, dass keine Fehler oder zu prüfenden Empfehlungen vorhanden sind. Warnungen werden durch orangefarbene Indikatoren und Fehler durch rote Indikatoren angezeigt. Diese Empfehlungen sind eine Zusammenfassung auf hohem Niveau. Sie sind ein Startpunkt für die Untersuchung von Ressourcen mit Hilfe anderer Werkzeuge wie CloudWatch oder Cost-Explorer.%[ODER?].
 \\\\
 
-\textbf{Kostenoptimierung}\\
+\subsubsection*{Kostenoptimierung}
 Die Empfehlungen zur Kostenoptimierung konzentrieren sich auf Möglichkeiten zur Kostensenkung, indem ungenutzte Ressourcen hervorgehoben werden. 
-Sollten EC2-Instanzen mit geringer Auslastung gefunden werden, wird es diese bei Trusted Advisor signalisiert. Denn diese Instanzen verbrauchen Ressourcen und können terminiert oder pausiert werden. 
-%[HIER FEHLT...]
+Sollten EC2-Instanzen mit geringer Auslastung gefunden werden, wird es diese bei Trusted Advisor signalisiert. Denn diese Instanzen verbrauchen Ressourcen und können terminiert oder pausiert werden. %[HIER FEHLT...]
 Auch nicht zugewiesene Elastic IP-Adressen erzeugen Kosten. Diese können gegebenenfalls von Trusted Advisor gefunden werden. %t.ly/nYiv
 [BEISPIELE]
-\\
 
-\textbf{Leistungsgrenzen}\\
+\subsubsection*{Leistungsgrenzen}
 In dieser Kategorie werden Empfehlungen zur Vermeidung von Grenzwertüberschreitungen hervorgehoben.
 Es wird zum Beispiel nach einer Nutzung gesucht, die mehr als 80 \% des Leistungsgrenzwerten für wichtige Dienste beträgt. Einige Beispiele sind  Amazon EC2, Auto Scaling, Elastic Block Store, Simple Email Service und AWS CloudFormation.
 \\\\
@@ -200,16 +175,16 @@ Die \autoref{fig:ÜberwachungswerkzeugeNachVerwendung} fasst die Überwachungswe
 \end{figure}
 [NOCH NICHT VOLLSTÄNDIG]
 
-\subsection{Handlungsempfehlungen}
+\subsection*{Handlungsempfehlungen}
 [SIND SIE HIER RICHTIG PLAZIERT? SOLLTEN LIEBER IN FAZIT SEIN?;NOCH ZU VERVOLSTÄNDIGEN]
 \\\\
-\textbf{Handlungsempfehlung 1:} \\
+\subsection*{Handlungsempfehlung 1:} 
 Es kann in Erwägung gezogen werden, für einen begrenzten Zeitraum von 3 Monaten einen Support-Plan zu bezahlen, um aus den gegebenen Empfehlungen zu lernen. Oder Business-Plan alle 6 Monate für 1 Monat zu aktivieren.  
 \\\\
-\textbf{Handlungsempfehlung 2:} \\ 
+\subsection*{Handlungsempfehlung 2:} 
 Ein Berater für eine Prüfung und Optimierung der Ressourcen kann in Deutschland zwischen x und N-EUR kosten. Dies ist eine Alternative zu den Plänen des Trusted-Advisor. Ein Berater, der alle 5 Kategorien abdeckt, könnte [BETRAG] kosten. %Das sagt der Berater Juanito von der Firma XXX.
 \\\\
-\textbf{Fazit}\\
+\subsection*{Fazit}
 %[ABSCHLUSS DES KAPITELS/Überbrückung FÜR DAS KOMMENDE KAPITEL]}
 % CloudWatch
 In diesem Kapitel wurde gezeigt, dass es mit CloudWatch möglich ist, Alarme auf Basis von Ereignissen einzurichten, die mit Amazon SNS oder externen E-Mail-Adressen kommunizieren. Im nächsten Kapitel wird CloudWatch erneut behandelt. Diesmal nicht als Überwachungswerkzeug, sondern als Optimierungswerkzeug zur Erstellung von automatisierte Aktionen/Reaktionen. Dazu war es notwendig, die Rolle der von CloudWatch gesammelten Metriken zu verstehen, die die Grundlage für die Verwaltung von Aktionen wie Auto-Scaling-Gruppen bilden. 

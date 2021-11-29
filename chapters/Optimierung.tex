@@ -1,7 +1,6 @@
 %Cloud-Computing Basics a Non tech. intro.
 %Seite 163
 % Wie werden die Informationen die Benutzer gezeigt und wie können sie diese manipulieren
-
 Die mit den Überwachungswerkzeuge gesammelte Informationen, bilden die Grundlage für die Optimierungsmaßnahmen.[KONKRETER WERDEN]
 In diesem Kapitel werden die mit Hilfe der Werkzeuge gewonnenen Informationen genutzt[INFO X FUER WERKZEUG 1...], um über die am besten geeigneten Optimierungsmaßnahmen zu entscheiden.
 %La mayoria de las medidas de opmimizacion se centran en las instancias EC2, pues como antes mencionado representan la gran mayoria de los servicios que comprenden los gastos en nuestras facturas.
@@ -13,12 +12,7 @@ Auto Scaling ist es hilfreich, um die richtige Anzahl von EC2 Instanzen zur Verf
 \\\\
 %https://www.youtube.com/watch?v=yC5nRYS2IYI En Espaniol
 %https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#policy-creating-asg-console
-
 Die \autoref{fig:AutoSca_Unused_Capacity} zeigt das wechselnde Verhalten einer Beispielanwendung, die vor allem unter der Woche Ressourcen verbraucht. Am Wochenende sinkt die Nachfrage nach Rechnerkapazität auf weniger als 25 \% und lässt den Rest der Kapazität ungenutzt. 
-
-Die gelben Säulen stellen die tägliche genutzte Rechenkapazität dar.
-Die graue Zone entspricht ungenutzte Rechenkapazität und beträgt etwa ein Drittel der wöchentlichen Rechnerkapazität. 
-
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.5]{sources/AutoCap Unused Capacity}
@@ -26,8 +20,9 @@ Die graue Zone entspricht ungenutzte Rechenkapazität und beträgt etwa ein Drit
     \label{fig:AutoSca_Unused_Capacity} Ungenutzte Rechenkapazität ohne automatische Skalierung. \\
     Quelle: Eigene Darstellung mit [fiktiven?] Angaben. 
     %\footnote{\cite{AMZ01}}
-  \end{figure}
-
+  \end{figure}\\
+Die gelben Säulen stellen die tägliche genutzte Rechenkapazität dar.
+Die graue Zone entspricht ungenutzte Rechenkapazität und beträgt etwa ein Drittel der wöchentlichen Rechnerkapazität.
 %Zu erklären: cooldown period and scaling policy.
 %Macht die Nutzung von Spor-Instanzen so einfach wie nie zuvor ?
 
@@ -35,9 +30,7 @@ Die graue Zone entspricht ungenutzte Rechenkapazität und beträgt etwa ein Drit
 %WE für Dev und Beta
 \textbf{Nicht produktive Umgebungen}\\
 In einem On-Premise-System macht es möglicherweise keinen Unterschied bei den Kosten, wenn die Instanzen aktiv bleiben. 
-Im Gegensatz dazu ist es bei On-Demand-Zahlungsmodelle sinnvoll Zeiträume zu definieren, in denen Instanzen abgeschaltet werden können, um den Verbrauch an Ressourcen zu reduzieren.
-
-Bei Systemen, die nur tagsüber und unter der Woche in Betrieb sein müssen, kann dies eine Einsparung von zu 67\% bedeuten.  Wenn zum Beispiel Test- und Beta-Umgebungen von Montag bis Freitag von 7 bis 20 Uhr laufen würden.
+Im Gegensatz dazu ist es bei On-Demand-Zahlungsmodelle sinnvoll Zeiträume zu definieren, in denen Instanzen abgeschaltet werden können, um den Verbrauch an Ressourcen zu reduzieren. Bei Systemen, die nur tagsüber und unter der Woche in Betrieb sein müssen, kann dies eine Einsparung von zu 67\% bedeuten.  Wenn zum Beispiel Test- und Beta-Umgebungen von Montag bis Freitag von 7 bis 20 Uhr laufen würden.
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.6]{sources/Einsparung_Zeitgesteuerte_Skalierung}
@@ -47,7 +40,7 @@ Bei Systemen, die nur tagsüber und unter der Woche in Betrieb sein müssen, kan
   %\footnote{\cite{AMZ01}}
 \end{figure}
 \\
-Der Stundensatz wurde am 23.11.2021 mit dem AWS Pricing Calculator{\cite{AMZ17} ermitellt für Linux Instanzen in Frankfurt mit 4vCPUs, 16 GB Arbeitsspeicher und Instanz-Familie t4g.xlarge in On-Demand-Zahlungsmodell.
+Der Stundensatz wurde am 23.11.2021 mit dem AWS Pricing Calculator\cite{AMZ17} ermitellt für Linux Instanzen in Frankfurt mit 4vCPUs, 16 GB Arbeitsspeicher und Instanz-Familie t4g.xlarge in On-Demand-Zahlungsmodell.
 % Automatisiere das Hoch- und Herunterfahren von Instanzen
 % https://www.linkedin.com/learning/monitoring-aws-with-cloudwatch/autoscaling-using-alarms?autoAdvance=true&autoSkip=true&autoplay=true&resume=false&u=79182202
 % Grund: weil i.d.R., kein Entwickler 24/7 arbeitet.
@@ -57,17 +50,14 @@ Der Stundensatz wurde am 23.11.2021 mit dem AWS Pricing Calculator{\cite{AMZ17} 
 %Weihnachten und BackFriday
 \\\\
 \textbf{Produktive Umgebungen}\\
-Wenn der Zeitpunkt einer hohen Nachfrage bekannt ist, kann eine Erhöhung der Rechnerkapazität geplant werden, um Überlastungen zu vermeiden.
-
-Beispiele für solche Zeiträume sind Weihnachten, Cyber-Monday und Black Friday. 
-[STATISTIK und ERKLÄTUNG t.ly/0Tth]
+Wenn der Zeitpunkt einer hohen Nachfrage bekannt ist, kann eine Erhöhung der Rechnerkapazität geplant werden, um Überlastungen zu vermeiden. Beispiele für solche Zeiträume sind Cyber-Monday und Black Friday\cite{STA5}. 
+[WEITERE ERKLÄRUNG]
 %https://de.statista.com/statistik/daten/studie/1076963/umfrage/ausgaben-an-black-friday-und-cyber-monday-in-deutschland/]
 
-\subsubsection{Dynamische automatische Skalierung / Dynamisches Auto Scaling}
+\subsubsection{Dynamisches Auto Scaling}
 %Intro mit Beispiel
-Es kann jedoch zu schnelle und kontinuierliche Änderungen im Verhalten von Applikationen geben, häufig innerhalb von wenige Minuten. Bei solche Szenarien ist sinnvoller, Metriken zur automatischen Anpassung der Skalierung der Rechenkapazität festzulegen.
-
-Beispiele für eine veränderte Nutzung von Applikationen finden sich bei Tinder und OkCupid, zwei der größten Dating-Applikationen in den vereinigten staaten. Die \autoref{fig:Use_by_hour_netflix_OkCupid_tinder} zeigt die Nutzungsspitzen bei den genannten Applikationen. Dieses wechselnde Verhalten wirkt sich unmittelbar auf die zu verschiedenen Tageszeiten benötigte Rechenkapazität aus und macht eine dynamische Skalierung der Rechenkapazität erforderlich, wenn das Ziel darin besteht, die Verschwendung von Ressourcen zu vermeiden oder zu verringern. 
+Es kann jedoch zu schnelle und kontinuierliche Änderungen im Verhalten von Applikationen geben, häufig innerhalb von wenige Minuten. Bei solche Szenarien ist sinnvoller, Metriken zur automatischen Anpassung der Skalierung der Rechenkapazität festzulegen. Beispiele für eine veränderte Nutzung von Applikationen finden sich bei Tinder und OkCupid, zwei der größten Dating-Applikationen in den vereinigten staaten. \\
+Die \autoref{fig:Use_by_hour_netflix_OkCupid_tinder} zeigt die Nutzungsspitzen bei den genannten Applikationen. Dieses wechselnde Verhalten wirkt sich unmittelbar auf die zu verschiedenen Tageszeiten benötigte Rechenkapazität aus und macht eine dynamische Skalierung der Rechenkapazität erforderlich, wenn das Ziel darin besteht, die Verschwendung von Ressourcen zu vermeiden oder zu verringern. 
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.4]{sources/Use_by_hour_netflix_OkCupid_tinder}
@@ -76,10 +66,6 @@ Beispiele für eine veränderte Nutzung von Applikationen finden sich bei Tinder
   {\cite{SCOUT1}}
   \\Mit Touches sind die Anzahl der Klicks, Swipes oder einfachen Interaktionen mit der Applikation gemeint.
 \end{figure}
-
-%Weitere Beispiele für solche Zeitpunkte sind das Feierabend, Mittagspause und beim Abendessen, wenn es um Applikationen für Unterhaltung und Online-Shopping geht[ZITAT/BELEG?].
-%\\
-%HIER erkläre ich wie genau AutoScaling funktioniert und was dafür nötig ist (Metriken)
 Die für die automatische Skalierung erforderlichen Metriken wurden bereits im Kapitel Überwachungswerkzeuge erwähnt. Eine der Metriken, die von Cloudexperten [Telefonat mit Deepak von der Einheit CIS[Cloud Capgemini]]benutzt wird, ist die gesamte CPU-Auslastung. 
 Um die CPU-Auslastung als Metrik zu verwenden, werden mindestens zwei Schwellenwerte definiert. Eine für die Erhöhung von Rechenkapazität, Scale-Out genannt und eine für das Verringern von Rechenkapazität bezeichnet als Scale-In.
 

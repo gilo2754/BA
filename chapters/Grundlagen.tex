@@ -113,24 +113,20 @@ Andererseits besteht die Gefahr, dass hohe ungewollte Kosten entstehen, wenn jem
 Amazon Web Services bietet ein Pay-as-you-go-Modell für viele ihre Ressourcen. %im On-Demand
 %Zahlungsmodell 
 %für EC2 und Speichereinheiten wie S3.
-Wenn nur für die monatlich verbrauchten Ressourcen bezahlt wird, verringert sich die Anfangsinvestition in die IT-Infrastruktur oder fällt ganz weg. Es ist zu bedenken, dass weitere Investitionen wie technische Schulungen für das Personal erforderlich werden. [KOSTEN EINER IT-INFRA = SERVER+Rack, TECH. SCHULUNGEN]
+Wenn nur für die monatlich verbrauchten Ressourcen bezahlt wird, verringert sich die Anfangsinvestition in die IT-Infrastruktur oder fällt ganz weg. Es ist zu bedenken, dass weitere Investitionen wie technische Schulungen für das Personal erforderlich werden. TÜV Rheinland bietet Kurse zur Ausbildung von Cloud Architekten an. Die Kurse dauern drei Tage und kosten 2.136,05 € pro Teilnehmer. Maßnahmen wie die genannten Kurse wirken einem der Hauptprobleme entgegen, mit denen Unternehmen bei der Migration in die Cloud konfrontiert sind. In der von Accenture im Jahr 2020 durchgeführten Umfrage gaben 38\% der Befragten an, dass fehlende Kompetenzen im Unternehmen im Bezug auf die Cloud ein Hindernis für eine Cloud-Migration ist\footnote{\cite{ACC2}, Seite 11}.
+%[KOSTEN EINER IT-INFRA = SERVER+Rack]
 % QUE PORTENTAJE DE LA INVERSION REPRESENTA LA INFRAESTRUCTURA DE IT EN UNA START UP Y EN UNA CORPORACION? RAZONES USAR LA NUBE(Statista)?
 
 \subsection{Amazon Cloud-Dienste}
-Einer der am häufigsten genutzten AWS-Dienste ist Amazon EC2, mit dem virtuelle Maschinen erstellt werden können{\cite{STA4}}.
-Ein weiterer wichtiger Dienst ist Amazon Simple Storage Service (S3), der einen Objektspeicherdienst bietet.
-
-\subsubsection{Amazon Elastic Computing Instances EC2 }
-AUSGEWÄHLT, WEIL DIESE CIRCA 80\% der Rechnungen ausmachen.[ERKLÄREUNG MIT ZITAT]
-%To put it simply, an EC2 is a virtual machine that represents a physical server for you to deploy your applications. Instead of purchasing your own hardware and connecting it to a network, Amazon gives you nearly unlimited virtual machines to run your applications while they take care of the hardware.
-\subsubsection{Amazon Simple Storage Service S3}
-%Warum S3 t.ly/iWn3
-S3 ist der Speicherdienst für Objekte bei AWS. Ein Objekt ist in AWS die Grundeinheit in welcher Dateien in den S3-Speichereinheiten gespeichert werden.
-\\
-Neben den Objekten werden Metadaten, wie das Datum der Objekterstellung und das Datum der letzten Aktualisierung gespeichert. Laut der Rangliste vieler Informatikwebseiten und des
-AWS Solutions Architekten Daniel Peña Silva{\cite{STA1}} ist Amazon S3 einer der am häufigsten genutzten AWS-Dienste.
+Einer der am häufigsten genutzten AWS-Dienste ist Amazon Elastic Computing Instances EC2, mit dem virtuelle Maschinen erstellt werden können{\cite{STA4}}. Ein weiterer wichtiger Dienst ist Amazon Simple Storage Service (S3), der zum Speichern von Objekten verwendet wird. Deshalb konzentrieren sich in dieser Arbeit die Überwachungs- und Optimierungsmaßnahmen hauptsächlich auf EC2-Instanzen und S3-Speichereinheiten. %\subsubsection*{Amazon Elastic Computing Instances EC2}
+Wie Lynn Langit, eine erfahrene Cloud-Architektin, feststellt, können bis zu 80\% der Rechnung aus Gebühren für EC2-Instanzen bestehen\footnote{\cite{LINK2}, Sektion 2 Control Costs by Service, Video AWS service type Minute 00:30}.%\subsubsection*{Amazon Simple Storage Service S3} Warum S3 t.ly/iWn3
+%S3 ist der Speicherdienst für Objekte bei AWS. 
+\\\\
+Objekte sind in AWS die Grundeinheit in welchen Dateien in den S3-Speichereinheiten gespeichert werden. Neben den Objekten werden Metadaten, wie das Datum der Objekterstellung und das Datum der letzten Aktualisierung gespeichert. Laut 
+%der Rangliste vieler Informatikwebseiten und 
+des AWS Solutions Architekten Daniel Peña Silva{\cite{STA1}} ist Amazon S3 einer der am häufigsten genutzten AWS-Dienste.
 %BESSER: S3 WIRD IN BÜCHER WIE t.ly/IJc1 GENANNT? THIS IS A SPANISH CITAT!
-
+\\\\
 Wie in \autoref{fig:moreCloudStorageThanLocal} zu sehen ist, werden darüber hinaus seit 2020 weltweit mehr Daten in Serverfarmen als auf lokalen Geräten gespeichert. Dies bietet Vorteile im Bezug auf die Geschwindigkeit der Arbeitsabläufe, birgt aber auch Risiken wie Datendiebstahl. Dies wird in dieser Arbeit nicht behandelt; da es den Rahmen der Recherche sprengen würde.
 \begin{figure}[h!]
       \centering
@@ -141,10 +137,8 @@ Wie in \autoref{fig:moreCloudStorageThanLocal} zu sehen ist, werden darüber hin
             {\cite{STA1}}
 \end{figure}
 
-\textbf{Fazit}\\
-Dieses grundlegende Kapitel hat einige potenzielle Vorteile der Nutzung von Cloud-Diensten für Unternehmen aufgezeigt. Darüber hinaus geht der Trend in den letzten Jahren zur Nutzung von Cloud-basierten Diensten.
-
-Das nächste Kapitel befasst sich mit Zahlungsmodellen für EC2-Instanzen und den Überlegungen, die bei der Wahl dieser Modelle in verschiedenen Szenarien zu berücksichtigen sind.
+%\textbf{Fazit}\\
+Dieses grundlegende Kapitel hat einige potenzielle Vorteile der Nutzung von Cloud-Diensten für Unternehmen aufgezeigt. Darüber hinaus geht der Trend in den letzten Jahren zur Nutzung von Cloud-basierten Diensten. Das nächste Kapitel befasst sich mit Zahlungsmodellen für EC2-Instanzen und den Überlegungen, die bei der Wahl dieser Modelle in verschiedenen Szenarien zu berücksichtigen sind.
 \newpage
 
 
