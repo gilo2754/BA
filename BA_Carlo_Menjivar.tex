@@ -131,8 +131,12 @@ plainpages=false,hypertexnames=false,citecolor=black, urlcolor=blue]{hyperref}
 % Das Paket "biblatex" für autom. 
 % Literaturverzeichnisse:
 %\usepackage{csquotes} % Für sprachangepasste Anführungszeichen
-%\usepackage[backend=bibtex,style=alphabetic]{biblatex}
-%\addbibresource{chapters/Quellenverzeichnis.bib}           
+%\usepackage[backend=bibtex,style=ieee]{biblatex}
+%\addbibresource{chapters/bibx.bib}           
+
+%This didnt works, because i need  a .bib
+%\usepackage[authoryear,round,longnamesfirst]{natbib}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% DOKUMENT                                %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -143,6 +147,8 @@ plainpages=false,hypertexnames=false,citecolor=black, urlcolor=blue]{hyperref}
 \input{leereSeite} % Ausgelagerte LaTeX-Datei (hier: leereSeite.tex) einbinden
 
 \newpage
+
+
 
 % Deckblatt
 \pagestyle{empty}

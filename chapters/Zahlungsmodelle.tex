@@ -6,7 +6,8 @@ Das On-Demand-Modell beinhaltet keine langfristigen Verpflichtungen, es ist dahe
 Dies wird in Unterkapitel \ref{sssec:num2.4} behandelt.
 %[WIRD ES?]
 \\\\
-In dieser Arbeit wird nicht darauf eingegangen, wie die richtige Server-Instanz ausgewählt werden sollte, da die Auswahl von individuellen Anforderungen abhängt, die von Fall zu Fall unterschiedlich sind. Im Allgemeinen wird empfohlen Instanzen so nahe wie möglich an den Ressourcen\footnote{Mit Ressourcen sind Cloud-Dienste gemeint}, mit denen sie kommunizieren werden, zu platzieren. %[IST DIESE ERKLÄRUNG NÖTIG?]
+In dieser Arbeit wird nicht darauf eingegangen, wie die richtige Server-Instanz ausgewählt werden sollte, da die Auswahl von individuellen Anforderungen abhängt, die von Fall zu Fall unterschiedlich sind. Im Allgemeinen wird empfohlen Instanzen so nahe wie möglich an den Ressourcen, mit denen sie kommunizieren werden, zu platzieren. %[IST DIESE ERKLÄRUNG NÖTIG?]
+% Ressourcen vs Cloud-Dienste sollte gekläert werden
 Die beste Leistung wird außerdem angestrebt, indem sich diese Instanzen in räumlicher Nähe zur Mehrzahl der Endnutzer, befinden. 
 %Vor- und Nachteile noch tabellarisch aufzulisten??
 %https://youtu.be/Q5wSvUVPyYY?t=678
@@ -20,7 +21,7 @@ Die Preise beim dem On-Demand Zahlungsmodell variiert je nach Instanz Typ, Regio
     \centering
     \includegraphics[scale=0.5]{sources/On-Demand-Pläne für Amazon EC2}\label{fig:OnDemand_Preise}\\
     \caption[On-Demand Preise für Amazon EC2]{}
-    \label{fig:OnDemand_Preise}  On-Demand Preise für Amazon EC2 {\cite{AMZ02}}
+    \label{fig:OnDemand_Preise}  On-Demand Preise für Amazon EC2 \footnote{\cite{AMZ02}}
   \end{figure}
 In der \autoref{fig:OnDemand_Preise} werden die für die Region Ohio verfügbaren Linux-Instanzen gezeigt. Es ist zu beachten, dass Instanzen mit denselben Eigenschaften, aber in verschiedenen Regionen, unterschiedliche Preise haben können.
  %WARUM IST DIESE ABB.?
@@ -42,12 +43,12 @@ Die Zahlungsmodelle Reservierte Instanzen und Saving Plans sind sich sehr ähnli
         \\
         \hline
     \end{tabular}
-    {\cite{AMZ07,AMZ11}}
+    \footnote{\cite{AMZ07,AMZ11}}
 \end{table}
 Die ersten beiden Optionen in der obigen Tabelle, die Saving Plans, unterscheiden sich dadurch, dass die Compute Saving Plans die Flexibilität bieten, EC2-Instanzen nach Familie\footnote{\cite{AWS1}, Seite 95}, Größe, Availability Zone (AZ), Betriebssystem oder Mandant zu wechseln.
 \begin{quote}
     „Bei Compute Saving Plans können Sie beispielsweise jederzeit von C4- auf M5-Instances wechseln, eine Workload von EU (Irland) nach EU (London) verlagern oder eine Workload von EC2 auf Fargate oder Lambda verschieben. Dabei zahlen Sie automatisch weiterhin den Saving Plans-Preis.”
-    {\cite{AMZ11}}
+    \footnote{\cite{AMZ11} \cite{AMZ11}}
 \end{quote}
 Bei den EC2-Instance Saving Plans hingegen muss eine Instance-Familie in einer bestimmten Region ausgewählt werden.  Dies reduziert automatisch die Kosten für die ausgewählte Instanz-Familie in der jeweiligen Region, unabhängig von Availability Zone, Größe, Betriebssystem oder Mandant.
 %\\Die Festlegung eines festen Stundensatzes über einen langen Zeitraum bietet die Möglichkeit, künftige Kosten zu planen[ZITAT/WIE IM BWL ERKLÄRT]WIEDER EINBLENDEN; WENN ES SINNVOLL IST.
@@ -57,7 +58,7 @@ Bei den EC2-Instance Saving Plans hingegen muss eine Instance-Familie in einer b
 %AUCH FÜR RIs?
 %3 Arten von S. Plans: Compute and EC2 Instance
 \subsubsection*{Vorauszahlung}\label{sssec:Vorauszahlung}
-Zusätzlich gibt es bei Saving Plans und reservierten Instanzen die Option im Voraus zu zahlen. Im Gegenzug wird ein niedrigerer Preis angeboten. Amazon bietet drei verschiedene Optionen an. Diese sind teilweise, keine oder vollständige Vorauszahlung{\cite{AMZ17}}. Bei teilweiser Vorauszahlung ist eine Anzahlung von etwa 50\% zu leisten.
+Zusätzlich gibt es bei Saving Plans und reservierten Instanzen die Option im Voraus zu zahlen. Im Gegenzug wird ein niedrigerer Preis angeboten. Amazon bietet drei verschiedene Optionen an. Diese sind teilweise, keine oder vollständige Vorauszahlung\footnote{\cite{AMZ17}}. Bei teilweiser Vorauszahlung ist eine Anzahlung von etwa 50\% zu leisten.
 \\\\
 Die \autoref{fig:EinsparungenVorauszahlung} zeigt den Vergleich zwischen den drei Optionen für Vorauszahlungen. Hier wird deutlich, dass es kaum einen Unterschied zwischen eine teilweise Vorauszahlung und keine Vorauszahlung zu machen gibt. Eine erhebliche Einsparung ergibt sich, wenn man für den gesamten Zeitraum der gebuchten Instanzen im Voraus bezahlt.
 \begin{figure}[h!]
@@ -92,8 +93,8 @@ Die folgende Tabelle fasst die Eigenschaften der Zahlungsmodelle für EC2-Instan
     \includegraphics[scale=0.63]{sources/Vergleich_der_Zahlungsmodelle}\label{fig:Vergleich_der_Zahlungsmodelle}\\
     \caption[Vergleich der Zahlungsmodelle]{}
     \label{fig:Vergleich_der_Zahlungsmodelle}  Vergleich der Zahlungsmodelle nach Eingenschaft und Anwendungsfall\\
-    Eigene Darstellung. Quelle: {\cite{AMZ02, AMZ07, AMZ11, AMZ19}},
-    {\cite{PS1} Seite 9}
+    Eigene Darstellung. Quelle: \footnote{\cite{AMZ02, AMZ07, AMZ11, AMZ19}},
+    \footnote{\cite{PS1} Seite 9}
   \end{figure}
 
 %To read planned at 21.11:
@@ -108,4 +109,4 @@ Die folgende Tabelle fasst die Eigenschaften der Zahlungsmodelle für EC2-Instan
 In diesem Kapitel wurden die verschiedenen Zahlungsmodelle für EC2-Instanzen untersucht. Es wurden Hinweise für die Auswahl des richtigen Zahlungsmodells in verschiedenen Szenarien gegeben. Dies wurde erklärt, um die Preisvorteile von den Zahlungsmodellen zu nutzen. Beginnend mit dem On-Demand-Zahlungsmodell, gefolgt von Reserved Instanzen und Saving Plans. In dieser Reihenfolge sinkt der Preis und mit ihm steigt die Verpflichtung, sich langfristig zu binden. Schließlich mit Spot-Instanzen, die die niedrigsten Preise bieten, aber keine volle Verfügbarkeit sicherstellen.%oder garantieren?
 \\\\
 %En el capitulo monitoreo de costes  se mostrarán herramientas como X(CloudWatch) con las que podremos verificar si la desicion realizada fue la correcta. Para el modelo de pago On-Demand no hay ninguna redccion de los costos, pero existen medidas para aun asi reducir el uso de las instancias. Dichas medidas seran profundizadas en capitulo medidas de optimizacion
-Im nächsten Kapitel wird CloudWatch[UND...] vorgestellt, mit dem überprüft werden kann, ob das ausgewählte Zahlungsmodell tatsächlich das Richtige für den betreffenden Anwendungsfall ist. Für das On-Demand-Zahlungsmodell gibt es keine Kostenreduzierung, aber es gibt Maßnahmen, um die Nutzung von Instanzen zu reduzieren. Auf diese Maßnahmen wird im Kapitel \ref{kap_Optimierung} näher eingegangen.
+Im nächsten Kapitel wird CloudWatch[UND...] vorgestellt, mit dem überprüft werden kann, ob das ausgewählte Zahlungsmodell tatsächlich das Richtige für den betreffenden Anwendungsfall ist. Für das On-Demand-Zahlungsmodell gibt es keine Kostenreduzierung, aber es gibt Maßnahmen, um die Nutzung von Instanzen zu reduzieren. Auf diese Maßnahmen wird im Kapitel \ref{kap_Optimierung} näher eingegangen.+Cost Explorer+Trusted Advisor.
