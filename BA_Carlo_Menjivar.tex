@@ -131,14 +131,11 @@ plainpages=false,hypertexnames=false,citecolor=black, urlcolor=blue]{hyperref}
 % Das Paket "biblatex" für autom. 
 % Literaturverzeichnisse:
 %\usepackage{csquotes} % Für sprachangepasste Anführungszeichen
-%\usepackage[backend=bibtex,style=alphabetic]  
-%        {biblatex}
-%\addbibresource{bib/literatur.bib}           
-
+%\usepackage[backend=bibtex,style=alphabetic]{biblatex}
+%\addbibresource{chapters/Quellenverzeichnis.bib}           
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% DOKUMENT                                %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{document}
 % Unbeschriftetes Vorblatt (Leere Seite)
 \pagestyle{empty} % Seite ohne Kopf- und Fußzeilen
@@ -210,8 +207,8 @@ plainpages=false,hypertexnames=false,citecolor=black, urlcolor=blue]{hyperref}
 \input{chapters/Abkürzungsverzeichnis}
 \newpage
 
-\section*{Einleitung}\label{kap_einleitung}
-\addcontentsline{toc}{section}{Einleitung} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen
+\section{Einleitung}\label{kap_einleitung}
+%\addcontentsline{toc}{section}{Einleitung} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen
 \input{chapters/Einleitung}
 \newpage
 
@@ -246,7 +243,6 @@ plainpages=false,hypertexnames=false,citecolor=black, urlcolor=blue]{hyperref}
 
 \section*{Quellenverzeichnis}\label{kap_quellenverzeichnis}
 \addcontentsline{toc}{section}{Quellenverzeichnis} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen
-
 \input{chapters/Quellenverzeichnis}
 \newpage
 
