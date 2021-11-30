@@ -1,4 +1,4 @@
-In diesem Grundlagenkapitel werden Erfolgschancen für Unternehmen aufgelistet, die Cloud-Dienste in ihre Geschäftsprozesse integrieren.
+In diesem Grundlagenkapitel werden Erfolgschancen für Unternehmen aufgelistet, die Cloud-Dienste in ihre Geschäftsprozesse integrieren. Mit Cloud-Diensten sind die Dienste eines beliebigen Cloud-Anbieters im Allgemeinen gemeint und nicht ausschließlich AWS-Dienste. 
 Es wird ebenfalls erklärt warum Kostenoptimierung und -überwachung relevant für Unternehmen sind.
 \\\\
 Folgende Ergebnisse könnten durch die Einführung von Überwachungs- und Optimierungsmaßnahmen erreicht werden:
@@ -11,7 +11,7 @@ Folgende Ergebnisse könnten durch die Einführung von Überwachungs- und Optimi
       \item
             Eine geringere Ungewissheit bei der Umsetzung von cloudbasierten Systemen.
       \item
-            Mehr Kontrolle über die  Gesamtkosten des Betriebs (TCO\footnote{TCO: Total Cost if Ownership}\cite{CAN01}.
+            Mehr Kontrolle über die  Gesamtkosten des Betriebs (TCO\footnote{TCO: Total Cost if Ownership}\footnote{\cite{CAN01} Seite 2}.
 
 \end{itemize}
 %Basandose en "Vor- und Nachteile der Nutzung von Cloud-Diensten (mit mobilen Endgeräten) in Organisationen und deren Einfluss auf die Nachhaltigkeit"
@@ -29,30 +29,26 @@ Folgende Ergebnisse könnten durch die Einführung von Überwachungs- und Optimi
 %https://d1.awsstatic.com/whitepapers/introduction-to-aws-cloud-economics-final.pdf
 %[Date last review: 25.11 Isa]
 \begin{flushleft}
-      Cloud Economics untersucht die Kosten und die Vorteile von Cloud
-      Computing und die, der dahinterstehenden wirtschaftlichen Grundsätze.
-      Das On-Demand Prinzip, besitzt die Flexibilität, die Rechenkapazität je nach Bedarf anzupassen.
+      Cloud Economics untersucht die Kosten und die Vorteile von Cloud Computing und die, der dahinterstehenden wirtschaftlichen Grundsätze. Das On-Demand Prinzip, besitzt die Flexibilität, die Rechenkapazität je nach Bedarf anzupassen.
       %gibt die Flexibilität, Rechenkapazität je nach Bedarf anzupassen.
       %entweder manuell oder automatisch
       Es entfällt die Notwendigkeit, hohe Investitionen in Hardware zu tätigen, wie bei On-Premise-Systemen.
-      Durch den Verzicht auf Hardware entfallen die Kosten für Reparatur, Wartung und eventuell damit verbundenen Lizenzen.
+      Durch den Verzicht auf Hardware entfallen die Kosten für Reparatur und Wartung.
       \\
-      Der Cloud-Anbieter übernimmt viele Verwaltungsaufgaben. Das führt zu einer Abnahme der nötigen Fachkraft.
-            {\cite{IDC01}}
-
-      Die Nutzung von Cloud-Diensten ist in unabhängiger Weise möglich;
-      in Selbstbedienung und mit der Freiheit Ressourcen ohne Einschränkungen zu nutzen. Das bedeutet jedoch gleichzeitig, dass der Nutzer Verantwortung für die anfallenden Kosten übernimmt\footnote{Nutzer von Cloud-Diensten}.
-      %\\(IST DAMIT KLAR, DASS ICH Selbsbedienung MEINE?). }
+      Der Cloud-Anbieter übernimmt viele Verwaltungsaufgaben. Das führt zu einer Abnahme der nötigen Fachkraft\cite{IDC01}.
+      Die Nutzung von Cloud-Diensten ist in unabhängiger Weise möglich; in Selbstbedienung und mit der Freiheit Ressourcen ohne Einschränkungen zu nutzen. Das bedeutet jedoch gleichzeitig, dass der Nutzer Verantwortung für die anfallenden Kosten übernimmt\footnote{Nutzer von Cloud-Diensten}.
 \end{flushleft}
 
 [Grafik der Kosten On-Premise/Demand?]
 \subsubsection{Skalierbarkeit}
-Um die Leistung der Ressourcen aufrecht zu halten und diese bei Abnahme der Nachfrage zu reduzieren,  ist es möglich die Rechenkapazität hoch- und runterzuskalieren.
-
+Skalierbarkeit bezieht sich in dieser Arbeit auf die Möglichkeit, die Kapazität von Cloud-Diensten zu skalieren. Um die Leistung der IT-Infrastruktur aufrecht zu halten, ist es zum Beispiel möglich, das Serversystem so zu konfigurieren, dass es auf wechselnde Lastanforderungen reagiert.
+%bietet  ist es möglich die Rechenkapazität hoch- und runterzuskalieren.
+%Vertikal und Horizontal
+%
 %DOPPELT?Mit Auto Scaling wird sichergestellt, dass die Rechenkapazität in Zeiträumen von hoher Nachfrage automatisch hochskaliert.[AUCH RUNTER?]
 % davor:  Anzahl der Amazon Server-Instanzen ABER ANZAHL VON SERVERN != Rechenkap.
 % und damit Kosten minimieren.
-Auf diese Weise kann Zeit mit der Verwaltung von IT - Ressourcen gespart werden, welche dann genutzt werden kann, um sich auf die wesentlichen Geschäftsaktivitäten zu konzentrieren\footnote[p.~29]{\cite{AWS1}[].
+Auf diese Weise kann Zeit mit der Verwaltung von IT - Ressourcen gespart werden, welche dann genutzt werden kann, um sich auf die wesentlichen Geschäftsaktivitäten zu konzentrieren\footnote{[p.~29]\cite{AWS1}[]}.
 \footnote{\citet*{AWS1}}
 %\parencite[][Seite 29]{AWS1}
 %OPTION 2: 
@@ -64,39 +60,28 @@ Dies war der Fall bei Walgreens 2020 in den Vereinigte Staaten.
 Sie haben unter anderem 750 virtuelle Maschinen und SAP HANA auf Azure Instanzen migriert.
 
 \begin{quote}
-      „By getting out of the business of managing datacenters, WBA[Walgreens Boots Alliance] can spend less time worrying about managing IT resources and more time focusing on what it’s really good at—delivering great healthcare and retail experiences to its customers. Azure also gives WBA an opportunity to better utilize the capabilities of its SAP implementation. “One of the key reasons for moving to Azure was so that we could take advantage of the scalability that SAP HANA is capable of,” explains Regalado. “Instead of using extremely big SAP HANA Large Instances, we can start using smaller VMs[virtuelle Maschinen] and then scale out.„
-
-      {\cite{AZU01}}
+      „By getting out of the business of managing datacenters, WBA[Walgreens Boots Alliance] can spend less time worrying about managing IT resources and more time focusing on what it’s really good at—delivering great healthcare and retail experiences to its customers. Azure also gives WBA an opportunity to better utilize the capabilities of its SAP implementation. “One of the key reasons for moving to Azure was so that we could take advantage of the scalability that SAP HANA is capable of,” explains Regalado. “Instead of using extremely big SAP HANA Large Instances, we can start using smaller VMs[virtuelle Maschinen] and then scale out.„{\cite{AZU01}}
 \end{quote}
 
 \subsubsection{Flexibilität und Agilität}
-In den Amazon Web Services gibt es im Allgemeinen eine Auswahl zwischen folgenden Optionen:
+Für Cloud-Dienste gibt es im Allgemeinen eine Vielzahl von Optionen, von denen einige Beispiele unten aufgeführt sind:
 \begin{itemize}
-      \item
-            Verschiedene Betriebssysteme, ohne oder mit Lizenzierung.
-      \item
-            Die meistverbreiteten Programmiersprachen, unter anderem Java, C++, Go, JavaScript und Python.{\cite{AMZ03}}
-
-      \item
-            Hosting für statische Webseiten und Webanwendungen.
-                  {\cite{AMZ04}}
-
-      \item
-            Populäre relationale und nicht relationale Datenbanken.
-                  {\cite{AMZ10}}
-      \item
-            Vielfältige Hardware-Konfigurationen.
+\item
+    Verschiedene Betriebssysteme, ohne oder mit Lizenzierung.
+\item
+    Die meistverbreiteten Programmiersprachen, unter anderem Java, C++, Go, JavaScript und Python.{\cite{AMZ03}}
+\item
+    Hosting für statische Webseiten und Webanwendungen{\cite{AMZ04}}.
+\item
+    Populäre relationale und nicht relationale Datenbanken{\cite{AMZ10}}.           
+\item
+    Vielfältige Hardware-Konfigurationen.
 
 \end{itemize}
 \begin{flushleft}
-      Durch die Vielzahl der verfügbaren Ressourcen ist es möglich, Prototypen und Experimente in kurzer Zeit durchzuführen.
-      \footnote{{\cite{IDC01}}, Seite 7}.
-      \\
-      Softwareprojekte können schnell auf den Markt gebracht werden. Je nach ihrem Erfolg ist es möglich, sinnvolle Entscheidungen zu treffen.
-      %mit echtem Kundenfeedback getestet werden.
-      Wenn ein Projekt, aus welchen Gründen auch immer, kurzfristig eingestellt werden muss, könnten alle damit verbundenen Kosten ausfallen.
-      
-      Denn im Gegensatz zu On-Premise-Infrastrukturen gibt es keine Bindung an kostspielige Hardware.
+Durch die Vielzahl der verfügbaren Ressourcen ist es möglich, Prototypen und Experimente in kurzer Zeit durchzuführen\footnote{{\cite{IDC01}}, Seite 7}.
+\\
+Softwareprojekte können schnell auf den Markt gebracht werden. Je nach ihrem Erfolg ist es möglich, sinnvolle Entscheidungen zu treffen. Wenn ein Projekt, aus welchen Gründen auch immer, kurzfristig eingestellt werden muss, könnten alle damit verbundenen Kosten ausfallen. Denn im Gegensatz zu On-Premise-Infrastrukturen gibt es keine Bindung an kostspielige Hardware.
       %Wenn die Neuentwicklung nicht erfolgreich war, müssen keine weitere Kosten anfallen.
       %Da die verwendete Dienste vollständig stillgelegt werden können.
 \end{flushleft}
@@ -106,15 +91,16 @@ Mit geringem Aufwand ist es möglich, Cloud-Dienste eigenständig einzurichten. 
 Andererseits besteht die Gefahr, dass hohe ungewollte Kosten entstehen, wenn jemand versehentlich oder in unverantwortlicher Weise Dienstleistungen in Anspruch nimmt.
  [TRÄGT DIESES ETWAS ZUR ARBEIT BEI?]     
 %[TODO: ADD USE CASE WHERE THIS HAPPEND]
-      %LinkedIn Learning, the woman said something like that?
+%LinkedIn Learning, the woman said something like that?
 %BRINGT DIESE UNTERKAP. ETWAS ZUR ARBEIT BEI?
 
 \subsubsection{Keine Vorabkosten}
 %https://aws.amazon.com/de/ec2/pricing/
-Amazon Web Services bietet ein Pay-as-you-go-Modell für viele ihre Ressourcen. %im On-Demand
-%Zahlungsmodell 
-%für EC2 und Speichereinheiten wie S3.
-Wenn nur für die monatlich verbrauchten Ressourcen bezahlt wird, verringert sich die Anfangsinvestition in die IT-Infrastruktur oder fällt ganz weg. Es ist zu bedenken, dass weitere Investitionen wie technische Schulungen für das Personal erforderlich werden. TÜV Rheinland bietet Kurse zur Ausbildung von Cloud Architekten an. Die Kurse dauern drei Tage und kosten 2.136,05 € pro Teilnehmer. Maßnahmen wie die genannten Kurse wirken einem der Hauptprobleme entgegen, mit denen Unternehmen bei der Migration in die Cloud konfrontiert sind. In der von Accenture im Jahr 2020 durchgeführten Umfrage gaben 38\% der Befragten an, dass fehlende Kompetenzen im Unternehmen im Bezug auf die Cloud ein Hindernis für eine Cloud-Migration ist\footnote{\cite{ACC2}, Seite 11}.
+Amazon Web Services bietet ein Pay-as-you-go-Modell für viele ihre Ressourcen. Das On-Demand Zahlungsmodell und die Nutzung S3-Speichereinheiten basieren auf das oben genannte Modell.
+Wenn nur für die monatlich verbrauchten Ressourcen bezahlt wird, verringert sich die Anfangsinvestition in die IT-Infrastruktur oder fällt ganz weg. 
+
+\subsubsection{Technische Fachkompetenz}
+Es ist zu bedenken, dass weitere Investitionen wie technische Schulungen für das Personal erforderlich werden. TÜV Rheinland bietet Kurse zur Ausbildung von Cloud Architekten an. Die Kurse dauern drei Tage und kosten 2.136,05 € pro Teilnehmer. Maßnahmen wie die genannten Kurse wirken einem der Hauptprobleme entgegen, mit denen Unternehmen bei der Migration in die Cloud konfrontiert sind. In der von Accenture im Jahr 2020 durchgeführten Umfrage gaben 38\% der Befragten an, dass fehlende Kompetenzen im Unternehmen im Bezug auf die Cloud ein Hindernis für eine Cloud-Migration ist\footnote{\cite{ACC2}, Seite 11}.
 %[KOSTEN EINER IT-INFRA = SERVER+Rack]
 % QUE PORTENTAJE DE LA INVERSION REPRESENTA LA INFRAESTRUCTURA DE IT EN UNA START UP Y EN UNA CORPORACION? RAZONES USAR LA NUBE(Statista)?
 
