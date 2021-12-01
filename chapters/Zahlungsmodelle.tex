@@ -68,7 +68,7 @@ Die \autoref{fig:EinsparungenVorauszahlung} zeigt den Vergleich zwischen den dre
   \end{figure}
   \\
 Die Berechnungen wurden mit dem AWS Pricing Calculator {\cite{AMZ17}} für Instanzen der Familie t4g.xlarge, in der EU (Frankfurt) und für eine Laufzeit von 3 Jahren durchgeführt. 
-\subsection{Spot Instanzen }
+\subsection{Spot Instanzen }\label{ssec:Spot-Instances}
 Wie in Unterkapitel \ref{sssec:RI-Marketplace} genannt bieten EC2 Spot-Instanzen die Möglichkeit aus den ungenutzten EC2-Instanzen anderer Nutzer zu profitieren. 
 Mit einem Preisvorteil von bis zu 90 \% gegenüber normalen On-Demand-Instanzen sind Spot-Instanzen ideal für fehlertolerante Anwendungen wie auf Containern ausgeführte Workloads, CI/CD, Bigdata-Anwendungen und ähnliches.
 
@@ -90,6 +90,25 @@ Hier sind zwei Fälle. In einem Fall ist die Rechnerkapazität sehr gering und e
 %SHOW THIS
 %https://medium.com/driven-by-code/how-truecar-saves-40-on-aws-with-ec2-reserved-instances-d0a6e0d9c08a
 [How TrueCar Saves 40\% on AWS with EC2 Reserved Instances]
+
+\subsection{Amazon EC2 Fleet[rev]} \label{sssec:AWS-EC2-Fleet}
+Instanzen-Flotte oder auf Englisch fleet of instances, bieten bei AWS die Möglichkeit mehrere Spot-Instanzen anzufordern, um einen bestimmten Bedarf an Rechenleistung zu decken\footnote{\cite{AMZ26} Amazon Elastic Compute Cloud - Benutzerhandbuch für Linux-Instances, Seite 708}. Spot-Instanzen können auch für produktive Umgebungen verwendet werden\footnote{\cite{AMZ24} Running Web Applications on Amazon EC2 Spot Instances}. Darüber hinaus ist es empfehlenswert, Instanzen aus verschiedenen Zahlungsmodellen zu kombinieren, um von den Einsparungen von Spot-Instanzen, Saving Plans und reservierten Instanzen zu profitieren. Die Kombination von Instanzen aus verschiedenen Zahlungsmodellen beseitigt den Nachteil für Produktionsumgebungen, der mit Spot-Instanzen verbunden ist. Das heißt, das Risiko eines vollständigen oder teilweisen Ausfalls der Rechenkapazität durch den Ausfall von Spot-Instanzen stellt.
+\\\\
+Folgende Punkte sind für die Nutzung von Spot Fleet Instanzen zu berücksichtigen:
+\subsubsection*{Wahl der Instanzen[rev]}
+Die Instanzen, die in der Auswahl für die Instanzen-Flotte berücksichtigt werden, müssen die Anforderungen der Applikation entsprechen. Um die Wahrscheinlichkeit zu erhöhen, dass Spot-Instanzen gefunden werden, ist es empfehlenswert, die Kriterien der Suche zu erweitern in dem man Instanzen ähnlicher Typen zulässt. Die Berücksichtigung von Instanzen von Familien mit mehr Leistung als erforderlich ist ebenfalls eine gute Option. Denn, obwohl die Leistung die Anforderungen der Applikation überstiegen werden, wird es einen reduzierten Preis für die Spot-Instanzen bezahlt als bei On-Demand Zahlungsmodell.
+\\\\
+\subsubsection*{Maximaler Stundenpreis[rev]}
+Wie im Unterkapitel \ref{ssec:Spot-Instances} erwähnt, muss für Anforderung von Spot-Instanzen einen Maximalpreis festlegt werden. In diesem Fall ist die Festlegung dieses Maximalpreises auch für die gesamte Instanzen-Flotte eine Option. Es kann erwartet werden, dass die Spot-Preise im Laufe der Zeit stabil bleiben, das heißt keine starke Preisschwankungen. Der aktuelle Preis und der Preisverlauf von Spot-Instanzen können in auf dem AWS-Konsole\footnote{\cite{AMZ25} AWS EC2 Spot Instanzen-Anfragen und Preisverlauf} abgefragt werden. Diese Informationen sind zugänglich nur mit einem AWS-Konto.
+\\
+\subsubsection*{Festlegung von On-Demand-Anteil[rev]}
+Die Standardeinstellungen sind ein guter Ausgangspunkt und liegen bei 70\% On-Demand-Instanzen und 30\% Spot-Instanzen.
+\cite{AMZ24}
+
+\subsubsection*{Auto Scaling group[rev]}
+\subsubsection*{Einschränkungen[rev]}
+
+
 \subsection*{Vergleich der Zahlungsmodelle}
 Die folgende Tabelle fasst die Eigenschaften der Zahlungsmodelle für EC2-Instanzen zusammen und listet typische Applikationen je nach Zahlungsmodell auf.
 [Abb. VOLLSTÄNDIG?]
@@ -98,7 +117,7 @@ Die folgende Tabelle fasst die Eigenschaften der Zahlungsmodelle für EC2-Instan
     \includegraphics[scale=0.63]{sources/Vergleich_der_Zahlungsmodelle}\label{fig:Vergleich_der_Zahlungsmodelle}\\
     \caption[Vergleich der Zahlungsmodelle]{}
     \label{fig:Vergleich_der_Zahlungsmodelle}  Vergleich der Zahlungsmodelle nach Eingenschaft und Anwendungsfall\\
-Eigene Darstellung. Quelle: {\cite{AMZ02, AMZ07, AMZ11, AMZ19}}\\
+Eigene Darstellung. Quelle: {\cite{AMZ02, AMZ07, AMZ11, AMZ19,SPOT1}}\\
 {\cite{PS1}Plusserver: Kostenoptimierung in AWS Seite 9}
   \end{figure}
 %
