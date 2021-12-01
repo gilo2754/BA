@@ -82,7 +82,7 @@ Anders als Zeitgesteuerte Skalierung ist es nicht notwendig, die Verhaltensmuste
 
 \subsection{S3 Optimierung}
 \subsubsection{Die richtige Speicherklassen wählen}
-Um die Speicherkosten zu optimieren, ist es daher notwendig, die richtige Speicherklassen für die jeweilige Applikation wählen. Um die richtige Wahl zu treffen, müssen die Anforderungen der Applikation verstanden werden. Klinische Patientendaten und eine Instagram-Story unterscheiden sich in der Zugriffshäufigkeit auf diese Daten und in der Länge der Aufbewahrungszeit[PASSENDES WORT?].
+Um die Speicherkosten zu optimieren, ist es daher notwendig, die richtige Speicherklassen für die jeweilige Applikation wählen. Um die richtige Wahl zu treffen, müssen die Anforderungen der Applikation verstanden werden. Klinische Patientendaten und eine Instagram-Story unterscheiden sich in der Zugriffshäufigkeit auf diese Daten und in der Länge der Aufbewahrungszeit.
 
 Amazon bietet verschiedene Speicherklassen an, die sich im Preis und in der Häufigkeit des Zugriffs auf die Objekte unterscheiden. Objekte sind in Behältern enthalten, die Buckets genannt werden.
 [ABB Speicherklasse ->Eigenschaften der Anwendung?]
@@ -92,8 +92,8 @@ Wenn Daten über einen längeren Zeitraum gespeichert werden müssen, weil die A
 Zusätzlich, wenn auf die Daten nicht häufig zugegriffen wird, sind Glacier und Glacier Deep Archive passende Speicherklassen. Die Entscheidung ist jedoch nicht immer so einfach und die Umstände können sich schnell ändern. Hinzu kommt, dass nicht alle Daten in einer Applikation immer die gleichen Zugriffsmuster haben. Für solche Fälle ist es möglich, Regeln zu definieren, die Dateien zwischen verschiedenen Speicherklassen abhängig von ihrem Alter übertragen.
 
 \subsubsection{Lebenszyklus-Konfiguration}
-Eine S3-Lebenszykluskonfiguration oder lifecycle policy beschreibt in einer XML-Datei Regeln und Aktionen für die Manipulation von Objekten.
-Aktionen wie das Verschieben von Objekten verursachen Kosten. Einige von ihnen werden in \autoref{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} für die Berechnung der Speicherkosten verwendet.
+[MASSNAHME für...]Eine S3-Lebenszykluskonfiguration oder lifecycle policy beschreibt in einer XML-Datei Regeln und Aktionen für die Manipulation von Objekten.
+Aktionen wie das Verschieben von Objekten verursachen Kosten. Ein Beispiel von diesen Kosten und mögliche Einsparungen werden in \autoref{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} für die Berechnung der Speicherkosten verwendet.
 \\
 %Beim Verschieben nach S3 Intelligent-Tiering, S3 Standard – Infrequent Access und S3 One Zone – Infrequent Access: %\$0.01\\
 %S3 Glacier: \$0.036\\

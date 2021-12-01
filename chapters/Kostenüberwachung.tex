@@ -52,7 +52,7 @@ Für eine detailliertere Überwachung ist es möglich, benutzerdefinierte Metrik
 \\
 Bei CloudWatch wird eine Änderung bei einer Ressource in der AWS-Umgebung Ereignis genannt. 
 AWS-Ressourcen können Ereignisse erzeugen, wenn sich ihr Status ändert.
-Beispielsweise, wird ein Ereignis erzeugt, wenn Amazon EC2 Auto Scaling, Instanzen gestartet oder beendet werden\footnote{\cite{AMZ13}, AWS Cloud Watch Events: User GuideSeite 1} oder wenn eine bestimmte Menge an Speicherplatz in einem Bucket erreicht wurde.
+Beispielsweise, wird ein Ereignis erzeugt, wenn Amazon EC2 Auto Scaling, Instanzen gestartet oder beendet werden\footnote{\cite{AMZ13}, AWS Cloud Watch Events: User GuideSeite 1} oder wenn eine bestimmte Menge an Speicherplatz in einem Bucket erreicht wurde. Ein Bucket ist ein Behälter, in dem Objekte bei Amazon S3 gespeichert werden\footnote{\cite{AMZ18}Amazon Simple Storage Service User Guide, Seite 4}. Beispiele für Objekte sind Dateien wie Bilder und Videos. 
 \\\\
 \textbf{Regel} \\
 Eine Regel ordnet eintreffende Ereignisse zu und leitet diese zur Verarbeitung an Ziele weiter.
@@ -181,7 +181,8 @@ Ein Berater für eine Prüfung und Optimierung der Ressourcen kann in Deutschlan
 % CloudWatch
 In diesem Kapitel wurde gezeigt, dass es mit CloudWatch möglich ist, Alarme auf Basis von Ereignissen einzurichten, die mit Amazon SNS oder externen E-Mail-Adressen kommunizieren. Im nächsten Kapitel wird CloudWatch erneut behandelt. Diesmal nicht als Überwachungswerkzeug, sondern als Optimierungswerkzeug zur Erstellung von automatisierte Aktionen/Reaktionen. Dazu war es notwendig, die Rolle der von CloudWatch gesammelten Metriken zu verstehen, die die Grundlage für die Verwaltung von Aktionen wie Auto-Scaling-Gruppen bilden. 
 %Cost Explorer
-Aus dem Blickwinkel des Kostenmanagements wurde gezeigt, dass mit Cost-Explorer eine Analyse von Kosten der letzten 12 Monate, eine Einschätzung der Kosten im aktuellen Monat und eine Prognose für die nächsten Monate möglich ist. Kosten können nach Tags und anderen Filtern getrennt werden. Diese Informationen dient unter anderem zur Erstellung einer operativen Budgetplanung mit genaueren Daten.
+Aus dem Blickwinkel des Kostenmanagements wurde gezeigt, dass mit Cost-Explorer eine Analyse von Kosten der letzten 12 Monate, eine Einschätzung der Kosten im aktuellen Monat und eine Prognose für die nächsten Monate möglich ist. Diese Informationen dient unter anderem zur Erstellung einer operativen Budgetplanung mit genaueren Daten, da
+Kosten nach Tags und anderen Filtern getrennt werden können.
 %Trusted Advisor
 Darüber hinaus wurde Trusted Advisor vorgestellt, die konkrete Optimierungsempfehlungen gibt und warnt über Leistungsgrenzen. Dies kann mit erheblichen Kosten verbunden sein und ist daher nicht für alle Arten von Unternehmen unmittelbar attraktiv. Obwohl sich nicht alle Unternehmen die Prüfungen von Trusted Advisor leisten können, sollten die kostenlosen Empfehlungen im Überwachungs- und Optimierungsplan berücksichtigt werden.
 [WAS KOMMT IN NÄCHTEN KAP.?]

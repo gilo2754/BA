@@ -2,8 +2,8 @@ Die Nutzung von EC2-Instanzen ist mit einem Zahlungsmodell verbunden. Die Wahl d
 %EC2 and RDS(DB) spend are often on of the main portions of your overall AWS Bill t.ly/Mqwn
 Die von Amazon Web Services angebotenen Zahlungsmodelle werden im Folgenden dargestellt.
 \\\\
-Das On-Demand-Modell beinhaltet keine langfristigen Verpflichtungen, es ist daher die teuerste Alternative, die auf Stundenbasis berechnet wird. Die Modelle Saving Plans und Reserved Instances erfordern den Abschluss von Verträgen über ein oder drei Jahre, um günstige Preise zu erhalten. EC2-Spot-Instanzen sind das kostengünstigste Modell, sie haben aber den Nachteil, dass ihre Verfügbarkeit nicht immer garantiert ist. Jedes Zahlungsmodell hat seine Vor- und Nachteile und eignet sich für unterschiedliche Anwendungsfälle. Gute Ergebnisse können auch durch die Kombination mehrerer Zahlungsmodelle erzielt werden[ZU ERGÄNZEN]. %SAG DER CLOUD-EXPERT/FIRMA
-Dies wird in Unterkapitel \ref{sssec:num2.4} behandelt.
+Das On-Demand-Modell beinhaltet keine langfristigen Verpflichtungen, es ist daher die teuerste Alternative, die auf Stundenbasis berechnet wird. Die Modelle Saving Plans und Reserved Instances erfordern den Abschluss von Verträgen über ein oder drei Jahre, um günstige Preise zu erhalten. EC2-Spot-Instanzen sind das kostengünstigste Modell, sie haben aber den Nachteil, dass ihre Verfügbarkeit nicht immer garantiert ist. Jedes Zahlungsmodell hat seine Vor- und Nachteile und eignet sich für unterschiedliche Anwendungsfälle. Gute Ergebnisse können auch durch die Kombination mehrerer Zahlungsmodelle erzielt werden. %SAG DER CLOUD-EXPERT/FIRMA
+Dies wird in Unterkapitel \ref{sssec:AWS-EC2-Fleet} behandelt.
 %[WIRD ES?]
 \\\\
 In dieser Arbeit wird nicht darauf eingegangen, wie die richtige Server-Instanz ausgewählt werden sollte, da die Auswahl von individuellen Anforderungen abhängt, die von Fall zu Fall unterschiedlich sind. Im Allgemeinen wird empfohlen Instanzen so nahe wie möglich an den Ressourcen, mit denen sie kommunizieren werden, zu platzieren. %[IST DIESE ERKLÄRUNG NÖTIG?]
@@ -82,32 +82,33 @@ Da Spot-Instanzen anfällig für Unterbrechungen sind, ist es nicht empfehlenswe
 %https://aws.amazon.com/de/ec2/spot/pricing/
 
 %2 OPTIONEN: LOWEST PRICE OR DIVERSIFIED ACROSS n POOLS TO AVOID DOWNS https://www.linkedin.com/learning/aws-automation-and-optimization/request-spot-instances-part-2?autoAdvance=true&autoSkip=true&autoplay=true&resume=false&u=79182202
-\subsection{Wahl des Zahlungsmodells} \label{sssec:num2.4}
-%Vor- und Nachteile? 
-Die Reservierung von Instanzen mit Plänen, die zu zeitlichen Verpflichtungen führen, birgt die Gefahr, dass die benötigte Rechenkapazität langfristig falsch eingeschätzt wird. 
-%A continuacion dos casos. En uno la capacidad de computo es muy baja y se necesita mucha capacidad de instancias On-Demand. En la segunda la capacidad de intancias reservadas es demasiada y haber usado instancias On-Demand hubiera sido en total mas economico.
-Hier sind zwei Fälle. In einem Fall ist die Rechnerkapazität sehr gering und es wird viel On-Demand-Instanzkapazität benötigt. Im zweiten Fall ist die reservierte Instanzkapazität zu hoch und die Verwendung von On-Demand-Instanzen wäre insgesamt rentabler gewesen.
-%SHOW THIS
-%https://medium.com/driven-by-code/how-truecar-saves-40-on-aws-with-ec2-reserved-instances-d0a6e0d9c08a
-[How TrueCar Saves 40\% on AWS with EC2 Reserved Instances]
 
 \subsection{Amazon EC2 Fleet[rev]} \label{sssec:AWS-EC2-Fleet}
-Instanzen-Flotte oder auf Englisch fleet of instances, bieten bei AWS die Möglichkeit mehrere Spot-Instanzen anzufordern, um einen bestimmten Bedarf an Rechenleistung zu decken\footnote{\cite{AMZ26} Amazon Elastic Compute Cloud - Benutzerhandbuch für Linux-Instances, Seite 708}. Spot-Instanzen können auch für produktive Umgebungen verwendet werden\footnote{\cite{AMZ24} Running Web Applications on Amazon EC2 Spot Instances}. Darüber hinaus ist es empfehlenswert, Instanzen aus verschiedenen Zahlungsmodellen zu kombinieren, um von den Einsparungen von Spot-Instanzen, Saving Plans und reservierten Instanzen zu profitieren. Die Kombination von Instanzen aus verschiedenen Zahlungsmodellen beseitigt den Nachteil für Produktionsumgebungen, der mit Spot-Instanzen verbunden ist. Das heißt, das Risiko eines vollständigen oder teilweisen Ausfalls der Rechenkapazität durch den Ausfall von Spot-Instanzen stellt.
+Instanzen-Flotte oder auf Englisch fleet of instances, bieten bei AWS die Möglichkeit mehrere Spot-Instanzen anzufordern, um einen bestimmten Bedarf an Rechenleistung zu decken\footnote{\cite{AMZ26} Amazon Elastic Compute Cloud - Benutzerhandbuch für Linux-Instances, Seite 708}. Spot-Instanzen können auch für produktive Umgebungen verwendet werden\footnote{\cite{AMZ24} Running Web Applications on Amazon EC2 Spot Instances}. Darüber hinaus ist es empfehlenswert, Instanzen aus verschiedenen Zahlungsmodellen zu kombinieren, um von den Einsparungen von Spot-Instanzen, Saving Plans und reservierten Instanzen zu profitieren. Die Kombination von Instanzen aus verschiedenen Zahlungsmodellen beseitigt den Nachteil für Produktionsumgebungen, der mit Spot-Instanzen verbunden ist. Das heißt, das Risiko eines vollständigen oder teilweisen Ausfalls der Rechenkapazität durch den Ausfall von Spot-Instanzen.
 \\\\
 Folgende Punkte sind für die Nutzung von Spot Fleet Instanzen zu berücksichtigen:
-\subsubsection*{Wahl der Instanzen[rev]}
-Die Instanzen, die in der Auswahl für die Instanzen-Flotte berücksichtigt werden, müssen die Anforderungen der Applikation entsprechen. Um die Wahrscheinlichkeit zu erhöhen, dass Spot-Instanzen gefunden werden, ist es empfehlenswert, die Kriterien der Suche zu erweitern in dem man Instanzen ähnlicher Typen zulässt. Die Berücksichtigung von Instanzen von Familien mit mehr Leistung als erforderlich ist ebenfalls eine gute Option. Denn, obwohl die Leistung die Anforderungen der Applikation überstiegen werden, wird es einen reduzierten Preis für die Spot-Instanzen bezahlt als bei On-Demand Zahlungsmodell.
+\subsubsection*{Wahl der Spot-Instanzen[rev]}
+Die Instanzen, die in der Auswahl für die Instanzen-Flotte berücksichtigt werden, müssen die Anforderungen der Applikation entsprechen. Um die Wahrscheinlichkeit zu erhöhen, dass mehr Spot-Instanzen gefunden werden, ist es empfehlenswert, die Kriterien der Suche zu erweitern. Das erreicht man, indem man Instanzen ähnlicher Typen einschließt. Die Berücksichtigung von Instanzen von Familien mit mehr Leistung als erforderlich ist ebenfalls eine gute Option. Denn, obwohl die Leistung die Anforderungen der Applikation überstiegen werden, wird es einen reduzierten Preis für die Spot-Instanzen bezahlt als bei On-Demand Zahlungsmodell.
 \\\\
 \subsubsection*{Maximaler Stundenpreis[rev]}
 Wie im Unterkapitel \ref{ssec:Spot-Instances} erwähnt, muss für Anforderung von Spot-Instanzen einen Maximalpreis festlegt werden. In diesem Fall ist die Festlegung dieses Maximalpreises auch für die gesamte Instanzen-Flotte eine Option. Es kann erwartet werden, dass die Spot-Preise im Laufe der Zeit stabil bleiben, das heißt keine starke Preisschwankungen. Der aktuelle Preis und der Preisverlauf von Spot-Instanzen können in auf dem AWS-Konsole\footnote{\cite{AMZ25} AWS EC2 Spot Instanzen-Anfragen und Preisverlauf} abgefragt werden. Diese Informationen sind zugänglich nur mit einem AWS-Konto.
 \\
 \subsubsection*{Festlegung von On-Demand-Anteil[rev]}
-Die Standardeinstellungen sind ein guter Ausgangspunkt und liegen bei 70\% On-Demand-Instanzen und 30\% Spot-Instanzen.
-\cite{AMZ24}
+Wenn alle oder eine große Anzahl von Spot-Instanzen nicht mehr verfügbar sind, muss auf ein anderes Zahlungsmodell zurückgegriffen werden, um die benötigte Rechenkapazität aufrecht zu erhalten. Die Standardeinstellungen liegen bei 70\% On-Demand-Instanzen und 30\% Spot-Instanzen\cite{AMZ24}. Im Falle von vorhandenen reservierten Instanzen oder Instanzen von Saving Plans werden On-Demand-Instanzen zum entsprechend reduzierten Preis berechnet\footnote{\cite{AMZ26} Amazon Elastic Compute Cloud - Benutzerhandbuch für Linux-Instances, Seite 690}.
 
 \subsubsection*{Auto Scaling group[rev]}
-\subsubsection*{Einschränkungen[rev]}
+Die EC2 Auto Scaling-Gruppe ist für die Skalierung der zu startenden Instanzen verantwortlich. Dazu muss vorher eine Startkonfiguration  erstellt werden. Dies definiert die Konfiguration der zu startenden Instanzen. In der Startkonfiguration werden unter anderem der Instanztyp, Security-Groups, und Tags festgelegt. Mehr über Auto-Scaling und seine verschiedenen Konfigurationen in Kapitel~\ref{kap_Optimierung}.
 
+\subsubsection*{Einschränkungen?[rev]}
+
+\subsection{Anwendungsfall: RI...} \label{sssec:num2.4}
+%Vor- und Nachteile? 
+Die Reservierung von Instanzen mit Plänen, die zu zeitlichen Verpflichtungen führen, birgt die Gefahr, dass die benötigte Rechenkapazität langfristig falsch eingeschätzt wird. 
+%A continuacion dos casos. En uno la capacidad de computo es muy baja y se necesita mucha capacidad de instancias On-Demand. En la segunda la capacidad de intancias reservadas es demasiada y haber usado instancias On-Demand hubiera sido en total mas economico.
+Hier sind zwei Fälle. In einem Fall ist die reservierte Rechnerkapazität sehr gering und es wird viel On-Demand-Instanzkapazität benötigt. Im zweiten Fall ist die reservierte Instanzkapazität zu hoch und die Verwendung von On-Demand-Instanzen wäre insgesamt rentabler gewesen.
+%SHOW THIS
+%https://medium.com/driven-by-code/how-truecar-saves-40-on-aws-with-ec2-reserved-instances-d0a6e0d9c08a
+[SHOW: How TrueCar Saves 40\% on AWS with EC2 Reserved Instances]
 
 \subsection*{Vergleich der Zahlungsmodelle}
 Die folgende Tabelle fasst die Eigenschaften der Zahlungsmodelle für EC2-Instanzen zusammen und listet typische Applikationen je nach Zahlungsmodell auf.
@@ -130,7 +131,8 @@ Eigene Darstellung. Quelle: {\cite{AMZ02, AMZ07, AMZ11, AMZ19,SPOT1}}\\
 %https://spot.io/aws-cost-optimization-calculator/
 \\\\
 \subsubsection*{Fazit}
-In diesem Kapitel wurden die verschiedenen Zahlungsmodelle für EC2-Instanzen untersucht. Es wurden Hinweise für die Auswahl des richtigen Zahlungsmodells in verschiedenen Szenarien gegeben. Dies wurde erklärt, um die Preisvorteile von den Zahlungsmodellen zu nutzen. Beginnend mit dem On-Demand-Zahlungsmodell, gefolgt von Reserved Instanzen und Saving Plans. In dieser Reihenfolge sinkt der Preis und mit ihm steigt die Verpflichtung, sich langfristig zu binden. Schließlich mit Spot-Instanzen, die die niedrigsten Preise bieten, aber keine volle Verfügbarkeit sicherstellen.%oder garantieren?
+In diesem Kapitel wurden die verschiedenen Zahlungsmodelle für EC2-Instanzen untersucht. Es wurden Hinweise für die Auswahl des richtigen Zahlungsmodells in verschiedenen Szenarien gegeben. Dies wurde erklärt, um die Preisvorteile von den Zahlungsmodellen zu nutzen. Beginnend mit dem On-Demand-Zahlungsmodell, gefolgt von Reserved Instanzen und Saving Plans. In dieser Reihenfolge sinkt der Preis und mit ihm steigt die Verpflichtung, sich langfristig zu binden. Schließlich mit Spot-Instanzen, die die niedrigsten Preise bieten, aber keine volle Verfügbarkeit sicherstellen.
 \\\\
+%[EC2-Fleet]
 %En el capitulo monitoreo de costes  se mostrarán herramientas como X(CloudWatch) con las que podremos verificar si la desicion realizada fue la correcta. Para el modelo de pago On-Demand no hay ninguna redccion de los costos, pero existen medidas para aun asi reducir el uso de las instancias. Dichas medidas seran profundizadas en capitulo medidas de optimizacion
 Im nächsten Kapitel wird CloudWatch[UND...] vorgestellt, mit dem überprüft werden kann, ob das ausgewählte Zahlungsmodell tatsächlich das Richtige für den betreffenden Anwendungsfall ist. Für das On-Demand-Zahlungsmodell gibt es keine Kostenreduzierung, aber es gibt Maßnahmen, um die Nutzung von Instanzen zu reduzieren. Auf diese Maßnahmen wird im Kapitel \ref{kap_Optimierung} näher eingegangen.+Cost Explorer+Trusted Advisor.
