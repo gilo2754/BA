@@ -15,7 +15,7 @@ Die beste Leistung wird außerdem angestrebt, indem sich diese Instanzen in räu
 \subsection{On-Demand-Instanzen}
 Bei diesem Zahlungsmodell besteht keine Notwendigkeit, ein festes Anfangsbudget festzulegen. Die Kosten richten sich nach dem Verbrauch auf der Grundlage der Nutzungsstunden. Dieses Modell eignet sich für Projekte, deren Entwicklung unvorhersehbar ist und die Möglichkeit besteht, dass das es in kurzer Zeit abgeschlossen sein wird, sodass es nicht Sinnvoll ist, eine langfristige Verpflichtung einzugehen.
 \\\\
-Die Preise beim dem On-Demand Zahlungsmodell variiert je nach Instanz Typ, Region und der übertragenen Datenmenge. Die aktuellen Preise für die verschiedenen Regionen sind auf der Amazon-Website in der Sektion EC2 - On-Demand-Preise\footnote{https://aws.amazon.com/de/ec2/pricing/on-demand/} zu finden. 
+Die Preise beim dem On-Demand Zahlungsmodell variiert je nach Instanz Typ, Region und der übertragenen Datenmenge. Die aktuellen Preise für die verschiedenen Regionen sind auf der Amazon-Website in der Sektion EC2 - On-Demand-Preise\footnote{\cite{AMZ02}AWS On-Demand Instances Pricing} zu finden. 
 %Hierzu ein Beispiel für die Preise der EC2-Instanzen im On-Demand Zahlungsmodell.
 \begin{figure}
     \centering
@@ -28,27 +28,22 @@ In der \autoref{fig:OnDemand_Preise} werden die für die Region Ohio verfügbare
 \subsection{Reservierte Instanzen und Saving Plans}
 %t.ly/JUWq
 %https://www.youtube.com/watch?v=c_zlPQimrvY
-Die Zahlungsmodelle Reservierte Instanzen und Saving Plans sind sich sehr ähnlich. Beide kommen mit einer gleichbleibenden  Nutzungsverpflichtung, die in €/Stunden gemessen wird. Um die reduzierten Preise  zu bekommen, müssen Verträge über ein oder drei Jahre abgeschlossen werden. Nachfolgend werden die prozentualen Einsparungen gemäß des jeweiligen Modells gezeigt.
-
-\begin{table}[h!]
-    \centering
-    \begin{tabular}{ |p{3cm}||p{3cm}|p{3.6cm}|p{3.6cm}|  }
-        \hline
-        \multicolumn{4}{|c|}{Einsparungen nach Modell}                                                                    \\
-        \hline
-        Compute Saving Plans & EC2-Instance Saving Plans & Convertible Reserved Instances & Standard Reserved Instances \\
-        \hline
-        bis zu 66\%           & bis zu 72\%
-                              & bis zu 54\%)               & bis zu 72\%
-        \\
-        \hline
-    \end{tabular}
-    \footnote{\cite{AMZ07,AMZ11}}
-\end{table}
-Die ersten beiden Optionen in der obigen Tabelle, die Saving Plans, unterscheiden sich dadurch, dass die Compute Saving Plans die Flexibilität bieten, EC2-Instanzen nach Familie\footnote{\cite{AWS1}, Seite 95}, Größe, Availability Zone (AZ), Betriebssystem oder Mandant zu wechseln.
+Die Zahlungsmodelle Reservierte Instanzen und Saving Plans sind sich sehr ähnlich. Beide kommen mit einer gleichbleibenden  Nutzungsverpflichtung, die in €/Stunden gemessen wird. Um die reduzierten Preise  zu bekommen, müssen Verträge über ein oder drei Jahre abgeschlossen werden. 
+\\\\
+Die \autoref{fig:EinsparungenRISP} zeigt die möglichen Einsparungen je nach Zahlungsmodell. Die Einsparungen hängen mit der Flexibilität bei der Wahl der Instanzfamilie und der Verfügbarkeitszone zusammen, in die Instanzen übertragen werden können. Je geringer die Flexibilität, desto höher die Einsparungen.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.8]{sources/EinsparungenRISP}\label{fig:EinsparungenRISP}\\
+  \caption[Mögliche Einsparungen bei Reserved Instances and Saving Plans laut AWS]{}
+  \label{fig:EinsparungenRISP}
+  Mögliche Einsparungen bei Reserved Instances and Saving Plans laut AWS
+  \footnote{\cite{AMZ07,AMZ11}}
+\end{figure}
+\\
+Compute Saving Plans\footnote{\cite{AMZ11}AWS Saving Plans Pricing} bieten die Flexibilität EC2-Instanzen nach Familie\footnote{\cite{AWS1},WS Certified Solutions Architect - Associate (SAA-C02), Seite 95}, Größe, Verfügbarkeitszone (AZ), Betriebssystem oder Mandant zu wechseln. Diese Option ist bei EC2-Instance Saving nicht möglich und daher bietet diese Alternative eine etwas höher Einsparung.
 \begin{quote}
     „Bei Compute Saving Plans können Sie beispielsweise jederzeit von C4- auf M5-Instances wechseln, eine Workload von EU (Irland) nach EU (London) verlagern oder eine Workload von EC2 auf Fargate oder Lambda verschieben. Dabei zahlen Sie automatisch weiterhin den Saving Plans-Preis.”
-    \footnote{\cite{AMZ11} \cite{AMZ11}}
+    \footnote{\cite{AMZ11}AWS Saving Plans Pricing}
 \end{quote}
 Bei den EC2-Instance Saving Plans hingegen muss eine Instance-Familie in einer bestimmten Region ausgewählt werden.  Dies reduziert automatisch die Kosten für die ausgewählte Instanz-Familie in der jeweiligen Region, unabhängig von Availability Zone, Größe, Betriebssystem oder Mandant.
 %\\Die Festlegung eines festen Stundensatzes über einen langen Zeitraum bietet die Möglichkeit, künftige Kosten zu planen[ZITAT/WIE IM BWL ERKLÄRT]WIEDER EINBLENDEN; WENN ES SINNVOLL IST.
@@ -57,8 +52,11 @@ Bei den EC2-Instance Saving Plans hingegen muss eine Instance-Familie in einer b
 %Vertraglaufzeit, Vorabzahlung, Betriebssystem,Region, Mandant
 %AUCH FÜR RIs?
 %3 Arten von S. Plans: Compute and EC2 Instance
+\subsubsection*{EC2 Reserved Instance Marketplace}\label{sssec:RI-Marketplace}
+Sollte sich herausstellen, dass die Kapazität der reservierten Instanzen viel zu wenig oder gar nicht genutzt wird, kann diese Rechenkapazität auf dem RI Marketplace zur Verfügung gestellt werden. Dadurch könnte Teil der Investition wieder hereinzuholen. Dies ist für Standard Reserved Instances möglich. Diese Instanzen werden in Spot-Instanzen umgewandelt damit andere Nutzer sie beantragen können. Eine Servicegebühr sollte in Betracht gezogen werden. Im November 2021 beträgt diese Abgabe 12\%\footnote{\cite{AMZ23}Amazon EC2 Reserved Instance Marketplace}.[Rev]
+
 \subsubsection*{Vorauszahlung}\label{sssec:Vorauszahlung}
-Zusätzlich gibt es bei Saving Plans und reservierten Instanzen die Option im Voraus zu zahlen. Im Gegenzug wird ein niedrigerer Preis angeboten. Amazon bietet drei verschiedene Optionen an. Diese sind teilweise, keine oder vollständige Vorauszahlung\footnote{\cite{AMZ17}}. Bei teilweiser Vorauszahlung ist eine Anzahlung von etwa 50\% zu leisten.
+Zusätzlich gibt es bei Saving Plans und reservierten Instanzen die Option im Voraus zu zahlen. Im Gegenzug wird ein niedrigerer Preis angeboten. Amazon bietet drei verschiedene Optionen an. Diese sind teilweise, keine oder vollständige Vorauszahlung\footnote{\cite{AMZ17} AWS Pricing Calculator}. Bei teilweiser Vorauszahlung ist eine Anzahlung von etwa 50\% zu leisten.
 \\\\
 Die \autoref{fig:EinsparungenVorauszahlung} zeigt den Vergleich zwischen den drei Optionen für Vorauszahlungen. Hier wird deutlich, dass es kaum einen Unterschied zwischen eine teilweise Vorauszahlung und keine Vorauszahlung zu machen gibt. Eine erhebliche Einsparung ergibt sich, wenn man für den gesamten Zeitraum der gebuchten Instanzen im Voraus bezahlt.
 \begin{figure}[h!]
@@ -66,12 +64,12 @@ Die \autoref{fig:EinsparungenVorauszahlung} zeigt den Vergleich zwischen den dre
     \includegraphics[scale=0.6]{sources/EinsparungenVorauszahlung}\label{fig:EinsparungenVorauszahlung}\\
     \caption[Mögliche Einsparungen durch Vorauszahlungen]{}
     \label{fig:EinsparungenVorauszahlung}Mögliche Einsparungen durch Vorauszahlungen für EC2 Instanzen in Saving Plans Zahlungsmodell\\
-    Eigene Darstellung. Quelle: {\cite{AMZ17}}
+    Eigene Darstellung. Quelle: {\cite{AMZ17}AWS Pricing Calculator}
   \end{figure}
   \\
-Die Berechnungen wurden mit dem AWS Pricing Calculator \cite{AMZ17} für Instanzen der Familie t4g.xlarge, in der EU (Frankfurt) und für eine Laufzeit von 3 Jahren durchgeführt. 
+Die Berechnungen wurden mit dem AWS Pricing Calculator {\cite{AMZ17}} für Instanzen der Familie t4g.xlarge, in der EU (Frankfurt) und für eine Laufzeit von 3 Jahren durchgeführt. 
 \subsection{Spot Instanzen }
-EC2 Spot-Instanzen bieten die Möglichkeit aus den ungenutzten EC2-Instanzen anderer Nutzer zu profitieren. 
+Wie in Unterkapitel \ref{sssec:RI-Marketplace} genannt bieten EC2 Spot-Instanzen die Möglichkeit aus den ungenutzten EC2-Instanzen anderer Nutzer zu profitieren. 
 Mit einem Preisvorteil von bis zu 90 \% gegenüber normalen On-Demand-Instanzen sind Spot-Instanzen ideal für fehlertolerante Anwendungen wie auf Containern ausgeführte Workloads, CI/CD, Bigdata-Anwendungen und ähnliches.
 
 \subsubsection*{Unterbrechbarkeit}
@@ -86,6 +84,13 @@ Da Spot-Instanzen anfällig für Unterbrechungen sind, ist es nicht empfehlenswe
 %2 OPTIONEN: LOWEST PRICE OR DIVERSIFIED ACROSS n POOLS TO AVOID DOWNS https://www.linkedin.com/learning/aws-automation-and-optimization/request-spot-instances-part-2?autoAdvance=true&autoSkip=true&autoplay=true&resume=false&u=79182202
 \subsection{Wahl des Zahlungsmodells} \label{sssec:num2.4}
 %Vor- und Nachteile? 
+Die Reservierung von Instanzen mit Plänen, die zu zeitlichen Verpflichtungen führen, birgt die Gefahr, dass die benötigte Rechenkapazität langfristig falsch eingeschätzt wird. 
+%A continuacion dos casos. En uno la capacidad de computo es muy baja y se necesita mucha capacidad de instancias On-Demand. En la segunda la capacidad de intancias reservadas es demasiada y haber usado instancias On-Demand hubiera sido en total mas economico.
+Hier sind zwei Fälle. In einem Fall ist die Rechnerkapazität sehr gering und es wird viel On-Demand-Instanzkapazität benötigt. Im zweiten Fall ist die reservierte Instanzkapazität zu hoch und die Verwendung von On-Demand-Instanzen wäre insgesamt rentabler gewesen.
+%SHOW THIS
+%https://medium.com/driven-by-code/how-truecar-saves-40-on-aws-with-ec2-reserved-instances-d0a6e0d9c08a
+[How TrueCar Saves 40\% on AWS with EC2 Reserved Instances]
+\subsection*{Vergleich der Zahlungsmodelle}
 Die folgende Tabelle fasst die Eigenschaften der Zahlungsmodelle für EC2-Instanzen zusammen und listet typische Applikationen je nach Zahlungsmodell auf.
 [Abb. VOLLSTÄNDIG?]
 \begin{figure}[h!]
@@ -93,18 +98,18 @@ Die folgende Tabelle fasst die Eigenschaften der Zahlungsmodelle für EC2-Instan
     \includegraphics[scale=0.63]{sources/Vergleich_der_Zahlungsmodelle}\label{fig:Vergleich_der_Zahlungsmodelle}\\
     \caption[Vergleich der Zahlungsmodelle]{}
     \label{fig:Vergleich_der_Zahlungsmodelle}  Vergleich der Zahlungsmodelle nach Eingenschaft und Anwendungsfall\\
-    Eigene Darstellung. Quelle: \footnote{\cite{AMZ02, AMZ07, AMZ11, AMZ19}},
-    \footnote{\cite{PS1} Seite 9}
+Eigene Darstellung. Quelle: {\cite{AMZ02, AMZ07, AMZ11, AMZ19}}\\
+{\cite{PS1}Plusserver: Kostenoptimierung in AWS Seite 9}
   \end{figure}
-
+%
 %To read planned at 21.11:
 %https://www.pcapps.com/services/aws-reserved-vs-on-demand-instances/
 %https://jaychapel.medium.com/aws-reserved-instances-versus-on-demand-which-is-better-e7f77f1f9582
 %https://www.cloudhealthtech.com/blog/aws-reserved-instances-vs-on-demand#:~:text=In%20terms%20of%20compute%20options,of%20an%20On%20Demand%20instance.
-
 %https://youtu.be/mKEdhmJ2udA?t=79
 %Automate the selection to get the best price
 %https://spot.io/aws-cost-optimization-calculator/
+\\\\
 \subsubsection*{Fazit}
 In diesem Kapitel wurden die verschiedenen Zahlungsmodelle für EC2-Instanzen untersucht. Es wurden Hinweise für die Auswahl des richtigen Zahlungsmodells in verschiedenen Szenarien gegeben. Dies wurde erklärt, um die Preisvorteile von den Zahlungsmodellen zu nutzen. Beginnend mit dem On-Demand-Zahlungsmodell, gefolgt von Reserved Instanzen und Saving Plans. In dieser Reihenfolge sinkt der Preis und mit ihm steigt die Verpflichtung, sich langfristig zu binden. Schließlich mit Spot-Instanzen, die die niedrigsten Preise bieten, aber keine volle Verfügbarkeit sicherstellen.%oder garantieren?
 \\\\
