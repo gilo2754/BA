@@ -1,30 +1,38 @@
+13, 17, 19, 20, 21, 22, 25
 %(CHECK Version/Carlo 21.11)\\
 %intro was kommt hier?
-Die von Amazon Web Services(AWS) zu Verfügung gestellte Überwachungswerkzeuge werden in diesem Kapitel vorgestellt.
+%\begin{flushleft}
+Die von Amazon Web Services(AWS) zu Verfügung gestellte Überwachungswerkzeuge werden in diesem Kapitel vorgestellt. [Rev]Op1{Der Fokus liegt auf Werkzeugen, zur Überwachung von den Kosten oder der Nutzung von AWS-Dienste beitragen.}/Op2{Der Schwerpunkt liegt auf Werkzeugen, die bei der Überwachung der Kosten oder der Nutzung von AWS-Diensten helfen.}
 %warum kommt diese hier?
 %Cloud-Watch 
-
+CloudWatch sammelt Metriken von AWS-Diensten und bietet die Möglichkeit, Alarme und Aktionen zu konfigurieren, die (wiederum)[Rev]AWS-Diensten auf der Grundlage dieser Metriken betreffen. Für die Visualisierung von Metriken bietet CloudWatch die Erstellung von personalisierten Dashboards.
 %Cost-Explorer
-
+Cost Explorer konzentriert sich auf die Überwachung der Nutzung von AWS-Diensten und der dadurch verursachten Kosten. 
 %Teil von T.Advisor
-
-%Ansätze/Beispiele
-
+Trustred Advisor bietet konkrete Empfehlungen auf der Grundlage von AWS Best Practices in fünf Kategorien: Kostenoptimierung, Leistung, Sicherheit, Fehlertoleranz und Servicegrenzen. Diese Arbeit konzentriert sich auf die Kategorien Kostenoptimierung und Leistungsgrenzen. 
+\\\\
 %Waum diese nicht?
-Es existieren weitere Überwachungswerkzeuge, die aber ein einerem Fokus haben. Zum Beispiel CloudTrail, mit dem Benutzeraktivitäten bei AWS-Diensten mit Logs(erklärt im Glosar) verfolgt werden kann.%https://aws.amazon.com/de/cloudtrail/
-
-%welche hat mit Performance zu tun?
-
-
-
-... mit denen Budgets mit Alarmen erstellt werden, diese informieren die Nutzer, wenn ein bestimmter Prozentsatz des festgelegten Budgets überschritten wurde. Die Erstellung von Budgets trägt zu einer besseren Planung-/Prognose- und Kostenkontrolle. [WEIL, Cost Controlling]
+%CloudTrail
+Es existieren weitere Überwachungswerkzeuge, die aber einen anderen Fokus haben. Zum Beispiel CloudTrail, mit dem Benutzeraktivitäten bei AWS-Diensten mit Logs(erklärt im Glossar) verfolgt werden kann.%https://aws.amazon.com/de/cloudtrail/ 
+\\\\
+%X-Ray (Leistung) https://aws.amazon.com/es/xray/?nc1=h_ls
+Ein Werkzeug zur Überwachung der Anwendungsleistung ist AWS X-Ray. Dies unterstützt Entwickler bei der Analyse und Fehlersuche in verteilten Produktionsanwendungen. Mit X-Ray kann man herausfinden, wie gut Anwendungen und ihnen zugrunde liegenden Dienste funktionieren. Auf diese Weise können Ursache von Leistungsproblemen und Fehlern ermittelt und behoben werden.
+%Contact lens for AWS-Contact
+%Customer-Support ? https://aws.amazon.com/es/connect/contact-lens/
+%Überwachung von Kundeninteraktionen 
+\\\\
+%Ansätze/Beispiele?
+...[Rev]mit denen Budgets mit Alarmen erstellt werden, diese informieren die Nutzer, wenn ein bestimmter Prozentsatz des festgelegten Budgets überschritten wurde. Die Erstellung von Budgets trägt zu einer besseren Planung-/Prognose- und Kostenkontrolle. [WEIL, Cost Controlling]
 Die Einstellung von Alarmen für relevante Ereignisse wie im Fall einer Budgetüberschreitung oder dem Start einer Instanz[IST GUT WEIL/TRÄG ZU...BEI].
 
-Darüber hinaus ist es mit Werkzeugen wie CloudWatch möglich, die Abschaltung bestimmter Dienste zu automatisieren, wenn eine Budgetschwelle überschritten wurde. Diese Maßnahmen werden in dem nächsten Kapitel genauer behandelt.
-[TRUSTED ADVISOR fehlt noch in der Einleitung]
-[SOLLTE AB HIER EINE NEUE UNTERKAPITEL ANFANGEN? zb. TAGS ZUR TRENNUNG DER DIENSTEN]
+Darüber hinaus ist es mit Werkzeugen wie CloudWatch möglich, die Abschaltung bestimmter Dienste zu automatisieren, wenn eine Budgetschwelle überschritten wurde. 
+%Diese Maßnahmen werden in dem nächsten Kapitel genauer behandelt. NEIN, ES WIRD HIER ERKLÄRTm WEIL ES AUCH MAßNAHMEN BEI ÜBERWACHUNG GIBT
+
+\subsection{Tags}
+[WICHTIG FÜR ÜBERWACHUNG UND OPTIMIERUNG, WEIL]
 Durch die Verwendung von Tags ist es möglich, Diensten nach Kriterien wie Region, Umgebung, Projekt, Art des Dienstes usw. zu visualisieren, dies %es
 ermöglicht, Kosten auf den von der Organisation festgelegten Ebenen zu verfolgen.
+%\end{flushleft}
 
 \begin{figure}[h!]
   \centering
@@ -70,8 +78,7 @@ Für eine detailliertere Überwachung ist es möglich, benutzerdefinierte Metrik
 \\\\
 \textbf{Ereignisse} 
 \\
-Bei CloudWatch wird eine Änderung bei einer Ressource in der AWS-Umgebung Ereignis genannt. 
-AWS-Ressourcen können Ereignisse erzeugen, wenn sich ihr Status ändert.
+Ein Ereignis ist in CloudWatch eine Änderung in einem AWS Dienst. AWS-Dienste können Ereignisse erzeugen, wenn sich ihr Status ändert. Das bedeutet, dass sich ein bestimmter AWS-Dienst selbst ändern kann. 
 Beispielsweise, wird ein Ereignis erzeugt, wenn Amazon EC2 Auto Scaling, Instanzen gestartet oder beendet werden\footnote{\cite{AMZ13}, AWS Cloud Watch Events: User GuideSeite 1} oder wenn eine bestimmte Menge an Speicherplatz in einem Bucket erreicht wurde. Ein Bucket ist ein Behälter, in dem Objekte bei Amazon S3 gespeichert werden\footnote{\cite{AMZ18}Amazon Simple Storage Service User Guide, Seite 4}. Beispiele für Objekte sind Dateien wie Bilder und Videos. 
 \\\\
 \textbf{Regel} \\
@@ -79,11 +86,11 @@ Eine Regel ordnet eintreffende Ereignisse zu und leitet diese zur Verarbeitung a
 Eine einzelne Regel kann an mehrere Ziele weiterleiten, die alle parallel verarbeitet werden\footnote{\cite{AMZ13}, AWS Cloud Watch : User Guide, Seite 2}.
 \\\\
 \textbf{Ziele} \\
-Ziele oder Targets sind Ressourcen, die aufgerufen werden, wenn eine Regel ausgelöst wird.
+Ziele oder Targets sind AWS-Dienste, die aufgerufen werden, wenn eine Regel ausgelöst wird.
 EC2 instances, AWS Lambda functions und Amazon SNS sind unter anderem mögliche Ziele.
 Die Ziele einer Regel müssen sich in derselben Region wie die Regel befinden
 \footnote{\cite{AMZ13}, Seite 2}.
-%Alle zugelassene Ressourcen \footnote\url{https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/EventTypes.html}
+%Alle zugelassene AWS-Diensten \footnote\url{https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/EventTypes.html}
 \\\\
 \textbf{Benachrichtigungen}\\
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html
@@ -101,7 +108,7 @@ Benachrichtigungen können durch Amazon SNS\footnote{Amazon SNS ist ein Dienst, 
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html
 \textbf{Visualisierung von Metriken}\\
-Mit Cloud-Watch Dashboards können relevante Metriken grafisch dargestellt werden. %[BESSERE FORMULIERUNG] %Sie ermöglichen eine umfassende Visualisierung von Metriken der Ressourcen in der AWS-Umgebung. 
+Mit Cloud-Watch Dashboards können relevante Metriken grafisch dargestellt werden. %[BESSERE FORMULIERUNG] %Sie ermöglichen eine umfassende Visualisierung von Metriken der AWS-Diensten in der AWS-Umgebung. 
 Durch die Dashboards können auch Benachrichtigungen erstellt werden. Für die Einrichtung der Benachrichtigungen ist kein technisches Wissen nötig\footnote{\cite{AMZ14},AWS Cloud Watch : User Guide, Seite 28}.
 %Die von CloudWatch gesammelte Informationen sind nicht nur für System-Administratoren relevant.
 Die in den Dashboards enthaltenen Informationen sind nicht nur für ihre Autoren von Relevanz.
@@ -109,9 +116,10 @@ Weitere Personen innerhalb oder außerhalb der Organisation können Zugriff auf 
 
 Dies ermöglicht einen schnelleren Kommunikationsfluss in Echtzeit[Fach Informationsmanagement: (Schwachstellenanalyse) IuM Technik/Check Book KCrmar]. Die Zugriffsverwaltung für geteilte Dashboards wird über AWS Identity and Access Management abgewickelt\footnote{\cite{AMZ14}, Seite 18 und 39}[UND?].
 \\\\
+%t.ly/lRzA Establezca indicadores clave de rendimiento (KPI) ...
 \subsubsection*{Fakturierungsalarme mit CloudWatch}
 %Seite 145 Amazon CloudWatch - Benutzerhandbuch
-AWS CloudWatch empfängt Abrechnungsmetriken von alle Ressourcen. Auf der Grundlage dieser Metriken ist es daher möglich, Regeln zu erstellen, die bei Überschreitung des geplanten Budgets einen Alarm auslösen.
+AWS CloudWatch empfängt Abrechnungsmetriken von allen AWS-Diensten. Auf der Grundlage dieser Metriken ist es daher möglich, Regeln zu erstellen, die bei Überschreitung des geplanten Budgets einen Alarm auslösen.
 %[KANN MAN NUR Total Estimated Charge verwenden ODER KÖNNTE MAN NACH PROJEKTE TRENNEN?]
 [BEZUG AUF PROJEKTMANAGEMENT/Kostenkontrolle?]
 
@@ -124,14 +132,15 @@ Mit Cost-Explorer können Kosten der letzten 12 Monate und eine Schätzung der K
 \\
 %Mio:%Conocer clos costos en un periodo de tiempo nos permite %saber si estamos en el camino correcto para alcanzar las %metas trazadas al inicio del periodo/proyecto y tomar %las medidas adecuadas para que al final del periodo/%proyecto tengamos resultados satisfactorios.
 Amazon analysiert die bisherige Nutzung der Instanzen und gibt Empfehlungen zur Kostensenkung durch den Wechsel von EC2-Instanzen in On-Demand Zahlungsmodell zu reservierten Instanzen. Diese ignorieren Kapazität, die bereits von anderen reservierten Instanzen abgedeckt wurden.
-Es besteht die Möglichkeit, einen Bericht über die Ressourcennutzung der letzten 12 Monate einzusehen und zu prüfen, ob die Empfehlungen des Cost-Explorers angemessen sind.
+Es besteht die Möglichkeit, einen Bericht über die Nutzung von AWS-Diensten der letzten 12 Monate einzusehen und zu prüfen, ob die Empfehlungen des Cost-Explorers angemessen sind.
 
 \subsubsection*{Budgetplanung}
 Die Budgetplanung ist eine Methode der Kostenkontrolle, die beim Start eines neuen Projekts eingesetzt wird\footnote{\cite{BUD2}Cost Control Methods: Definitions and Examples}. Der Bericht über die in den letzten 12 Monaten entstandenen Kosten zusammen mit der Prognose der Kosten der kommenden drei Monaten tragen zu einen guten Budgetplanung bei.
 %%t.ly/6bvZ% https://youtu.be/3peNAKB3VxA?t=223
-Durch die Möglichkeit, die in den letzten Monaten angefallenen Kosten nach Ressourcen, Projekt oder Abteilung zu trennen, ist es möglich, operative Budgetplanungen aus vergangenen Projekten mit Genauigkeit zu erstellen. 
+Durch die Möglichkeit, die in den letzten Monaten angefallenen Kosten nach bestimmten AWS-Diensten, Projekt oder Abteilung zu trennen, ist es möglich, operative Budgetplanungen aus vergangenen Projekten mit Genauigkeit zu erstellen. 
 \begin{quote}
   „Bei der operativen Planung wird von einem Zeithorizont von einem Jahr ausgegangen. Hier liegt der Fokus darauf, Ressourcen konkret zuzuweisen und detailreicher zu planen. Welche Mittel werden wofür verwendet und welche kurz- und mittelfristigen Ziele sollen durch diesen Mitteleinsatz erreicht werden”\cite{BUD1}.
+  In dem Fall dieser Arbeit sind die obengenannten Ressourcen die AWS-Dienste.
 \end{quote}
 
 Cost-Explorer liefert Informationen zur Rechtfertigung von Ausgaben aus im Voraus festgelegten Budgets, hilft bei der Planung künftiger Budgets und unterstützt die []
@@ -144,7 +153,7 @@ Cost-Explorer liefert Informationen zur Rechtfertigung von Ausgaben aus im Vorau
 %was macht dieses?
 %AWS Trusted Advisor: This helps you know more about idle or underutilized resources.
 
-AWS Trusted Advisor ist ein Werkzeug, das entwickelt wurde, um Kosten zu senken, um Systemverfügbarkeit und -leistung zu verbessern und um Sicherheit zu erhöhen. Es analysiert die Nutzung des AWS-Kontos und gibt Best-Practice-Empfehlungen. Es werden die Kategorien Leistungsgrenzen und Kostenoptimierung insbesondere betrachtet, da diese am relevanten für die vorliegende Arbeit sind. Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen November 2021) für Konten in den Plänen Developer und Basic Support kostenlos sind. Prüfungen für die Kategorie Leistungsgrenzen sind kostenlos. Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{https://aws.amazon.com/de/premiumsupport/technology/trusted-advisor/}. \\
+AWS Trusted Advisor ist ein Werkzeug, das entwickelt wurde, um Kosten zu senken, um Systemverfügbarkeit und -leistung zu verbessern und um Sicherheit zu erhöhen. Es analysiert die Nutzung des AWS-Kontos und gibt Best-Practice-Empfehlungen. Es werden die Kategorien Servicekontingente und Kostenoptimierung insbesondere betrachtet, da diese am relevanten für die vorliegende Arbeit sind. Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen November 2021) für Konten in den Plänen Developer und Basic Support kostenlos sind. Prüfungen für die Kategorie Servicekontingente sind kostenlos. Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{https://aws.amazon.com/de/premiumsupport/technology/trusted-advisor/}. \\
 %ES MUSS GEPRÜFT WERDEN, OB ES SINNVOLL IST, FÜR DIE OBEN GENANNTEN SUPPORT-PLÄNEN ZU ZAHLEN.
 
 \begin{figure}[h!]
@@ -154,12 +163,12 @@ AWS Trusted Advisor ist ein Werkzeug, das entwickelt wurde, um Kosten zu senken,
       \label{fig:AWS_Trusted_Advisor_Kategorien} 
       AWS Trusted Advisor Kategorien\cite{AMZ20}
 \end{figure}
-Die \autoref{fig:AWS_Trusted_Advisor_Kategorien} zeigt die fünf Kategorien von Trusted Advisor mit jeweils 3 Arten von Indikatoren. Die Indikatoren zeigen an, welche Prüfungen durchgeführt wurden. Grün bedeutet, dass keine Fehler oder zu prüfenden Empfehlungen vorhanden sind. Warnungen werden durch orangefarbene Indikatoren und Fehler durch rote Indikatoren angezeigt. Diese Empfehlungen sind eine Zusammenfassung auf hohem Niveau. Sie sind ein Startpunkt für die Untersuchung von Ressourcen mit Hilfe anderer Werkzeuge wie CloudWatch oder Cost-Explorer.%[ODER?].
+Die \autoref{fig:AWS_Trusted_Advisor_Kategorien} zeigt die fünf Kategorien von Trusted Advisor mit jeweils 3 Arten von Indikatoren. Die Indikatoren zeigen an, welche Prüfungen durchgeführt wurden. Grün bedeutet, dass keine Fehler oder zu prüfenden Empfehlungen vorhanden sind. Warnungen werden durch orangefarbene Indikatoren und Fehler durch rote Indikatoren angezeigt. Diese Empfehlungen sind eine Zusammenfassung auf hohem Niveau. Sie sind ein Startpunkt für die Untersuchung von AWS-Diensten mit Hilfe anderer Werkzeuge wie CloudWatch oder Cost-Explorer.%[ODER?].
 \\\\
 
 \subsubsection*{Kategorie Kostenoptimierung}
-Die Empfehlungen zur Kostenoptimierung konzentrieren sich auf Möglichkeiten zur Kostensenkung, indem ungenutzte Ressourcen hervorgehoben werden. 
-Sollten EC2-Instanzen mit geringer Auslastung gefunden werden, wird es diese bei Trusted Advisor signalisiert. Denn diese Instanzen verbrauchen Ressourcen und können terminiert oder pausiert werden. %[HIER FEHLT...]
+Die Empfehlungen zur Kostenoptimierung konzentrieren sich auf Möglichkeiten zur Kostensenkung, indem ungenutzte AWS-Diensten hervorgehoben werden. 
+Sollten EC2-Instanzen mit geringer Auslastung gefunden werden, wird es diese bei Trusted Advisor signalisiert. Denn diese Instanzen verbrauchen verursachen Kosten und können terminiert oder pausiert werden. %[HIER FEHLT...]
 Auch nicht zugewiesene Elastic IP-Adressen erzeugen Kosten. Diese können gegebenenfalls von Trusted Advisor gefunden werden. %t.ly/nYiv
 [BEISPIELE]
 
@@ -194,7 +203,7 @@ Die \autoref{fig:ÜberwachungswerkzeugeNachVerwendung} fasst die Überwachungswe
 Es kann in Erwägung gezogen werden, für einen begrenzten Zeitraum von 3 Monaten einen Support-Plan zu bezahlen, um aus den gegebenen Empfehlungen zu lernen. Oder Business-Plan alle 6 Monate für 1 Monat zu aktivieren.  
 \\\\
 \subsection*{Handlungsempfehlung 2:} 
-Ein Berater für eine Prüfung und Optimierung der Ressourcen kann in Deutschland zwischen x und N-EUR kosten. Dies ist eine Alternative zu den Plänen des Trusted-Advisor. Ein Berater, der alle 5 Kategorien abdeckt, könnte [BETRAG] kosten. %Das sagt der Berater Juanito von der Firma XXX.
+Ein Berater für eine Prüfung und Optimierung der AWS-Diensten kann in Deutschland zwischen x und N-EUR kosten. Dies ist eine Alternative zu den Plänen des Trusted-Advisor. Ein Berater, der alle 5 Kategorien abdeckt, könnte [BETRAG] kosten. %Das sagt der Berater Juanito von der Firma XXX.
 \\\\
 \subsection*{Fazit}
 %[ABSCHLUSS DES KAPITELS/Überbrückung FÜR DAS KOMMENDE KAPITEL]}
