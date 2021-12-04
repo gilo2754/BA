@@ -6,50 +6,49 @@ Die von Amazon Web Services(AWS) zu Verfügung gestellte Überwachungswerkzeuge 
 %Cloud-Watch 
 CloudWatch sammelt Metriken von AWS-Diensten und bietet die Möglichkeit, Alarme und Aktionen zu konfigurieren, die (wiederum)[Rev]AWS-Diensten auf der Grundlage dieser Metriken betreffen. Für die Visualisierung von Metriken bietet CloudWatch die Erstellung von personalisierten Dashboards.
 %Cost-Explorer
-Cost Explorer konzentriert sich auf die Überwachung der Nutzung von AWS-Diensten und der dadurch verursachten Kosten. 
+Cost-Explorer konzentriert sich auf die Überwachung der Nutzung von AWS-Diensten und der dadurch verursachten Kosten. Diese bietet die Möglichkeit Kosten- und Nutzungsberichte der AWS-Diensten zu erstellen. Solche Informationen dienen zugrunde für Budgetierung, %https://youtu.be/45J9kwEmA9E?t=1330 
+Verfolgung von KPIs und Entscheidungsfindung in Bezug auf die operative Planung im Unternehmen. Die vorgenannten Konzepte werden in Unterkapitel ~\ref{ssec:Cost-Explorer}[Rev]näher erläutert. %*Umsatz-, Kosten-, Finanz-, Investitions-, Liquidität-,    
 %Teil von T.Advisor
-Trustred Advisor bietet konkrete Empfehlungen auf der Grundlage von AWS Best Practices in fünf Kategorien: Kostenoptimierung, Leistung, Sicherheit, Fehlertoleranz und Servicegrenzen. Diese Arbeit konzentriert sich auf die Kategorien Kostenoptimierung und Leistungsgrenzen. 
+Trusted Advisor bietet konkrete Empfehlungen auf der Grundlage von AWS Best Practices in fünf Kategorien: Kostenoptimierung, Leistung, Sicherheit, Fehlertoleranz und Servicegrenzen. Diese Arbeit konzentriert sich auf die Kategorien Kostenoptimierung und Leistungsgrenzen. 
 \\\\
 %Waum diese nicht?
 %CloudTrail
-Es existieren weitere Überwachungswerkzeuge, die aber einen anderen Fokus haben. Zum Beispiel CloudTrail, welches für die Überwachung von Governance, Compliance, Betrieb und Risiken im AWS-Konto ist. Mit CloudTrail können Benutzeraktivitäten über AWS-Dienste durch Ereignisse verfolgt werden\footnote{\cite{AMZ27},AWS CloudTrail User Guide Version 1.0: What Is AWS CloudTrail?, Seite 1}.
+Es existieren weitere Überwachungswerkzeuge bei AWS, auf die in dieser Arbeit nicht eingegangen wird. Der Grund dafür ist, dass sie einen anderen Fokus als Kostenüberwachung und -optimierung haben. Zum Beispiel CloudTrail, welches für die Überwachung von Governance, Compliance, Betrieb und Risiken im AWS-Konto ist. Mit CloudTrail können Benutzeraktivitäten über AWS-Dienste durch Ereignisse verfolgt werden\footnote{\cite{AMZ27},AWS CloudTrail User Guide Version 1.0: What Is AWS CloudTrail?, Seite 1}.
 \\\\
 %X-Ray (Leistung) https://aws.amazon.com/es/xray/?nc1=h_ls
-Ein Werkzeug zur Überwachung der Anwendungsleistung ist AWS X-Ray. Dies unterstützt Entwickler bei der Analyse und Fehlersuche in verteilten Produktionsanwendungen. Mit X-Ray kann man herausfinden, wie gut Anwendungen und ihnen zugrunde liegenden Dienste funktionieren. Auf diese Weise können Ursache von Leistungsproblemen und Fehlern ermittelt und behoben werden\footnote{\cite{AMZ27},AWS X-Ray Developer Guide: What is AWS X-Ray?, Seite 1}.
+Ein weiteres Werkzeug ist AWS X-Ray, welches zur Überwachung von Anwendungsleistung verwendet wird. Dies unterstützt Entwickler bei der Analyse und Fehlersuche in verteilten Produktionsanwendungen. Mit X-Ray kann man herausfinden, wie gut Anwendungen und ihnen zugrunde liegenden Dienste funktionieren. Auf diese Weise können Ursache von Leistungsproblemen und Fehlern ermittelt und behoben werden\footnote{\cite{AMZ27},AWS X-Ray Developer Guide: What is AWS X-Ray?, Seite 1}.
 %Contact lens for AWS-Contact
 %Customer-Support ? https://aws.amazon.com/es/connect/contact-lens/
 %Überwachung von Kundeninteraktionen 
-\\\\
-%Ansätze/Beispiele?
-...[Rev]mit denen Budgets mit Alarmen erstellt werden, diese informieren die Nutzer, wenn ein bestimmter Prozentsatz des festgelegten Budgets überschritten wurde. Die Erstellung von Budgets trägt zu einer besseren Planung-/Prognose- und Kostenkontrolle. [WEIL, Cost Controlling]
-Die Einstellung von Alarmen für relevante Ereignisse wie im Fall einer Budgetüberschreitung oder dem Start einer Instanz[IST GUT WEIL/TRÄG ZU...BEI].
-
-Darüber hinaus ist es mit Werkzeugen wie CloudWatch möglich, die Abschaltung bestimmter Dienste zu automatisieren, wenn eine Budgetschwelle überschritten wurde. 
 %Diese Maßnahmen werden in dem nächsten Kapitel genauer behandelt. NEIN, ES WIRD HIER ERKLÄRTm WEIL ES AUCH MAßNAHMEN BEI ÜBERWACHUNG GIBT
+\newpage
 
-%\subsection{Tags}
-%[WICHTIG FÜR ÜBERWACHUNG UND OPTIMIERUNG, WEIL]
-Durch die Verwendung von Tags ist es möglich, Diensten nach Kriterien wie Region, Umgebung, Projekt, Art des Dienstes usw. zu visualisieren, dies %es
-ermöglicht, Kosten auf den von der Organisation festgelegten Ebenen zu verfolgen.
-%\end{flushleft}
-
+\subsection*{Tag Policies/Tagging-Strategie[Rev]}
+Tags sind bei AWS Information in Form von Metadaten, die an AWS-Dienste zugewiesen werden kann\footnote{\cite{AMZ29},AWS – Allgemeine Referenz - Referenzhandbuch
+, Seite 681}. Ein Tag besteht aus einem Tag-Schlüssel und einem Tag-Wert. Beispiele für Tag-Schlüssel sind Abteilung, Projekt, Team, Region, Art des Dienstes und Umgebung. Tag-Werte für den Tag-Schlüssel Abteilung könnten Buchhaltung, Finanz, Entwicklung oder Marketing sein. Sowohl bei Tag-Schlüssel als auch bei Tag-Werte wird zwischen Groß- und Kleinschreibung unterschieden. 
+\\
 \begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.4]{sources/Kosten_Ueber_Abteilungen}
+  \includegraphics[scale=0.5]{sources/BA Diagramme-Nach Abteilung.drawio}
   \caption[Trennung der Kosten durch Tags]{}
-  \label{fig:Kosten_Ueber_Abteilungen} 
-  Trennung der Kosten durch Tags.\\
+  \label{fig:BA Diagramme-Nach Abteilung.drawio} 
+  Trennung der Abteilungskosten durch Tags.\\
   Die Angaben dienen nur als Beispiel und entsprechen keiner realen IT-Infrastruktur.
   %\cite{AMZ20}
 \end{figure}
-
-Es könnte zum Beispiel ein Szenario entstehen, in dem eine Abteilung innerhalb einer Organisation mehr Kosten verursacht als Andere. Dies ist nur durch den Anstieg der von Amazon generierten Rechnung, aber um den Grund für diesen Anstieg genauer zu verstehen, muss ihre Ursache untersucht werden. Werkzeuge wie Cost-Explorer machen diese Art von Analyse möglich.
-
+\\
+Durch die Verwendung von Tags ist es möglich, die Kosten auf den von der Organisation festgelegten Tags zu verfolgen. Es könnte (zum Beispiel)[Rev] ein Szenario entstehen, in dem eine Abteilung innerhalb einer Organisation mehr Kosten verursacht als Andere. Dies ist nur durch den Anstieg der von AWS generierten Rechnung bemerkbar, aber um den Grund für diesen Anstieg genauer zu verstehen, muss ihre Ursache untersucht werden. Werkzeuge wie Cost-Explorer zusammen mit einer Tag-Strategie machen diese Art von Analyse möglich. 
+\\
+In der \autoref{fig:BA Diagramme-Nach Abteilung.drawio} wird ein Szenario vorgestellt, wo die Kosten für EC2-Instanzen der Forschungsabteilung kontinuierlich angestiegen sind. Mitarbeiter der Forschungsabteilung waren nicht in der Lage, die Kostensteigerungen zu begründen. 
+Um die von den einzelnen Abteilungen verursachten Kosten zu trennen, wurde ein Tag-Schlüssel mit dem Namen \textit{Abteilung} angelegt. Um anschließend jeder AWS-Dienst einen Tag-Wert entsprechend seiner Abteilung zuzuweisen. Mit Hilfe des Cost-Explorer konnte festgestellt werden, dass die Kosten für EC2 der Forschungsabteilung im Laufe der Zeit gestiegen sind. Nach Angaben der Abteilungsleiter hatte die Nutzung der Rechnerkapazität nicht zugenommen. Im vorliegenden Fall wurde festgestellt, dass Gastpraktikanten in der Forschungsabteilung Experimente durchführt, wo EC2-Instanzen genutzt haben. Die Instanzen wurden nach Beendigung des Aufenthalts nicht mehr abgeschaltet und haben kontinuierlich Kosten verursacht. 
+\\\\
+Für diesen hypothetischen Fall wurde die Ursache für den Anstieg der Gesamtkosten einer einfachen Organisation mit zwei Abteilungen und wenigen Cloud-Diensten ermittelt. Es gibt Unternehmen mit viel komplexeren Strukturen als diese, die weitaus mehr Cloud-Dienste in Anspruch nehmen. Für Unternehmen ist eine Tagging-Strategie von Relevanz, um Kosten für die Buchhaltungsabteilung zu ermittelt %internes Rechnungswesen
+und um Budgets auf der Grundlage früherer Projekte erstellen zu können. Die Kostenüberwachung ist mit einer Tag-Strategie auf eine detaillierte Ebene möglich. Je nach festgelegten Tags können sehr detaillierte Analysen der Cloud-Nutzung und -Kosten über Produkte, Einheiten, Umgebungen oder beliebige andere Bereiche hinweg erstellt werden\footnote{\cite{CCB},Cloud Computing Basics: a Non.-Technical Introduction. Seite 152}.
+%In den Best-Practices für Kostenüberwachung wird empfohlen, so bald wie möglich mit der Zuweisung von Tags zu Cloud-Diensten zu beginnen. QUELLE?
 %Zu diesem Zweck werden Werkzeuge vorgestellt, die die Überwachung aktiver Diensten ermöglichen.
 %Welche Kosten sind mit der Nutzung dieser Werkzeuge verbunden?
 %Es sollte gezeigt werden, die Arten/Kategorien von Kunden, die kostenlosen Zugang zu diesen Werkzeuge haben?
 %WAS MIT AWS Budgets? AWS Bill and cost Man.?
-
 \subsection{AWS CloudWatch}
 %https://aws.amazon.com/de/cloudwatch/pricing/
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingStarted.html
@@ -58,7 +57,7 @@ Amazon CloudWatch ermöglicht die Überwachung der Leistung von Diensten, auch b
 %Asi pueden diferentes departamentos de una organizacion sacar provecho y justificar sus desiciones (de compra). La transparencia sobre la informacion para tomar desiciones logra reducir el riesgo de la desicion. t.ly/cLGu S.27
 %Wiki t.ly/9xO2
 \\\\
-Eine der Metriken zur Überwachung von EC2-Instanzen in CloudWatch ist die CPU-Auslastung. Basierend auf einem Prozentsatz der CPU-Auslastung können Benachrichtigungen und Aktionen konfiguriert werden. Eine dieser Aktionen ist die automatische Einrichtung neuer Instanzen zur Deckung des Kapazitätsbedarfs\footnote{\cite{AWS1},AWS Certified Solutions Architect - Associate (SAA-C02), Seite 185}. Diese Art von Aktionen werden im Kapitel ~\ref{kap_Optimierung} tiefer behandelt.
+Eine der Metriken zur Überwachung von EC2-Instanzen in CloudWatch ist die CPU-Auslastung oder CPU-Utilization auf Englisch. Basierend auf einem Prozentsatz der CPU-Auslastung können Benachrichtigungen und Aktionen konfiguriert werden. Eine dieser Aktionen ist die automatische Einrichtung neuer Instanzen zur Deckung des Kapazitätsbedarfs\footnote{\cite{AWS1},AWS Certified Solutions Architect - Associate (SAA-C02), Seite 185}. Diese Art von Aktionen werden im Kapitel ~\ref{kap_Optimierung} tiefer behandelt[ODER HIER?].
 \\\\
 Im Folgenden werden die grundlegenden Bereiche und Begriffe von CloudWatch erläutert und wie sie zur Überwachung von Informationen über AWS-Dienste verwendet werden.
 \\\\
@@ -72,32 +71,29 @@ Auflösung/Zeitraum: \\
 1 Stunde - 15 Monate
 \footnote{\cite{AMZ15}, Wie lange werden die verfügbaren Metriken aufbewahrt?}
 \end{comment}
-Zum Beispiel kann der Durchschnitt von einer bestimmten API pro Stunde untersucht werden.
-Für eine detailliertere Überwachung ist es möglich, benutzerdefinierte Metriken zu konfigurieren, die eine Auflösung von bis zu eine Sekunde zulassen. Ein praktisches Beispiel für benutzerdefinierte Metriken ist die Messung der Ladezeit einer Website.
-[ANDERES BEISPIEL?]
+Zum Beispiel kann der Durchschnitt von einer bestimmten API pro Stunde untersucht werden. Für eine detailliertere Überwachung ist es möglich, benutzerdefinierte Metriken zu konfigurieren, die eine Auflösung von bis zu eine Sekunde zulassen. %Ein praktisches Beispiel für benutzerdefinierte Metriken ist die Messung der Ladezeit einer Website.
+%[ANDERES BEISPIEL?]
 % MIT BEZUG AUF K:OPTIMIERUNG?oder WIESO IST DIE AUFLÖSUNG RELEVANT?]
 %\textbf{Logs} \\ BRAUCHE ICH DAS?
 \\\\
-\textbf{Ereignisse} 
-\\
-Ein Ereignis ist in CloudWatch eine Änderung in einem AWS Dienst. AWS-Dienste können Ereignisse erzeugen, wenn sich ihr Status ändert. Das bedeutet, dass sich ein bestimmter AWS-Dienst selbst ändern kann. 
-Beispielsweise, wird ein Ereignis erzeugt, wenn Amazon EC2 Auto Scaling, Instanzen gestartet oder beendet werden\footnote{\cite{AMZ13}, AWS Cloud Watch Events: User GuideSeite 1} oder wenn eine bestimmte Menge an Speicherplatz in einem Bucket erreicht wurde. Ein Bucket ist ein Behälter, in dem Objekte bei Amazon S3 gespeichert werden\footnote{\cite{AMZ18}Amazon Simple Storage Service User Guide, Seite 4}. Beispiele für Objekte sind Dateien wie Bilder und Videos. 
+\textbf{Ereignisse}\\
+Ein Ereignis ist in CloudWatch eine Änderung in einem AWS Dienst. AWS-Dienste können Ereignisse erzeugen, wenn sich ihr Status ändert. %Das bedeutet, dass sich ein bestimmter AWS-Dienst selbst ändern kann. 
+Beispielsweise, wird ein Ereignis erzeugt, wenn Amazon EC2 Auto Scaling, Instanzen gestartet oder beendet werden\footnote{\cite{AMZ13}, AWS Cloud Watch Events: User Guide. Seite 1} oder wenn eine bestimmte Menge an Speicherplatz in einem Bucket erreicht wurde. Ein Bucket ist ein Behälter, in dem Objekte bei Amazon S3 gespeichert werden\footnote{\cite{AMZ18}Amazon Simple Storage Service User Guide, Seite 4}. Beispiele für Objekte sind Dateien wie Bilder und Videos. 
 \\\\
 \textbf{Regel} \\
 Eine Regel ordnet eintreffende Ereignisse zu und leitet diese zur Verarbeitung an Ziele weiter.
-Eine einzelne Regel kann an mehrere Ziele weiterleiten, die alle parallel verarbeitet werden\footnote{\cite{AMZ13}, AWS Cloud Watch : User Guide, Seite 2}.
+Eine einzelne Regel kann an mehrere Ziele weiterleiten, die alle parallel verarbeitet werden\footnote{\cite{AMZ13}, AWS Cloud Watch : User Guide. Seite 2}.
 \\\\
 \textbf{Ziele} \\
 Ziele oder Targets sind AWS-Dienste, die aufgerufen werden, wenn eine Regel ausgelöst wird.
 EC2 instances, AWS Lambda functions und Amazon SNS sind unter anderem mögliche Ziele.
 Die Ziele einer Regel müssen sich in derselben Region wie die Regel befinden
-\footnote{\cite{AMZ13}, Seite 2}.
+\footnote{\cite{AMZ13}AWS Cloud Watch Events: User Guide. Seite 2}.
 %Alle zugelassene AWS-Diensten \footnote\url{https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/EventTypes.html}
 \\\\
 \textbf{Benachrichtigungen}\\
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html
-Benachrichtigt zu werden ist wichtig, um relevante Ereignisse nicht zu verpassen und rechtzeitig Maßnahmen zu ergreifen. Mit CloudWatch können Alarme eingerichtet werden, die durch Metriken wie die CPU-Auslastung und auch Gebühren[PASSENDES WORT?] auf AWS-Rechnungen ausgelöst werden.
-Benachrichtigungen können durch Amazon SNS\footnote{Amazon SNS ist ein Dienst, der die Benachrichtigung an Personen und an Applikationen ermöglicht. https://aws.amazon.com/de/sns/} oder zu einer E-Mail-Adresse geschickt werden.
+Benachrichtigt zu werden ist wichtig, um relevante Ereignisse nicht zu verpassen und rechtzeitig Maßnahmen zu ergreifen. Mit CloudWatch können Alarme eingerichtet werden, die durch Metriken wie die CPU-Auslastung und Gebühren von einem spezifischen AWS-Dienst[PASSENDES WORT?] ausgelöst werden. Benachrichtigungen können durch Amazon SNS\footnote{\cite{AMZ30}Amazon SNS ist ein AWS-Dienst für die Benachrichtigung an Personen und an Applikationen.} oder zu einer E-Mail-Adresse geschickt werden.
 %AUCH PER SLACK ODER ÄHNLICHES
 \\\\
 %This could be a good example %https://youtu.be/__knpcBRLHg?t=770
@@ -111,18 +107,20 @@ Benachrichtigungen können durch Amazon SNS\footnote{Amazon SNS ist ein Dienst, 
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html
 \textbf{Visualisierung von Metriken}\\
 Mit Cloud-Watch Dashboards können relevante Metriken grafisch dargestellt werden. %[BESSERE FORMULIERUNG] %Sie ermöglichen eine umfassende Visualisierung von Metriken der AWS-Diensten in der AWS-Umgebung. 
-Durch die Dashboards können auch Benachrichtigungen erstellt werden. Für die Einrichtung der Benachrichtigungen ist kein technisches Wissen nötig\footnote{\cite{AMZ14},AWS Cloud Watch : User Guide, Seite 28}.
+Durch die Dashboards können auch Benachrichtigungen erstellt werden. Für die Einrichtung der Benachrichtigungen ist kein technisches Wissen nötig\footnote{\cite{AMZ14}AWS Cloud Watch : User Guide. Seite 28}.
 %Die von CloudWatch gesammelte Informationen sind nicht nur für System-Administratoren relevant.
 Die in den Dashboards enthaltenen Informationen sind nicht nur für ihre Autoren von Relevanz.
-Weitere Personen innerhalb oder außerhalb der Organisation können Zugriff auf Dashboards mit nützlichen Informationen bekommen, um Prozesse zu beschleunigen[VORTEILE DES OPTIMIERUNGSPROZESS VERWEISEN] oder Probleme schneller zu beheben[USE CASE].
+Weitere Personen innerhalb oder außerhalb der Organisation können Zugriff auf Dashboards mit nützlichen Informationen bekommen, um Prozesse zu beschleunigen[VORTEILE DES OPTIMIERUNGSPROZESS VERWEISEN] oder Probleme schneller zu beheben.
 
-Dies ermöglicht einen schnelleren Kommunikationsfluss in Echtzeit[Fach Informationsmanagement: (Schwachstellenanalyse) IuM Technik/Check Book KCrmar]. Die Zugriffsverwaltung für geteilte Dashboards wird über AWS Identity and Access Management abgewickelt\footnote{\cite{AMZ14}, Seite 18 und 39}[UND?].
+Dies ermöglicht einen schnelleren Kommunikationsfluss in Echtzeit[Fach Informationsmanagement: (Schwachstellenanalyse) IuM Technik/Check Book KCrmar]. Die Zugriffsverwaltung für geteilte Dashboards wird über AWS Identity and Access Management abgewickelt\footnote{\cite{AMZ14}AWS Cloud Watch : User Guide. Seite 18 und 39}[UND?].
 \\\\
 %t.ly/lRzA Establezca indicadores clave de rendimiento (KPI) ...
 \subsubsection*{Fakturierungsalarme mit CloudWatch}
 %Seite 145 Amazon CloudWatch - Benutzerhandbuch
 AWS CloudWatch empfängt Abrechnungsmetriken von allen AWS-Diensten. Auf der Grundlage dieser Metriken ist es daher möglich, Regeln zu erstellen, die bei Überschreitung des geplanten Budgets einen Alarm auslösen.
-%[KANN MAN NUR Total Estimated Charge verwenden ODER KÖNNTE MAN NACH PROJEKTE TRENNEN?]
+
+Wenn ein bestimmter Prozentsatz oder Betrag des festgelegten Budgets überschritten wurde. Die Erstellung von Budgets trägt zu einer besseren Kostenkontrolle. [WEIL, Cost Controlling]
+Die Einstellung von Alarmen für relevante Ereignisse wie im Fall einer Budgetüberschreitung [IST GUT WEIL/TRÄG ZU...BEI].
 [BEZUG AUF PROJEKTMANAGEMENT/Kostenkontrolle?]
 
 \subsubsection*{Benachrichtigung bei Hoch- und Runterfahren von EC2-Instanzen}
@@ -241,6 +239,4 @@ Da kann man sehen wie viele Stunden an RI und an On-Demand pro Tag/Monat verbrau
 %(How to use Spots and on-demand)
 %detect CPU Utilization, with Amazon CloudWatch
 \end{comment}
-%IST taging EINE STRATEGIE?
 %I could compute the cost of a query, user, transaction
-% https://youtu.be/qYHR_V1lvNU?t=375
