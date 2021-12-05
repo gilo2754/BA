@@ -8,10 +8,14 @@ In diesem Kapitel werden die mit Hilfe der Werkzeuge gewonnenen Informationen ge
 \subsection{EC2 Automatische Skalierung}
 %t.ly/CXs3 Linked In auf DE          %t.ly/1nka          %THIS!!! t.ly/vrCO
 %https://youtu.be/qYHR_V1lvNU?t=900
-Auto Scaling ist es hilfreich, um die richtige Anzahl von EC2 Instanzen zur Verfügung zu haben[NÖ+horitonzal/vertikal Skalierung], um die Anwendungslast dynamisch abzudecken.
-\\\\
+Auto Scaling ist es hilfreich, um die richtige Anzahl von EC2 Instanzen zur Verfügung zu haben[Explain tht this is vertikal Skalierung and not horitonzal/], um die Anwendungslast dynamisch abzudecken\footnote{\cite{AMZ31} Was ist Amazon EC2 Auto Scaling?}.
+
+\subsubsection*{Auto Scaling Group}
+Die Instanzen, die zur Deckung der erforderlichen Rechenkapazität zur Verfügung stehen, werden in einer Auto-Scaling-Gruppe gruppiert. Diese Gruppe von Instanzen wird in AWS als Auto-Scaling-Gruppe bezeichnet. Bei der Erstellung einer Auto-Scaling-Gruppe wird eine minimale, gewünschte und maximale Anzahl von Instanzen definiert. 
+[Abb.]
 %https://www.youtube.com/watch?v=yC5nRYS2IYI En Espaniol
 %https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#policy-creating-asg-console
+\\\\
 Die \autoref{fig:AutoSca_Unused_Capacity} zeigt das wechselnde Verhalten einer Beispielanwendung, die vor allem unter der Woche genutzt wird. Am Wochenende sinkt die Nachfrage nach Rechnerkapazität auf weniger als 25 \% und lässt den Rest der Kapazität ungenutzt. 
 \begin{figure}[h]
     \centering
@@ -26,12 +30,12 @@ Die graue Zone entspricht ungenutzte Rechenkapazität und beträgt etwa ein Drit
 %Zu erklären: cooldown period and scaling policy.
 %Macht die Nutzung von Spor-Instanzen so einfach wie nie zuvor ?
 \subsubsection*{Elastic Load Balancing}%https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html
-[]
+[?]
 \subsubsection{Zeitgesteuerte Skalierung}
 %W-Ende für Dev und Beta
 \textbf{Nicht produktive Umgebungen}\\
 %Auch möglich damit https://aws.amazon.com/de/solutions/implementations/instance-scheduler/
-In einem On-Premise-System macht es, wenn überhaupt, einen kleinen Unterschied bei den Kosten, dass Instanzen die ganze Zeit aktiv bleiben. Im Gegensatz dazu ist es bei On-Demand-Zahlungsmodelle sinnvoll Zeiträume zu definieren, in denen Instanzen abgeschaltet werden können, um der Nutzung von AWS-Diensten zu reduzieren. Bei Systemen, die nur tagsüber und unter der Woche in Betrieb sein müssen, kann dies eine Einsparung von zu 67\% bedeuten.  Wenn zum Beispiel Test- und Beta-Umgebungen von Montag bis Freitag von 7 bis 20 Uhr laufen würden.
+In einem On-Premise-System macht es, wenn überhaupt, einen kleinen Unterschied bei den Kosten, dass Instanzen die ganze Zeit aktiv bleiben\footnote{\cite{CCB},Cloud Computing Basics: a Non.-Technical Introduction. Seite 153}. Im Gegensatz dazu ist es bei On-Demand-Zahlungsmodelle sinnvoll Zeiträume zu definieren, in denen Instanzen abgeschaltet werden können, um der Nutzung von AWS-Diensten zu reduzieren. Bei Systemen, die nur tagsüber und unter der Woche in Betrieb sein müssen, kann dies eine Einsparung von zu 67\% bedeuten.  Wenn zum Beispiel Test- und Beta-Umgebungen von Montag bis Freitag von 7 bis 20 Uhr laufen würden.
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.6]{sources/Einsparung_Zeitgesteuerte_Skalierung}
@@ -52,7 +56,7 @@ Der Stundensatz wurde am 23.11.2021 mit dem AWS Pricing Calculator\cite{AMZ17} e
 \\\\
 \textbf{Produktive Umgebungen}\\
 Wenn der Zeitpunkt einer hohen Nachfrage bekannt ist, kann eine Erhöhung der Rechnerkapazität geplant werden, um Überlastungen zu vermeiden. Beispiele für solche Zeiträume sind Cyber-Monday und Black Friday\footnote{\cite{STA5}Wie viel planen Sie am Black Friday / Cyber Monday auszugeben?}. 
-[WEITERE ERKLÄRUNG]
+[WEITERE ERKLÄRUNG ODER LÖSCHEN]
 %https://de.statista.com/statistik/daten/studie/1076963/umfrage/ausgaben-an-black-friday-und-cyber-monday-in-deutschland/]
 
 \subsubsection{Dynamisches Auto Scaling}
@@ -86,9 +90,7 @@ Anders als Zeitgesteuerte Skalierung ist es nicht notwendig, die Verhaltensmuste
 \subsubsection{Die richtige Speicherklassen wählen}
 Um die Speicherkosten zu optimieren, ist es daher notwendig, die richtige Speicherklassen für die jeweilige Applikation wählen. Um die richtige Wahl zu treffen, müssen die Anforderungen der Applikation verstanden werden. Klinische Patientendaten und eine Instagram-Story unterscheiden sich in der Zugriffshäufigkeit auf diese Daten und in der Länge der Aufbewahrungszeit.
 
-Amazon bietet verschiedene Speicherklassen an, die sich im Preis und in der Häufigkeit des Zugriffs auf die Objekte unterscheiden. Objekte sind in Behältern enthalten, die Buckets genannt werden.
-[ABB Speicherklasse ->Eigenschaften der Anwendung?]
-Wenn Daten über einen längeren Zeitraum gespeichert werden müssen, weil die Anforderungen der Applikation dies vorschreiben oder für den Fall dass, per Gesetz auf die Informationen in der Zukunft zugegriffen werden muss.
+AWS bietet verschiedene Speicherklassen an, die sich im Preis und in der Häufigkeit des Zugriffs auf die Objekte unterscheiden. Objekte sind in Behältern enthalten, die Buckets genannt werden. Wenn Daten über einen längeren Zeitraum gespeichert werden müssen, weil die Anforderungen der Applikation dies vorschreiben oder für den Fall dass, per Gesetz auf die Informationen in der Zukunft zugegriffen werden muss.
 %\\
 [UMFORMULIEREN]
 Zusätzlich, wenn auf die Daten nicht häufig zugegriffen wird, sind Glacier und Glacier Deep Archive passende Speicherklassen. Die Entscheidung ist jedoch nicht immer so einfach und die Umstände können sich schnell ändern. Hinzu kommt, dass nicht alle Daten in einer Applikation immer die gleichen Zugriffsmuster haben. Für solche Fälle ist es möglich, Regeln zu definieren, die Dateien zwischen verschiedenen Speicherklassen abhängig von ihrem Alter übertragen.
@@ -136,10 +138,10 @@ Es ist zum Beispiel möglich, alle Objekte mit dem Tag: Dev nach 45 Tagen nach S
 Angepasster Code auf Basis der Beispiele auf Seite 701 in 
 Amazon Simple Storage Service - User Guide, 
 \end{lstlisting}
-\footnote{\cite{AMZ18}, Seite 701}
+\footnote{\cite{AMZ18},Amazon Simple Storage Service - User Guide. Seite 701}
 Zur Veranschaulichung (der gezeigten Informationen[OHNE ODER DAMIT?]) wird davon ausgegangen, dass ein Sicherheitsunternehmen, das Sicherheitsvideos speichern muss, im Durchschnitt 120 TB an Videos speichern muss. Viele von ihnen werden mindestens 5 Jahre lang aufbewahrt, falls sie vor Gericht als Beweismittel dienen. Ungefähr 50\% der Videos werden mindestens einmal im Monat überprüft und müssen laut Gesetz sofort zugänglich sein. Die Software des Unternehmens speichert die Videos in S3-Buckets und hat eine durchschnittliche Größe von 3,4 GB.
 
-Im Folgenden werden die Speicherkosten für ein Szenario berechnet, bei dem nur S3 Standard verwendet wird. Als nächstes wird die Kombination von S3 Standard Infrequent Access, S3 Glacier und S3 Standard für ein Szenario betrachtet, in dem die Dateien je nach Alter verschoben werden. Im letzten Szenario müssen die Kosten für den Übergang[RICHTIGES WORT?] zwischen Speicherklassen berücksichtigt werden.
+Im Folgenden werden die Speicherkosten für ein Szenario berechnet, bei dem nur S3 Standard verwendet wird. Als nächstes wird die Kombination von S3 Standard Infrequent Access, S3 Glacier und S3 Standard für ein Szenario betrachtet, in dem die Dateien je nach Alter verschoben werden. Im letzten Szenario müssen die Kosten für die Verschiebung zwischen Speicherklassen berücksichtigt werden.
 \\
 Zur Vereinfachung der Berechnung wird angenommen, dass 20\% der Dateien in S3 Standard Infrequent Access und 30\% in S3 Glacier gespeichert werden.
 \\
@@ -147,10 +149,10 @@ Zur Vereinfachung der Berechnung wird angenommen, dass 20\% der Dateien in S3 St
   \centering
   \includegraphics[scale=0.75]{sources/Kostenvergleich_Nutzung_unt_Speicherklassen}
   \caption[Kostenvergleich durch Nutzung von unterschiedlichen Speicherklassen]{}\label{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} 
-  Kostenvergleich durch Nutzung von unterschiedlichen Speicherklassen.  \\
-  Quelle: Eigene Darstellung. S3 Stundensätze: \footnote{\cite{AMZ09}}\\
+  Kostenvergleich durch Nutzung von unterschiedlichen Speicherklassen.  
+\end{figure}\\
+Quelle: Eigene Darstellung mit Stundensätze der S3-Preise\footnote{\cite{AMZ09}AWS S3 Pricing}.\\
 Der Punkt wurde als Dezimaltrennzeichen und das Komma als Tausendertrennzeichen verwendet.
-\end{figure}
 %\\
 Bei der Berechnung wurden die Kosten für das Verschieben von Dateien zwischen Speicherklassen berücksichtigt. 
 Anhand der Berechnungen lässt sich erkennen, dass ein Einsparungspotenzial von rund 1.000 Dollar pro Monat besteht, indem die notwendigen Regeln aufgestellt werden, um einen Teil der Dateien in anderen Speicherklassen zu verschieben, welche niedrigere Preise bieten.
@@ -158,7 +160,7 @@ Anhand der Berechnungen lässt sich erkennen, dass ein Einsparungspotenzial von 
 %WICHTIG IST DIE GRÖSSE MEINE DATEIEN UND DIE ANZAHL.
 %weil SO WERDEN DIE PREISE FÜR VERSCHIEBUNG BERECHNET.
 %(Object size distribution )
-\newpage
+%\newpage
 \subsubsection{Intelligent-Tiering}
 Intelligent-Tiering verschiebt Dateien auf der Grundlage von Zugriffsmustern. Diese Speicherklasse ist ideal für Daten mit wechselnden oder unbekannten Zugriffsmustern. 
 Wie die Senior Product Manager für S3 Ruhi Dang erklärt, einige Unternehmen haben weder die Zeit noch die finanziellen Möglichkeiten, eine Person einzustellen, die ihre Daten sortiert und in die richtige Speicherklasse einordnet. Intelligent Auto Tiering ist eine attraktive Lösung für Unternehmen, die jährlich weniger als \$100,000 für Speicher ausgeben \footnote{\cite{AMZ16},AWS re:Invent 2019: Guidelines and design patterns for optimizing cost in Amazon S3. Minute: 21:12}.
@@ -168,10 +170,11 @@ Wie die Senior Product Manager für S3 Ruhi Dang erklärt, einige Unternehmen ha
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.7]{sources/S3_IntLifeCycle}
-  \caption[Funktionsweise von Intelligent-Tiering]{}\label{fig:S3_IntLifeCycle} Funktionsweise von Intelligent-Tiering\\
-  Quelle: Eigene Darstellung
+  \caption[Funktionsweise von Intelligent-Tiering]{}\label{fig:S3_IntLifeCycle} Funktionsweise von Intelligent-Tiering
   %{\cite{SCOUT1}}
-\end{figure}
+\end{figure}\\
+Quelle: Eigene Darstellung. \footnote{\cite{AMZ18},Amazon Simple Storage Service - User Guide. Seite 715}
+\\\\
 Wird ein Datei zu einem späteren Zeitpunkt aus der Ebene der seltenen Zugriffe aufgerufen, wird es automatisch in eine Speicherklasse der häufigen Zugriffe zurückversetzt.
 
 
