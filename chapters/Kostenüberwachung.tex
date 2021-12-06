@@ -136,29 +136,43 @@ Wenn ein bestimmter Prozentsatz oder Betrag des festgelegten Budgets überschrit
 %[WEIL .... LÖSCHEN?]
 %\\\\
 \subsection{AWS Cost-Explorer}\label{ssec:Cost-Explorer}
-Mit Cost-Explorer können Kosten der letzten 12 Monate und eine Schätzung der Kosten des laufenden Monats visualisiert werden. Darüber hinaus wird eine Kostenprognose für die nächsten Monate erstellt. Die Prognose basieren auf die Kosten der vergangenen Monaten. Die Nutzung des Cost-Explorers ist kostenlos, nur API-Aufrufe sind kostenpflichtig \footnote{{\cite{AMZ22}AWS Cost Management Pricing}}.
-\\
+Cost-Explorer erstellt Berichte über die Kosten und die Nutzung von AWS-Diensten. Darüber hinaus wird eine Kostenprognose für die nächsten Monate erstellt, welche auf die Kosten der vergangenen Monaten basiert. Die Nutzung des Cost-Explorers ist kostenlos, nur API-Aufrufe sind kostenpflichtig \footnote{{\cite{AMZ22}AWS Cost Management Pricing}}.
 %Mio:%Conocer clos costos en un periodo de tiempo nos permite %saber si estamos en el camino correcto para alcanzar las %metas trazadas al inicio del periodo/proyecto y tomar %las medidas adecuadas para que al final del periodo/%proyecto tengamos resultados satisfactorios.
+\subsubsection*{Standardberichte}
+Standardberichte sind vorgefertigte Berichte, die die Nutzung oder die Kosten nach einer selbstdefinierten Zeitraum zeigen. Diese zeigen eine grafische Darstellung der stündlichen, täglichen oder monatliche Kosten nach Dienst, die Abdeckung und die Auslastung von reservierten Instanzen oder die in Saving Plans Zahlungsmodell und die Ausgaben auf dem AWS Marketplace\footnote{{\cite{AMZ34}AWS Marketplace ist ein Einkaufskatalog für Software von Drittanbietern.}}. Die Berichte über die Abdeckung und Auslastung der reservierten Instanzen wurde im TrueCar-Anwendungsfall verwendet. Dies findet sich in Unterkapitel \ref{ssec:UseCaseTrueCar}.
+\\\\
+Eine weitere Verwendung dieser Informationen findet sich im Bereich der Marketing. Als Beispiel, ein Unternehmen, das ein Freemium-Dienst\footnote{\cite{MAR1}Ein Freemium-Dienst bietet in der Regel zwei Versionen an, eine kostenlose und eine kostenpflichtige.} anbietet. Die Marketingabteilung möchte zu diesem Zweck die tatsächlichen Kundenakquisitionskosten (CAC)\footnote{\cite{MAR2}Kundenakquisitionskosten sind alle anfallenden Kosten in der Customer Acquisition-Phase für ein Unternehmen.} messen, einschließlich der Kosten, die durch Nutzer entstehen, die das Produkt nutzen, aber nicht dafür bezahlen. 
+\subsubsection*{Leistungskennzahlen (KPI)[Rev][Rev]}
+Cost-Explorer-Berichte enthalten Daten, die die Merkmale eines guten KPI erfüllen. Sie sind spezifisch und in Bezug auf die Zeit messbar.
+\\\\
+In der \autoref{fig:Dashboard_EC2_S3} werden das monatliche Geschäftswachstum, die durchschnittlichen Kosten pro Stunde für EC2-Instanzen, den Prozentsatz der Instanzen einer bestimmten Generation und der Vorgängerversionen, die Abdeckung nach Zahlungsmodell und die Verteilung des S3-Speichers nach Speicherklassen berechnet. In diesem Beispiel werden Metriken aus CloudWatch? und Informationen aus Cost-Explorer-Berichten zusammengestellt.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.4]{sources/Dashboard_EC2_S3}
+  \caption[Dashboard mit EC2 und S3 Metriken]{}
+  \label{fig:Dashboard_EC2_S3} 
+  Dashboard mit EC2 und S3 Metriken\cite{AMZ35}
+\end{figure}
 
-\subsubsection*{Standard Berichte}
-\subsubsection*{Bereiche: SP und RIs}
-Auslastungsbericht UND
-Abdeckungsbericht
-
-
-AWS analysiert die bisherige Nutzung der Instanzen und gibt Empfehlungen zur Kostensenkung durch den Wechsel von EC2-Instanzen in On-Demand Zahlungsmodell zu reservierten Instanzen. Diese ignorieren Kapazität, die bereits von anderen reservierten Instanzen abgedeckt wurden.
-Es besteht die Möglichkeit, einen Bericht über die Nutzung von AWS-Diensten der letzten 12 Monate einzusehen und zu prüfen, ob die Empfehlungen des Cost-Explorers angemessen sind.
+%https://andrewchen.com/how-to-actually-calculate-cac/
+%Sample KPIs: EC2 hourly or daily costs
+%Value: Understand the EC2 unit cost per subscriber
+%Sample KPIs: Cost by purchase option, purchase option coverage
+%Value: Optimize your cost savings by leveraging pricing models
+%Auslastungsbericht UND Abdeckungsbericht
+%\subsubsection*{Berichte von reservierten Instanzen und Saving Plans}
+[WAS DAMIT?]AWS analysiert die bisherige Nutzung der Instanzen und gibt Empfehlungen zur Kostensenkung durch den Wechsel von EC2-Instanzen in On-Demand Zahlungsmodell zu reservierten Instanzen. Diese ignorieren Kapazität, die bereits von anderen reservierten Instanzen abgedeckt wurden.
+Es besteht die Möglichkeit, einen Bericht über die Nutzung von AWS-Diensten der letzten zwölf Monate einzusehen und zu prüfen, ob die Empfehlungen des Cost-Explorers angemessen sind.
 
 \subsubsection*{Budgetplanung}
-Die Budgetplanung ist eine Methode der Kostenkontrolle, die beim Start eines neuen Projekts eingesetzt wird\footnote{\cite{BUD2}Cost Control Methods: Definitions and Examples}. Der Bericht über die in den letzten 12 Monaten entstandenen Kosten zusammen mit der Prognose der Kosten der kommenden drei Monaten tragen zu einen guten Budgetplanung bei.
+Die Budgetplanung ist eine Methode der Kostenkontrolle, die beim Start eines neuen Projekts eingesetzt wird\footnote{\cite{BUD2}Cost Control Methods: Definitions and Examples}. Der Bericht über die in den letzten zwölf Monaten entstandenen Kosten zusammen mit der Prognose der Kosten der kommenden zwölf Monaten[Rev] tragen zu einen guten Budgetplanung bei.
 %%t.ly/6bvZ% https://youtu.be/3peNAKB3VxA?t=223
 Durch die Möglichkeit, die in den letzten Monaten angefallenen Kosten nach bestimmten AWS-Diensten, Projekt oder Abteilung zu trennen, ist es möglich, operative Budgetplanungen aus vergangenen Projekten mit Genauigkeit zu erstellen. 
 \begin{quote}
   „Bei der operativen Planung wird von einem Zeithorizont von einem Jahr ausgegangen. Hier liegt der Fokus darauf, Ressourcen konkret zuzuweisen und detailreicher zu planen. Welche Mittel werden wofür verwendet und welche kurz- und mittelfristigen Ziele sollen durch diesen Mitteleinsatz erreicht werden”\cite{BUD1}.
   In dem Fall dieser Arbeit sind die obengenannten Ressourcen die AWS-Dienste.
 \end{quote}
-
-Cost-Explorer liefert Informationen zur Rechtfertigung von Ausgaben aus im Voraus festgelegten Budgets, hilft bei der Planung künftiger Budgets und unterstützt die []Finanz- und Buchhaltungsabteilungen?
+Cost-Explorer liefert Informationen zur Rechtfertigung von Ausgaben aus im Voraus festgelegten Budgets, hilft bei der Planung künftiger Budgets und unterstützt die Verfolgung von KPIs.
 %\textbf{Aktuelle Budgets vs erwartet=Soll-Ist-Vergleich Methode}
 %Einer der Standardberichte im AWS Cost Explorer enthält die Kosten in Dollar/Euro und die Nutzung von EC2-Instanzen in Stunden pro Monat. Mit diesen Informationen können Sie die Kosten für eine bestimmte Dienstleistung berechnen. 
 \subsection{AWS Trusted Advisor}
@@ -168,7 +182,7 @@ Cost-Explorer liefert Informationen zur Rechtfertigung von Ausgaben aus im Vorau
 %was macht dieses?
 %AWS Trusted Advisor: This helps you know more about idle or underutilized resources.
 
-AWS Trusted Advisor ist ein Werkzeug, das entwickelt wurde, um Kosten zu senken, um Systemverfügbarkeit und -leistung zu verbessern und um Sicherheit zu erhöhen. Es analysiert die Nutzung des AWS-Kontos und gibt Best-Practice-Empfehlungen. Es werden die Kategorien Servicekontingente und Kostenoptimierung insbesondere betrachtet, da diese am relevanten für die vorliegende Arbeit sind. Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen November 2021) für Konten in den Plänen Developer und Basic Support kostenlos sind. Prüfungen für die Kategorie Servicekontingente sind kostenlos. Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{https://aws.amazon.com/de/premiumsupport/technology/trusted-advisor/}. \\
+AWS Trusted Advisor ist ein Werkzeug, das entwickelt wurde, um Kosten zu senken, um Systemverfügbarkeit und -leistung zu verbessern und um Sicherheit zu erhöhen. Es analysiert die Nutzung des AWS-Kontos und gibt Best-Practice-Empfehlungen. Es werden die Kategorien Servicekontingente und Kostenoptimierung insbesondere betrachtet, da diese am relevanten für die vorliegende Arbeit sind. Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen November 2021) für Konten in den Plänen Developer und Basic Support kostenlos sind. Prüfungen für die Kategorie Servicekontingente sind kostenlos. Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{\cite{AMZ36}Trusted Advisor}. \\
 %ES MUSS GEPRÜFT WERDEN, OB ES SINNVOLL IST, FÜR DIE OBEN GENANNTEN SUPPORT-PLÄNEN ZU ZAHLEN.
 
 \begin{figure}[h!]

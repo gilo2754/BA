@@ -96,8 +96,7 @@ AWS bietet verschiedene Speicherklassen an, die sich im Preis und in der Häufig
 Zusätzlich, wenn auf die Daten nicht häufig zugegriffen wird, sind Glacier und Glacier Deep Archive passende Speicherklassen. Die Entscheidung ist jedoch nicht immer so einfach und die Umstände können sich schnell ändern. Hinzu kommt, dass nicht alle Daten in einer Applikation immer die gleichen Zugriffsmuster haben. Für solche Fälle ist es möglich, Regeln zu definieren, die Dateien zwischen verschiedenen Speicherklassen abhängig von ihrem Alter übertragen.
 
 \subsubsection{Lebenszyklus-Konfiguration}
-[MASSNAHME für...]Eine S3-Lebenszykluskonfiguration oder lifecycle policy beschreibt in einer XML-Datei Regeln und Aktionen für die Manipulation von Objekten.
-Aktionen wie das Verschieben von Objekten verursachen Kosten. Ein Beispiel von diesen Kosten und mögliche Einsparungen werden in \autoref{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} für die Berechnung der Speicherkosten verwendet.
+Die Lebenszyklus-Konfiguration oder lifecycle policy ist eine Maßnahme zur Optimierung S3-Speichereinheiten. Eine S3-Lebenszykluskonfiguration beschreibt in einer XML-Datei Regeln und Aktionen für die Verschiebung in unterschiedlichen Speicherklassen von Objekten. Die Verschiebung von Objekten verursachen Kosten. Ein Beispiel von diesen Kosten und mögliche Einsparungen werden in \autoref{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} vorgestellt.
 \\
 %Beim Verschieben nach S3 Intelligent-Tiering, S3 Standard – Infrequent Access und S3 One Zone – Infrequent Access: %\$0.01\\
 %S3 Glacier: \$0.036\\
@@ -105,9 +104,7 @@ Aktionen wie das Verschieben von Objekten verursachen Kosten. Ein Beispiel von d
 %Datenabfrage am 24.11.2
 %{\cite{AMZ09}}
 %\\
-Um konkretere Regeln zu zu definieren, ist es möglich Tags zu verwenden und somit eine Unterscheidung zwischen Objekten mit verschiedenen Tags zu treffen.
-Es ist zum Beispiel möglich, alle Objekte mit dem Tag: Dev nach 45 Tagen nach Standard Infrequent Access und nach 120 Tagen nach S3 Glacier zu verschieben.
-
+Um konkretere Regeln zu zu definieren, ist es möglich Tags zu verwenden und somit eine Unterscheidung zwischen Objekten mit verschiedenen Tags zu treffen. Es ist zum Beispiel möglich, alle Objekte mit dem Tag-Wert: Dev nach 45 Tagen nach Standard Infrequent Access und nach 120 Tagen nach S3 Glacier zu verschieben.
 \begin{lstlisting}
   <LifecycleConfiguration>
   <Rule>
@@ -138,7 +135,7 @@ Es ist zum Beispiel möglich, alle Objekte mit dem Tag: Dev nach 45 Tagen nach S
 Angepasster Code auf Basis der Beispiele auf Seite 701 in 
 Amazon Simple Storage Service - User Guide, 
 \end{lstlisting}
-\footnote{\cite{AMZ18},Amazon Simple Storage Service - User Guide. Seite 701}
+\footnote{\cite{AMZ18},Amazon Simple Storage Service - User Guide. Seite 701}\\
 Zur Veranschaulichung (der gezeigten Informationen[OHNE ODER DAMIT?]) wird davon ausgegangen, dass ein Sicherheitsunternehmen, das Sicherheitsvideos speichern muss, im Durchschnitt 120 TB an Videos speichern muss. Viele von ihnen werden mindestens 5 Jahre lang aufbewahrt, falls sie vor Gericht als Beweismittel dienen. Ungefähr 50\% der Videos werden mindestens einmal im Monat überprüft und müssen laut Gesetz sofort zugänglich sein. Die Software des Unternehmens speichert die Videos in S3-Buckets und hat eine durchschnittliche Größe von 3,4 GB.
 
 Im Folgenden werden die Speicherkosten für ein Szenario berechnet, bei dem nur S3 Standard verwendet wird. Als nächstes wird die Kombination von S3 Standard Infrequent Access, S3 Glacier und S3 Standard für ein Szenario betrachtet, in dem die Dateien je nach Alter verschoben werden. Im letzten Szenario müssen die Kosten für die Verschiebung zwischen Speicherklassen berücksichtigt werden.
