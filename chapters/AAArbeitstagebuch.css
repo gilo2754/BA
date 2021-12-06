@@ -1,16 +1,14 @@
 
 @Offen { 
-#Not-much-important:
 [Grafik der Kosten On-Premise/Demand?]
 Bleibt die Abb. On-Demand?
 Preis IT-Infra(schwer zu finden sagte Feedpak)
-#Important+#Urgent
-?
+Load Balancer mit eigenem Bild
 Große der Instanzen ändern t.ly/rH5c
+Predective Scaling, nötig ?
 }
 
 @Heute {
-
 15.12: drucken
 14.12: Format und Zitate
 /13./12.12: PUFFER!!!
@@ -19,23 +17,23 @@ Große der Instanzen ändern t.ly/rH5c
 10.12: Ab hier müsste die Arbeit vollständig sein und nur verbessert werden.+große Review
 !9.12: 7 Punkte Zusammenfassung
 !8.12: Einleitung umformulieren
-!7.12: K.Optimierung fast abgeschlossen
+ K.Optimierung fast abgeschlossen
  NEUE GLIEDERUNG? Überwachung, Optimierung(EC2(Zahlungs..)+S3)
 STEHE ICH GUT IM PLAN? Ja
 -------
-Predective Scaling, nötig ?
 + Beispiele Trusted Ad.
- +Marvin S.10 
- + Wozu werden Berichten benutzt? C.Explorer
++Marvin S.10 
++ Wozu werden Berichten benutzt? C.Explorer
 +Speicherklasse_Abb.
  Handlungsempfehlungen formulieren und plazieren
  
-K.Überwachung abschliesen
-!6.12:  2.Sarah's Korrektur+C.Explorer mit KPIs+}
+Trusted Advisor
+!7.12: Beratung mit Fede
+}
 
 
 @Done {
-!5.12: CWatch komplett+Eigenes Dashboard+Anhänge
+!6.12:  2.Sarah's Korrektur+C.Explorer mit KPIs!5.12: CWatch komplett+Eigenes Dashboard+Anhänge
 !4.12: Tags sind gut für Überwachung/Opt.+Lösche unrealistische/zeitlich nicht erreichbare Sachen
 iwann: Gute Ergebnisse können auch durch die Kombination mehrerer Zahlungsmodell+Relevanz von Metriken S.18
 {Grundlagen Server/Storage}+TRUSTED ADVISOR(Einleitung) 
@@ -130,7 +128,6 @@ TODO:
 https://youtu.be/9BlsFNBnKHc
 -Launch templates determines what will launch!
 https://youtu.be/9BlsFNBnKHc?t=628
-Load Balancer mit eigenem Bild
 -SE tiene que considerar la lentitud con la que se escala!
 -Separar Scale upp y down lo suficiente.
 -What is Target Tracking?
