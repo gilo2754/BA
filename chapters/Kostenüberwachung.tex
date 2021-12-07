@@ -143,7 +143,13 @@ Cost-Explorer erstellt Berichte über die Kosten und die Nutzung von AWS-Dienste
 \subsubsection*{Standardberichte}
 Standardberichte sind vorgefertigte Berichte, die die Nutzung oder die Kosten nach einer selbstdefinierten Zeitraum zeigen. Diese zeigen eine grafische Darstellung der stündlichen, täglichen oder monatliche Kosten nach Dienst, die Abdeckung und die Auslastung von reservierten Instanzen oder die in Saving Plans Zahlungsmodell und die Ausgaben auf dem AWS Marketplace\footnote{{\cite{AMZ34}AWS Marketplace ist ein Einkaufskatalog für Software von Drittanbietern.}}. Die Berichte über die Abdeckung und Auslastung der reservierten Instanzen wurde im TrueCar-Anwendungsfall verwendet. Dies findet sich in Unterkapitel \ref{ssec:UseCaseTrueCar}.
 \\\\
-Eine weitere Verwendung dieser Informationen findet sich im Bereich der Marketing. Als Beispiel, ein Unternehmen, das ein Freemium-Dienst\footnote{\cite{MAR1}Ein Freemium-Dienst bietet in der Regel zwei Versionen an, eine kostenlose und eine kostenpflichtige.} anbietet. Die Marketingabteilung möchte zu diesem Zweck die tatsächlichen Kundenakquisitionskosten (CAC)\footnote{\cite{MAR2}Kundenakquisitionskosten sind alle anfallenden Kosten in der Customer Acquisition-Phase für ein Unternehmen.} messen, einschließlich der Kosten, die durch Nutzer entstehen, die das Produkt nutzen, aber nicht dafür bezahlen. 
+Eine weitere Verwendung dieser Informationen findet sich im Bereich der Marketing. Als Beispiel, ein Unternehmen, das ein Freemium-Dienst\footnote{\cite{MAR2}Ein Freemium-Dienst bietet in der Regel zwei Versionen an, eine kostenlose und eine kostenpflichtige.} anbietet. Die Marketingabteilung möchte eine Werbekampagne durchführen. Durch eine Werbekampagne werden in der Regel neue Nutzer generiert, und zwar sowohl zahlende als auch nicht zahlende Nutzer. Normalerweise gilt: Je mehr Nutzer, desto größer die Belastung für die IT-Infrastruktur. Um die im Zusammenhang mit der Werbekampagne durch neue Nutzer entstehenden Kosten zu messen, werden die tatsächlichen Kundenakquisitionskosten (CAC)\footnote{\cite{MAR1}Kundenakquisitionskosten sind alle anfallenden Kosten in der Customer Acquisition-Phase für ein Unternehmen.} berechnet, wobei nur die Kosten der nicht zahlenden Nutzer berücksichtigt werden. Zur Unterscheidung zwischen alten(vor der Werbekampagne) und neuen Nutzern wird das Datum der Erstellung des Nutzerkontos verwendet. Kunden, die aufgrund der Werbekampagne von der kostenlosen zur kostenpflichtigen Version des Dienstes gewechselt haben, werden in einer anderen Kategorie\footnote{{MAR3}Cost-per-Action (CPA)} ausgeschlossen.
+%, die den Dienst nutzen, aber nicht dafür bezahlen. 
+\\\\ 
+Die Formel für die Berechnung der Kundenakquisitionskosten lautet wie folgt:\\
+Anfallende Marketingkosten (MK) plus Vertriebskosten (VK) durch die Anzahl der gewonnenen Kunden (GK).\\
+Kosten von Nutzern, die den Dienst kostenlos in Anspruch nehmen, würden in diesem Fall in den Vertriebskosten enthalten sein. Auf diese Weise ist die Marketingabteilung in der Lage, die tatsächlichen Kosten pro zahlenden Neukunden zu berechnen, die durch die Werbekampagne generiert wurden.  
+
 \subsubsection*{Leistungskennzahlen (KPI)[Rev][Rev]}
 Cost-Explorer-Berichte enthalten Daten, die die Merkmale eines guten KPI erfüllen. Sie sind spezifisch und in Bezug auf die Zeit messbar.
 \\\\
@@ -186,16 +192,17 @@ Durch die Möglichkeit, die in den letzten Monaten angefallenen Kosten nach best
 Cost-Explorer liefert Informationen zur Rechtfertigung von Ausgaben aus im Voraus festgelegten Budgets, hilft bei der Planung künftiger Budgets und unterstützt die Verfolgung von KPIs.
 %\textbf{Aktuelle Budgets vs erwartet=Soll-Ist-Vergleich Methode}
 %Einer der Standardberichte im AWS Cost Explorer enthält die Kosten in Dollar/Euro und die Nutzung von EC2-Instanzen in Stunden pro Monat. Mit diesen Informationen können Sie die Kosten für eine bestimmte Dienstleistung berechnen. 
-\subsection{AWS Trusted Advisor}
+\subsection{AWS Trusted Advisor[Rev]}
 %https://www.youtube.com/watch?v=i0IkKN9NoPk
 %https://aws.amazon.com/de/premiumsupport/technology/trusted-advisor/
 %Kunden von AWS Basic Support und AWS Developer Support können auf grundlegende Sicherheitsprüfungen und alle Prüfungen für Servicekontingente zugreifen. Kunden von AWS Business Support und AWS Enterprise Support können auf alle Prüfungen zugreifen, einschließlich Kostenoptimierung, Sicherheit, Fehlertoleranz, Leistung und Servicekontingente. 
 %was macht dieses?
 %AWS Trusted Advisor: This helps you know more about idle or underutilized resources.
+AWS Trusted Advisor ist ein Werkzeug, das Empfehlungen zur Kostenreduzierung, Verbesserung der Systemverfügbarkeit und Erhöhung der Systemsicherheit gibt. Die Empfehlungen basieren auf Best-Practices, die im Laufe der Jahre durch die Beteuerung von AWS-Kunden gesammelt wurden und Prüfungen, die auf dem bestehenden AWS-Konto durchgeführt wurden.
+In dieser Arbeit werden Empfehlungen in Bezug auf Servicekontingente und Kostenoptimierung insbesondere betrachtet, weil es sich um Empfehlungen handelt, die mit Kostenüberwachung und -optimierung zusammenhängen. Der Status von Prüfungen von Trusted Advisor sind über CloudWatch Events zugänglich. 
 
-AWS Trusted Advisor ist ein Werkzeug, das entwickelt wurde, um Kosten zu senken, um Systemverfügbarkeit und -leistung zu verbessern und um Sicherheit zu erhöhen. Es analysiert die Nutzung des AWS-Kontos und gibt Best-Practice-Empfehlungen. Es werden die Kategorien Servicekontingente und Kostenoptimierung insbesondere betrachtet, da diese am relevanten für die vorliegende Arbeit sind. Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen November 2021) für Konten in den Plänen Developer und Basic Support kostenlos sind. Prüfungen für die Kategorie Servicekontingente sind kostenlos. Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{\cite{AMZ36}Trusted Advisor}. \\
+Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen Stand November 2021) für Konten in den Plänen Developer und Basic Support kostenlos sind. Prüfungen für die Kategorie Servicekontingente sind kostenlos. Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{\cite{AMZ36}Trusted Advisor}. \\
 %ES MUSS GEPRÜFT WERDEN, OB ES SINNVOLL IST, FÜR DIE OBEN GENANNTEN SUPPORT-PLÄNEN ZU ZAHLEN.
-
 \begin{figure}[h!]
       \centering
       \includegraphics[scale=0.4]{sources/AWS_Trusted_Advisor_Kategorien}
@@ -206,24 +213,27 @@ AWS Trusted Advisor ist ein Werkzeug, das entwickelt wurde, um Kosten zu senken,
 Die \autoref{fig:AWS_Trusted_Advisor_Kategorien} zeigt die fünf Kategorien von Trusted Advisor mit jeweils 3 Arten von Indikatoren. Die Indikatoren zeigen an, welche Prüfungen durchgeführt wurden. Grün bedeutet, dass keine Fehler oder zu prüfenden Empfehlungen vorhanden sind. Warnungen werden durch orangefarbene Indikatoren und Fehler durch rote Indikatoren angezeigt. Diese Empfehlungen sind eine Zusammenfassung auf hohem Niveau. Sie sind ein Startpunkt für die Untersuchung von AWS-Diensten mit Hilfe anderer Werkzeuge wie CloudWatch oder Cost-Explorer.%[ODER?].
 \\\\
 
-\subsubsection*{Kategorie Kostenoptimierung}
+\subsection*{Kategorie Kostenoptimierung}
 Die Empfehlungen zur Kostenoptimierung konzentrieren sich auf Möglichkeiten zur Kostensenkung, indem ungenutzte AWS-Diensten hervorgehoben werden. 
+%[BEISPIELE]
+\subsubsection*{EC2}
 Sollten EC2-Instanzen mit geringer Auslastung gefunden werden, wird es diese bei Trusted Advisor signalisiert. Denn diese Instanzen verbrauchen verursachen Kosten und können terminiert oder pausiert werden. %[HIER FEHLT...]
-Auch nicht zugewiesene Elastic IP-Adressen erzeugen Kosten. Diese können gegebenenfalls von Trusted Advisor gefunden werden. %t.ly/nYiv
-[BEISPIELE]
+Auch nicht zugewiesene Elastic IP-Adressen(EIP) erzeugen Kosten. Diese können gegebenenfalls von Trusted Advisor gefunden werden. EIPs maskieren den Ausfall einer Instanz oder Availability Zone, indem eine öffentliche IP-Adresse einer anderen Instanz oder Availability Zone neu zugewiesen wird\footnote{\cite{AMZ37}AWS Support - Benutzerhandbuch. Seite 65.}. %t.ly/nYiv
 
-\subsubsection*{Kategorie Leistungsgrenzen}
+
+\subsubsection*{Kategorie Servicekontingente}
 In dieser Kategorie werden Empfehlungen zur Vermeidung von Grenzwertüberschreitungen hervorgehoben.
 Es wird zum Beispiel nach einer Nutzung gesucht, die mehr als 80 \% des Leistungsgrenzwerten für wichtige Dienste beträgt. Einige Beispiele sind  Amazon EC2, Auto Scaling, Elastic Block Store, Simple Email Service und AWS CloudFormation.
 \\\\
 Sich dieser Grenzen bewusst zu sein, gibt die Möglichkeit, rechtzeitig zu handeln und es trägt zu Kostenüberwachung bei.
 [GLEICHE GRENZEN WIE BEI CloudWatch?]
-Bei der Erwägung von Trusted-Advisor ist zu überlegen, ob es kosteneffizient ist, für Pläne zu zahlen, die den Zugang zu allen Empfehlungen des Trusted Advisors ermöglichen. Das übergeordnete Ziel dieser Arbeit ist es, die Entstehung der Kosten auf eine praktikable Weise zu verstehen (Kostenüberwachung). Dies, um Optimierungsmaßnahmen zu ermöglichen. 
+
+\subsubsection*{Trusted-Advisor Kosten/Erwägungen}
+Bei der Erwägung von Trusted-Advisor ist zu überlegen, ob es kosteneffizient ist, für Support-Pläne zu zahlen, die den Zugang zu allen Empfehlungen des Trusted Advisors ermöglichen. Eines der Ziele dieser Arbeit ist es, die Entstehung der Kosten auf eine praktikable Weise zu verstehen (Kostenüberwachung). %Dies, um Optimierungsmaßnahmen zu ermöglichen. 
 \\
-Es wäre nicht sinnvoll, Kosten für Plänen wie Geschäfts- oder Enterprise Support zu übernehmen, wenn diese die möglichen Einsparungen übersteigen.  Die Vorteile von Geschäfts- oder Enterprise Support-Plänen beschränken sich nicht auf Kosteneinsparungen und Kostenbegrenzung, sondern tragen auch zur Sicherheit und Leistung bei. Jedes Unternehmen muss selbst entscheiden, ob es diese Informationen benötigt.
-[ZEIGE BEISPIELE FueR Empfehlungen]\\
-%[WIE TRIFFT MAN EINE ENTSCHEIDUNG IM UNTERNEHMEN? MODELLE?]
-\\
+Es wäre nicht sinnvoll, Kosten für AWS-Dienste wie Geschäfts- oder Enterprise Support zu übernehmen, wenn diese die möglichen Einsparungen übersteigen. Die Vorteile von Geschäfts- oder Enterprise Support-Plänen beschränken sich nicht auf Kosteneinsparungen und Kostenbegrenzung, sondern tragen auch zur Sicherheit und Leistung bei. Jedes Unternehmen muss selbst entscheiden, ob es diese Informationen benötigt.
+[ZEIGE BEISPIELE FueR Empfehlungen][Hier die Handlungen?]
+\\   
 \subsection{Überwachungswerkzeuge gemäß ihrer Verwendung}
 Die \autoref{fig:ÜberwachungswerkzeugeNachVerwendung} fasst die Überwachungswerkzeuge zusammen und listet die Verwendung der einzelnen Werkzeuge auf.
 \begin{figure}[h!]
@@ -238,8 +248,7 @@ Die \autoref{fig:ÜberwachungswerkzeugeNachVerwendung} fasst die Überwachungswe
 
 
 \subsection*{Fazit}
-%[ABSCHLUSS DES KAPITELS/Überbrückung FÜR DAS KOMMENDE KAPITEL]}
-% CloudWatch
+ % CloudWatch
 In diesem Kapitel wurde gezeigt, dass es mit CloudWatch möglich ist, Alarme auf Basis von Ereignissen einzurichten, die mit Amazon SNS oder externen E-Mail-Adressen kommunizieren. %Im nächsten Kapitel wird CloudWatch erneut behandelt. Diesmal nicht als Überwachungswerkzeug, sondern als Optimierungswerkzeug zur Erstellung von automatisierte Aktionen/Reaktionen. 
 %Dazu war es notwendig, die Rolle der von CloudWatch gesammelten Metriken zu verstehen, die die Grundlage für die Verwaltung von Aktionen wie Auto-Scaling-Gruppen bilden. 
 %Cost Explorer
