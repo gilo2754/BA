@@ -18,6 +18,11 @@
 
 %\fancyfoot[RE]{\thepage} % Páginas Pares numeradas a la derecha
 
+%Create Glossar
+%\usepackage[xindy,acronym]{glossaries}
+%\makeglossaries
+%\loadglsentries[chapters]{Glossar.tex}
+
 %% Show code in a better way
 \usepackage{listings}
 \usepackage{xcolor}
@@ -147,9 +152,6 @@ plainpages=false,hypertexnames=false,citecolor=black, urlcolor=blue]{hyperref}
 \input{leereSeite} % Ausgelagerte LaTeX-Datei (hier: leereSeite.tex) einbinden
 
 \newpage
-
-
-
 % Deckblatt
 \pagestyle{empty}
 \begin{titlepage}
@@ -176,7 +178,7 @@ plainpages=false,hypertexnames=false,citecolor=black, urlcolor=blue]{hyperref}
       \textbf{Zweitprüfer:} & Thomas Raser\\
     \end{tabular}
     \vspace{0.8cm}
-    \\Gummersbach, 1x Feb 2021
+    \\Gummersbach, 20 Februar 2021
   \end{center}
 \end{titlepage}
 \newpage
@@ -206,6 +208,12 @@ plainpages=false,hypertexnames=false,citecolor=black, urlcolor=blue]{hyperref}
 \renewcommand{\listfigurename}{} % Name des Abbildungsverzeichnisses ändern
 \thispagestyle{empty}
 \listoffigures
+\newpage
+
+%Temporär, danach sollten wir das Package glossaries benutzen
+\section*{Glossar}\label{kap_glossar}
+\addcontentsline{toc}{section}{Glossar} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen
+\input{chapters/Glossar}
 \newpage
 
 \section*{Abkürzungsverzeichnis}\label{kap_Abkuerzungen}
@@ -238,14 +246,6 @@ plainpages=false,hypertexnames=false,citecolor=black, urlcolor=blue]{hyperref}
 \addcontentsline{toc}{section}{Zusammenfassung und Ausblick} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen
 \input{chapters/Zusammenfassung}
 \newpage
-
-%Temporär, danach sollten wir das Package glossaries benutzen
-\section*{Glossar}\label{kap_glossar}
-\addcontentsline{toc}{section}{Glossar} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen
-\input{chapters/Glossar}
-\newpage
-
-
 
 \section*{Quellenverzeichnis}\label{kap_quellenverzeichnis}
 \addcontentsline{toc}{section}{Quellenverzeichnis} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen

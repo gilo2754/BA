@@ -13,10 +13,10 @@ Trusted Advisor bietet konkrete Empfehlungen auf der Grundlage von AWS Best Prac
 \\\\
 %Waum diese nicht?
 %CloudTrail
-Es existieren weitere Überwachungswerkzeuge bei AWS, auf die in dieser Arbeit nicht eingegangen wird. Der Grund dafür ist, dass sie einen anderen Fokus als Kostenüberwachung und -optimierung haben. Zum Beispiel CloudTrail, welches für die Überwachung von Governance, Compliance, Betrieb und Risiken im AWS-Konto ist. Mit CloudTrail können Benutzeraktivitäten über AWS-Dienste durch Ereignisse verfolgt werden\footnote{\cite{AMZ27},AWS CloudTrail User Guide Version 1.0: What Is AWS CloudTrail?, Seite 1}.
+Es existieren weitere Überwachungswerkzeuge bei AWS, auf die in dieser Arbeit nicht eingegangen wird. Der Grund dafür ist, dass sie einen anderen Fokus als Kostenüberwachung und -optimierung haben. Zum Beispiel CloudTrail, welches für die Überwachung von Governance, Compliance, Betrieb und Risiken im AWS-Konto ist. Mit CloudTrail können Benutzeraktivitäten über AWS-Dienste durch Ereignisse verfolgt werden\footnote{AWS CloudTrail User Guide Version 1.0: What Is AWS CloudTrail?, S.1 \cite{AMZ27}}.
 \\\\
 %X-Ray (Leistung) https://aws.amazon.com/es/xray/?nc1=h_ls
-Ein weiteres Werkzeug ist AWS X-Ray, welches zur Überwachung von Anwendungsleistung verwendet wird. Dies unterstützt Entwickler bei der Analyse und Fehlersuche in verteilten Produktionsanwendungen. Mit X-Ray kann man herausfinden, wie gut Anwendungen und ihnen zugrunde liegenden Dienste funktionieren. Auf diese Weise können Ursache von Leistungsproblemen und Fehlern ermittelt und behoben werden\footnote{\cite{AMZ27},AWS X-Ray Developer Guide: What is AWS X-Ray?, Seite 1}.
+Ein weiteres Werkzeug ist AWS X-Ray, welches zur Überwachung von Anwendungsleistung verwendet wird. Dies unterstützt Entwickler bei der Analyse und Fehlersuche in verteilten Produktionsanwendungen. Mit X-Ray kann man herausfinden, wie gut Anwendungen und ihnen zugrunde liegenden Dienste funktionieren. Auf diese Weise können Ursache von Leistungsproblemen und Fehlern ermittelt und behoben werden\footnote{AWS X-Ray Developer Guide: What is AWS X-Ray?, S.1\cite{AMZ27},}.
 %Contact lens for AWS-Contact
 %Customer-Support ? https://aws.amazon.com/es/connect/contact-lens/
 %Überwachung von Kundeninteraktionen 
@@ -24,8 +24,7 @@ Ein weiteres Werkzeug ist AWS X-Ray, welches zur Überwachung von Anwendungsleis
 \newpage
 
 \subsection*{Tag Policies/Tagging-Strategie[Rev]}
-Tags sind bei AWS Information in Form von Metadaten, die an AWS-Dienste zugewiesen werden kann\footnote{\cite{AMZ29},AWS – Allgemeine Referenz - Referenzhandbuch
-, Seite 681}. Ein Tag besteht aus einem Tag-Schlüssel und einem Tag-Wert. Beispiele für Tag-Schlüssel sind Abteilung, Projekt, Team, Region, Art des Dienstes und Umgebung. Tag-Werte für den Tag-Schlüssel Abteilung könnten Buchhaltung, Finanz, Entwicklung oder Marketing sein. Sowohl bei Tag-Schlüssel als auch bei Tag-Werte wird zwischen Groß- und Kleinschreibung unterschieden. 
+Tags sind bei AWS Information in Form von Metadaten, die an AWS-Dienste zugewiesen werden kann\footnote{AWS – Allgemeine Referenz - Referenzhandbuch. S.681\cite{AMZ29}}. Ein Tag besteht aus einem Tag-Schlüssel und einem Tag-Wert. Beispiele für Tag-Schlüssel sind Abteilung, Projekt, Team, Region, Art des Dienstes und Umgebung. Tag-Werte für den Tag-Schlüssel Abteilung könnten Buchhaltung, Finanz, Entwicklung oder Marketing sein. Sowohl bei Tag-Schlüssel als auch bei Tag-Werte wird zwischen Groß- und Kleinschreibung unterschieden. 
 \\\\
 Durch die Verwendung von Tags ist es möglich, die Kosten auf den von der Organisation festgelegten Tags zu verfolgen. Es könnte (zum Beispiel)[Rev] ein Szenario entstehen, in dem eine Abteilung innerhalb einer Organisation mehr Kosten verursacht als Andere. Dies ist nur durch den Anstieg der von AWS generierten Rechnung bemerkbar, aber um den Grund für diesen Anstieg genauer zu verstehen, muss ihre Ursache untersucht werden. Werkzeuge wie Cost-Explorer zusammen mit einer Tag-Strategie machen diese Art von Analyse möglich.
 \begin{figure}[h!]
@@ -42,7 +41,7 @@ In der \autoref{fig:BA Diagramme-Nach Abteilung.drawio} wird ein Szenario vorges
 Um die von den einzelnen Abteilungen verursachten Kosten zu trennen, wurde ein Tag-Schlüssel mit dem Namen \textit{Abteilung} angelegt. Um anschließend jeder AWS-Dienst einen Tag-Wert entsprechend seiner Abteilung zuzuweisen. Mit Hilfe des Cost-Explorer konnte festgestellt werden, dass die Kosten für EC2 der Forschungsabteilung im Laufe der Zeit gestiegen sind. Nach Angaben der Abteilungsleiter hatte die Nutzung der Rechnerkapazität nicht zugenommen. Im vorliegenden Fall wurde festgestellt, dass Gastpraktikanten in der Forschungsabteilung Experimente durchführt, wo EC2-Instanzen genutzt haben. Die Instanzen wurden nach Beendigung des Aufenthalts nicht mehr abgeschaltet und haben kontinuierlich Kosten verursacht. 
 \\\\
 Für diesen hypothetischen Fall wurde die Ursache für den Anstieg der Gesamtkosten einer einfachen Organisation mit zwei Abteilungen und wenigen Cloud-Diensten ermittelt. Es gibt Unternehmen mit viel komplexeren Strukturen als diese, die weitaus mehr Cloud-Dienste in Anspruch nehmen. Für Unternehmen ist eine Tagging-Strategie von Relevanz, um Kosten für die Buchhaltungsabteilung zu ermittelt %internes Rechnungswesen
-und um Budgets auf der Grundlage früherer Projekte erstellen zu können. Die Kostenüberwachung ist mit einer Tag-Strategie auf eine detaillierte Ebene möglich. Je nach festgelegten Tags können sehr detaillierte Analysen der Cloud-Nutzung und -Kosten über Produkte, Einheiten, Umgebungen oder beliebige andere Bereiche hinweg erstellt werden\footnote{\cite{CCB},Cloud Computing Basics: a Non.-Technical Introduction. Seite 152}.
+und um Budgets auf der Grundlage früherer Projekte erstellen zu können. Die Kostenüberwachung ist mit einer Tag-Strategie auf eine detaillierte Ebene möglich. Je nach festgelegten Tags können sehr detaillierte Analysen der Cloud-Nutzung und -Kosten über Produkte, Einheiten, Umgebungen oder beliebige andere Bereiche hinweg erstellt werden\footnote{Cloud Computing Basics: a Non.-Technical Introduction. S.152.\cite{CCB}}.
 %TRACK untagged services with a Budget.
 %Si se quiere ser estricto con los costos de servicios que no tienen un Tag asignado se es posible rastrear estos costos creando un presupuesto filtrando servicios que no tienen un Tag asignado y crear una alarma si un umbral del presupuesto es sobrepasado.
 %In den Best-Practices für Kostenüberwachung wird empfohlen, so bald wie möglich mit der Zuweisung von Tags zu Cloud-Diensten zu beginnen. QUELLE?
@@ -50,7 +49,7 @@ und um Budgets auf der Grundlage früherer Projekte erstellen zu können. Die Ko
 %Welche Kosten sind mit der Nutzung dieser Werkzeuge verbunden?
 %Es sollte gezeigt werden, die Arten/Kategorien von Kunden, die kostenlosen Zugang zu diesen Werkzeuge haben?
 %WAS MIT AWS Budgets? AWS Bill and cost Man.?
-\subsection{AWS CloudWatch}
+\subsection{AWS CloudWatch}\label{ssec:CloudWatch}
 %https://aws.amazon.com/de/cloudwatch/pricing/
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingStarted.html
 Amazon CloudWatch ermöglicht die Überwachung der Leistung von Diensten, auch bei Diensten, die über verschiedene Regionen verteilt sind. CloudWatch sammelt operative Daten, welche zur Verlaufsanalyse und der Entscheidungsfindung in Bezug auf Optimierung und Fehlerbehebung hilfreicht sind. CloudWatch beschränkt sich nicht nur darauf, Daten aus der AWS-Umgebung zu empfangen. Externe Metriken, die mit CloudWatch kompatibel sind, können für eine einheitliche Analyse aggregiert werden. 
@@ -58,7 +57,7 @@ Amazon CloudWatch ermöglicht die Überwachung der Leistung von Diensten, auch b
 %Asi pueden diferentes departamentos de una organizacion sacar provecho y justificar sus desiciones (de compra). La transparencia sobre la informacion para tomar desiciones logra reducir el riesgo de la desicion. t.ly/cLGu S.27
 %Wiki t.ly/9xO2
 \\\\
-Eine der Metriken zur Überwachung von EC2-Instanzen in CloudWatch ist die CPU-Auslastung oder CPU-Utilization auf Englisch. Basierend auf einem Prozentsatz der CPU-Auslastung können Benachrichtigungen und Aktionen konfiguriert werden. Eine dieser Aktionen ist die automatische Einrichtung neuer Instanzen zur Deckung des Kapazitätsbedarfs\footnote{\cite{AWS1},AWS Certified Solutions Architect - Associate (SAA-C02), Seite 185}. Diese Art von Aktionen werden im Kapitel ~\ref{kap_Optimierung} tiefer behandelt[ODER HIER?].
+Eine der Metriken zur Überwachung von EC2-Instanzen in CloudWatch ist die CPU-Auslastung oder CPU-Utilization auf Englisch. Basierend auf einem Prozentsatz der CPU-Auslastung können Benachrichtigungen und Aktionen konfiguriert werden. Eine dieser Aktionen ist die automatische Einrichtung neuer Instanzen zur Deckung des Kapazitätsbedarfs\footnote{AWS Certified Solutions Architect - Associate (SAA-C02), S.185.\cite{AWS1}}. Diese Art von Aktionen werden im Kapitel ~\ref{kap_Optimierung} tiefer behandelt[ODER HIER?].
 \\\\
 Im Folgenden werden die grundlegenden Bereiche und Begriffe von CloudWatch erläutert und wie sie zur Überwachung von Informationen über AWS-Dienste verwendet werden.
 \\\\
@@ -79,22 +78,22 @@ Zum Beispiel kann der Durchschnitt von einer bestimmten API pro Stunde untersuch
 \\\\
 \textbf{Ereignisse}\\
 Ein Ereignis ist in CloudWatch eine Änderung in einem AWS Dienst. AWS-Dienste können Ereignisse erzeugen, wenn sich ihr Status ändert. %Das bedeutet, dass sich ein bestimmter AWS-Dienst selbst ändern kann. 
-Beispielsweise, wird ein Ereignis erzeugt, wenn Amazon EC2 Auto Scaling, Instanzen gestartet oder beendet werden\footnote{\cite{AMZ13}, AWS Cloud Watch Events: User Guide. Seite 1} oder wenn eine bestimmte Menge an Speicherplatz in einem Bucket erreicht wurde. Ein Bucket ist ein Behälter, in dem Objekte bei Amazon S3 gespeichert werden\footnote{\cite{AMZ18}Amazon Simple Storage Service User Guide, Seite 4}. Beispiele für Objekte sind Dateien wie Bilder und Videos. 
+Beispielsweise, wird ein Ereignis erzeugt, wenn Amazon EC2 Auto Scaling, Instanzen gestartet oder beendet werden\footnote{AWS Cloud Watch Events: User Guide. S.1\cite{AMZ13}} oder wenn eine bestimmte Menge an Speicherplatz in einem Bucket erreicht wurde. Ein Bucket ist ein Behälter, in dem Objekte bei Amazon S3 gespeichert werden\footnote{Amazon Simple Storage Service User Guide, S.4\cite{AMZ18}}. Beispiele für Objekte sind Dateien wie Bilder und Videos. 
 \\\\
 \textbf{Regel} \\
 Eine Regel ordnet eintreffende Ereignisse zu und leitet diese zur Verarbeitung an Ziele weiter.
-Eine einzelne Regel kann an mehrere Ziele weiterleiten, die alle parallel verarbeitet werden\footnote{\cite{AMZ13}, AWS Cloud Watch : User Guide. Seite 2}.
+Eine einzelne Regel kann an mehrere Ziele weiterleiten, die alle parallel verarbeitet werden\footnote{AWS Cloud Watch : User Guide. S.2\cite{AMZ13}}.
 \\\\
 \textbf{Ziele} \\
 Ziele oder Targets sind AWS-Dienste, die aufgerufen werden, wenn eine Regel ausgelöst wird.
 EC2 instances, AWS Lambda functions und Amazon SNS sind unter anderem mögliche Ziele.
 Die Ziele einer Regel müssen sich in derselben Region wie die Regel befinden
-\footnote{\cite{AMZ13}AWS Cloud Watch Events: User Guide. Seite 2}.
+\footnote{AWS Cloud Watch Events: User Guide. S.2\cite{AMZ13}}.
 %Alle zugelassene AWS-Diensten \footnote\url{https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/EventTypes.html}
 \\\\
 \textbf{Benachrichtigungen}\\
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html
-Benachrichtigt zu werden ist wichtig, um relevante Ereignisse nicht zu verpassen und rechtzeitig Maßnahmen zu ergreifen. Mit CloudWatch können Alarme eingerichtet werden, die durch Metriken wie die CPU-Auslastung und Gebühren von einem spezifischen AWS-Dienst ausgelöst werden. Benachrichtigungen können durch Amazon SNS\footnote{\cite{AMZ30}Amazon SNS ist ein AWS-Dienst für die Benachrichtigung an Personen und an Applikationen.} oder zu einer E-Mail-Adresse geschickt werden.
+Benachrichtigt zu werden ist wichtig, um relevante Ereignisse nicht zu verpassen und rechtzeitig Maßnahmen zu ergreifen. Mit CloudWatch können Alarme eingerichtet werden, die durch Metriken wie die CPU-Auslastung und Gebühren von einem spezifischen AWS-Dienst ausgelöst werden. Benachrichtigungen können durch Amazon SNS\footnote{Amazon SNS ist ein AWS-Dienst für die Benachrichtigung an Personen und an Applikationen.\cite{AMZ30}} oder zu einer E-Mail-Adresse geschickt werden.
 Zu Testzwecken wurde ein Alarm erstellt, indem eine monatliche Ausgabengrenze von 9 Euro festgelegt wurde. Dieser ist in Anhang \ref{sec_Ang_B} zu finden.
 %AUCH PER SLACK ODER ÄHNLICHES
 %This could be a good example %https://youtu.be/__knpcBRLHg?t=770
@@ -108,16 +107,16 @@ Zu Testzwecken wurde ein Alarm erstellt, indem eine monatliche Ausgabengrenze vo
 %https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html
 \subsubsection*{Visualisierung von Metriken}
 Mit Cloud-Watch Dashboards können relevante Metriken grafisch dargestellt werden. %[BESSERE FORMULIERUNG] %Sie ermöglichen eine umfassende Visualisierung von Metriken der AWS-Diensten in der AWS-Umgebung. 
-Durch die Dashboards können auch Benachrichtigungen erstellt werden. Für die Einrichtung der Benachrichtigungen ist kein technisches Wissen nötig\footnote{\cite{AMZ14}AWS Cloud Watch : User Guide. Seite 28}.
+Durch die Dashboards können auch Benachrichtigungen erstellt werden. Für die Einrichtung der Benachrichtigungen ist kein technisches Wissen nötig\footnote{AWS Cloud Watch : User Guide. S.28\cite{AMZ14}}.
 %Die von CloudWatch gesammelte Informationen sind nicht nur für System-Administratoren relevant.
-Die in den Dashboards enthaltenen Informationen sind nicht nur für ihre Autoren von Relevanz. Weitere Personen innerhalb oder außerhalb einer Organisation können Zugriff auf Dashboards mit nützlichen Informationen bekommen, um Prozesse zu beschleunigen und Probleme schneller zu beheben. Um den Zugriff auf das Dashboard zu beschränken, ist es möglich, den Zugriff auf bestimmte Personen per E-Mail oder über SSO-Anmeldeinformationen\footnote{\cite{AMZ33} AWS Single Sign-On} zu beschränken. SSO (Single Sign-On) ist ein Prozess der einmaligen Authentifizierung und Zugriff auf mehrere Ressourcen. Ziel von SSO ist es, die Anzahl von von Login und Passwort in heterogenen Umgebungen zu reduzieren\footnote{\cite{SSO}Securing User Authentication using Single SignOn in Cloud Computing}. Außerdem hat die Einbindung von Dashboard-Informationen auf Infranet-Portale das Potenzial, Transparenz und eine schnelle Verbreitung von Informationen zu schaffen\footnote{\cite{BKM}Business Knowledge Management: Wertschöpfung durch Wissensportale.}. 
+Die in den Dashboards enthaltenen Informationen sind nicht nur für ihre Autoren von Relevanz. Weitere Personen innerhalb oder außerhalb einer Organisation können Zugriff auf Dashboards mit nützlichen Informationen bekommen, um Prozesse zu beschleunigen und Probleme schneller zu beheben. Um den Zugriff auf das Dashboard zu beschränken, ist es möglich, den Zugriff auf bestimmte Personen per E-Mail oder über SSO-Anmeldeinformationen\footnote{ AWS Single Sign-On.\cite{AMZ33}} zu beschränken. SSO (Single Sign-On) ist ein Prozess der einmaligen Authentifizierung und Zugriff auf mehrere Ressourcen. Ziel von SSO ist es, die Anzahl von von Login und Passwort in heterogenen Umgebungen zu reduzieren\footnote{Securing User Authentication using Single SignOn in Cloud Computing\cite{SSO}.}. Außerdem hat die Einbindung von Dashboard-Informationen auf Infranet-Portale das Potenzial, Transparenz und eine schnelle Verbreitung von Informationen zu schaffen\footnote{Business Knowledge Management: Wertschöpfung durch Wissensportale\cite{BKM}.}. 
 %Die Zugriffsverwaltung für geteilte Dashboards wird über AWS Identity and Access Management abgewickelt\footnote{\cite{AMZ14}AWS Cloud Watch : User Guide. Seite 18 und 39}[UND?].
 \\\\
 Zu Testzwecken wurde ein Dashboard mit einigen Widgets erstellt. Das erste Widget in der \autoref{fig:AWS_Trusted_Advisor_Kategorien} zeigt, wie oft auf die Objekte eines Buckets in S3 zugegriffen wird. Die andere zeigt die Anzahl der Aufrufe der CloudWatch-API an. Beide Widgets verwenden Standardmetriken, welche keine Kosten verursachen. Ein Widget ist ein grafischer Weg, um Metriken in CloudWatch darzustellen. Unter anderem gibt es Widgets für Zahlen, Linien, [More]etc.
 [Rev update this]
 \begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.5]{sources/CloudWatchDashboardTest}
+  \includegraphics[scale=0.4]{sources/CloudWatchDashboardTest}
   \caption[Dashboard-Test in CloudWatch]{}
   \label{fig:CloudWatchDashboardTest} 
   Dashboard-Test in CloudWatch.
@@ -132,18 +131,18 @@ Es wurde bereits erwähnt, dass es möglich ist, das Dashboard zu teilen, ohne Z
 \subsubsection*{Fakturierungsalarme mit CloudWatch}
 %Seite 145 Amazon CloudWatch - Benutzerhandbuch
 AWS CloudWatch empfängt Abrechnungsmetriken von allen AWS-Diensten. Auch von AWS-Rechnungen, auf der Grundlage dieser Metriken ist es daher möglich, Regeln zu erstellen, die bei Überschreitung des geplanten Budgets Alarmen in Form von Benachrichtigungen auslösen.
-Wenn ein bestimmter Prozentsatz oder Betrag des festgelegten Budgets überschritten wurde. Die oben genannten Alarme finden ihre Anwendung unter anderem im Kostenverlaufsplan. Der Kostenverlaufsplan gehört zum Projektmanagement, welcher Kosten eines Projekts phasenweise oder kumuliert bereitstellt\footnote{\cite{PM1}Kompakte Einführung in das Projektmanagement. Seite 96.}. Im Anhang \ref{sec_Ang_A} befindet sich die Vorlage für die Erstellung eines Fakturierungsalarms in JSON und YAML Format.
+Wenn ein bestimmter Prozentsatz oder Betrag des festgelegten Budgets überschritten wurde. Die oben genannten Alarme finden ihre Anwendung unter anderem im Kostenverlaufsplan. Der Kostenverlaufsplan gehört zum Projektmanagement, welcher Kosten eines Projekts phasenweise oder kumuliert bereitstellt\footnote{Kompakte Einführung in das Projektmanagement. S.96\cite{PM1}.}. Im Anhang \ref{sec_Ang_A} befindet sich die Vorlage für die Erstellung eines Fakturierungsalarms in JSON und YAML Format.
 %\subsubsection*{Benachrichtigung bei Hoch- und Runterfahren von EC2-Instanzen}
 %Obwohl Auto-Scaling dafür sorgt, die Rechenkapazität dynamisch anzupassen, ist es von größter Wichtigkeit, über Änderungen in der Infrastruktur informiert zu sein, ohne die Dashboards manuell überprüfen zu müssen.
 %[WEIL .... LÖSCHEN?]
 %\\\\
 \subsection{AWS Cost-Explorer}\label{ssec:Cost-Explorer}
-Cost-Explorer erstellt Berichte über die Kosten und die Nutzung von AWS-Diensten. Darüber hinaus wird eine Kostenprognose für die nächsten Monate erstellt, welche auf die Kosten der vergangenen Monaten basiert. Die Nutzung des Cost-Explorers ist kostenlos, nur API-Aufrufe sind kostenpflichtig \footnote{{\cite{AMZ22}AWS Cost Management Pricing}}.
+Cost-Explorer erstellt Berichte über die Kosten und die Nutzung von AWS-Diensten. Darüber hinaus wird eine Kostenprognose für die nächsten Monate erstellt, welche auf die Kosten der vergangenen Monaten basiert. Die Nutzung des Cost-Explorers ist kostenlos, nur API-Aufrufe sind kostenpflichtig \footnote{{AWS Cost Management Pricing\cite{AMZ22}.}}.
 %Mio:%Conocer clos costos en un periodo de tiempo nos permite %saber si estamos en el camino correcto para alcanzar las %metas trazadas al inicio del periodo/proyecto y tomar %las medidas adecuadas para que al final del periodo/%proyecto tengamos resultados satisfactorios.
 \subsubsection*{Standardberichte}
-Standardberichte sind vorgefertigte Berichte, die die Nutzung oder die Kosten nach einer selbstdefinierten Zeitraum zeigen. Diese zeigen eine grafische Darstellung der stündlichen, täglichen oder monatliche Kosten nach Dienst, die Abdeckung und die Auslastung von reservierten Instanzen oder die in Saving Plans Zahlungsmodell und die Ausgaben auf dem AWS Marketplace\footnote{{\cite{AMZ34}AWS Marketplace ist ein Einkaufskatalog für Software von Drittanbietern.}}. Die Berichte über die Abdeckung und Auslastung der reservierten Instanzen wurde im TrueCar-Anwendungsfall verwendet. Dies findet sich in Unterkapitel \ref{ssec:UseCaseTrueCar}.
+Standardberichte sind vorgefertigte Berichte, die die Nutzung oder die Kosten nach einer selbstdefinierten Zeitraum zeigen. Diese zeigen eine grafische Darstellung der stündlichen, täglichen oder monatliche Kosten nach Dienst, die Abdeckung und die Auslastung von reservierten Instanzen oder die in Saving Plans Zahlungsmodell und die Ausgaben auf dem AWS Marketplace\footnote{{AWS Marketplace ist ein Einkaufskatalog für Software von Drittanbietern\cite{AMZ34}.}}. Die Berichte über die Abdeckung und Auslastung der reservierten Instanzen wurde im TrueCar-Anwendungsfall verwendet. Dies findet sich in Unterkapitel \ref{ssec:UseCaseTrueCar}.
 \\\\
-Eine weitere Verwendung dieser Informationen findet sich im Bereich der Marketing. Als Beispiel, ein Unternehmen, das ein Freemium-Dienst\footnote{\cite{MAR2}Ein Freemium-Dienst bietet in der Regel zwei Versionen an, eine kostenlose und eine kostenpflichtige.} anbietet. Die Marketingabteilung möchte eine Werbekampagne durchführen. Durch eine Werbekampagne werden in der Regel neue Nutzer generiert, und zwar sowohl zahlende als auch nicht zahlende Nutzer. Normalerweise gilt: Je mehr Nutzer, desto größer die Belastung für die IT-Infrastruktur. Um die im Zusammenhang mit der Werbekampagne durch neue Nutzer entstehenden Kosten zu messen, werden die tatsächlichen Kundenakquisitionskosten (CAC)\footnote{\cite{MAR1}Kundenakquisitionskosten sind alle anfallenden Kosten in der Customer Acquisition-Phase für ein Unternehmen.} berechnet, wobei nur die Kosten der nicht zahlenden Nutzer berücksichtigt werden. Zur Unterscheidung zwischen alten(vor der Werbekampagne) und neuen Nutzern wird das Datum der Erstellung des Nutzerkontos verwendet. Kunden, die aufgrund der Werbekampagne von der kostenlosen zur kostenpflichtigen Version des Dienstes gewechselt haben, werden in einer anderen Kategorie\footnote{{MAR3}Cost-per-Action (CPA)} ausgeschlossen.
+Eine weitere Verwendung dieser Informationen findet sich im Bereich der Marketing. Als Beispiel, ein Unternehmen, das ein Freemium-Dienst\footnote{Ein Freemium-Dienst bietet in der Regel zwei Versionen an, eine kostenlose und eine kostenpflichtige\cite{MAR2}.} anbietet. Die Marketingabteilung möchte eine Werbekampagne durchführen. Durch eine Werbekampagne werden in der Regel neue Nutzer generiert, und zwar sowohl zahlende als auch nicht zahlende Nutzer. Normalerweise gilt: Je mehr Nutzer, desto größer die Belastung für die IT-Infrastruktur. Um die im Zusammenhang mit der Werbekampagne durch neue Nutzer entstehenden Kosten zu messen, werden die tatsächlichen Kundenakquisitionskosten (CAC)\footnote{Kundenakquisitionskosten sind alle anfallenden Kosten in der Customer Acquisition-Phase für ein Unternehmen\cite{MAR1}.} berechnet, wobei nur die Kosten der nicht zahlenden Nutzer berücksichtigt werden. Zur Unterscheidung zwischen alten(vor der Werbekampagne) und neuen Nutzern wird das Datum der Erstellung des Nutzerkontos verwendet. Kunden, die aufgrund der Werbekampagne von der kostenlosen zur kostenpflichtigen Version des Dienstes gewechselt haben, werden in einer anderen Kategorie\footnote{Cost-per-Action (CPA).{MAR3}} ausgeschlossen.
 %, die den Dienst nutzen, aber nicht dafür bezahlen. 
 \\\\ 
 Die Formel für die Berechnung der Kundenakquisitionskosten lautet wie folgt:\\
@@ -182,7 +181,7 @@ Die obengenannten Metriken stammen von CloudWatch. Wie in der \autoref{fig:OpsAn
 Es besteht die Möglichkeit, einen Bericht über die Nutzung von AWS-Diensten der letzten zwölf Monate einzusehen und zu prüfen, ob die Empfehlungen des Cost-Explorers angemessen sind.
 
 \subsubsection*{Budgetplanung}
-Die Budgetplanung ist eine Methode der Kostenkontrolle, die beim Start eines neuen Projekts eingesetzt wird\footnote{\cite{BUD2}Cost Control Methods: Definitions and Examples}. Der Bericht über die in den letzten zwölf Monaten entstandenen Kosten zusammen mit der Prognose der Kosten der kommenden zwölf Monaten[Rev] tragen zu einen guten Budgetplanung bei.
+Die Budgetplanung ist eine Methode der Kostenkontrolle, die beim Start eines neuen Projekts eingesetzt wird\footnote{Cost Control Methods: Definitions and Examples\cite{BUD2}.}. Der Bericht über die in den letzten zwölf Monaten entstandenen Kosten zusammen mit der Prognose der Kosten der kommenden zwölf Monaten tragen zu einen guten Budgetplanung bei.
 %%t.ly/6bvZ% https://youtu.be/3peNAKB3VxA?t=223
 Durch die Möglichkeit, die in den letzten Monaten angefallenen Kosten nach bestimmten AWS-Diensten, Projekt oder Abteilung zu trennen, ist es möglich, operative Budgetplanungen aus vergangenen Projekten mit Genauigkeit zu erstellen. 
 \begin{quote}
@@ -200,8 +199,9 @@ Cost-Explorer liefert Informationen zur Rechtfertigung von Ausgaben aus im Vorau
 %AWS Trusted Advisor: This helps you know more about idle or underutilized resources.
 AWS Trusted Advisor ist ein Werkzeug, das Empfehlungen zur Kostenreduzierung, Verbesserung der Systemverfügbarkeit und Erhöhung der Systemsicherheit gibt. Die Empfehlungen basieren auf Best-Practices, die im Laufe der Jahre durch die Beteuerung von AWS-Kunden gesammelt wurden und Prüfungen, die auf dem bestehenden AWS-Konto durchgeführt wurden.
 In dieser Arbeit werden Empfehlungen in Bezug auf Servicekontingente und Kostenoptimierung insbesondere betrachtet, weil es sich um Empfehlungen handelt, die mit Kostenüberwachung und -optimierung zusammenhängen. Der Status von Prüfungen von Trusted Advisor sind über CloudWatch Events zugänglich. 
-
-Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen Stand November 2021) für Konten in den Plänen Developer und Basic Support kostenlos sind. Prüfungen für die Kategorie Servicekontingente sind kostenlos. Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{\cite{AMZ36}Trusted Advisor}. \\
+\\\\
+Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen Stand November 2021) für Konten in den Plänen Developer und Basic Support kostenlos sind. Prüfungen für die Kategorie Servicekontingente sind kostenlos. Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{Trusted Advisor\cite{AMZ36}}. 
+\\
 %ES MUSS GEPRÜFT WERDEN, OB ES SINNVOLL IST, FÜR DIE OBEN GENANNTEN SUPPORT-PLÄNEN ZU ZAHLEN.
 \begin{figure}[h!]
       \centering
@@ -210,29 +210,40 @@ Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfun
       \label{fig:AWS_Trusted_Advisor_Kategorien} 
       AWS Trusted Advisor Kategorien\cite{AMZ20}
 \end{figure}
-Die \autoref{fig:AWS_Trusted_Advisor_Kategorien} zeigt die fünf Kategorien von Trusted Advisor mit jeweils 3 Arten von Indikatoren. Die Indikatoren zeigen an, welche Prüfungen durchgeführt wurden. Grün bedeutet, dass keine Fehler oder zu prüfenden Empfehlungen vorhanden sind. Warnungen werden durch orangefarbene Indikatoren und Fehler durch rote Indikatoren angezeigt. Diese Empfehlungen sind eine Zusammenfassung auf hohem Niveau. Sie sind ein Startpunkt für die Untersuchung von AWS-Diensten mit Hilfe anderer Werkzeuge wie CloudWatch oder Cost-Explorer.%[ODER?].
+Die \autoref{fig:AWS_Trusted_Advisor_Kategorien} zeigt die fünf Kategorien von Trusted Advisor mit jeweils 3 Arten von Indikatoren. Die Indikatoren zeigen an, welche Prüfungen durchgeführt wurden. Grün bedeutet, dass keine Fehler oder zu prüfenden Empfehlungen vorhanden sind. Warnungen werden durch orangefarbene Indikatoren und Fehler durch rote Indikatoren angezeigt. 
 \\\\
-
-\subsection*{Kategorie Kostenoptimierung}
-Die Empfehlungen zur Kostenoptimierung konzentrieren sich auf Möglichkeiten zur Kostensenkung, indem ungenutzte AWS-Diensten hervorgehoben werden. 
+Diese Empfehlungen scheinen ein angemessener Startpunkt für die Untersuchung von AWS-Diensten zu sein. Eine genauere Untersuchung erfolgt mithilfe anderer Werkzeuge wie CloudWatch oder Cost-Explorer.%[ODER?].
+Die Empfehlungen für die Kategorien Kostenoptimierung und Servicekontingente werden in der AWS-Dokumentation\footnote{AWS Support - Benutzerhandbuch. S.59-65 und S.83-94 \cite{AMZ37}} nur kurz beschrieben und sind in einem Basiskonto nicht zugänglich. Diese Kategorien lassen sich daher in eingeschränkter Weise unter der aktuellen Umständen untersuchen.
+%
+Es bestehen Empfehlungen für verschiedene Dienste unter anderem für EBS, Route 53, RDS und AWS Lambda. Im Folgenden werden Empfehlungen zu EC2-Instanzen gegeben, da dies der Fokus dieser Arbeit entspricht. Empfehlungen für S3-Speichereinheiten sind im Trusted Advisor nicht verfügbar.
+%\subsection*{Kategorie Kostenoptimierung}
+%Die Empfehlungen zur Kostenoptimierung konzentrieren sich auf Möglichkeiten zur Kostensenkung. 
 %[BEISPIELE]
-\subsubsection*{EC2}
-Sollten EC2-Instanzen mit geringer Auslastung gefunden werden, wird es diese bei Trusted Advisor signalisiert. Denn diese Instanzen verbrauchen verursachen Kosten und können terminiert oder pausiert werden. %[HIER FEHLT...]
-Auch nicht zugewiesene Elastic IP-Adressen(EIP) erzeugen Kosten. Diese können gegebenenfalls von Trusted Advisor gefunden werden. EIPs maskieren den Ausfall einer Instanz oder Availability Zone, indem eine öffentliche IP-Adresse einer anderen Instanz oder Availability Zone neu zugewiesen wird\footnote{\cite{AMZ37}AWS Support - Benutzerhandbuch. Seite 65.}. %t.ly/nYiv
-
-
-\subsubsection*{Kategorie Servicekontingente}
-In dieser Kategorie werden Empfehlungen zur Vermeidung von Grenzwertüberschreitungen hervorgehoben.
-Es wird zum Beispiel nach einer Nutzung gesucht, die mehr als 80 \% des Leistungsgrenzwerten für wichtige Dienste beträgt. Einige Beispiele sind  Amazon EC2, Auto Scaling, Elastic Block Store, Simple Email Service und AWS CloudFormation.
+\subsubsection*{Empfehlungen zur Kostenoptimierung}
+Sollten EC2-Instanzen mit geringer Auslastung gefunden werden, wird es diese bei Trusted Advisor signalisiert. Denn diese Instanzen verursachen Kosten, welche durch die Terminierung oder das Pausieren vermieden werden können. Eine geringe Auslastung wird von AWS definiert, wenn Instanzen in den letzten 14 Tagen eine CPU-Auslastung von 10\% oder weniger hatten und wenn der Netzwerkverkehr in den letzten 4 Tagen gleich oder kleiner als 5 MB war. 
 \\\\
-Sich dieser Grenzen bewusst zu sein, gibt die Möglichkeit, rechtzeitig zu handeln und es trägt zu Kostenüberwachung bei.
+Reservierte Instanzen, die in der letzten 30 Tage abgelaufen sind oder in den kommenden 30 Tage ablaufen werden werden hervorgehoben. Auf diese Weise kann vermieden werden, dass die Reservierung von Instanzen vergessen wird oder dass sie erneuert werden müssen, wenn sie bereits abgelaufen sind.
+\\\\
+Empfehlungen des Cost Explorers zu Saving Plans werden auch im Trusted Advisor angezeigt. Saving Plans sind eine mögliche Sparalternative zu reservierten Instanzen. AWS weist darauf hin, dass nur eine der beiden Maßnahmen zur Instanzreservierung durchgeführt werden sollte.
+\\\\
+Trusted Advisor erstellt Simulationen möglicher Kombinationen von reservierten Instanzen und On-Demand-Instanzen. Dies könnte dazu dienen, die Auswahl reservierter Instanzen auf der Grundlage von AWS-Simulationen zu erleichtern.
+%Auch nicht zugewiesene Elastic IP-Adressen(EIP) erzeugen Kosten. Diese können gegebenenfalls von Trusted Advisor gefunden werden. EIPs maskieren den Ausfall einer Instanz oder Availability Zone, indem eine öffentliche IP-Adresse einer anderen Instanz oder Availability Zone neu zugewiesen wird\footnote{\cite{AMZ37}AWS Support - Benutzerhandbuch. Seite 65.}. %t.ly/nYiv
+
+\subsubsection*{Empfehlungen zur Servicekontingente}
+In der Kategorie Servicekontingente(auch als Kontingente bekannt) werden Empfehlungen zur Vermeidung von Grenzwertüberschreitungen hervorgehoben. Sich dieser Grenzen bewusst zu sein, gibt die Möglichkeit, rechtzeitig zu handeln und es trägt zu Kostenkontrolle über die AWS-Cloud-Dienste bei.
+\\\\
+Für Auto-Scaling-Gruppen %und -Startkonfigurationen 
+wird es geprüft, ob deren Nutzung mehr als 80\% des Kontingents beträgt. [Rev]Aufgrund fehlender Informationen in der AWS-Dokumentation wird interpretiert, dass eine Auto-Scaling-Gruppe als eine einzelne Recheneinheit betrachtet wird und eine Auslastung von mehr als 80\% als Näherung an die Grenze der Rechenkapazität angesehen wird.
+Dies wird eine Anpassung der Startkonfiguration für eine bessere Skalierung zur Folge haben.
+\\\\
+Prüfungen, die eine Nutzungsüberschreitung von 80\% belegen, werden auch für On-Demand-Instances, Reserved Instances, EC2-Classic Elastic IP Addresses und EC2-VPC Elastic IP Addresses angezeigt.
 [GLEICHE GRENZEN WIE BEI CloudWatch?]
 
 \subsubsection*{Trusted-Advisor Kosten/Erwägungen}
-Bei der Erwägung von Trusted-Advisor ist zu überlegen, ob es kosteneffizient ist, für Support-Pläne zu zahlen, die den Zugang zu allen Empfehlungen des Trusted Advisors ermöglichen. Eines der Ziele dieser Arbeit ist es, die Entstehung der Kosten auf eine praktikable Weise zu verstehen (Kostenüberwachung). %Dies, um Optimierungsmaßnahmen zu ermöglichen. 
+Bei der Erwägung von Trusted-Advisor ist zu überlegen, ob es kosteneffizient ist, für Support-Pläne zu zahlen. Da diese den Zugang zu allen Empfehlungen des Trusted Advisors ermöglichen. Eines der Ziele dieser Arbeit ist es, die Entstehung der Kosten auf eine praktikable Weise zu verstehen (Kostenüberwachung). Einschränkend lässt sich sagen, ob alle Empfehlungen von Trusted Advisor zu echten Einsparungen führen.  %Dies, um Optimierungsmaßnahmen zu ermöglichen. 
 \\
-Es wäre nicht sinnvoll, Kosten für AWS-Dienste wie Geschäfts- oder Enterprise Support zu übernehmen, wenn diese die möglichen Einsparungen übersteigen. Die Vorteile von Geschäfts- oder Enterprise Support-Plänen beschränken sich nicht auf Kosteneinsparungen und Kostenbegrenzung, sondern tragen auch zur Sicherheit und Leistung bei. Jedes Unternehmen muss selbst entscheiden, ob es diese Informationen benötigt.
-[ZEIGE BEISPIELE FueR Empfehlungen][Hier die Handlungen?]
+Es wäre nicht sinnvoll, Kosten für AWS-Dienste wie Geschäfts- oder Enterprise Support zu übernehmen, wenn diese die möglichen Einsparungen übersteigen. Die Vorteile von Geschäfts- oder Enterprise Support-Plänen beschränken sich nicht auf Kosteneinsparungen und Kostenbegrenzung, sondern tragen auch zur Sicherheit und Leistung bei. Dabei stellt sich die Frage, ob die Empfehlungen aller fünf Kategorien für die aktuelle Situation des Unternehmens benötigt werden.
+[Hier die Handlungen?]
 \\   
 \subsection{Überwachungswerkzeuge gemäß ihrer Verwendung}
 Die \autoref{fig:ÜberwachungswerkzeugeNachVerwendung} fasst die Überwachungswerkzeuge zusammen und listet die Verwendung der einzelnen Werkzeuge auf.
@@ -244,7 +255,7 @@ Die \autoref{fig:ÜberwachungswerkzeugeNachVerwendung} fasst die Überwachungswe
   Überwachungswerkzeuge gemäß ihrer Verwendung\\
   Eigene Darstellung\cite{AMZ12, AMZ20, AMZ21}. 
 \end{figure}
-[NOCH NICHT VOLLSTÄNDIG]
+[[Rev]NOCH NICHT VOLLSTÄNDIG]
 
 
 \subsection*{Fazit}

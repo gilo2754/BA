@@ -5,13 +5,13 @@ Die mit den Überwachungswerkzeuge gesammelte Informationen, bilden die Grundlag
 In diesem Kapitel werden die mit Hilfe der Werkzeuge gewonnenen Informationen genutzt[INFO X FUER WERKZEUG 1...], um über die am besten geeigneten Optimierungsmaßnahmen zu entscheiden.
 %La mayoria de las medidas de opmimizacion se centran en las instancias EC2, pues como antes mencionado representan la gran mayoria de los servicios que comprenden los gastos en nuestras facturas.
 
-\subsection{EC2 Automatische Skalierung}
+\subsection{EC2 Auto Scaling}
 %t.ly/CXs3 Linked In auf DE          %t.ly/1nka          %THIS!!! t.ly/vrCO
 %https://youtu.be/qYHR_V1lvNU?t=900
-Auto Scaling ist es hilfreich, um die richtige Anzahl von EC2 Instanzen zur Verfügung zu haben[Explain tht this is vertikal Skalierung and not horitonzal/], um die Anwendungslast dynamisch abzudecken\footnote{\cite{AMZ31} Was ist Amazon EC2 Auto Scaling?}.
-
+Auto Scaling oder automatische Skalierung von Instanzen ist es hilfreich, um die richtige Anzahl von EC2-Instanzen zur Verfügung zu haben, um die Anwendungslast dynamisch abzudecken\footnote{Was ist Amazon EC2 Auto Scaling?\cite{AMZ31} }.
+[Explain tht this is vertikal Skalierung and not horitonzal/]
 \subsubsection*{Auto Scaling Group}
-Die Instanzen, die zur Deckung der erforderlichen Rechenkapazität zur Verfügung stehen, werden in einer Auto-Scaling-Gruppe gruppiert. Diese Gruppe von Instanzen wird in AWS als Auto-Scaling-Gruppe bezeichnet. Bei der Erstellung einer Auto-Scaling-Gruppe wird eine minimale, gewünschte und maximale Anzahl von Instanzen definiert. 
+Die Instanzen, die zur Deckung der erforderlichen Rechenkapazität zur Verfügung stehen, werden in einer Auto-Scaling-Gruppe(Auto Scaling Group) gruppiert[Rev anderes Wort]. Diese Gruppe von Instanzen wird in AWS als Auto-Scaling-Gruppe bezeichnet. Bei der Erstellung einer Auto-Scaling-Gruppe wird eine minimale, gewünschte und maximale Anzahl von Instanzen definiert. 
 [Abb.]
 %https://www.youtube.com/watch?v=yC5nRYS2IYI En Espaniol
 %https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#policy-creating-asg-console
@@ -22,7 +22,7 @@ Die \autoref{fig:AutoSca_Unused_Capacity} zeigt das wechselnde Verhalten einer B
     \includegraphics[scale=0.5]{sources/AutoCap Unused Capacity}
     \caption[Ungenutzte Rechenkapazität ohne automatische Skalierung]{}
     \label{fig:AutoSca_Unused_Capacity} Ungenutzte Rechenkapazität ohne automatische Skalierung. \\
-    Quelle: Eigene Darstellung mit [fiktiven?] Angaben. 
+    Quelle: Eigene Darstellung mit fiktiven Angaben. 
     %\footnote{\cite{AMZ01}}
   \end{figure}\\
 Die gelben Säulen stellen die tägliche genutzte Rechenkapazität dar.
@@ -35,17 +35,18 @@ Die graue Zone entspricht ungenutzte Rechenkapazität und beträgt etwa ein Drit
 %W-Ende für Dev und Beta
 \textbf{Nicht produktive Umgebungen}\\
 %Auch möglich damit https://aws.amazon.com/de/solutions/implementations/instance-scheduler/
-In einem On-Premise-System macht es, wenn überhaupt, einen kleinen Unterschied bei den Kosten, dass Instanzen die ganze Zeit aktiv bleiben\footnote{\cite{CCB},Cloud Computing Basics: a Non.-Technical Introduction. Seite 153}. Im Gegensatz dazu ist es bei On-Demand-Zahlungsmodelle sinnvoll Zeiträume zu definieren, in denen Instanzen abgeschaltet werden können, um der Nutzung von AWS-Diensten zu reduzieren. Bei Systemen, die nur tagsüber und unter der Woche in Betrieb sein müssen, kann dies eine Einsparung von zu 67\% bedeuten.  Wenn zum Beispiel Test- und Beta-Umgebungen von Montag bis Freitag von 7 bis 20 Uhr laufen würden.
+In einem On-Premise-System mache es, wenn überhaupt, einen kleinen Unterschied bei den Kosten, dass Instanzen die ganze Zeit aktiv bleiben(Anders Lisdorf, 2021, S. 153,\cite{CCB}).%\footnote{,Cloud Computing Basics: a Non.-Technical Introduction. Seite 153}. 
+\\
+Im Gegensatz dazu ist es bei On-Demand-Zahlungsmodelle sinnvoll Zeiträume zu definieren, in denen Instanzen abgeschaltet werden können, um der Nutzung von AWS-Diensten zu reduzieren. Bei Systemen, die nur tagsüber und unter der Woche in Betrieb sein müssen, kann dies eine Einsparung von zu 67\% bedeuten.  Wenn zum Beispiel Test- und Beta-Umgebungen von Montag bis Freitag von 7 bis 20 Uhr laufen würden.
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.6]{sources/Einsparung_Zeitgesteuerte_Skalierung}
   \caption[Berechnung für ein nicht produktives Umgebung mit Zeitgesteuerte Skalierung]{}
-  \label{fig:Einsparung_Zeitgesteuerte_Skalierung} Berechnung für ein nicht-produktive Umgebung mit Zeitgesteuerte Skalierung. \\
-  Quelle: Eigene Darstellung. 
-  %\footnote{\cite{AMZ01}}
+  \label{fig:Einsparung_Zeitgesteuerte_Skalierung} 
+  Berechnung für ein nicht-produktive Umgebung mit Zeitgesteuerte Skalierung. \\
+  Quelle: Eigene Darstellung.\\ 
+  Der Stundensatz wurde am 23.11.2021 mit dem AWS Pricing Calculator ermitellt für Linux Instanzen in Frankfurt mit 4vCPUs, 16 GB Arbeitsspeicher und Instanz-Familie t4g.xlarge in On-Demand-Zahlungsmodell\cite{AMZ17}.
 \end{figure}
-\\
-Der Stundensatz wurde am 23.11.2021 mit dem AWS Pricing Calculator\cite{AMZ17} ermitellt für Linux Instanzen in Frankfurt mit 4vCPUs, 16 GB Arbeitsspeicher und Instanz-Familie t4g.xlarge in On-Demand-Zahlungsmodell.
 % Automatisiere das Hoch- und Herunterfahren von Instanzen
 % https://www.linkedin.com/learning/monitoring-aws-with-cloudwatch/autoscaling-using-alarms?autoAdvance=true&autoSkip=true&autoplay=true&resume=false&u=79182202
 % Grund: weil i.d.R., kein Entwickler 24/7 arbeitet.
@@ -53,10 +54,10 @@ Der Stundensatz wurde am 23.11.2021 mit dem AWS Pricing Calculator\cite{AMZ17} e
 %Wann ist es sinnvoll Systeme runterzufahren 
 %HIER LESEN {\cite{CCB}, Seite 153}
 %Weihnachten und BackFriday
-\\\\
-\textbf{Produktive Umgebungen}\\
-Wenn der Zeitpunkt einer hohen Nachfrage bekannt ist, kann eine Erhöhung der Rechnerkapazität geplant werden, um Überlastungen zu vermeiden. Beispiele für solche Zeiträume sind Cyber-Monday und Black Friday\footnote{\cite{STA5}Wie viel planen Sie am Black Friday / Cyber Monday auszugeben?}. 
-[WEITERE ERKLÄRUNG ODER LÖSCHEN]
+%\\\\
+%\textbf{Produktive Umgebungen}\\
+%Wenn der Zeitpunkt einer hohen Nachfrage bekannt ist, kann eine Erhöhung der Rechnerkapazität geplant werden, um Überlastungen zu vermeiden. Beispiele für solche Zeiträume sind Cyber-Monday und Black Friday\footnote{Wie viel planen Sie am Black Friday / Cyber Monday auszugeben?\cite{STA5}}. 
+%[WEITERE ERKLÄRUNG ODER LÖSCHEN]
 %https://de.statista.com/statistik/daten/studie/1076963/umfrage/ausgaben-an-black-friday-und-cyber-monday-in-deutschland/]
 
 \subsubsection{Dynamisches Auto Scaling}
@@ -66,13 +67,15 @@ Die \autoref{fig:Use_by_hour_netflix_OkCupid_tinder} zeigt die Nutzungsspitzen b
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.4]{sources/Use_by_hour_netflix_OkCupid_tinder}
-  \caption[Nutzung von Tinder, OkCupid und Netflix pro Stunde]{}\label{fig:Use_by_hour_netflix_OkCupid_tinder} Nutzung von Tinder, OkCupid und Netflix pro Stunde.  
+  \caption[Nutzung von Tinder, OkCupid und Netflix pro Stunde]{}\label{fig:Use_by_hour_netflix_OkCupid_tinder} 
+  DScout's Study: "Putting a Finger on Our Phone Obsession". \\
+  Nutzung pro Stunde von Netflix, OkCupid und Tinder während des Tages\cite{SCOUT1}.
   %Quelle: Eigene Darstellung. 
-  \footnote{\cite{SCOUT1}}
   \\Mit Touches sind die Anzahl der Klicks, Swipes oder einfachen Interaktionen mit der Applikation gemeint.
 \end{figure}
-Die für die automatische Skalierung erforderlichen Metriken wurden bereits im Kapitel Überwachungswerkzeuge erwähnt. Eine der Metriken, die von Cloudexperten [TELEFONAT mit Deepak von der Einheit CIS[Cloud Capgemini]]benutzt wird, ist die gesamte CPU-Auslastung. 
-Um die CPU-Auslastung als Metrik zu verwenden, werden mindestens zwei Schwellenwerte definiert. Eine für die Erhöhung von Rechenkapazität, Scale-Out genannt und eine für das Verringern von Rechenkapazität bezeichnet als Scale-In.
+Die für die automatische Skalierung erforderlichen Metriken wurden näher im Unterkapitel~\ref{ssec:CloudWatch} erwähnt. Eine der Metriken, die von Cloudexperten/AWS %[TELEFONAT mit Deepak von der Einheit CIS[Cloud Capgemini]]
+benutzt wird, ist die gesamte CPU-Auslastung(CPU-Utilization). 
+Um die CPU-Auslastung als Metrik zu verwenden, werden mindestens zwei Schwellenwerte definiert. Eine für die Erhöhung von Rechenkapazität, \textit{Scale-Out} genannt und eine für das Verringern von Rechenkapazität bezeichnet als \textit{Scale-In}.
 
 \subsubsection{Manual Scaling}
 %CHECK/23.11\\
@@ -81,15 +84,16 @@ Für die Konfiguration einer Auto-Scaling-Gruppe werden die minimale, maximale u
 \subsubsection{Predective Scaling}%Voraussagende Skalierung / 
 Voraussagende Skalierung oder Predictive Scaling auf Englisch, nutzt maschinelles Lernen, um den Kapazitätsbedarf auf der Grundlage historischer Daten von CloudWatch vorherzusagen. Mit Hilfe der Predictive Scaling kann es die Kapazität vor der erwarteten Auslastung bereitstellen, im Gegensatz zur dynamischen Skalierung, die reaktiv ist. 
 Für Instanzen, die viel Zeit für die Initialisierung benötigen kann die Zeit zwischen dem Beginn des Nachfrageanstiegs und der Initialisierung der Instanz vermieden oder verkürzt werden.
-[(EIGENES) DIAGRAMM]
+[(EIGENES) DIAGRAMM?]
 Anders als Zeitgesteuerte Skalierung ist es nicht notwendig, die Verhaltensmuster der Anwendungen zu analysieren.
 %[SOLLTE DAS ZITIERT WERDEN?]
 %https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-dg.pdf#ec2-auto-scaling-predictive-scaling
 
 \subsection{S3 Optimierung}
-\subsubsection{Die richtige Speicherklassen wählen}
-Um die Speicherkosten zu optimieren, ist es daher notwendig, die richtige Speicherklassen für die jeweilige Applikation wählen. Um die richtige Wahl zu treffen, müssen die Anforderungen der Applikation verstanden werden. Klinische Patientendaten und eine Instagram-Story unterscheiden sich in der Zugriffshäufigkeit auf diese Daten und in der Länge der Aufbewahrungszeit.
-
+\subsubsection{Die richtige Speicherklassen wählen[Rev]}
+Um die Speicherkosten zu optimieren, ist es daher notwendig, die richtige Speicherklassen für die jeweilige Applikation wählen. Um die richtige Wahl zu treffen, müssen die Anforderungen der Applikation verstanden werden. Ärztliche Patientenakten und Instagram-Stories sind zwei Beispiele für Daten, die nach deren Erstellung in einem Archiv gespeichert nicht gelöscht werden und. In Deutschland müssen ärztliche Patientenakten mindesten zehn Jahre aufbewahrt werden\footnote{Nach dem Bürgerlichen Gesetzbuch (BGB) § 630f müssen Patientenakten zehn Jahren nach Abschluss der Behandlung aufbewahrt werden, soweit nicht nach anderen Vorschriften andere Aufbewahrungsfristen bestehen. \cite{BGB}}. %[nicht gelöscht, sondern archiviert]Im Gegensatz dazu wird eine Instagram-Story innerhalb von 24 Stunden von der Applikation verschwinden und archiviert\footnote{Instagram: Wann verschwindet meine Instagram Story?\cite{IG1}}.
+Die Zugriffshäufigkeit und die Aufbewahrungszeit sind die zwei Hauptkriterien für die Verschiebung von Daten zwischen Speicherklassen.[Rev: Zitat! ]
+\\\\
 AWS bietet verschiedene Speicherklassen an, die sich im Preis und in der Häufigkeit des Zugriffs auf die Objekte unterscheiden. Objekte sind in Behältern enthalten, die Buckets genannt werden. Wenn Daten über einen längeren Zeitraum gespeichert werden müssen, weil die Anforderungen der Applikation dies vorschreiben oder für den Fall dass, per Gesetz auf die Informationen in der Zukunft zugegriffen werden muss.
 %\\
 [UMFORMULIEREN]
@@ -135,8 +139,8 @@ Um konkretere Regeln zu zu definieren, ist es möglich Tags zu verwenden und som
 Angepasster Code auf Basis der Beispiele auf Seite 701 in 
 Amazon Simple Storage Service - User Guide, 
 \end{lstlisting}
-\footnote{\cite{AMZ18},Amazon Simple Storage Service - User Guide. Seite 701}\\
-Zur Veranschaulichung (der gezeigten Informationen[OHNE ODER DAMIT?]) wird davon ausgegangen, dass ein Sicherheitsunternehmen, das Sicherheitsvideos speichern muss, im Durchschnitt 120 TB an Videos speichern muss. Viele von ihnen werden mindestens 5 Jahre lang aufbewahrt, falls sie vor Gericht als Beweismittel dienen. Ungefähr 50\% der Videos werden mindestens einmal im Monat überprüft und müssen laut Gesetz sofort zugänglich sein. Die Software des Unternehmens speichert die Videos in S3-Buckets und hat eine durchschnittliche Größe von 3,4 GB.
+\footnote{Amazon Simple Storage Service - User Guide. S.701.\cite{AMZ18}}\\
+Zur Veranschaulichung ([Rev]der gezeigten Informationen[OHNE ODER DAMIT?]) wird davon ausgegangen, dass ein Sicherheitsunternehmen, das Sicherheitsvideos speichern muss, im Durchschnitt 120 TB an Videos speichern muss. Viele von ihnen werden mindestens 5 Jahre lang aufbewahrt, falls sie vor Gericht als Beweismittel dienen. Ungefähr 50\% der Videos werden mindestens einmal im Monat überprüft und müssen laut Gesetz sofort zugänglich sein. Die Software des Unternehmens speichert die Videos in S3-Buckets und hat eine durchschnittliche Größe von 3,4 GB.
 
 Im Folgenden werden die Speicherkosten für ein Szenario berechnet, bei dem nur S3 Standard verwendet wird. Als nächstes wird die Kombination von S3 Standard Infrequent Access, S3 Glacier und S3 Standard für ein Szenario betrachtet, in dem die Dateien je nach Alter verschoben werden. Im letzten Szenario müssen die Kosten für die Verschiebung zwischen Speicherklassen berücksichtigt werden.
 \\
@@ -148,7 +152,7 @@ Zur Vereinfachung der Berechnung wird angenommen, dass 20\% der Dateien in S3 St
   \caption[Kostenvergleich durch Nutzung von unterschiedlichen Speicherklassen]{}\label{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} 
   Kostenvergleich durch Nutzung von unterschiedlichen Speicherklassen.  
 \end{figure}\\
-Quelle: Eigene Darstellung mit Stundensätze der S3-Preise\footnote{\cite{AMZ09}AWS S3 Pricing}.\\
+Quelle: Eigene Darstellung mit Stundensätze der S3-Preise\footnote{AWS S3 Pricing\cite{AMZ09}}.\\
 Der Punkt wurde als Dezimaltrennzeichen und das Komma als Tausendertrennzeichen verwendet.
 %\\
 Bei der Berechnung wurden die Kosten für das Verschieben von Dateien zwischen Speicherklassen berücksichtigt. 
@@ -160,7 +164,7 @@ Anhand der Berechnungen lässt sich erkennen, dass ein Einsparungspotenzial von 
 %\newpage
 \subsubsection{Intelligent-Tiering}
 Intelligent-Tiering verschiebt Dateien auf der Grundlage von Zugriffsmustern. Diese Speicherklasse ist ideal für Daten mit wechselnden oder unbekannten Zugriffsmustern. 
-Wie die Senior Product Manager für S3 Ruhi Dang erklärt, einige Unternehmen haben weder die Zeit noch die finanziellen Möglichkeiten, eine Person einzustellen, die ihre Daten sortiert und in die richtige Speicherklasse einordnet. Intelligent Auto Tiering ist eine attraktive Lösung für Unternehmen, die jährlich weniger als \$100,000 für Speicher ausgeben \footnote{\cite{AMZ16},AWS re:Invent 2019: Guidelines and design patterns for optimizing cost in Amazon S3. Minute: 21:12}.
+Wie die Senior Product Manager für S3 Ruhi Dang erklärt, einige Unternehmen haben weder die Zeit noch die finanziellen Möglichkeiten, eine Person einzustellen, die ihre Daten sortiert und in die richtige Speicherklasse einordnet. Intelligent Auto Tiering ist eine attraktive Lösung für Unternehmen, die jährlich weniger als \$100,000 für Speicher ausgeben \footnote{AWS re:Invent 2019: Guidelines and design patterns for optimizing cost in Amazon S3. Minute: 21:12 \cite{AMZ16}}.
 %Ach von Jessie Felix gesagt https://www.youtube.com/watch?v=IOT41L_adSw
 %\\\\
 \autoref{fig:S3_IntLifeCycle} zeigt, wie die Dateien in Abhängigkeit davon, ob auf sie zugegriffen wurde oder nicht, verschieben werden. 
@@ -170,7 +174,7 @@ Wie die Senior Product Manager für S3 Ruhi Dang erklärt, einige Unternehmen ha
   \caption[Funktionsweise von Intelligent-Tiering]{}\label{fig:S3_IntLifeCycle} Funktionsweise von Intelligent-Tiering
   %{\cite{SCOUT1}}
 \end{figure}\\
-Quelle: Eigene Darstellung. \footnote{\cite{AMZ18},Amazon Simple Storage Service - User Guide. Seite 715}
+Quelle: Eigene Darstellung. \footnote{Amazon Simple Storage Service - User Guide. S.715\cite{AMZ18}}
 \\\\
 Wird ein Datei zu einem späteren Zeitpunkt aus der Ebene der seltenen Zugriffe aufgerufen, wird es automatisch in eine Speicherklasse der häufigen Zugriffe zurückversetzt.
 
