@@ -24,14 +24,17 @@ Eine Verfügbarkeitszone ist einfach ein Datenzentrum oder eine Sammlung von Dat
 Buckets sind in AWS-S3 Behälter, wo Dateien wie Bilder oder Videos gespeichert werden\footnote{Amazon Simple Storage Service - User Guide. S.4.\cite{AMZ18}}.
 \\\\
 \textbf{Cloud-Computing}\\
+Das NIST definiert Cloud Computing als das Modell zur Ermöglichung eines allgegenwärtigen, bequemen und bedarfsgerechten Netzzugangs zu einem gemeinsamen Pool konfigurierbarer Rechenressourcen (z. B. Netze, Server, Speicher, Anwendungen und Dienste), die mit minimalem Verwaltungsaufwand oder minimaler Interaktion mit dem Dienstanbieter schnell bereitgestellt und freigegeben werden können\footnote{The NIST Definition of Cloud Computing. S.6
+\cite{CC1}}.
+%Das Cloud-Modell besteht aus fünf wesentlichen Merkmalen, drei Dienstmodellen und vier Bereitstellungsmodellen.
 \\\\
-\textbf{Cloud-Dienste}\\
+\textbf{Cloud-Dienst}\\
 \\\\
 \textbf{Instance family}\\
-Instanzfamilien sind eine Sammlung von EC2-Instanzen, die nach dem Verhältnis von Speicher, Netzwerkleistung, CPU-Größe und Speicherwerten zueinander gruppiert sind. Zum Beispiel bietet die m4-Familie von EC2 eine ausbalancierte Kombination von Rechen-, Speicher- und Netzwerkressourcen. \footnote{AWS Certified Solutions Architect - Associate (SAA-C02). S.95\cite{AWS1}}.
+Instanzfamilien sind eine Sammlung von EC2-Instanzen, die nach dem Verhältnis von Speicher, Netzwerkleistung, CPU-Größe und Speicherwerten zueinander gruppiert sind. Zum Beispiel bietet die m4-Familie von EC2 eine ausbalancierte Kombination von Rechen-, Speicher- und Netzwerkressourcen\footnote{AWS Certified Solutions Architect - Associate (SAA-C02). S.95\cite{AWS1}}.
 \\\\
 \textbf{Instagram-Story}\\
-%https://onlinemarketing.de/lexikon/definition-instagram-story
+Bei Instagram Stories handelt es sich um kurzen visuellen Content in der Regel Bilder oder kurze Videos, die nach 24 Stunden automatisch aus der Applikation Instagram verschwinden(Stand November 2021)\cite{IG2}.
 \\\\
 \textbf{On-Demand}\\
 ...
@@ -43,22 +46,25 @@ Instanzfamilien sind eine Sammlung von EC2-Instanzen, die nach dem Verhältnis v
 Die Region ist ein völlig unabhängiges und eigenständiges geografisches Gebiet. Jede Region hat mehrere, physisch getrennte und isolierte Standorte, die als Availability Zones bekannt sind. Beispiele für Regionen sind London, Dublin, Sydney, usw \footnote{AWS Certified Solutions Architect - Associate (SAA-C02)\cite{AWS1}, S.42}.
 \\\\
 \textbf{Tag}\\
-Ein Tag (Markierung) ist eine Markierung, die Sie einer AWS-Ressource zuordnen. Jeder Tag (Markierung) besteht aus einem Schlüssel und einem optionalen Wert\footnote{Amazon Elastic Compute Cloud - Benutzerhandbuch für Linux-Instances\cite{AMZ26}, S.1580}.
+Ein \textit{Tag} (Markierung) ist eine Markierung, die einer AWS-Ressource zuordnet. Jeder Tag (Markierung) besteht aus einem Schlüssel und einem optionalen Wert\footnote{Amazon Elastic Compute Cloud - Benutzerhandbuch für Linux-Instances\cite{AMZ26}, S.1570}.
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.4]{sources/TagExample}
   \caption[Beispiel für ein Tag]{}\label{fig:TagExample}
-Beispiel für ein Tag{\cite{AMZ26}, S.1580}.
+Beispiel für ein Tag{\cite{AMZ26}, S.1570}.
 \end{figure}
 \\\\
 %PAYG %https://www.nimbix.net/glossary/pay-go
 \textbf{Metadaten}\\
 Metadaten beschreiben andere Daten. Sie liefern Informationen über den Inhalt eines bestimmten Objekts. Ein Bild kann beispielsweise Metadaten enthalten, die beschreiben, wie groß das Bild ist, die Farbtiefe, die Bildauflösung, wann das Bild erstellt wurde und andere Daten. Die Metadaten eines Textdokuments können Informationen darüber enthalten, wie lang das Dokument ist, wer der Autor ist, wann das Dokument geschrieben wurde und eine kurze Zusammenfassung des Dokuments.
 \\\\
-\textbf{Startkonfiguration}\\ %https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html
+\textbf{Startkonfiguration}\\ 
+Eine Startkonfiguration ist eine Instance-Konfigurationsvorlage, die eine Auto-Scaling-Gruppe zum Starten von EC2-Instances verwendet{Amazon EC2 Auto Scaling - Benutzerhandbuch. S.54 \cite{AMZ31}}. 
+%https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html
 \\\\
 \textbf{Scale-In/Out}\\
 \\\\
 \textbf{Maschinelles Lernen}\\
+Maschinelles Lernen ist ein Teilbereich der künstlichen Intelligenz (KI). Beim maschinellen Lernen werden Algorithmen darauf trainiert, Muster und Korrelationen in großen Datensätzen zu finden und auf Basis dieser Analyse die besten Entscheidungen und Vorhersagen zu treffen. Auf diese Weise wird die Rechenkapazität von EC2-Instanzen auf der Grundlage früherer Muster vorhergesagt\cite{ML1}. 
 %Governance, Compliance ?
 %\\\\
