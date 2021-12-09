@@ -1,12 +1,22 @@
-(To-Do:)
+[Rev]
 \\Kapitelweise Kurzdarstellung der Inhalte (inklusive Referenzierung auf die \\Kapitelnummerierung) => Nach dem Motto: \textit{Was wurde wo beschrieben?}
-\\Kurzdarstellung \textit{Problem – Lösungsweg – Ergebnisse}
-\\Rückkopplung auf die Einleitung: Wurde die Zielstellung der Arbeit und die \\Fragestellung zufriedenstellend beantwortet?
+Kapitel~\ref{kap_grundlagen} Erfolgchancen der Cloud-Computing in Unternehmen\\
+Kapitel~\ref{kap_zahlungsmodelle} Weil EC2 großteil der Kosten ausmacht, wurden die Zahlungsmodelle untersucht und vorgestellt. +Anwendungsfall(Truecar) mit reservierten Instanzen und Cost-Explorer. + Berechnung der möglichen Einsparungen bei zeitgesteuerte Skalierung.\\
+Kapitel~\ref{kap_kostenüberwachung} Um einen umfangreichen Überblick der Nutzung und Kosten zu verschaffen, wurden drei Überwachungswerkzeuge untersucht und vorgestellt sowie die damit mögliche Überwachungsmaßnahmen wie zB. Beachrichtigungen.\\
+Kapitel~\ref{kap_Optimierung}Konkrete Optimierungsmaßnahmen für EC2(Auto-Scaling) und S3(Verschiebung innerhalt Speicherklassen)
+\\
+Kurzdarstellung \textit{Problem(Kosten sind nicht transparent?zugänglich?einfach zu verstehen/sehen?) – Lösungsweg(Überwachungswerkzeuge+Optimierungsmaßnahmen) – Ergebnisse(Kenntnisse über die nötigen Werkzeugen/Dienste, um Kosten zu optimieren und überwachen)}
+\\
+Rückkopplung auf die Einleitung: Wurde die Zielstellung der Arbeit und die 
+\\Fragestellung zufriedenstellend beantwortet?
 \\Kritische Bewertung (sofern nicht bereits im Hauptteil geschehen)
-\\Offene Probleme/Themen: CloudFormation, IAM, Mit Serverless Kosten nach Transaktionen?,  AWS Cost Anomalies
-\\Richtung der zukünftigen/möglichen Arbeiten
-\\Erläuterung, warum welche Aspekte in der Arbeit nicht erläutert 
-
+\\
+Offene Probleme/Themen: AWS-Organizations(%https://aws.amazon.com/de/organizations/?blog_multi_account_ct) 
+, IAM, Mit Serverless können Kosten optimiert werden, möglichweise würde die Komplexität der Anwendung zunehmen.,  AWS Cost Anomalies,CloudFormation?
++Werkzeuge Testen, Maßnahmen ergreifen und Ergebnisse messen.
+\\Richtung der zukünftigen/möglichen Arbeiten: \\
+\\Erläuterung, warum welche Aspekte in der Arbeit nicht erläutert: Es wurden zwei AWS-Dienste untersucht und nicht mehr, um den Fokus auf die meist genutzte und representative Cloud-Dienste zu halten. Trusted Advisor zeigt Optimierungsmaßnahmen für Datenbanken, Netzwerk usw(...) 
+\\
 \subsection*{Bewusstsein in der gesamten Organisation entwickeln}
 \addcontentsline{toc}{subsection}{Bewusstsein in der gesamten Organisation} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen
 Zusätzlich zu den bisher genannten Maßnahmen ist es wichtig, dass Verbraucher von Cloud-Diensten Bewusstsein für die Entstehung von Kosten entwikclen[ODER sensibilisier werden?]. Von dem Entwickler bis zum der IT-Manager, jeder sollte wissen, dass es so einfach ist, Cloud-Dienste mit ein paar Klicks zu beauftragen\footnote{Plusserver: Kostenoptimierung in AWS, S.5\cite{PS1}.}. Diese können in kurzer Zeit ungewünschte  Kosten verursachen oder sogar über Jahre hinweg wirtschaftliche Schäden verursachen. 

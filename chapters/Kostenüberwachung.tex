@@ -200,7 +200,7 @@ Cost-Explorer liefert Informationen zur Rechtfertigung von Ausgaben aus im Vorau
 AWS Trusted Advisor ist ein Werkzeug, das Empfehlungen zur Kostenreduzierung, Verbesserung der Systemverfügbarkeit und Erhöhung der Systemsicherheit gibt. Die Empfehlungen basieren auf Best-Practices, die im Laufe der Jahre durch die Beteuerung von AWS-Kunden gesammelt wurden und Prüfungen, die auf dem bestehenden AWS-Konto durchgeführt wurden.
 In dieser Arbeit werden Empfehlungen in Bezug auf Servicekontingente und Kostenoptimierung insbesondere betrachtet, weil es sich um Empfehlungen handelt, die mit Kostenüberwachung und -optimierung zusammenhängen. Der Status von Prüfungen von Trusted Advisor sind über CloudWatch Events zugänglich. 
 \\\\
-Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen Stand November 2021) für Konten in den Plänen Developer und Basic Support kostenlos sind. Prüfungen für die Kategorie Servicekontingente sind kostenlos. Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{Trusted Advisor\cite{AMZ36}}. 
+Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen Stand November 2021) für Konten in den Plänen Developer und Basic Support kostenlos sind. Prüfungen für die Kategorie Servicekontingente sind kostenlos. Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{Trusted Advisor\cite{AMZ20}}. 
 \\
 %ES MUSS GEPRÜFT WERDEN, OB ES SINNVOLL IST, FÜR DIE OBEN GENANNTEN SUPPORT-PLÄNEN ZU ZAHLEN.
 \begin{figure}[h!]
@@ -236,17 +236,30 @@ Für Auto-Scaling-Gruppen %und -Startkonfigurationen
 wird es geprüft, ob deren Nutzung mehr als 80\% des Kontingents beträgt. [Rev]Aufgrund fehlender Informationen in der AWS-Dokumentation wird interpretiert, dass eine Auto-Scaling-Gruppe als eine einzelne Recheneinheit betrachtet wird und eine Auslastung von mehr als 80\% als Näherung an die Grenze der Rechenkapazität angesehen wird.
 Dies wird eine Anpassung der Startkonfiguration für eine bessere Skalierung zur Folge haben.
 \\\\
-Prüfungen, die eine Nutzungsüberschreitung von 80\% belegen, werden auch für On-Demand-Instances, Reserved Instances, EC2-Classic Elastic IP Addresses und EC2-VPC Elastic IP Addresses angezeigt.
-[GLEICHE GRENZEN WIE BEI CloudWatch?]
+Prüfungen, die die Nutzung eines Kontingents über 80\% betragen, werden auch für On-Demand-Instances, Reserved Instances, EC2-Classic Elastic IP Addresses und EC2-VPC Elastic IP Addresses angezeigt.
 
-\subsubsection*{Trusted-Advisor Kosten/Erwägungen}
-Bei der Erwägung von Trusted-Advisor ist zu überlegen, ob es kosteneffizient ist, für Support-Pläne zu zahlen. Da diese den Zugang zu allen Empfehlungen des Trusted Advisors ermöglichen. Eines der Ziele dieser Arbeit ist es, die Entstehung der Kosten auf eine praktikable Weise zu verstehen (Kostenüberwachung). Einschränkend lässt sich sagen, ob alle Empfehlungen von Trusted Advisor zu echten Einsparungen führen.  %Dies, um Optimierungsmaßnahmen zu ermöglichen. 
+\subsubsection*{Trusted-Advisor Kostenerwägungen}
+Bei der Erwägung von Trusted-Advisor ist zu berücksichtigen, ob es kosteneffizient ist, für Support-Pläne zu zahlen. Da diese den Zugang zu allen Empfehlungen des Trusted Advisors ermöglichen. Eines der Ziele dieser Arbeit ist es, die Entstehung der Kosten auf eine praktikable Weise zu verstehen (Kostenüberwachung). Einschränkend lässt sich sagen, ob alle Empfehlungen von Trusted Advisor zu echten Einsparungen führen.  %Dies, um Optimierungsmaßnahmen zu ermöglichen. 
 \\
-Es wäre nicht sinnvoll, Kosten für AWS-Dienste wie Geschäfts- oder Enterprise Support zu übernehmen, wenn diese die möglichen Einsparungen übersteigen. Die Vorteile von Geschäfts- oder Enterprise Support-Plänen beschränken sich nicht auf Kosteneinsparungen und Kostenbegrenzung, sondern tragen auch zur Sicherheit und Leistung bei. Dabei stellt sich die Frage, ob die Empfehlungen aller fünf Kategorien für die aktuelle Situation des Unternehmens benötigt werden.
-[Hier die Handlungen?]
-\\   
+Es wäre nicht sinnvoll, Kosten für AWS-Dienste wie Business- oder Enterprise Support zu übernehmen, wenn diese die möglichen Einsparungen übersteigen. Die Vorteile von Business- oder Enterprise Support-Plänen beschränken sich nicht auf Kosteneinsparungen und Kostenbegrenzung, sondern tragen auch zur Sicherheit und Leistung bei. Dabei stellt sich die Frage, ob die Empfehlungen aller fünf Kategorien für die aktuelle Situation des Unternehmens benötigt werden.
+[[Rev]Hier die Handlungen?]
+\\\\   
+Die Preise für einen Business Support-Plan sind wie folgt definiert. Der Prozentsatz basiert auf der monatlichen Gebühr für AWS-Dienste.
+\\
+Zwischen 0 USD und 10,000 USD: 10\% oder 100 USD. Je nachdem, was größer ist.\\
+Zwischen 10,000 USD und 80,000 USD: 7\%.\\
+Zwischen 80,000 USD und 250,000 USD: 5\%.\\
+Ab 250,000 USD: 3\%\footnote{ AWS Support Plan Pricing - Business Support-Plan, 2021, o.S. \cite{AMZ38}}.\\
+\\\\
+Die Preise für einen Enterprise Support-Plan sind wie folgt definiert. Der Prozentsatz basiert auf der monatlichen Gebühr für AWS-Dienste.
+\\
+Zwischen 0 USD und 150,000 USD: 10\% oder 15,000 USD. Je nachdem, was größer ist.\\
+Zwischen 150,000 USD und 500,000 USD: 7\%.\\
+Zwischen 500,000 USD und 1,000,000 USD: 5\%.\\
+Ab 1,000,000 USD: 3\%\footnote{ AWS Support Plan Pricing - Business Enterprise-Plan, 2021, o.S. \cite{AMZ38}}.\\
+Beide Pläne bieten rund um die Uhr technischen Support durch AWS-Ingenieure und andere zusätzliche Dienstleistungen, auf die in dieser Arbeit nicht weiter eingegangen wird. Die Preise der Support-Pläne geben einen Hinweis darauf, ob die zu zahlende Empfehlungen von Trusted Advisor zur Kostenoptimierung und -überwachung kosteneffizient werden.
 \subsection{Überwachungswerkzeuge gemäß ihrer Verwendung}
-Die \autoref{fig:ÜberwachungswerkzeugeNachVerwendung} fasst die Überwachungswerkzeuge zusammen und listet die Verwendung der einzelnen Werkzeuge auf.
+\autoref{fig:ÜberwachungswerkzeugeNachVerwendung} fasst die Überwachungswerkzeuge zusammen und listet deren Einsatzmöglichkeiten auf.
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.6]{sources/ÜberwachungswerkzeugeNachVerwendung}
