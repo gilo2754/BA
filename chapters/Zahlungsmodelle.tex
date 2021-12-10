@@ -2,7 +2,7 @@ Die Nutzung von EC2-Instanzen ist mit einem Zahlungsmodell verbunden. Die Wahl d
 %EC2 and RDS(DB) spend are often on of the main portions of your overall AWS Bill t.ly/Mqwn
 Die von Amazon Web Services angebotenen Zahlungsmodelle werden im Folgenden dargestellt.
 \\\\
-Das On-Demand-Modell beinhaltet keine langfristigen Verpflichtungen, es ist daher die teuerste Alternative, die auf Stundenbasis berechnet wird. Die Modelle Saving Plans und Reserved Instances erfordern den Abschluss von Verträgen über ein oder drei Jahre, um günstige Preise zu erhalten. EC2-Spot-Instanzen sind das kostengünstigste Modell, sie haben aber den Nachteil, dass ihre Verfügbarkeit nicht immer garantiert ist. Jedes Zahlungsmodell hat seine Vor- und Nachteile und eignet sich für unterschiedliche Anwendungsfälle. Gute Ergebnisse können auch durch die Kombination mehrerer Zahlungsmodelle erzielt werden. %SAG DER CLOUD-EXPERT/FIRMA
+Das \textit{On-Demand-Modell} beinhaltet keine langfristigen Verpflichtungen, es ist daher die teuerste Alternative, die auf Stundenbasis berechnet wird. Die Modelle \textit{Saving Plans} und \textit{reservierte Instanzen(Reserved Instances)}erfordern den Abschluss von Verträgen über ein oder drei Jahre, um günstige Preise zu erhalten. \textit{EC2-Spot-Instanzen} sind das kostengünstigste Modell, sie haben aber den Nachteil, dass ihre Verfügbarkeit nicht immer garantiert ist. Jedes Zahlungsmodell hat seine Vor- und Nachteile und eignet sich für unterschiedliche Anwendungsfälle. Gute Ergebnisse können auch durch die Kombination mehrerer Zahlungsmodelle erzielt werden. %SAG DER CLOUD-EXPERT/FIRMA
 Dies wird in Unterkapitel \ref{sssec:AWS-EC2-Fleet} behandelt.
 %[WIRD ES?]
 \\\\
@@ -28,15 +28,15 @@ In der \autoref{fig:OnDemand_Preise} werden die für die Region Ohio verfügbare
 \subsection{Reservierte Instanzen und Saving Plans}
 %t.ly/JUWq
 %https://www.youtube.com/watch?v=c_zlPQimrvY
-Die Zahlungsmodelle Reservierte Instanzen und Saving Plans sind sich sehr ähnlich. Beide kommen mit einer gleichbleibenden  Nutzungsverpflichtung, die in €/Stunden gemessen wird. Um die reduzierten Preise  zu bekommen, müssen Verträge über ein oder drei Jahre abgeschlossen werden. 
+Die Zahlungsmodelle \textit{reservierte Instanzen} und \textit{Saving Plans} sind sich sehr ähnlich. Beide kommen mit einer gleichbleibenden  Nutzungsverpflichtung, die in €/Stunden gemessen wird. Um die reduzierten Preise  zu bekommen, müssen Verträge über ein oder drei Jahre abgeschlossen werden. 
 \\\\
 Die \autoref{fig:EinsparungenRISP} zeigt die möglichen Einsparungen je nach Zahlungsmodell. Die Einsparungen hängen mit der Flexibilität bei der Wahl der Instanzfamilie und der Verfügbarkeitszone zusammen, in die Instanzen übertragen werden können. Je geringer die Flexibilität, desto höher die Einsparungen.
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.8]{sources/EinsparungenRISP}\label{fig:EinsparungenRISP}\\
-  \caption[Mögliche Einsparungen bei Reserved Instances and Saving Plans laut AWS]{}
+  \caption[Mögliche Einsparungen bei reservierten Instanzen and Saving Plans laut AWS]{}
   \label{fig:EinsparungenRISP}
-  Mögliche Einsparungen bei Reserved Instances and Saving Plans laut AWS
+  Mögliche Einsparungen bei reservierten Instanzen and Saving Plans laut AWS
   \footnote{\cite{AMZ07,AMZ11}}
 \end{figure}
 \\
@@ -55,10 +55,11 @@ Bei den EC2-Instance Saving Plans hingegen muss eine Instance-Familie in einer b
 
 %RI Configurations-Normalization https://medium.com/driven-by-code/how-truecar-saves-40-on-aws-with-ec2-reserved-instances-d0a6e0d9c08a
 \subsubsection*{EC2 Reserved Instance Marketplace}\label{sssec:RI-Marketplace}
-Sollte sich herausstellen, dass die Kapazität der reservierten Instanzen viel zu wenig oder gar nicht genutzt wird, kann diese Rechenkapazität auf dem RI Marketplace zur Verfügung gestellt werden. Somit kann ein Teil der Investition zurückgeholt werden. Dies ist für Standard Reserved Instances möglich. Diese Instanzen werden in Spot-Instanzen umgewandelt, damit andere Nutzer sie beantragen können. Dafür sollte eine Servicegebühr in Betracht gezogen werden. Stand November 2021 beträgt diese Abgabe 12\%\footnote{Amazon EC2 Reserved Instance Marketplace\cite{AMZ23}.}.[Rev]
+Sollte sich herausstellen, dass die Kapazität der reservierten Instanzen viel zu wenig oder gar nicht genutzt wird, kann diese Rechenkapazität auf dem \textit{RI Marketplace}(Marktplatz für den Kauf von reservierten Instanzen) zur Verfügung gestellt werden. Somit kann ein Teil der Investition zurückgeholt werden. Dies ist für Standard reservierten Instanzen möglich.
+Diese Instanzen werden in Spot-Instanzen umgewandelt, damit andere Nutzer sie beantragen können. Dafür sollte eine Servicegebühr in Betracht gezogen werden. Stand November 2021 beträgt diese Gebühr 12\%\footnote{Amazon EC2 Reserved Instance Marketplace\cite{AMZ23}.}.
 
 \subsubsection*{Möglichkeit der Vorauszahlung}\label{sssec:Vorauszahlung}
-Zusätzlich gibt es bei Saving Plans und reservierten Instanzen die Option im Voraus zu zahlen. Im Gegenzug wird ein niedrigerer Preis angeboten. Amazon bietet drei verschiedene Optionen an. Diese sind teilweise, keine oder vollständige Vorauszahlung\footnote{ AWS Pricing Calculator\cite{AMZ17}.}. Bei teilweiser Vorauszahlung ist eine Anzahlung von etwa 50\% zu leisten.
+Zusätzlich gibt es bei Saving Plans und reservierten Instanzen die Option im Voraus zu zahlen. Im Gegenzug wird ein niedrigerer Preis angeboten. Amazon bietet drei verschiedene Optionen an. Diese sind eine teilweise, keine oder eine vollständige Vorauszahlung\footnote{ AWS Pricing Calculator\cite{AMZ17}.}. Bei teilweiser Vorauszahlung ist eine Anzahlung von etwa 50\% zu leisten.
 \\\\
 Die \autoref{fig:EinsparungenVorauszahlung} zeigt den Vergleich zwischen den drei Optionen für Vorauszahlungen. Hier wird deutlich, dass es kaum einen Unterschied zwischen eine teilweise Vorauszahlung und keine Vorauszahlung zu machen gibt. Eine erhebliche Einsparung ergibt sich, wenn man für den gesamten Zeitraum der gebuchten Instanzen im Voraus bezahlt.
 \begin{figure}[h!]
@@ -86,7 +87,7 @@ Da Spot-Instanzen anfällig für Unterbrechungen sind, ist es nicht empfehlenswe
 %2 OPTIONEN: LOWEST PRICE OR DIVERSIFIED ACROSS n POOLS TO AVOID DOWNS https://www.linkedin.com/learning/aws-automation-and-optimization/request-spot-instances-part-2?autoAdvance=true&autoSkip=true&autoplay=true&resume=false&u=79182202
 
 \subsection{Amazon EC2 Fleet[rev]} \label{sssec:AWS-EC2-Fleet}
-Instanzen-Flotten oder auf Englisch fleet of instances, bieten bei AWS die Möglichkeit mehrere Spot-Instanzen anzufordern, um einen bestimmten Bedarf an Rechenleistung zu decken\footnote{Amazon Elastic Compute Cloud - Benutzerhandbuch für Linux-Instances, S.708\cite{AMZ26}.}. Spot-Instanzen können auch für produktive Umgebungen verwendet werden\footnote{ Running Web Applications on Amazon EC2 Spot Instances\cite{AMZ24}.}. Darüber hinaus ist es empfehlenswert, Instanzen aus verschiedenen Zahlungsmodellen zu kombinieren, um von den Einsparungen von Spot-Instanzen, Saving Plans und reservierten Instanzen zu profitieren. Die Kombination von Instanzen aus verschiedenen Zahlungsmodellen beseitigt den Nachteil für Produktionsumgebungen, der mit Spot-Instanzen verbunden ist. Das heißt, das Risiko, dass Spot-Instanzen unterbrochen werden können.
+\textit{Instanzen-Flotten} oder auf Englisch fleet of instances, bieten bei AWS die Möglichkeit mehrere Spot-Instanzen anzufordern, um einen bestimmten Bedarf an Rechenleistung zu decken\footnote{Amazon Elastic Compute Cloud - Benutzerhandbuch für Linux-Instances, S.708\cite{AMZ26}.}. Spot-Instanzen können auch für produktive Umgebungen verwendet werden\footnote{ Running Web Applications on Amazon EC2 Spot Instances\cite{AMZ24}.}. Darüber hinaus ist es empfehlenswert, Instanzen aus verschiedenen Zahlungsmodellen zu kombinieren, um von den Einsparungen von Spot-Instanzen, Saving Plans und reservierten Instanzen zu profitieren. Die Kombination von Instanzen aus verschiedenen Zahlungsmodellen beseitigt den Nachteil für Produktionsumgebungen, der mit Spot-Instanzen verbunden ist. Das heißt, das Risiko, dass Spot-Instanzen unterbrochen werden können.
 \\\\
 Folgende Punkte sind für die Nutzung von Spot Fleet Instanzen zu berücksichtigen:
 \subsubsection*{Wahl der Spot-Instanzen[rev]}
@@ -100,7 +101,7 @@ Wie im Unterkapitel \ref{ssec:Spot-Instances} erwähnt, muss für die Anforderun
 Wenn alle oder eine große Anzahl von Spot-Instanzen nicht mehr verfügbar sind, muss die benötigte Rechenkapazität von Instanzen anderer Zahlungsmodellen wie On-Demand abgedeckt werden. Die Standardeinstellungen liegen bei 70\% On-Demand-Instanzen und 30\% Spot-Instanzen\cite{AMZ24}. Im Fall von vorhandenen reservierten Instanzen oder Instanzen von Saving Plans werden On-Demand-Instanzen zum entsprechend reduzierten Preis berechnet\footnote{Amazon Elastic Compute Cloud - Benutzerhandbuch für Linux-Instances, S.690\cite{AMZ26}.}.
 
 \subsubsection*{Auto Scaling Groups}%Sarah 6.12
-Auch als EC2-Auto-Scaling-Gruppe(ASG) bezeichnet, ist diese für die Skalierung der zu startenden Instanzen verantwortlich. Dazu wird eine Startkonfiguration benötigt, welche definiert, unter welchen Bedingungen Instanzen gestartet oder beendet werden sollen[rev]. In der Startkonfiguration werden unter anderem der Instanztyp, Security-Groups, und Tags festgelegt. Mehr über Auto-Scaling und seine verschiedenen Konfigurationen in Kapitel~\ref{kap_Optimierung}.
+Auch als \textit{EC2-Auto-Scaling-Gruppe}(ASG) bezeichnet, ist diese für die Skalierung der zu startenden Instanzen verantwortlich. Dazu wird eine Startkonfiguration benötigt, welche definiert, unter welchen Bedingungen Instanzen gestartet oder beendet werden sollen[rev]. In der Startkonfiguration werden unter anderem der Instanztyp, Security-Groups, und Tags festgelegt. Mehr über Auto-Scaling und seine verschiedenen Konfigurationen in Kapitel~\ref{kap_Optimierung}.
 \\\\
 Für die Nutzung von EC2-Flotten und Auto Scaling-Gruppen fallen keine zusätzlichen Kosten an. Man muss nur für die durch die EC2-Instanzen verursachten Kosten bezahlen\footnote{Amazon Elastic Compute Cloud - Benutzerhandbuch für Linux-Instances, S.709\cite{AMZ26}. }. 
 %\subsubsection*{Einschränkungen?[rev]}
@@ -108,7 +109,7 @@ Für die Nutzung von EC2-Flotten und Auto Scaling-Gruppen fallen keine zusätzli
 \subsection{Anwendungsfall: TrueCar[rev]}\label{ssec:UseCaseTrueCar}
 Instanzen in Zahlungsmodellen, die zu zeitlichen Verpflichtungen führen, bergen die Gefahr, dass die benötigte Rechenkapazität mittel- bis langfristig falsch eingeschätzt wird. Einerseits kann die reservierte Rechnerkapazität zu gering eingeschätzt werden. Als Konsequenz wird es großenteils der Rechnerkapazität mit On-Demand-Instanzen gedeckt, welche in dem Anteil der reservierten Instanzen berücksichtigt werden konnten und mit reduzierten Preisen berechnet. Andererseits, wenn zu viel Rechnerkapazität mit reservierten Instanzen reserviert und diese zu wenig gebraucht wird. Besteht die Möglichkeit, dass es die reine Nutzung von On-Demand-Instanzen eine kostengünstigere Option darstellt.
 \\\\
-Im Folgenden wird die Strategie beschrieben, dass TrueCar Inc. verfolgt hat, um in keine der beiden oben genannten Situationen zu geraten. Dank ihrer Optimierungsstrategie konnten sie ihre AWS-Kosten durch die Nutzung reservierter Instanzen um etwa 40\% senken\footnote{How TrueCar Saves 40\% on AWS with EC2 Reserved Instances\cite{MED1}.}.
+Im Folgenden wird die Strategie beschrieben, dass\textit{TrueCar Inc}. verfolgt hat, um in keine der beiden oben genannten Situationen zu geraten. Dank ihrer Optimierungsstrategie konnten sie ihre AWS-Kosten durch die Nutzung reservierter Instanzen um etwa 40\% senken\footnote{How TrueCar Saves 40\% on AWS with EC2 Reserved Instances\cite{MED1}.}.
 \\\\
 Um Einsparungen von 40\% zu erreichen, musste das Team von TrueCar zuerst verstehen, wie AWS-Dienste wie reservierte Instanzen, Cost-Explorer, Auto-Scaling-Gruppen und Lambda Funktionen funktionieren. Damit haben sie eines der häufigsten Hindernisse überwunden, mit denen Unternehmen bei der Nutzung von Cloud-Diensten konfrontiert werden und zwar die Mangel an technisches Wissen in Bezug auf Cloud-Dienste\footnote{Accenture Dienstleistungen GmbH. Hohe Erwartungen an die Cloud: Hürden meistern, Mehrwert maximieren, S.11\cite{ACC1}.}. Nachdem das Team von TrueCar die notwendigen Informationen, insbesondere über die reservierten Instanzen, verstanden haben, haben sie die benötigte Rechenkapazität ermittelt. In dem Artikel wurde nicht erläutert, wie die von TrueCar benötigte Rechnerkapazität berechnet wurde. Diese Informationen werden jedoch von Cost-Explorer bereitgestellt. Cost-Explorer bietet die Möglichkeit, die Nutzung der AWS-Services für die letzten 12 Monate anzuzeigen. Cost-Explorer wird in Unterkapitel~\ref{ssec:Cost-Explorer} ausführlicher behandelt.
 \\\\

@@ -1,14 +1,13 @@
 %Cloud-Computing Basics a Non tech. intro.
 %Seite 163
 % Wie werden die Informationen die Benutzer gezeigt und wie können sie diese manipulieren
-Die mit den Überwachungswerkzeuge gesammelte Informationen, bilden die Grundlage für die Optimierungsmaßnahmen.[JA?-KONKRETER WERDEN]
-In diesem Kapitel werden die mit Hilfe der Werkzeuge gewonnenen Informationen genutzt[INFO X FUER WERKZEUG 1...], um über die am besten geeigneten Optimierungsmaßnahmen zu entscheiden.
+[Rev]Die mit den Überwachungswerkzeuge gesammelte Informationen, bilden die Grundlage für die Optimierungsmaßnahmen. In diesem Kapitel werden die mithilfe der Werkzeuge gewonnenen Informationen genutzt, um über die am besten geeigneten Optimierungsmaßnahmen zu entscheiden.
 %La mayoria de las medidas de opmimizacion se centran en las instancias EC2, pues como antes mencionado representan la gran mayoria de los servicios que comprenden los gastos en nuestras facturas.
 
 \subsection{EC2 Auto Scaling}
 %t.ly/CXs3 Linked In auf DE          %t.ly/1nka          %THIS!!! t.ly/vrCO
 %https://youtu.be/qYHR_V1lvNU?t=900
-Auto Scaling oder automatische Skalierung von Instanzen ist es hilfreich, um die richtige Anzahl von EC2-Instanzen zur Verfügung zu haben, um die Anwendungslast dynamisch abzudecken\footnote{Was ist Amazon EC2 Auto Scaling? S.9\cite{AMZ31} }. Dieses wird als horizontale Skalierung bezeichnet\footnote{Die Grundbedeutung der horizontalen Skalierung ist, dass Systeme durch zusätzliche Komponenten "erweitert" werden. Im Gegensatz dazu bedeutet der Begriff "vertikale Skalierung", dass einer einzelnen Komponente zusätzliche Leistungsfähigkeiten und Ressourcen hinzugefügt werden. o.S.\cite{TECH1} }.
+\textit{Auto Scaling} oder automatische Skalierung von Instanzen ist es hilfreich, um die richtige Anzahl von EC2-Instanzen zur Verfügung zu haben, um die Anwendungslast dynamisch abzudecken\footnote{Was ist Amazon EC2 Auto Scaling? S.9\cite{AMZ31} }. Dieses wird als horizontale Skalierung bezeichnet\footnote{Die Grundbedeutung der horizontalen Skalierung ist, dass Systeme durch zusätzliche Komponenten "erweitert" werden. Im Gegensatz dazu bedeutet der Begriff "vertikale Skalierung", dass einer einzelnen Komponente zusätzliche Leistungsfähigkeiten und Ressourcen hinzugefügt werden. o.S.\cite{TECH1} }.
 \\\\
 Die \autoref{fig:AutoSca_Unused_Capacity} zeigt das wechselnde Verhalten einer Beispielanwendung, die vor allem unter der Woche genutzt wird. Am Wochenende sinkt die Nachfrage nach Rechnerkapazität auf weniger als 25 \% und lässt den Rest der Kapazität ungenutzt. 
 \begin{figure}[h]
@@ -41,7 +40,7 @@ Die \autoref{fig:BA Diagramme-AutoScaling and LoadBalancer.drawio} zeigt die gew
 %Zu erklären: cooldown period and scaling policy.
 %Macht die Nutzung von Spor-Instanzen so einfach wie nie zuvor ?
 \subsubsection*{Elastic Load Balancing}%https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html
-Elastic Load Balancing verteilt den eingehenden Anwendungsverkehr automatisch auf alle laufenden EC2-Instanzen. Elastic Load Balancing hilft bei der Verwaltung eingehender Anfragen, indem es den Datenverkehr umleitet\footnote{In diesem Fall beschränkt auf den Application Load Balancer. Amazon Elastic Container Service Entwicklerhandbuch - Load Balancer-Typen - S.617\cite{AMZ39}}. Dies sorgt dafür, Instanzen mit einem ähnlicher CPU-Auslastung arbeiten. Die \autoref{fig:BA Diagramme-AutoScaling and LoadBalancer.drawio} zeigt ein Application Load Balancer, welcher den Datenverkehr den Datenverkehr auf die Instanzen einer Auto-Scaling-Gruppe verteilt.
+\textit{Elastic Load Balancing} verteilt den eingehenden Anwendungsverkehr automatisch auf alle laufenden EC2-Instanzen. Elastic Load Balancing hilft bei der Verwaltung eingehender Anfragen, indem es den Datenverkehr umleitet\footnote{In diesem Fall beschränkt auf den Application Load Balancer. Amazon Elastic Container Service Entwicklerhandbuch - Load Balancer-Typen - S.617\cite{AMZ39}}. Dies sorgt dafür, Instanzen mit einem ähnlicher CPU-Auslastung arbeiten. Die \autoref{fig:BA Diagramme-AutoScaling and LoadBalancer.drawio} zeigt ein Application Load Balancer, welcher den Datenverkehr den Datenverkehr auf die Instanzen einer Auto-Scaling-Gruppe verteilt.
 
 
 \subsubsection{Zeitgesteuerte Skalierung}
@@ -113,7 +112,7 @@ AWS bietet verschiedene Speicherklassen an, die sich im Preis und in der Häufig
 Zusätzlich, wenn auf die Daten nicht häufig zugegriffen wird, sind Glacier und Glacier Deep Archive passende Speicherklassen. Die Entscheidung ist jedoch nicht immer so einfach und die Umstände können sich schnell ändern. Hinzu kommt, dass nicht alle Daten in einer Applikation immer die gleichen Zugriffsmuster haben. Für solche Fälle ist es möglich, Regeln zu definieren, die Dateien zwischen verschiedenen Speicherklassen abhängig von ihrem Alter übertragen.
 
 \subsubsection{Lebenszyklus-Konfiguration}
-Die Lebenszyklus-Konfiguration oder lifecycle policy ist eine Maßnahme zur Optimierung S3-Speichereinheiten. Eine S3-Lebenszykluskonfiguration beschreibt in einer XML-Datei Regeln und Aktionen für die Verschiebung in unterschiedlichen Speicherklassen von Objekten. Die Verschiebung von Objekten verursachen Kosten. Ein Beispiel von diesen Kosten und mögliche Einsparungen werden in \autoref{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} vorgestellt.
+Die \textit{Lebenszyklus-Konfiguration} oder \textit{lifecycle policy} ist eine Maßnahme zur Optimierung S3-Speichereinheiten. Eine S3-Lebenszykluskonfiguration beschreibt in einer XML-Datei Regeln und Aktionen für die Verschiebung in unterschiedlichen Speicherklassen von Objekten. Die Verschiebung von Objekten verursachen Kosten. Ein Beispiel von diesen Kosten und mögliche Einsparungen werden in \autoref{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} vorgestellt.
 \\
 %Beim Verschieben nach S3 Intelligent-Tiering, S3 Standard – Infrequent Access und S3 One Zone – Infrequent Access: %\$0.01\\
 %S3 Glacier: \$0.036\\
@@ -176,7 +175,7 @@ Anhand der Berechnungen lässt sich erkennen, dass ein Einsparungspotenzial von 
 %(Object size distribution )
 %\newpage
 \subsubsection{Intelligent-Tiering}
-Intelligent-Tiering verschiebt Dateien auf der Grundlage von Zugriffsmustern. Diese Speicherklasse ist ideal für Daten mit wechselnden oder unbekannten Zugriffsmustern. 
+\textit{Intelligent-Tiering} verschiebt Dateien auf der Grundlage von Zugriffsmustern. Diese Speicherklasse ist ideal für Daten mit wechselnden oder unbekannten Zugriffsmustern. 
 Wie die Senior Product Manager für S3 Ruhi Dang erklärt, einige Unternehmen haben weder die Zeit noch die finanziellen Möglichkeiten, eine Person einzustellen, die ihre Daten sortiert und in die richtige Speicherklasse einordnet. Intelligent Auto Tiering ist eine attraktive Lösung für Unternehmen, die jährlich weniger als \$100,000 für Speicher ausgeben \footnote{AWS re:Invent 2019: Guidelines and design patterns for optimizing cost in Amazon S3. Minute: 21:12 \cite{AMZ16}}.
 %Ach von Jessie Felix gesagt https://www.youtube.com/watch?v=IOT41L_adSw
 %\\\\
