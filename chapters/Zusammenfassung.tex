@@ -1,12 +1,22 @@
 [Rev]
 %\\Kapitelweise Kurzdarstellung der Inhalte (inklusive Referenzierung auf die \\Kapitelnummerierung) => Nach dem Motto: \textit{Was wurde wo beschrieben?}
 \subsubsection*{Kurzdarstellung der Inhalte}
-Kapitel~\ref{kap_grundlagen} Erfolgchancen der Cloud-Computing in Unternehmen\\
-Kapitel~\ref{kap_zahlungsmodelle} Weil EC2 großteil der Kosten ausmacht, wurden die Zahlungsmodelle untersucht und vorgestellt. +Anwendungsfall(Truecar) mit reservierten Instanzen und Cost-Explorer. + Berechnung der möglichen Einsparungen bei zeitgesteuerte Skalierung+EC2-Fleet ermöglichen die Nutzung von Spot-Instanzen in produktive Umgebungen und lassen Kosten reduzieren.\\
+Kapitel~\ref{kap_grundlagen} %Erfolgchancen der Cloud-Computing in Unternehmen.
+Die Bedeutung von Cloud-basierten Systemen wurde bestätigt und verstäkt. Zum einen durch die Statistiken[Zitat] über die Nutzung von Cloud-Systemen weltweit. Zum anderen durch die Anzahl von Unternehmen, auch in Deutschland[Zitat], mit erfolgreicher Implementierung von Public Cloud-basierten Systemen. Es hat sich gezeigt, dass viele Unternehmen derzeit Schwierigkeiten haben, auf die Cloud umzusteigen, weil ihnen die technische Qualifikation fehlt[Zitat].
+\\
+Kapitel~\ref{kap_zahlungsmodelle} Weil EC2 großteil der Kosten ausmacht, wurden die Zahlungsmodelle untersucht und vorgestellt. 
++Mit einer Berechnung von On-Demand Instanzen mit zeitgesteuerter Skalierung, wurden die möglichen Einsparungen gezeigt.
++EC2-Fleet in Kombination mit On-Demand Instanzen ermöglichen die Nutzung von Spot-Instanzen sogar in produktive Umgebungen. Als Folge lassen sich Kosten reduzieren.
+%
+Wie auch in dem Anwendungsfall von Truecar Inc. sind die Kosten von EC2-Instanzen von großer Relevanz in der Infrastrukturkosten. Durch die korrekte Berechnung der künftig nötigen reservierten Instanzen und deren spätere Überwachung, haben gezeigt, die Möglichkeit, erhebliche Einsparungen zu erreichen/erzielen.
+\\
 Kapitel~\ref{kap_kostenüberwachung}: Es wurden drei Überwachungswerkzeuge untersucht mit denen mögliche Überwachungsmaßnahmen?oderOptimierungen?.
-
+%
 Cost-Explorer hat gezeigt? wie mit Berichte einen umfangreichen Überblick der Nutzung und Kosten zu verschaffen ist. 
++ 2 Einsatzmöglichkeiten = operative Budgetplanung und Verfolgung von KPIs.
+%
 CloudWatch:Visualisierung von Metriken mit Dashboards und Benachrichtigungen.
+%
 Trusted Advisor: Empfehlungen aber nicht alle sind ohne Business/Enterprise Plan zugänglich.
 \\
 Kapitel~\ref{kap_Optimierung} EC2(Auto-Scaling): 
@@ -16,7 +26,7 @@ Berechnung einer nicht produktiven Umgebung mit zeitgesteuerte Skalierung.
 S3(Verschiebung innerhalt Speicherklassen): mit Lebenszyklus-Konfiguration HIER wurde eine Berechnung anhand eines Anwendungsfall durgeführt und Intelligent-Tiering
 \\
 \subsubsection*{Kurzdarstellung Problem-Lösungsweg-Ergebnisse}
-Kurzdarstellung \textit{Problem(Kosten sind nicht transparent?zugänglich?einfach zu verstehen/sehen?) – Lösungsweg(Überwachungswerkzeuge+Optimierungsmaßnahmen) – Ergebnisse(Kenntnisse über die nötigen Werkzeugen/Dienste, um Kosten zu optimieren und überwachen)}
+Kurzdarstellung \textit{Problem(Kosten sind nicht transparent?zugänglich?einfach zu verstehen/sehen? - Fehlender Fachkraft) –  Lösungsweg(Überwachungswerkzeuge+Optimierungsmaßnahmen) – Ergebnisse(Kenntnisse über die nötigen Werkzeugen/Dienste, um Kosten zu optimieren und überwachen)}
 \\
 \subsubsection*{Rückkopplung auf die Einleitung: Wurde die Zielstellung der Arbeit und die Fragestellung zufriedenstellend beantwortet?}
 \subsubsection*{Kritische Bewertung (sofern nicht bereits im Hauptteil geschehen)}
@@ -26,7 +36,11 @@ AWS-Organizations%(https://aws.amazon.com/de/organizations/?blog_multi_account_c
 +Werkzeuge Testen, Maßnahmen ergreifen und Ergebnisse messen.
 %Limitationen: es konnte in dieser Arbeit nicht in der Praxis geprüft werden, ob die Maßnahmen ihre Verprechen anhalten
 \subsubsection*{Richtung der zukünftigen/möglichen Arbeiten - Weitere Forschungen}
-Es empfehlt sich diese Maßnahmen in echte Systeme einzusetzen.
+Während der Entwicklung dieser Arbeit wurden S3, Spot-Instanzen, Cost-Explorer, CloudWatch und Trusted Advisor (mit Einschränkungen) mit dem kostenlosen AWS-Kontingent getestet. 
+\\\\
+Es bleibt offen, die Überwachungswerkzeuge zu verwenden und die Optimierungsmaßnahmen zu ergreifen in einer echter IT-Infrastruktur. 
+Zum Beispiel bei Rechenlasten(Wort)?, die nicht vorhersehbar sind, oder bei Entwicklungumgebungen, die nach Arbeitszeiten ein- und ausgeschaltet werden können. Für die Datenspeicherung mit unterschiedlichen Zugriffsmustern werden S3 intelligent-Tiering oder Policies zu testen.d%so dass diese zwischen Speicherklassen verschoben werden.
+
 \subsubsection*{Erläuterung, warum welche Aspekte in der Arbeit nicht erläutert} 
 Es wurden zwei AWS-Dienste untersucht und nicht mehr, um den Fokus auf die meist genutzte und representative Cloud-Dienste zu halten. Trusted Advisor zeigt Optimierungsmaßnahmen für Datenbanken, Netzwerk usw(...) 
 

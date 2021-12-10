@@ -153,7 +153,7 @@ Kosten von Nutzern, die den Dienst kostenlos in Anspruch nehmen, würden in dies
 Cost-Explorer-Berichte enthalten Daten, die die Merkmale eines guten KPI erfüllen. Sie sind spezifisch und in Bezug auf die Zeit messbar.
 \\\\
 In der \autoref{fig:Dashboard_EC2_S3} werden %das monatliche Geschäftswachstum, [Gelöscht, weil hier nicht relevant]
-die durchschnittlichen Kosten pro Stunde für EC2-Instanzen, den Prozentsatz der Instanzen einer bestimmten Generation und der Vorgängerversionen, die Abdeckung nach Zahlungsmodell und die Verteilung des S3-Speichers nach Speicherklassen berechnet. Die oben genannten Metriken sammelt sichIn diesem Beispiel werden Metriken aus CloudWatch? und Informationen aus Cost-Explorer-Berichten zusammengestellt.
+die durchschnittlichen Kosten pro Stunde für EC2-Instanzen, den Prozentsatz der Instanzen einer bestimmten Generation und der Vorgängerversionen, die Abdeckung nach Zahlungsmodell und die Verteilung des S3-Speichers nach Speicherklassen berechnet. In diesem Dashboard werden Metriken aus CloudWatch und  Cost-Explorer-Berichten zusammengestellt.
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.65]{sources/Dashboard_EC2_S3}
@@ -161,7 +161,8 @@ die durchschnittlichen Kosten pro Stunde für EC2-Instanzen, den Prozentsatz der
   \label{fig:Dashboard_EC2_S3} 
   Dashboard mit EC2 und S3 Metriken\cite{AMZ35}
 \end{figure}\\
-Die obengenannten Metriken stammen von CloudWatch. Wie in der \autoref{fig:OpsAnDiensteCloudWatch} zu sehen, ist es möglich, mathematische Operationen mit den Metriken durchzuführen, um zum Beispiel Durchschnittswerte, Prozentsätze und vieles mehr zu berechnen.
+%Die obengenannten Metriken stammen von CloudWatch. 
+Wie in der \autoref{fig:OpsAnDiensteCloudWatch} zu sehen, ist es möglich, mathematische Operationen mit den Metriken durchzuführen, um zum Beispiel Durchschnittswerte, Prozentsätze und vieles mehr zu berechnen.
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.55]{sources/OpsAnDiensteCloudWatch}
@@ -177,11 +178,12 @@ Die obengenannten Metriken stammen von CloudWatch. Wie in der \autoref{fig:OpsAn
 %Value: Optimize your cost savings by leveraging pricing models
 %Auslastungsbericht UND Abdeckungsbericht
 %\subsubsection*{Berichte von reservierten Instanzen und Saving Plans}
-[WAS DAMIT?]AWS analysiert die bisherige Nutzung der Instanzen und gibt Empfehlungen zur Kostensenkung durch den Wechsel von EC2-Instanzen in On-Demand Zahlungsmodell zu reservierten Instanzen. Diese ignorieren Kapazität, die bereits von anderen reservierten Instanzen abgedeckt wurden.
-Es besteht die Möglichkeit, einen Bericht über die Nutzung von AWS-Diensten der letzten zwölf Monate einzusehen und zu prüfen, ob die Empfehlungen des Cost-Explorers angemessen sind.
 
 \subsubsection*{Budgetplanung}
-Die Budgetplanung ist eine Methode der Kostenkontrolle, die beim Start eines neuen Projekts eingesetzt wird\footnote{Cost Control Methods: Definitions and Examples\cite{BUD2}.}. Der Bericht über die in den letzten zwölf Monaten entstandenen Kosten zusammen mit der Prognose der Kosten der kommenden zwölf Monaten tragen zu einen guten Budgetplanung bei.
+%AWS analysiert die bisherige Nutzung der EC2-Instanzen und gibt Empfehlungen zur Kostensenkung durch den Wechsel von EC2-Instanzen in On-Demand Zahlungsmodell zu reservierten Instanzen. Diese ignorieren Kapazität, die bereits von anderen reservierten Instanzen abgedeckt wurden.
+%Cost-Explorer generiert einen weiteren Bericht über die Nutzung von AWS-Diensten der letzten zwölf Monate.
+%einzusehen und zu prüfen, ob die Empfehlungen des Cost-Explorers angemessen sind.
+Die Budgetplanung ist eine Methode der Kostenkontrolle, die beim Start eines neuen Projekts eingesetzt wird\footnote{Cost Control Methods: Definitions and Examples\cite{BUD2}.}. Der Cost-Explorer Berichte über die in den letzten zwölf Monaten entstandenen Kosten zusammen mit der Prognose der Kosten der kommenden zwölf Monaten tragen zu einen guten Budgetplanung bei.
 %%t.ly/6bvZ% https://youtu.be/3peNAKB3VxA?t=223
 Durch die Möglichkeit, die in den letzten Monaten angefallenen Kosten nach bestimmten AWS-Diensten, Projekt oder Abteilung zu trennen, ist es möglich, operative Budgetplanungen aus vergangenen Projekten mit Genauigkeit zu erstellen. 
 \begin{quote}
