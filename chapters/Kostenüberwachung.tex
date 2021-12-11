@@ -163,8 +163,8 @@ Die Formel für die Berechnung der Kundenakquisitionskosten lautet wie folgt:\\
 Anfallende Marketingkosten (MK) addiert mit den Vertriebskosten (VK) durch die Anzahl der gewonnenen Kunden (GK).\\
 Kosten von Nutzern, die den Dienst kostenlos in Anspruch nehmen, würden in diesem Fall in den Vertriebskosten enthalten sein. Auf diese Weise ist die Marketingabteilung in der Lage, die tatsächlichen Kosten pro zahlenden Neukunden zu berechnen, die durch die Werbekampagne generiert wurden.  
 
-\subsubsection*{Berichte für Leistungskennzahlen (KPI)[Rev]}
-Cost-Explorer-Berichte enthalten Daten, die die Merkmale eines guten KPI erfüllen. Sie sind spezifisch und in Bezug auf die Zeit messbar.
+\subsubsection*{Leistungskennzahlen (KPI)[Rev]}
+Cost-Explorer-Berichte enthalten Daten, die die Merkmale eines guten KPI\footnote{Marc Optiz. (2019). Anforderungen an Kennzahlen. Prozessorientiertes Reporting. (S.130-132). Schäffer-Poeschel Verlag für Wirtschaft.\cite{PR1}} erfüllen. Sie sind aktuell, spezifisch und in Bezug auf die Zeit messbar.
 \\\\
 In der \autoref{fig:Dashboard_EC2_S3} werden %das monatliche Geschäftswachstum, [Gelöscht, weil hier nicht relevant]
 die durchschnittlichen Kosten pro Stunde für EC2-Instanzen, den Prozentsatz der Instanzen einer bestimmten Generation und der Vorgängerversionen, die Abdeckung nach Zahlungsmodell und die Verteilung des S3-Speichers nach Speicherklassen berechnet. In diesem Dashboard werden Metriken aus CloudWatch und Cost-Explorer-Berichten zusammengestellt.
@@ -173,10 +173,10 @@ die durchschnittlichen Kosten pro Stunde für EC2-Instanzen, den Prozentsatz der
   \includegraphics[scale=0.65]{sources/Dashboard_EC2_S3}
   \caption[Dashboard mit EC2 und S3 Metriken]{}
   \label{fig:Dashboard_EC2_S3} 
-  Dashboard mit EC2 und S3 Metriken\cite{AMZ35}
+  Dashboard mit Kennzahlen über EC2-Instanzen und S3-Speichereinheiten \footnote{Getting Started: Tracking AWS Cost Management Metrics. o.S.\cite{AMZ35}}
 \end{figure}\\
 %Die obengenannten Metriken stammen von CloudWatch. 
-Wie in der \autoref{fig:OpsAnDiensteCloudWatch} zu sehen, ist es möglich, mathematische Operationen mit den Metriken durchzuführen, um zum Beispiel Durchschnittswerte, Prozentsätze und vieles mehr zu berechnen.
+Wie in der \autoref{fig:OpsAnDiensteCloudWatch} zu sehen, ist es möglich, mathematische Operationen mit den Metriken durchzuführen, um auf dem Dashboard nur die aussagekräftigsten Kennzahlen anzuzeigen.
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.55]{sources/OpsAnDiensteCloudWatch}
@@ -192,12 +192,12 @@ Wie in der \autoref{fig:OpsAnDiensteCloudWatch} zu sehen, ist es möglich, mathe
 %Value: Optimize your cost savings by leveraging pricing models
 %Auslastungsbericht UND Abdeckungsbericht
 %\subsubsection*{Berichte von reservierten Instanzen und Saving Plans}
-
+\newpage
 \subsubsection*{Budgetplanung}
 %AWS analysiert die bisherige Nutzung der EC2-Instanzen und gibt Empfehlungen zur Kostensenkung durch den Wechsel von EC2-Instanzen in On-Demand Zahlungsmodell zu reservierten Instanzen. Diese ignorieren Kapazität, die bereits von anderen reservierten Instanzen abgedeckt wurden.
 %Cost-Explorer generiert einen weiteren Bericht über die Nutzung von AWS-Diensten der letzten zwölf Monate.
 %einzusehen und zu prüfen, ob die Empfehlungen des Cost-Explorers angemessen sind.
-Die Budgetplanung ist eine Methode der Kostenkontrolle, die beim Start eines neuen Projekts eingesetzt wird\footnote{Cost Control Methods: Definitions and Examples\cite{BUD2}.}. Der Cost-Explorer Berichte über die in den letzten zwölf Monaten entstandenen Kosten zusammen mit der Prognose der Kosten der kommenden zwölf Monaten tragen zu einen guten Budgetplanung bei.
+Die Budgetplanung ist eine Methode der Kostenkontrolle, die beim Start eines neuen Projekts eingesetzt wird\footnote{Indeed Editorial Team. (09.04.2021) Planning the budget properly. Cost Control Methods: Definitions and Examples. o.S. \cite{BUD2}.}. Der Cost-Explorer Berichte über die in den letzten zwölf Monaten entstandenen Kosten zusammen mit der Prognose der Kosten der kommenden zwölf Monaten tragen zu einen guten Budgetplanung bei.
 %%t.ly/6bvZ% https://youtu.be/3peNAKB3VxA?t=223
 Durch die Möglichkeit, die in den letzten Monaten angefallenen Kosten nach bestimmten AWS-Diensten, Projekt oder Abteilung zu trennen, ist es möglich, operative Budgetplanungen aus vergangenen Projekten mit Genauigkeit zu erstellen. 
 \begin{quote}
@@ -213,7 +213,7 @@ Cost-Explorer liefert Informationen zur Rechtfertigung von Ausgaben aus im Vorau
 %Kunden von AWS Basic Support und AWS Developer Support können auf grundlegende Sicherheitsprüfungen und alle Prüfungen für Servicekontingente zugreifen. Kunden von AWS Business Support und AWS Enterprise Support können auf alle Prüfungen zugreifen, einschließlich Kostenoptimierung, Sicherheit, Fehlertoleranz, Leistung und Servicekontingente. 
 %was macht dieses?
 %AWS Trusted Advisor: This helps you know more about idle or underutilized resources.
-\textit{AWS Trusted Advisor} ist ein Werkzeug, das Empfehlungen zur Kostenreduzierung, Verbesserung der Systemverfügbarkeit und Erhöhung der Systemsicherheit gibt. Die Empfehlungen basieren auf Best-Practices, die im Laufe der Jahre durch die Beteuerung von AWS-Kunden gesammelt wurden und Prüfungen, die auf dem bestehenden AWS-Konto durchgeführt wurden.
+\textit{AWS Trusted Advisor} ist ein Werkzeug, das Empfehlungen zur Kostenreduzierung, Verbesserung der Systemverfügbarkeit und Erhöhung der Systemsicherheit gibt. Die Empfehlungen basieren auf Best-Practices, die im Laufe der Jahre durch die Betreuerung von AWS-Kunden gesammelt wurden und Prüfungen, die auf dem bestehenden AWS-Konto durchgeführt wurden.
 In dieser Arbeit werden Empfehlungen in Bezug auf Servicekontingente und Kostenoptimierung insbesondere betrachtet, weil es sich um Empfehlungen handelt, die mit Kostenüberwachung und -optimierung zusammenhängen. Der Status von Prüfungen von Trusted Advisor sind über CloudWatch Events zugänglich. 
 \\\\
 Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen Stand November 2021) für Konten in den Plänen Developer und Basic Support kostenlos sind. Prüfungen für die Kategorie Servicekontingente sind kostenlos. Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{Trusted Advisor\cite{AMZ20}}. 
@@ -226,56 +226,60 @@ Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfun
       \label{fig:AWS_Trusted_Advisor_Kategorien} 
       AWS Trusted Advisor Kategorien\cite{AMZ20}
 \end{figure}
+\\\\
 Die \autoref{fig:AWS_Trusted_Advisor_Kategorien} zeigt die fünf Kategorien von Trusted Advisor mit jeweils 3 Arten von Indikatoren. Die Indikatoren zeigen an, welche Prüfungen durchgeführt wurden. Grün bedeutet, dass keine Fehler oder zu prüfenden Empfehlungen vorhanden sind. Warnungen werden durch orangefarbene Indikatoren und Fehler durch rote Indikatoren angezeigt. 
 \\\\
-Diese Empfehlungen scheinen ein angemessener Startpunkt für die Untersuchung von AWS-Diensten zu sein. Eine genauere Untersuchung erfolgt mithilfe anderer Werkzeuge wie CloudWatch oder Cost-Explorer.%[ODER?].
+Diese Empfehlungen scheinen ein angemessener Startpunkt für die Untersuchung von AWS-Diensten zu sein. Eine genauere Untersuchung erfolgt mithilfe anderer Werkzeuge wie CloudWatch oder Cost-Explorer. %[ODER?].
 Die Empfehlungen für die Kategorien Kostenoptimierung und Servicekontingente werden in der AWS-Dokumentation\footnote{AWS Support - Benutzerhandbuch. S.59-65 und S.83-94 \cite{AMZ37}} nur kurz beschrieben und sind in einem Basiskonto nicht zugänglich. Diese Kategorien lassen sich daher in eingeschränkter Weise unter der aktuellen Umständen untersuchen.
 %
-Es bestehen Empfehlungen für verschiedene Dienste unter anderem für EBS, Route 53, RDS und AWS Lambda. Im Folgenden werden Empfehlungen zu EC2-Instanzen gegeben, da dies der Fokus dieser Arbeit entspricht. Empfehlungen für Amazon S3-Speichereinheiten sind im Trusted Advisor nicht verfügbar.
+Es bestehen Empfehlungen für verschiedene AWS-Dienste unter anderem für EBS, Route 53, RDS und AWS Lambda. Im Folgenden werden Empfehlungen zu EC2-Instanzen gegeben, da dies der Fokus dieser Arbeit entspricht. Empfehlungen für Amazon S3-Speichereinheiten sind im Trusted Advisor nicht verfügbar.
 %\subsection*{Kategorie Kostenoptimierung}
 %Die Empfehlungen zur Kostenoptimierung konzentrieren sich auf Möglichkeiten zur Kostensenkung. 
 %[BEISPIELE]
 \subsubsection*{Empfehlungen zur Kostenoptimierung}
 Sollten EC2-Instanzen mit geringer Auslastung gefunden werden, wird es diese bei Trusted Advisor signalisiert. Denn diese Instanzen verursachen Kosten, welche durch die Terminierung oder das Pausieren vermieden werden können. Eine geringe Auslastung wird von AWS definiert, wenn Instanzen in den letzten 14 Tagen eine CPU-Auslastung von 10\% oder weniger hatten und wenn der Netzwerkverkehr in den letzten 4 Tagen gleich oder kleiner als 5 MB war. 
 \\\\
-Reservierte Instanzen, die in der letzten 30 Tage abgelaufen sind oder in den kommenden 30 Tage ablaufen werden werden hervorgehoben. Auf diese Weise kann vermieden werden, dass die Reservierung von Instanzen vergessen wird oder dass sie erneuert werden müssen, wenn sie bereits abgelaufen sind.
+Buchungen von \textit{reservierten Instanzen}, die in der letzten 30 Tage abgelaufen sind oder in den kommenden 30 Tage ablaufen werden, werden hervorgehoben. Auf diese Weise kann vermieden werden, dass die Buchung von Instanzen vergessen wird oder dass sie erneuert werden müssen, wenn sie bereits abgelaufen sind.
 \\\\
-Empfehlungen des Cost Explorers zu Saving Plans werden auch im Trusted Advisor angezeigt. Saving Plans sind eine mögliche Sparalternative zu reservierten Instanzen. AWS weist darauf hin, dass nur eine der beiden Maßnahmen zur Instanzreservierung durchgeführt werden sollte.
+Empfehlungen des Cost-Explorers zu Saving Plans werden auch im Trusted Advisor angezeigt. Saving Plans sind eine mögliche Sparalternative zu reservierten Instanzen. AWS weist darauf hin, dass nur eine der beiden Maßnahmen zur Instanzreservierung durchgeführt werden sollte.
 \\\\
-Trusted Advisor erstellt Simulationen möglicher Kombinationen von reservierten Instanzen und On-Demand-Instanzen. Dies könnte dazu dienen, die Auswahl reservierter Instanzen auf der Grundlage von AWS-Simulationen zu erleichtern.
+Trusted Advisor erstellt Simulationen möglicher Kombinationen von reservierten Instanzen und On-Demand-Instanzen. Dies sollte dazu dienen, die Auswahl reservierter Instanzen auf der Grundlage von AWS-Simulationen zu erleichtern.
 %Auch nicht zugewiesene Elastic IP-Adressen(EIP) erzeugen Kosten. Diese können gegebenenfalls von Trusted Advisor gefunden werden. EIPs maskieren den Ausfall einer Instanz oder Availability Zone, indem eine öffentliche IP-Adresse einer anderen Instanz oder Availability Zone neu zugewiesen wird\footnote{\cite{AMZ37}AWS Support - Benutzerhandbuch. Seite 65.}. %t.ly/nYiv
 
-\subsubsection*{Empfehlungen zur Servicekontingente}
-In der Kategorie Servicekontingente(auch als Kontingente bekannt) werden Empfehlungen zur Vermeidung von Grenzwertüberschreitungen hervorgehoben. Sich dieser Grenzen bewusst zu sein, gibt die Möglichkeit, rechtzeitig zu handeln und es trägt zu Kostenkontrolle über die AWS-Cloud-Dienste bei.
+\subsubsection*{Empfehlungen zur Servicekontingente[Rev]}
+In der Kategorie Servicekontingente(auch als Kontingente bekannt) werden Empfehlungen zur Vermeidung von Grenzwertüberschreitungen hervorgehoben. Sich dieser Grenzen bewusst zu sein, sollte die Möglichkeit, rechtzeitig zu handeln und es trägt zu Kostenkontrolle über die AWS-Cloud-Dienste bei.
 \\\\
 Für Auto-Scaling-Gruppen %und -Startkonfigurationen 
-wird es geprüft, ob deren Nutzung mehr als 80\% des Kontingents beträgt. [Rev]Aufgrund fehlender Informationen in der AWS-Dokumentation wird interpretiert, dass eine Auto-Scaling-Gruppe als eine einzelne Recheneinheit betrachtet wird und eine Auslastung von mehr als 80\% als Näherung an die Grenze der Rechenkapazität angesehen wird.
-Dies wird eine Anpassung der Startkonfiguration für eine bessere Skalierung zur Folge haben.
+wird es geprüft, ob deren Nutzung mehr als 80\% des Kontingents beträgt. Aufgrund fehlender Informationen in der AWS-Dokumentation wird interpretiert, dass eine Auto-Scaling-Gruppe als eine einzelne Recheneinheit betrachtet wird und eine Auslastung von mehr als 80\% als Näherung an die Grenze der Rechenkapazität angesehen wird.
+Dies wird eine Anpassung der Startkonfiguration für eine bessere Skalierung zur Folge haben. %Pues el escalamiento no es suficientemente amplio
 \\\\
-Prüfungen, die die Nutzung eines Kontingents über 80\% betragen, werden auch für On-Demand-Instances, Reserved Instances, EC2-Classic Elastic IP Addresses und EC2-VPC Elastic IP Addresses angezeigt.
+Prüfungen, die die Nutzung eines Kontingents über 80\% betragen, werden auch für \textit{On-Demand-Instanzen, reservierte Instanzen, EC2-Classic Elastic IP Addresses und EC2-VPC Elastic IP Addresses} angezeigt.
 
 \subsubsection*{Trusted-Advisor Kostenerwägungen}
-Bei der Erwägung von Trusted-Advisor ist zu berücksichtigen, ob es kosteneffizient ist, für Support-Pläne zu zahlen. Da diese den Zugang zu allen Empfehlungen des Trusted Advisors ermöglichen. Eines der Ziele dieser Arbeit ist es, die Entstehung der Kosten auf eine praktikable Weise zu verstehen (Kostenüberwachung). Einschränkend lässt sich sagen, ob alle Empfehlungen von Trusted Advisor zu echten Einsparungen führen.  %Dies, um Optimierungsmaßnahmen zu ermöglichen. 
-\\
+Bei der Erwägung von Trusted-Advisor ist zu berücksichtigen, ob es kosteneffizient ist, für Support-Pläne zu zahlen. Da diese den Zugang zu allen Empfehlungen des Trusted Advisors ermöglichen. Eines der Ziele dieser Arbeit ist es, die Entstehung der Kosten auf eine praktikable Weise zu verstehen (Kostenüberwachung). Einschränkend lässt sich sagen, ob alle Empfehlungen von Trusted Advisor zu echten Einsparungen führen. %Dies, um Optimierungsmaßnahmen zu ermöglichen. 
 Es wäre nicht sinnvoll, Kosten für AWS-Dienste wie Business- oder Enterprise Support zu übernehmen, wenn diese die möglichen Einsparungen übersteigen. Die Vorteile von Business- oder Enterprise Support-Plänen beschränken sich nicht auf Kosteneinsparungen und Kostenbegrenzung, sondern tragen auch zur Sicherheit und Leistung bei. Dabei stellt sich die Frage, ob die Empfehlungen aller fünf Kategorien für die aktuelle Situation des Unternehmens benötigt werden.
 [[Rev]Hier die Handlungen?]
 \\\\   
-Die Preise für einen Business Support-Plan sind wie folgt definiert. Der Prozentsatz basiert auf der monatlichen Gebühr für AWS-Dienste.
+Die Preise für einen Business Support-Plan sind wie folgt definiert. 
 \\
 Zwischen 0 USD und 10,000 USD: 10\% oder 100 USD. Je nachdem, was größer ist.\\
 Zwischen 10,000 USD und 80,000 USD: 7\%.\\
 Zwischen 80,000 USD und 250,000 USD: 5\%.\\
-Ab 250,000 USD: 3\%\footnote{ AWS Support Plan Pricing - Business Support-Plan, 2021, o.S. \cite{AMZ38}}.\\
+Ab 250,000 USD: 3\%\footnote{ AWS Support Plan Pricing - Business Support-Plan, 2021, o.S. \cite{AMZ38}}.
 \\\\
-Die Preise für einen Enterprise Support-Plan sind wie folgt definiert. Der Prozentsatz basiert auf der monatlichen Gebühr für AWS-Dienste.
+Die Preise für einen Enterprise Support-Plan sind wie folgt definiert.
 \\
 Zwischen 0 USD und 150,000 USD: 10\% oder 15,000 USD. Je nachdem, was größer ist.\\
 Zwischen 150,000 USD und 500,000 USD: 7\%.\\
 Zwischen 500,000 USD und 1,000,000 USD: 5\%.\\
 Ab 1,000,000 USD: 3\%\footnote{ AWS Support Plan Pricing - Business Enterprise-Plan, 2021, o.S. \cite{AMZ38}}.\\
+Die Prozentsätze basieren auf der monatlichen Gebühr für AWS-Dienste.
 \\\\
-Beide Pläne bieten rund um die Uhr technischen Support durch AWS-Ingenieure und andere zusätzliche Dienstleistungen, auf die in dieser Arbeit nicht weiter eingegangen wird. Die Preise der Support-Pläne geben einen Hinweis darauf, ob die zu zahlende Empfehlungen von Trusted Advisor zur Kostenoptimierung und -überwachung kosteneffizient werden.
+Beide Pläne bieten rund um die Uhr technischen Support durch AWS-Ingenieure und andere zusätzliche Dienstleistungen, auf die in dieser Arbeit nicht weiter eingegangen wird. Die Preise der Support-Pläne geben einen Hinweis darauf, ob die zu zahlende Empfehlungen von Trusted Advisor zur Kostenoptimierung und -überwachung kosteneffizient würden.
+
+\newpage
 \subsection{Überwachungswerkzeuge gemäß ihrer Verwendung}
+[[Rev]NOCH NICHT VOLLSTÄNDIG]
 \autoref{fig:ÜberwachungswerkzeugeNachVerwendung} fasst die Überwachungswerkzeuge zusammen und listet deren Einsatzmöglichkeiten auf.
 \begin{figure}[h!]
   \centering
@@ -285,7 +289,6 @@ Beide Pläne bieten rund um die Uhr technischen Support durch AWS-Ingenieure und
   Überwachungswerkzeuge gemäß ihrer Verwendung\\
   Eigene Darstellung\cite{AMZ12, AMZ20, AMZ21}. 
 \end{figure}
-[[Rev]NOCH NICHT VOLLSTÄNDIG]
 
 
 \subsection*{Fazit}
@@ -296,8 +299,8 @@ In diesem Kapitel wurde gezeigt, dass es mit CloudWatch möglich ist, Alarme auf
 Aus dem Blickwinkel des Kostenmanagements wurde gezeigt, dass mit Cost-Explorer eine Analyse von Kosten der letzten 12 Monate, eine Einschätzung der Kosten im aktuellen Monat und eine Prognose für die nächsten Monate möglich ist. Diese Informationen dient unter anderem zur Erstellung einer operativen Budgetplanung mit genaueren Daten, da
 Kosten nach Tags und anderen Filtern getrennt werden können.
 %Trusted Advisor
-Darüber hinaus wurde Trusted Advisor vorgestellt, die konkrete Optimierungsempfehlungen gibt und warnt über Leistungsgrenzen. Dies kann mit erheblichen Kosten verbunden sein und ist daher nicht für alle Arten von Unternehmen unmittelbar attraktiv. Obwohl sich nicht alle Unternehmen die Prüfungen von Trusted Advisor leisten können, sollten die kostenlosen Empfehlungen im Überwachungs- und Optimierungsplan berücksichtigt werden.
-[WAS KOMMT IN NÄCHTEN KAP.?]
+Darüber hinaus wurde Trusted Advisor vorgestellt, welcher konkrete Optimierungsempfehlungen gibt und warnt über Leistungsgrenzen. Dies kann mit erheblichen Kosten verbunden sein und ist daher nicht für alle Arten von Unternehmen unmittelbar attraktiv. Obwohl sich nicht alle Unternehmen die Prüfungen von Trusted Advisor leisten können, sollten die kostenlosen Empfehlungen im Überwachungs- und Optimierungsplan berücksichtigt werden.
+%[WAS KOMMT IN NÄCHTEN KAP.?]
 
 \begin{comment}
 En este capitulo se  mostró de qué manera es posible con CloudWatch configurar alarmas basadas en eventos. Dichas alarmas comunican con Amazon SNS o direcciones de correo externas. En el capiulo siguiente se volverá a tematizar CloudWatch. Esta vez no como herramienta de monitoneo, sino de optimizacion para crear acciones ??? Para ello fue necesario entender que papel juegan las metricas recolectadas por CloudWatch, las cuales son la base para manejar los grupos Auto-Scaling. 
