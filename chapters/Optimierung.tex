@@ -43,7 +43,7 @@ Die \autoref{fig:BA Diagramme-AutoScaling and LoadBalancer.drawio} zeigt die gew
 \textit{Elastic Load Balancing} verteilt den eingehenden Anwendungsverkehr automatisch auf alle laufenden EC2-Instanzen. Elastic Load Balancing hilft bei der Verwaltung eingehender Anfragen, indem es den Datenverkehr umleitet\footnote{In diesem Fall beschränkt auf den Application Load Balancer. Amazon Elastic Container Service Entwicklerhandbuch - Load Balancer-Typen - S.617\cite{AMZ39}}. Dies sorgt dafür, Instanzen mit einem ähnlicher CPU-Auslastung arbeiten. Die \autoref{fig:BA Diagramme-AutoScaling and LoadBalancer.drawio} zeigt ein Application Load Balancer, welcher den Datenverkehr den Datenverkehr auf die Instanzen einer Auto-Scaling-Gruppe verteilt.
 
 
-\subsubsection{Zeitgesteuerte Skalierung}
+\subsubsection{Zeitgesteuerte Skalierung}\label{ssec:ZeitgesteuerteScal}
 %W-Ende für Dev und Beta
 \textbf{Nicht produktive Umgebungen}\\
 %Auch möglich damit https://aws.amazon.com/de/solutions/implementations/instance-scheduler/
