@@ -15,20 +15,22 @@ Die beste Leistung wird außerdem angestrebt, indem sich diese Instanzen in räu
 \subsection{On-Demand-Instanzen}
 Bei diesem Zahlungsmodell besteht keine Notwendigkeit, ein festes Anfangsbudget festzulegen. Die Kosten richten sich nach dem Verbrauch auf der Grundlage der Nutzungsstunden. Dieses Modell eignet sich für Projekte, deren Entwicklung unvorhersehbar ist und die Möglichkeit besteht, dass das es in kurzer Zeit abgeschlossen sein wird, sodass es nicht Sinnvoll ist, eine langfristige Verpflichtung einzugehen.
 \\\\
-Die Preise beim dem On-Demand Zahlungsmodell variiert je nach Instanz Typ, Region und der übertragenen Datenmenge. Die aktuellen Preise für die verschiedenen Regionen sind auf der Amazon-Website in der Sektion EC2 - On-Demand-Preise\footnote{AWS On-Demand Instances Pricing.\cite{AMZ02}} zu finden. 
+Die Preise beim dem On-Demand Zahlungsmodell variiert je nach Instanz Typ, Region und der übertragenen Datenmenge. Die aktuellen Preise für die verschiedenen Regionen sind auf der AWS-Website in der Sektion EC2 - On-Demand-Preise\footnote{AWS On-Demand Instances Pricing.\cite{AMZ02}} zu finden. 
 %Hierzu ein Beispiel für die Preise der EC2-Instanzen im On-Demand Zahlungsmodell.
+In der \autoref{fig:OnDemand_Preise} werden Preisbeispiele für die Region Ohio verfügbaren Linux-Instanzen gezeigt.
 \begin{figure}
     \centering
     \includegraphics[scale=0.5]{sources/On-Demand-Pläne für Amazon EC2}\label{fig:OnDemand_Preise}\\
     \caption[On-Demand Preise für Amazon EC2]{}
-    \label{fig:OnDemand_Preise}  On-Demand Preise für Amazon EC2 \footnote{\cite{AMZ02}}
+    \label{fig:OnDemand_Preise}  On-Demand Preisbeispiele von EC2-Instanzen \footnote{\cite{AMZ02}}
   \end{figure}
-In der \autoref{fig:OnDemand_Preise} werden die für die Region Ohio verfügbaren Linux-Instanzen gezeigt. Es ist zu beachten, dass Instanzen mit denselben Eigenschaften, aber in verschiedenen Regionen, unterschiedliche Preise haben können.
- %WARUM IST DIESE ABB.?
+\\
+Es ist zu beachten, dass Instanzen mit denselben Eigenschaften(Instanzfamilie, Arbeitsspeicher, Netzwerkleistung usw.), aber in verschiedenen Regionen, unterschiedliche Preise haben können.
+%WARUM IST DIESE ABB.?
 \subsection{Reservierte Instanzen und Saving Plans}
 %t.ly/JUWq
 %https://www.youtube.com/watch?v=c_zlPQimrvY
-Die Zahlungsmodelle \textit{reservierte Instanzen} und \textit{Saving Plans} sind sich sehr ähnlich. Beide kommen mit einer gleichbleibenden  Nutzungsverpflichtung, die in €/Stunden gemessen wird. Um die reduzierten Preise  zu bekommen, müssen Verträge über ein oder drei Jahre abgeschlossen werden. 
+Die Zahlungsmodelle \textit{reservierte Instanzen} und \textit{Saving Plans} sind sich sehr ähnlich. Beide kommen mit einer gleichbleibenden  Nutzungsverpflichtung, die in USD/Stunden\footnote{AWS-Services werden in US-Dollar abgerechnet. Zahlungen in anderen Währungen sind auch .möglich. Quelle: AWS-Console in Kontoeinstellungen.} gemessen wird. Um die reduzierten Preise  zu bekommen, müssen Verträge über ein oder drei Jahre abgeschlossen werden. 
 \\\\
 Die \autoref{fig:EinsparungenRISP} zeigt die möglichen Einsparungen je nach Zahlungsmodell. Die Einsparungen hängen mit der Flexibilität bei der Wahl der Instanzfamilie und der Verfügbarkeitszone zusammen, in die Instanzen übertragen werden können. Je geringer die Flexibilität, desto höher die Einsparungen.
 \begin{figure}[h!]

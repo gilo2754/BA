@@ -93,9 +93,6 @@ Andererseits besteht die Gefahr, dass hohe ungewollte Kosten entstehen, wenn jem
 Das Pay-as-you-go-Modell(PAYG) wird von einer Reihe von Cloud-Anbietern angeboten\footnote{ Die aktuellen Marktführer im Bereich der \textit{Cloud-Computing} weltweit sind AWS, Google, Telekom und Microsoft (Vgl. Synergy Reseach Group 2019, o.S.\cite{STA6})}. Dies erfordert keine Vorauszahlungen für die Nutzung von vielen Cloud-Diensten. Wenn nur für die monatlich verbrauchten Diensten bezahlt wird, verringert sich die Anfangsinvestition in die IT-Infrastruktur oder fällt ganz weg. Dies ist besonders für kleine Unternehmen interessant, die nicht über die finanziellen Mittel verfügen, um in eine IT-Infrastruktur zu investieren. Es besteht jedoch die Möglichkeit, bestimmte Beträge für die zu konsumierende Dienste im Voraus zu bezahlen. Im Unterkapitel \ref{sssec:Vorauszahlung} wird eine Berechnung der Einsparungen durch die teilweise oder vollständige Vorauszahlung der Kosten für die Nutzung von Serverinstanzen gezeigt.  
 
 %\subsubsection{Verfügbarkeit?} t.ly/bV1z
-
-
-
 \subsubsection{Technische Fachkompetenz}
 Es ist zu bedenken, dass weitere Investitionen wie technische Schulungen für das Personal erforderlich werden. TÜV Rheinland bietet Kurse zur Ausbildung von Cloud Architekten an. Die Kurse dauern drei Tage und kosten 2.136,05 € pro Teilnehmer. Maßnahmen wie die genannten Kurse wirken einem der Hauptprobleme entgegen, mit denen Unternehmen bei der Migration in die Cloud konfrontiert werden. In der von Accenture im Jahr 2020 durchgeführten Umfrage gaben 38\% der Befragten an, dass fehlende Kompetenzen im Unternehmen im Bezug auf die Cloud ein Hindernis für eine Cloud-Migration ist\footnote{Accenture Dienstleistungen GmbH. Hohe Erwartungen an die Cloud: Hürden
 meistern, Mehrwert maximieren, S.11\cite{ACC1}}.
@@ -103,11 +100,11 @@ meistern, Mehrwert maximieren, S.11\cite{ACC1}}.
 % QUE PORTENTAJE DE LA INVERSION REPRESENTA LA INFRAESTRUCTURA DE IT EN UNA START UP Y EN UNA CORPORACION? RAZONES USAR LA NUBE(Statista)?
 
 \subsection{Amazon Cloud-Dienste}%Sarah 6.12
-Von dieser Stelle der Arbeit an liegt der Fokus auf den Cloud-Diensten von Amazon Web Services, die als \textit{AWS-Dienste} bezeichnet werden. Einer der am häufigsten genutzten AWS-Dienste ist \textit{Amazon Elastic Computing Instances EC2}, mit dem virtuelle Maschinen erstellt werden können\footnote{Cloud infrastructure services vendor market share worldwide from 4th quarter 2017 to 3rd quarter 2021.\cite{STA4}}. Ein weiterer wichtiger Dienst ist \textit{Amazon Simple Storage Service (S3)}, der zum Speichern von Objekten\footnote{Objekte sind in AWS die Grundeinheit in welchen Dateien in den Amazon S3-Speichereinheiten gespeichert werden. Neben den Objekten werden Metadaten, wie das Datum der Objekterstellung und das Datum der letzten Aktualisierung gespeichert.} verwendet wird. Deshalb konzentrieren sich in dieser Arbeit die Überwachungs- und Optimierungsmaßnahmen hauptsächlich auf EC2-Instanzen und Amazon S3. Amazon Elastic Computing EC2-Instanzen werden im Folgenden in dieser Arbeit als \textit{EC2-Instanzen} und Amazon Simple Storage Service als \textit{Amazon S3} oder \textit{Amazon S3-Speichereinheiten} bezeichnet. %\subsubsection*{Amazon Elastic Computing Instances EC2}
+Von dieser Stelle der Arbeit an liegt der Fokus auf den Cloud-Diensten von Amazon Web Services, die als \textit{AWS-Dienste} bezeichnet werden. Einer der am häufigsten genutzten AWS-Dienste ist \textit{Amazon Elastic Computing Instances EC2}, mit dem virtuelle Maschinen erstellt werden können\footnote{Cloud infrastructure services vendor market share worldwide from 4th quarter 2017 to 3rd quarter 2021.\cite{STA4}}. Ein weiterer wichtiger AWS-Dienst ist \textit{Amazon Simple Storage Service (S3)}, der zum Speichern von Objekten\footnote{Objekte sind in AWS die Grundeinheit in welchen Dateien in den Amazon S3-Speichereinheiten gespeichert werden. Neben den Objekten werden Metadaten, wie das Datum der Objekterstellung und das Datum der letzten Aktualisierung gespeichert.} verwendet wird. Amazon Elastic Computing Instances EC2 werden im Folgenden in dieser Arbeit als \textit{EC2-Instanzen} und Amazon Simple Storage Service als \textit{Amazon S3} oder \textit{Amazon S3-Speichereinheiten} bezeichnet.
+\\\\
+Wie Lynn Langit, eine erfahrene Cloud-Architektin, feststellt, können bis zu 80\% der AWS-Rechnung aus Gebühren für EC2-Instanzen bestehen\footnote{LinkedIn Learning: AWS Controlling Cost by Lynn Langit. Minute 0:20-0:45\cite{LINK2}}. Laut des AWS Solutions Architekten Daniel Peña Silva\footnote{LinkedIn: Listado de todos los Servicios de AWS.\cite{LINK1}} ist Amazon S3 einer der am häufigsten genutzten AWS-Dienste. Deshalb konzentrieren sich in dieser Arbeit die Überwachungs- und Optimierungsmaßnahmen hauptsächlich auf EC2-Instanzen und Amazon S3.  %\subsubsection*{Amazon Elastic Computing Instances EC2}
 %, Sektion 2 Control Costs by Service, Video AWS service type Minute 00:30}.%\subsubsection*{Amazon Simple Storage Service S3} Warum S3 t.ly/iWn3
 %S3 ist der Speicherdienst für Objekte bei AWS. 
-\\\\
-Wie Lynn Langit, eine erfahrene Cloud-Architektin, feststellt, können bis zu 80\% der AWS-Rechnung aus Gebühren für EC2-Instanzen bestehen\footnote{LinkedIn Learning: AWS Controlling Cost by Lynn Langit. Minute 0:20-0:45\cite{LINK2}}. Laut des AWS Solutions Architekten Daniel Peña Silva\footnote{LinkedIn: Listado de todos los Servicios de AWS.\cite{LINK1}} ist Amazon S3 einer der am häufigsten genutzten AWS-Dienste.
 %der Rangliste vieler Informatikwebseiten und 
 %BESSER: S3 WIRD IN BÜCHER WIE t.ly/IJc1 GENANNT? THIS IS A SPANISH CITAT!
 \\\\
@@ -125,7 +122,6 @@ Wie in \autoref{fig:moreCloudStorageThanLocal} zu sehen ist, werden darüber hin
 \\\\
 Dieses grundlegende Kapitel hat einige potenzielle Vorteile der Nutzung von Cloud-Diensten für Unternehmen aufgezeigt. Darüber hinaus geht der Trend in den letzten Jahren zur Nutzung von Cloud-basierten Diensten. Das nächste Kapitel befasst sich mit den Zahlungsmodellen für EC2-Instanzen und den Überlegungen, die bei der Wahl dieser Modelle in verschiedenen Szenarien zu berücksichtigen sind.
 \newpage
-
 
 \begin{comment}
 Advantages of Cloud Technology
