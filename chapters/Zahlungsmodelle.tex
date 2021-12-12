@@ -92,15 +92,15 @@ Da Spot-Instanzen anfällig für Unterbrechungen sind, ist es nicht empfehlenswe
 \textit{Instanzen-Flotten} oder auf Englisch \textit{fleet of instances}, bieten bei AWS die Möglichkeit mehrere Spot-Instanzen anzufordern, um einen bestimmten Bedarf an Rechenleistung zu decken\footnote{Vgl. Amazon Elastic Compute Cloud - Benutzerhandbuch für Linux-Instances, S.708\cite{AMZ26}.}. Spot-Instanzen können auch für produktive Umgebungen verwendet werden\footnote{Vgl.  Running Web Applications on Amazon EC2 Spot Instances\cite{AMZ24}.}. Darüber hinaus ist es empfehlenswert, Instanzen aus verschiedenen Zahlungsmodellen zu kombinieren, um von den Einsparungen von Spot-Instanzen, Saving Plans und reservierten Instanzen zu profitieren. Die Kombination von Instanzen aus verschiedenen Zahlungsmodellen beseitigt den Nachteil für Produktionsumgebungen, der mit Spot-Instanzen verbunden ist. Das heißt, das Risiko, dass Spot-Instanzen unterbrochen werden können.
 \\\\
 Folgende Punkte sind für die Nutzung von Spot Fleet Instanzen zu berücksichtigen:
-\subsubsection*{Wahl der Spot-Instanzen[rev]}
+\subsubsection*{Wahl der Spot-Instanzen}
 Die zu berücksichtigenden Instanzen für die Instanzen-Flotte, müssen den Anforderungen der %jeweiligen 
 Applikation entsprechen. Um die Wahrscheinlichkeit zu erhöhen, dass mehr Spot-Instanzen gefunden werden, ist es empfehlenswert, die Kriterien der Suche zu erweitern. Dies kann erreicht werden, indem Instanzen ähnlicher Typen einbezogen werden. Die Berücksichtigung von Instanzen von Familien mit mehr Leistung als erforderlich, ist ebenfalls eine gute Option\cite{AMZ24}, da der Preis für Spot-Instanzen trotz höherer Leistung geringer sein wird als bei einem On-Demand Zahlungsmodell.
 %Alte Version: . Denn, obwohl die Leistung die Anforderungen der Applikation überstiegen werden, wird es einen reduzierten Preis für die Spot-Instanzen bezahlt als bei On-Demand Zahlungsmodell.
 \\\\
-\subsubsection*{Maximaler Stundenpreis[rev]}
+\subsubsection*{Maximaler Stundenpreis}
 Wie im Unterkapitel \ref{ssec:Spot-Instances} erwähnt, muss für die Anforderung von Spot-Instanzen ein Maximalpreis festlegt werden. In diesem Fall ist die Festlegung dieses Maximalpreises auch für die gesamte Instanzen-Flotte eine Option. Es kann erwartet werden, dass die Spot-Preise im Laufe der Zeit stabil bleiben, da sie keinen starken Preisschwankungen unterliegen. Die aktuellen Preis und der Preisverlauf von Spot-Instanzen können in auf der AWS-Konsole\footnote{Vgl. AWS EC2 Spot Instanzen-Anfragen und Preisverlauf\cite{AMZ25}.} abgefragt werden. Diese Informationen sind nur mit einem AWS-Konto zugänglich.
 
-\subsubsection*{Festlegung von On-Demand-Anteil[rev]}
+\subsubsection*{Festlegung von On-Demand-Anteil}
 Wenn alle oder eine große Anzahl von Spot-Instanzen nicht mehr verfügbar sind, muss die benötigte Rechenkapazität von Instanzen anderer Zahlungsmodellen wie On-Demand abgedeckt werden. Die Standardeinstellungen liegen bei 70\% On-Demand-Instanzen und 30\% Spot-Instanzen\footnote{Vgl. Running Web Applications on Amazon EC2 Spot Instances. o.S.\cite{AMZ24}}. Im Fall von vorhandenen reservierten Instanzen oder Instanzen von Saving Plans werden On-Demand-Instanzen zum entsprechend reduzierten Preis berechnet\footnote{Vgl. Amazon Elastic Compute Cloud - Benutzerhandbuch für Linux-Instances, S.690\cite{AMZ26}.}.
 
 \subsubsection*{Auto Scaling Groups}%Sarah 6.12
