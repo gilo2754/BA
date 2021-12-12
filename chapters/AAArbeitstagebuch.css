@@ -2,8 +2,7 @@
 @Forget-it{
 NEUE GLIEDERUNG? Überwachung, Optimierung(EC2(Zahlungs..)+S3) 
 [Grafik der Kosten On-Premise/Demand?]
-Bleibt die Abb. On-Demand?
-Preis IT-Infra(schwer zu finden sagte Feedpak)
+Bleibt die Abb. On-Demand? jep
 Load Balancer mit eigenem Bild
 Große der Instanzen ändern t.ly/rH5c
 Predective Scaling, nötig ?
@@ -11,14 +10,16 @@ Predective Scaling, nötig ?
 
 @Heute {
 15.12: drucken
-14.12: Format und Zitate
-/13./12.12: PUFFER!!! Check all [Rev]s
+14.12: Format und Zitate(PUFFER)
+13.12:  Check all [Rev]s
 Einleitung umformulieren(Fede)
 ---------
  Glossar
 +Marvin S.10 
 +Speicherklasse Intro?
 Handlungsempfehlungen formulieren und plazieren
++Zusammenfassung-Problem:Preis IT-Infra(schwer zu finden sagte Feedpak)+spot.io?
+12.12: 2.Rev(Marcel)
 }
 
 @Done {
@@ -85,7 +86,7 @@ DAVOR:
 }
 
 @To-Do {
--Selecting the right EC2, would drivee to saving costs
+-Selecting the right EC2, would drive to saving costs
     -Research why is monitoring important. Why companies do this?
     -non-Tech(157-165) für die Intro
     
