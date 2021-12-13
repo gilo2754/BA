@@ -166,7 +166,7 @@ Amazon Simple Storage Service - User Guide,
 \end{lstlisting}
 \footnote{Vgl. AWS: Amazon Simple Storage Service - User Guide. S.701.\cite{AMZ18}}\\
 
-\subsubsection{Anwendungsbeispiel für eine Lebenszyklus-Konfiguration}
+\subsubsection{Anwendungsbeispiel für eine Lebenszyklus-Konfiguration}\label{Anwendungsbeispiel-Leben-Konfig}
 Zur Veranschaulichung der Verschiebung von Objekten zwischen Speicherklassen wird der folgende Anwendungsfall vorgestellt. In diesem Fall wird der Punkt als Dezimaltrennzeichen und das Komma als Tausendertrennzeichen verwendet. 
 \\\\
 Ein Sicherheitsunternehmen muss Sicherheitsvideos speichern, die aktuell im Gesamtdurchschnittlich 120 TB groß sind. Viele von ihnen werden mindestens 5 Jahre lang aufbewahrt, falls sie vor Gericht als Beweismittel dienen sollten. Ungefähr 50\% der Videos werden mindestens einmal im Monat überprüft und müssen laut Gesetz sofort zugänglich sein. Die Software des Unternehmens speichert die Videos in S3-Buckets. Jedes Video hat eine durchschnittliche Größe von 3.4 GB.
@@ -188,11 +188,10 @@ Bei der Berechnung wurden die Kosten für das Verschieben von Videos zwischen Sp
 %(Object size distribution )
 \newpage
 \subsubsection{Intelligent-Tiering}
-\textit{Intelligent-Tiering} verschiebt Dateien auf der Grundlage von Zugriffsmustern. Diese Speicherklasse ist ideal für Daten mit wechselnden oder unbekannten Zugriffsmustern. 
-Wie die Senior Product Manager für S3 Ruhi Dang erklärt, einige Unternehmen haben weder die Zeit noch die finanziellen Möglichkeiten, eine Person einzustellen, die ihre Daten sortiert und in die richtige Speicherklasse einordnet. Intelligent Auto Tiering ist eine attraktive Lösung für Unternehmen, die jährlich weniger als 100,000 USD für Speicher ausgeben \footnote{Vgl. AWS re:Invent 2019: Guidelines and design patterns for optimizing cost in Amazon S3. Minute: 21:12 \cite{AMZ16}}.
+\textit{Intelligent-Tiering} verschiebt Objekte auf der Grundlage von Zugriffsmustern. Diese Speicherklasse ist ideal für Objekte mit wechselnden oder unbekannten Zugriffsmustern. Wie die Senior Product Manager für S3 Ruhi Dang erklärt, einige Unternehmen haben weder die Zeit noch die finanziellen Möglichkeiten, eine Person einzustellen, die ihre Daten sortiert und in die richtige Speicherklasse einordnet. Intelligent Auto Tiering ist eine attraktive Lösung für Unternehmen, die jährlich weniger als 100,000 USD für Speicher ausgeben \footnote{Vgl. AWS re:Invent 2019: Guidelines and design patterns for optimizing cost in Amazon S3. Minute: 21:12 \cite{AMZ16}}.
 %Ach von Jessie Felix gesagt https://www.youtube.com/watch?v=IOT41L_adSw
 %\\\\
-\autoref{fig:S3_IntLifeCycle} zeigt, wie die Dateien in Abhängigkeit davon, ob auf sie zugegriffen wurde oder nicht, verschieben werden. 
+Die \autoref{fig:S3_IntLifeCycle} zeigt, wie Objekte in Abhängigkeit davon, ob auf sie zugegriffen wurde oder nicht, verschieben werden. 
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.7]{sources/S3_IntLifeCycle}
@@ -202,23 +201,51 @@ Wie die Senior Product Manager für S3 Ruhi Dang erklärt, einige Unternehmen ha
 Quelle: Eigene Darstellung auf der Grundlage von \\
 der Funktionsweise von Intelligent-Tiering\footnote{Vgl. Amazon Simple Storage Service - User Guide. S.715\cite{AMZ18}}.
 \\\\
-Wird ein Datei zu einem späteren Zeitpunkt aus der Ebene der seltenen Zugriffe aufgerufen, wird es automatisch in eine Speicherklasse der häufigen Zugriffe zurückversetzt.
+Wird ein Objekt zu einem späteren Zeitpunkt aus der Ebene der seltenen Zugriffe aufgerufen, wird dieses automatisch in eine Speicherklasse der häufigen Zugriffe zurückversetzt.
 %TALVEZ PARA RELLENAR UN POCO HACER UN CALCULO DE CUANTO SALDRIA SI SE USA Intelligent-Tiering para el caso de los videos
 %En comparación con Lebenszyklus-Konfiguration Intelligent-Tiering objetos son regresados al ser llamados/usados.
 %Ademas los tiempos de desplazamientos ya están definidos en Intelligent-Tiering.
-
-
-
-
-
-
-
-
-
-
-
-
-
+\\\\
+%Anwenfungsbeispiel?
+Das in Unterkapitel \ref{Anwendungsbeispiel-Leben-Konfig} dargestellte Szenario wurde mit dem AWS Pricing-Calculator für S3\footnote{Vgl.  AWS Pricing Calculator S3\cite{AMZ17-S3}.} unter Verwendung der Speicherklasse S3 Intelligent-Tiering berechnet. %Intelligent-Tiering bietet die Möglichkeit, Objekte in fünf verschiedenen Ebenen zu verschieben. 
+Da bei der Berechnung des Unterkapitels \ref{Anwendungsbeispiel-Leben-Konfig} eine Speicherklasse für häufigen Zugriff, eine für seltenen Zugriff und eine für Archivierung verwendet wurde, wurden für die Berechnung mit Intelligent-Tiering vergleichbare Speicherebenen ausgewählt. In diesem Fall wurden ausschließlich die Ebenen \textit{Frequent-Access, Infrequent-Access} und \textit{Instant-Archive-Access} ausgewählt. %Die Ebenen \textit{Archive-Access} und \textit{Deep-Archive-Access} wurden vernachlässigt. %nicht berücksichtigt
+\\\\
+Die Speicherzuweisung für die 120 TB in den Speicherebenen war wie folgt:\\
+Frequent-Access-Tier: 50\% \\
+Infrequent-Access-Tier: 20\%\\
+Instant-Archive-Access: 30\%
+\\
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.6]{sources/S3_INT_1}
+  \caption[Berechnung für die Verwaltung von 120 TB mit AWS Pricing-Calculator für S3 Intelligent-Tiering(1)]{}
+  \label{fig:INT_S3_1} Berechnung für die Verwaltung von 120 TB mit AWS Pricing-Calculator für S3 Intelligent-Tiering(1).\\
+  Quelle: eigene Darstellung von AWS Pricing-Calculator \cite{AMZ17-S3}.
+  %{\cite{SCOUT1}}
+\end{figure}
+\newpage
+In der \autoref{fig:INT_S3_2} werden die Kosten gezeigt, die durch jede Speicherebene anfallen (mit orange markiert). 
+\\
+Darüber hinaus werden die folgenden Kosten berechnet (mit blau markiert): \\
+- Überwachung und Automatisierung von 36.141 Objekten.\\
+- Leseanfragen (GET-Anfragen) von 18.070 Objekten, welche 50\% der Gesamtzahl der Videos entsprechen, wie in den Anforderungen im Unterkapitel \ref{Anwendungsbeispiel-Leben-Konfig} definiert. \\
+- Scannen von Objekten, die allen Videos und 120 TB entsprechen.
+\\
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.6]{sources/S3_INT_2}
+  \caption[Berechnung für die Verwaltung von 120 TB mit AWS Pricing-Calculator für S3 Intelligent-Tiering(2)]{}
+  \label{fig:INT_S3_2} Berechnung für die Verwaltung von 120 TB mit\\ AWS Pricing-Calculator für S3 Intelligent-Tiering(2).\\
+  Quelle: eigene Darstellung mit AWS Pricing-Calculator \cite{AMZ17-S3}.
+\end{figure}
+\\\\
+\subsubsection*{Unterscheidung zwischen Intelligent-Tiering und Lebenszyklus-Konfiguration[Rev]}
+Ein Unterschied zwischen der Verwendung von Intelligent-Tiering und einer Lebenszyklus-Konfiguration besteht darin, dass bei Intelligent-Tiering die Objekte in Ebenen von seltenen Zugriff automatisch auf eine Ebene für häufigen Zugriff zurückgegeben werden. Siehe \autoref{fig:S3_IntLifeCycle}.
+\\\\
+Ein weiterer Unterschied ist, dass bei einer Lebenszyklus-Konfiguration die Tage der Verschiebung zwischen den Speicherklassen und die Speicherklassen leicht verändert werden können. Dies ist standardmäßig bei Intelligent-Tiering bereits festgelegt. %Die Möglichkeit die Zeitabstand für die Verschiebung zwischen Ebenen bei Intelligent-Tiering wurde in der AWS-Dokumentation nicht gefunden. 
+\\
+Es gibt jedoch die Möglichkeit, Objekte aus Intelligent-Tiering in andere Speicherklassen zu verschieben (mit Einschränkungen\footnote{Vgl. AWS: Amazon Simple Storage Service - User Guide. S.724.\cite{AMZ18}}), indem man eine Lebenszyklus-Konfiguration verwendet. %t.ly/1CgV
+Dies gäbe die Möglichkeit, Objekte für einen längeren Zeitraum in einer bestimmten Speicherklasse aufzubewahren und Richlinien von Intelligent-Tiering zu überspringen.
 %COMMENTS
 \begin{comment}
 \subsubsection{Automatisierung mit Lambda Funktionen}
