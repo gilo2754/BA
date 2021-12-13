@@ -1,35 +1,39 @@
 [Rev]
 %\\Kapitelweise Kurzdarstellung der Inhalte (inklusive Referenzierung auf die \\Kapitelnummerierung) => Nach dem Motto: \textit{Was wurde wo beschrieben?}
 \subsubsection*{Kurzdarstellung der Inhalte}
-Kapitel~\ref{kap_grundlagen} %Erfolgchancen der Cloud-Computing in Unternehmen.
-Die Bedeutung von Cloud-basierten Systemen wurde bestätigt und verstäkt. Zum einen durch die Statistiken[Zitat] über die Nutzung von Cloud-Systemen weltweit. Zum anderen durch die Anzahl von Unternehmen, auch in Deutschland[Zitat], mit erfolgreicher Implementierung von Public Cloud-basierten Systemen. Es hat sich gezeigt, dass viele Unternehmen derzeit Schwierigkeiten haben, auf die Cloud umzusteigen, weil ihnen die technische Qualifikation fehlt[Zitat].
-\\
-Kapitel~\ref{kap_zahlungsmodelle} Weil EC2 großteil der Kosten ausmacht, wurden die Zahlungsmodelle untersucht und vorgestellt. 
-+Mit einer Berechnung von On-Demand Instanzen mit zeitgesteuerter Skalierung, wurden die möglichen Einsparungen gezeigt.
-+EC2-Fleet in Kombination mit On-Demand Instanzen ermöglichen die Nutzung von Spot-Instanzen sogar in produktive Umgebungen. Als Folge lassen sich Kosten reduzieren.
+Im Kapitel~\ref{kap_grundlagen} %Erfolgchancen der Cloud-Computing in Unternehmen.
+ wurde die Bedeutung von Cloud-basierten Systemen wurde bestätigt und verstäkt. Zum einen durch die Statistiken\cite{STA1,STA2,STA4} über die Nutzung von Cloud-Systemen weltweit. Zum anderen durch die Anzahl von Unternehmen, auch in Deutschland\cite{ACC2}, mit erfolgreicher Implementierung von Public Cloud-basierten Systemen. Es hat sich gezeigt, dass viele Unternehmen derzeit Schwierigkeiten haben, auf die Cloud umzusteigen, weil ihnen die technische Qualifikation fehlt[Zitat]. 
+\\\\
+Kapitel~\ref{kap_zahlungsmodelle} Weil EC2 großteil der Kosten von Cloud-Diensten ausmacht, wurden deren Zahlungsmodelle untersucht und vorgestellt wann welches Zahlungsmodell das geeignetste ist. 
++Anhand einer Berechnung von On-Demand Instanzen mit zeitgesteuerter Skalierung, wurden die möglichen Einsparungen ermittelt. +Es hat sich gezeigt, dass die Kombination von Zahlungsmodellen sich zur Kostensenkung anbietet. Dies unter Einbeziehung von EC2-Flotten für die erwartete und On-Demand Instanzen für die variable Nutzung.%ohne die Gesamtleistung der IT-Infrastruktur zu gefährden. 
 %
-Wie auch in dem Anwendungsfall von Truecar Inc. sind die Kosten von EC2-Instanzen von großer Relevanz in der Infrastrukturkosten. Durch die korrekte Berechnung der künftig nötigen reservierten Instanzen und deren spätere Überwachung, haben gezeigt, die Möglichkeit, erhebliche Einsparungen zu erreichen/erzielen.
+\\\\
+Wie in dem Anwendungsfall von Truecar Inc. in Unterkapitel~\ref{ssec:UseCaseTrueCar} %sind die Kosten von EC2-Instanzen von großer Relevanz in der Infrastrukturkosten. 
+wurde bestätigt, dass die korrekte Berechnung der künftig nötigen reservierten Instanzen und deren spätere Überwachung, erhebliche Einsparungen erzielen.
 \\
-Kapitel~\ref{kap_kostenüberwachung}: Es wurden drei Überwachungswerkzeuge untersucht mit denen mögliche Überwachungsmaßnahmen?oderOptimierungen?.
+Im Kapitel~\ref{kap_kostenueberwachung} wurden drei Überwachungswerkzeuge untersucht mit denen Optimierunsmaßnahmen zu ergreigen sind. Die damit gesammelte Informationen dienen in Bereichen der Betriebswirtschaft und sollte eine bessere Kontrolle über die Kosten von Cloud-Diensten ermöglichen.
+\\\\
+Cost-Explorer hat gezeigt wie mit Berichten einen umfangreichen Überblick der Nutzung und Kosten zu verschaffen ist. Die zwei vorgestellten Einsatzmöglichkeiten sind die operative Budgetplanung und Verfolgung von Lesitungskennzahlen(KPIs).
 %
-Cost-Explorer hat gezeigt? wie mit Berichte einen umfangreichen Überblick der Nutzung und Kosten zu verschaffen ist. 
-+ 2 Einsatzmöglichkeiten = operative Budgetplanung und Verfolgung von KPIs.
+Die Metriken bei CloudWatch haben gezeigt das Potenzial zu haben, die Verfolgung von Lesitungskennzahlen zu ergänzen. Darüber hinaus mit den Dashboards und Benachrichtigungen haben gezeigt, dass wie sie  in echter Zeit über den Stand der Cloud-Diensten informieren.
 %
-CloudWatch:Visualisierung von Metriken mit Dashboards und Benachrichtigungen.
-%
-Trusted Advisor: Empfehlungen aber nicht alle sind ohne Business/Enterprise Plan zugänglich.
-\\
-Kapitel~\ref{kap_Optimierung} EC2(Auto-Scaling): 
-Erklärung von Auto Scaling-Gruppe, Load Balancer und dynamisches Auto Scaling.
-Berechnung einer nicht produktiven Umgebung mit zeitgesteuerte Skalierung.
-
-S3(Verschiebung innerhalt Speicherklassen): mit Lebenszyklus-Konfiguration HIER wurde eine Berechnung anhand eines Anwendungsfall durgeführt und Intelligent-Tiering
-\\
+Trusted Advisor wurde aufgrund des fehlenden Zugangs zu einem Business- oder Enterprise-Plan nur eingeschränkt untersucht. 
+Auch der Dokumentation in Bezug auf Trusted Advisor was nicht ausreichend, um Berechnungen, Prüfungen oder Ähnliches durchführen zu können. Die Informationen, die gesammelt werden konnten, geben jedoch Hinweise auf die in dieser Arbeit behandelten Optimierungsmaßnahmen.  Zum Beispiel die Verwendung von reservierten Instanzen und das Abschalten von Instanzen mit geringer Auslastung.
+\\\\
+Im Kapitel~\ref{kap_Optimierung} wurde anhand von definierten Arbeitszeiten mögliche Einsparungen für eine nicht-produktive Entwicklungsumgebung mit On-Demand EC2-Instanzen berechnet. Außerdem wurde erklärt, wie Auto Scaling-Gruppen, Load Balancer und Auto Scaling die Leistung einer balancierten und vertikal skalierbaren Serverinfrastruktur ermögichen können.
+\\\\
+Mit Fokus auf Amazon S3 wurden Speicherklassen und das Verschieben von Objekten zwischen ihnen mithilfe von Lebenszyklus-Konfiguration und Intelligent-Tiering vorgestellt.
 \subsubsection*{Kurzdarstellung Problem-Lösungsweg-Ergebnisse}
-Kurzdarstellung \textit{Problem(Kosten sind nicht transparent?zugänglich?einfach zu verstehen/sehen? - Fehlender Fachkraft) –  Lösungsweg(Überwachungswerkzeuge+Optimierungsmaßnahmen) – Ergebnisse(Kenntnisse über die nötigen Werkzeugen/Dienste, um Kosten zu optimieren und überwachen)}
+Problem: Kosten von Cloud-Diensten sind für ihre Verbraucher(Unternehmen) nicht verständlich. Als Teil des Problems gehört die fehlende Fachkraft. \\
+Lösungsweg: Schulungen+(Überwachungswerkzeuge+Optimierungsmaßnahmen) \\ Ergebnisse: bessere Kostenübersicht und -kontrrolle, durch die Nutzung von den passenden Werkzeuge/Dienste.
+%, um Kosten zu optimieren und überwachen.
 \\
 \subsubsection*{Rückkopplung auf die Einleitung: Wurde die Zielstellung der Arbeit und die Fragestellung zufriedenstellend beantwortet?}
+Werkzeuge und Maßnahmen sind da und warten darauf genutzt zu werden...?
+
 \subsubsection*{Kritische Bewertung (sofern nicht bereits im Hauptteil geschehen)}
+Nur mit AWS-Diensten zu arbeiten könnte zu (Abhähigkeit von dem Cloud-Anbieter führen; dafür gibt es ein Fachbegriff), deswegen lädt Multi-Cloud ein zu einenz
+
 \subsubsection*{Offene Probleme/Themen}
 AWS-Organizations%(https://aws.amazon.com/de/organizations/?blog_multi_account_ct) 
 , IAM, Mit Serverless können Kosten optimiert werden, möglichweise würde die Komplexität der Anwendung zunehmen.,  AWS Cost Anomalies,CloudFormation?
@@ -37,12 +41,15 @@ AWS-Organizations%(https://aws.amazon.com/de/organizations/?blog_multi_account_c
 %Limitationen: es konnte in dieser Arbeit nicht in der Praxis geprüft werden, ob die Maßnahmen ihre Verprechen anhalten
 \subsubsection*{Richtung der zukünftigen/möglichen Arbeiten - Weitere Forschungen}
 Während der Entwicklung dieser Arbeit wurden S3, Spot-Instanzen, Cost-Explorer, CloudWatch und Trusted Advisor (mit Einschränkungen) mit dem kostenlosen AWS-Kontingent getestet. 
-\\\\
-Es bleibt offen, die Überwachungswerkzeuge zu verwenden und die Optimierungsmaßnahmen zu ergreifen in einer echter IT-Infrastruktur. 
-Zum Beispiel bei Rechenlasten(Wort)?, die nicht vorhersehbar sind, oder bei Entwicklungumgebungen, die nach Arbeitszeiten ein- und ausgeschaltet werden können. Für die Datenspeicherung mit unterschiedlichen Zugriffsmustern werden S3 intelligent-Tiering oder Policies zu testen.d%so dass diese zwischen Speicherklassen verschoben werden.
+%\\\\
+Es bleibt offen, die Überwachungswerkzeuge zu verwenden und die Optimierungsmaßnahmen in einer echter IT-Infrastruktur zu ergreifen. 
+Zum Beispiel bei Rechenlasten(Wort)?, die nicht vorhersehbar sind, oder bei Entwicklungumgebungen, die nach Arbeitszeiten ein- und ausgeschaltet werden können. Für die Datenspeicherung mit unterschiedlichen Zugriffsmustern werden S3 intelligent-Tiering oder Policies zu testen.%so dass diese zwischen Speicherklassen verschoben werden.
 
 \subsubsection*{Erläuterung, warum welche Aspekte in der Arbeit nicht erläutert} 
-Es wurden zwei AWS-Dienste untersucht und nicht mehr, um den Fokus auf die meist genutzte und representative Cloud-Dienste zu halten. Trusted Advisor zeigt Optimierungsmaßnahmen für Datenbanken, Netzwerk usw(...) 
+Es wurden zwei AWS-Dienste untersucht und nicht mehr, um den Fokus auf die meist genutzte und representative Cloud-Dienste von AWS zu halten. Aus diesem Grund wurden Optimierungsmaßnahmen von Trusted Advisor für Datenbanken, Netzwerk, AWS-Lambda und mehr nicht berücksichtigt.
+%Die Prüfungen in Bezug auf Sicherheit, Leistung und Fehlertoleranz von Trusted Advisor wurden nicht berücksichtigt, weil...(Schon in Kapitel erklärt)
+ANDERE ASPEKTE(Wenn Zeit gibt):\\
+%\begin{comment}
 
 \subsection*{Bewusstsein in der gesamten Organisation entwickeln}
 \addcontentsline{toc}{subsection}{Bewusstsein in der gesamten Organisation} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen
@@ -75,6 +82,8 @@ Es kann in Erwägung gezogen werden, für einen begrenzten Zeitraum von 3 Monate
 \subsubsection*{Handlungsempfehlung 2:} 
 Ein Berater für eine Prüfung und Optimierung der AWS-Diensten kann in Deutschland zwischen x und N-EUR kosten. Dies ist eine Alternative zu den Plänen des Trusted-Advisor. Ein Berater, der alle 5 Kategorien abdeckt, könnte [BETRAG] kosten. %Das sagt der Berater Juanito von der Firma XXX.
 \\\\
+%\end{comment}
+
 \begin{comment}
   \subsection*{Umweltbezogene Aspekte}
   \addcontentsline{toc}{subsection}{Umweltbezogene Aspekte} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen
