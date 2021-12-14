@@ -215,7 +215,7 @@ Cost-Explorer liefert Informationen zur Rechtfertigung von Ausgaben aus im Vorau
 \textit{AWS Trusted Advisor} ist ein Werkzeug, das Empfehlungen zur Kostenreduzierung, Verbesserung der Systemverfügbarkeit und Erhöhung der Systemsicherheit gibt. Die Empfehlungen basieren auf Best-Practices, die im Laufe der Jahre durch die Betreuerung von AWS-Kunden gesammelt wurden und Prüfungen, die auf dem bestehenden AWS-Konto durchgeführt wurden.
 In dieser Arbeit werden Empfehlungen in Bezug auf Servicekontingente und Kostenoptimierung insbesondere betrachtet, weil es sich um Empfehlungen handelt, die mit Kostenüberwachung und -optimierung zusammenhängen. Der Status von Prüfungen von Trusted Advisor sind über CloudWatch Events zugänglich. 
 \\\\
-Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen Stand November 2021) für Konten in den Plänen Developer und Basic Support kostenlos sind. Prüfungen für die Kategorie Servicekontingente sind kostenlos. Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{Vgl. AWS: Trusted Advisor o.J. o.S.\cite{AMZ20}}. 
+Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen Stand November 2021) für Konten in den Plänen Developer und Basic Support kostenlos sind. Prüfungen für die Kategorie Servicekontingente zusätzlich sind kostenlos. Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt\footnote{Vgl. AWS: Trusted Advisor o.J. o.S.\cite{AMZ20}}. 
 \\
 %ES MUSS GEPRÜFT WERDEN, OB ES SINNVOLL IST, FÜR DIE OBEN GENANNTEN SUPPORT-PLÄNEN ZU ZAHLEN.
 \begin{figure}[h!]
@@ -229,7 +229,7 @@ Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfun
 Die \autoref{fig:AWS_Trusted_Advisor_Kategorien} zeigt die fünf Kategorien von Trusted Advisor mit jeweils 3 Arten von Indikatoren. Die Indikatoren zeigen an, welche Prüfungen durchgeführt wurden. Grün bedeutet, dass keine Fehler oder zu prüfenden Empfehlungen vorhanden sind. Warnungen werden durch orangefarbene Indikatoren und Fehler durch rote Indikatoren angezeigt. 
 \\\\
 Diese Empfehlungen scheinen ein angemessener Startpunkt für die Untersuchung von AWS-Diensten zu sein. Eine genauere Untersuchung erfolgt mithilfe anderer Werkzeuge wie CloudWatch oder Cost-Explorer. %[ODER?].
-Die Empfehlungen für die Kategorien Kostenoptimierung und Servicekontingente werden in der AWS-Dokumentation\footnote{Vgl. AWS Support - Benutzerhandbuch. S.59-65 und S.83-94 \cite{AMZ37}} nur kurz beschrieben und sind in einem Basiskonto nicht zugänglich. Diese Kategorien lassen sich daher in eingeschränkter Weise unter der aktuellen Umständen untersuchen.
+Die Empfehlungen für die Kategorien Kostenoptimierung und Servicekontingente werden in der AWS-Dokumentation\footnote{Vgl. AWS Support - Benutzerhandbuch. S.59-65 und S.83-94 \cite{AMZ37}} nur kurz beschrieben und sind in einem Basiskonto nicht zugänglich. Diese Kategorien lassen sich daher in eingeschränkter Weise unter den aktuellen Umständen untersuchen.
 %
 Es bestehen Empfehlungen für verschiedene AWS-Dienste unter anderem für EBS, Route 53, RDS und AWS Lambda. Im Folgenden werden Empfehlungen zu EC2-Instanzen gegeben, da dies der Fokus dieser Arbeit entspricht. Empfehlungen für Amazon S3-Speichereinheiten sind im Trusted Advisor nicht verfügbar.
 %\subsection*{Kategorie Kostenoptimierung}
@@ -249,7 +249,7 @@ Trusted Advisor erstellt Simulationen möglicher Kombinationen von reservierten 
 In der Kategorie Servicekontingente(auch als Kontingente bekannt) werden Empfehlungen zur Vermeidung von Grenzwertüberschreitungen hervorgehoben. Sich dieser Grenzen bewusst zu sein, sollte die Möglichkeit, rechtzeitig zu handeln und es trägt zu Kostenkontrolle über die AWS-Cloud-Dienste bei.
 \\\\
 Für Auto-Scaling-Gruppen %und -Startkonfigurationen 
-wird es geprüft, ob deren Nutzung mehr als 80\% des Kontingents beträgt. Aufgrund fehlender Informationen in der AWS-Dokumentation wird interpretiert, dass eine Auto-Scaling-Gruppe als eine einzelne Recheneinheit betrachtet wird und eine Auslastung von mehr als 80\% als Näherung an die Grenze der Rechenkapazität angesehen wird.
+wird es geprüft, ob deren Nutzung mehr als 80\% des Kontingents beträgt. Aufgrund fehlender Informationen in der AWS-Dokumentation wird angenommen, dass eine Auto-Scaling-Gruppe als eine einzelne Recheneinheit betrachtet wird und eine Auslastung von mehr als 80\% als Näherung an die Grenze der Rechenkapazität angesehen wird.
 Dies wird eine Anpassung der Startkonfiguration für eine bessere Skalierung zur Folge haben. %Pues el escalamiento no es suficientemente amplio
 \\\\
 Prüfungen, die die Nutzung eines Kontingents über 80\% betragen, werden auch für \textit{On-Demand-Instanzen, reservierte Instanzen, EC2-Classic Elastic IP Addresses und EC2-VPC Elastic IP Addresses} angezeigt.

@@ -22,7 +22,7 @@ Die \autoref{fig:AutoSca_Unused_Capacity} zeigt das wechselnde Verhalten einer B
 Die gelben Säulen stellen die tägliche genutzte Rechenkapazität dar.
 Die graue Zone entspricht ungenutzte Rechenkapazität und beträgt etwa ein Drittel der wöchentlichen Rechnerkapazität.
 \subsubsection*{Auto Scaling Group}
-Die Instanzen, die zur Deckung der erforderlichen Rechenkapazität zur Verfügung stehen, werden in einer \textit{Auto-Scaling-Gruppe(Auto Scaling Group)} gruppiert[Rev anderes Wort]. Diese Gruppe von Instanzen wird in AWS als Auto-Scaling-Gruppe bezeichnet. Bei der Erstellung einer Auto-Scaling-Gruppe wird eine minimale, gewünschte und maximale Anzahl von Instanzen definiert. 
+Die Instanzen, die zur Deckung der erforderlichen Rechenkapazität zur Verfügung stehen, werden in einer \textit{Auto-Scaling-Gruppe(Auto Scaling Group)} zusammengestellt. Diese Gruppe von Instanzen wird in AWS als Auto-Scaling-Gruppe bezeichnet. Bei der Erstellung einer Auto-Scaling-Gruppe wird eine minimale, gewünschte und maximale Anzahl von Instanzen definiert. 
 \\\\
 Die \autoref{fig:BA Diagramme-AutoScaling and LoadBalancer.drawio} zeigt die gewünschte Instanzen einer Auto-Scaling-Gruppe, welche beim Start der Auto-Scaling-Gruppe gestartet werden. Die minimale und maximale Anzahl von Instanzen sind die Grenzwerte für die Auto-Scaling-Gruppe.  
 \begin{figure}[h]
@@ -169,7 +169,7 @@ Amazon Simple Storage Service - User Guide,
 \subsubsection{Anwendungsbeispiel für eine Lebenszyklus-Konfiguration}\label{Anwendungsbeispiel-Leben-Konfig}
 Zur Veranschaulichung der Verschiebung von Objekten zwischen Speicherklassen wird der folgende Anwendungsfall vorgestellt. In diesem Fall wird der Punkt als Dezimaltrennzeichen und das Komma als Tausendertrennzeichen verwendet. 
 \\\\
-Ein Sicherheitsunternehmen muss Sicherheitsvideos speichern, die aktuell im Gesamtdurchschnittlich 120 TB groß sind. Viele von ihnen werden mindestens 5 Jahre lang aufbewahrt, falls sie vor Gericht als Beweismittel dienen sollten. Ungefähr 50\% der Videos werden mindestens einmal im Monat überprüft und müssen laut Gesetz sofort zugänglich sein. Die Software des Unternehmens speichert die Videos in S3-Buckets. Jedes Video hat eine durchschnittliche Größe von 3.4 GB.
+Ein Sicherheitsunternehmen muss Sicherheitsvideos speichern, die aktuell im Summe 120 TB groß sind. Viele von ihnen werden mindestens 5 Jahre lang aufbewahrt, falls sie vor Gericht als Beweismittel dienen sollten. Ungefähr 50\% der Videos werden mindestens einmal im Monat überprüft und müssen laut Gesetz sofort zugänglich sein. Die Software des Unternehmens speichert die Videos in S3-Buckets. Jedes Video hat eine durchschnittliche Größe von 3.4 GB.
 \\\\
 Im Folgenden werden die Speicherkosten für ein Szenario berechnet, bei dem nur \textit{S3 Standard} verwendet wird. Als nächstes wird die Kombination von \textit{S3 Standard Infrequent Access, S3 Glacier} und \textit{S3 Standard} für ein zweites Szenario betrachtet, in dem die Videos je nach Alter verschoben werden. Im zweiten Szenario müssen die Kosten für die Verschiebung zwischen Speicherklassen berücksichtigt werden. Die Verschiebung erfolgt durch eine Lebenszyklus-Konfiguration wie in der Unterkapitel \ref{ssec:Lebenszyklus-Konfiguration} beschrieben. Zum besseren Verständnis wird angenommen, dass 20\% der Dateien in S3 Standard Infrequent Access und 30\% in S3 Glacier gespeichert werden.
 \newpage
@@ -182,13 +182,13 @@ Im Folgenden werden die Speicherkosten für ein Szenario berechnet, bei dem nur 
 %\\
 Quelle: Eigene Darstellung mit Stundensätze der S3-Preise\footnote{Vgl. AWS S3 Pricing\cite{AMZ09}}.
 \\\\
-Bei der Berechnung wurden die Kosten für das Verschieben von Videos zwischen Speicherklassen berücksichtigt. Anhand der Berechnungen in der \autoref{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} lässt sich erkennen, dass ein Einsparungspotenzial von rund 1,00(Eintausend) USD pro Monat besteht, indem die notwendigen Regeln aufgestellt werden, um einen Teil der Videos in anderen Speicherklassen zu verschieben, welche niedrigere Preise bieten.
+Bei der Berechnung wurden die Kosten für das Verschieben von Videos zwischen Speicherklassen berücksichtigt. Anhand der Berechnungen in der \autoref{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} lässt sich erkennen, dass ein Einsparungspotenzial von rund 1,000(Eintausend) USD pro Monat besteht, indem die notwendigen Regeln aufgestellt werden, um einen Teil der Videos in anderen Speicherklassen zu verschieben, welche niedrigere Preise bieten.
 %WICHTIG IST DIE GRÖSSE MEINE DATEIEN UND DIE ANZAHL.
 %weil SO WERDEN DIE PREISE FÜR VERSCHIEBUNG BERECHNET.
 %(Object size distribution )
 \newpage
 \subsubsection{Intelligent-Tiering}
-\textit{Intelligent-Tiering} verschiebt Objekte auf der Grundlage von Zugriffsmustern. Diese Speicherklasse ist ideal für Objekte mit wechselnden oder unbekannten Zugriffsmustern. Wie die Senior Product Manager für S3 Ruhi Dang erklärt, einige Unternehmen haben weder die Zeit noch die finanziellen Möglichkeiten, eine Person einzustellen, die ihre Daten sortiert und in die richtige Speicherklasse einordnet. Intelligent Auto Tiering ist eine attraktive Lösung für Unternehmen, die jährlich weniger als 100,000 USD für Speicher ausgeben \footnote{Vgl. AWS re:Invent 2019: Guidelines and design patterns for optimizing cost in Amazon S3. Minute: 21:12 \cite{AMZ16}}.
+\textit{Intelligent-Tiering} verschiebt Objekte auf der Grundlage von Zugriffsmustern. Diese Speicherklasse ist ideal für Objekte mit wechselnden oder unbekannten Zugriffsmustern. Wie die Senior Product Managerin für S3 Ruhi Dang erklärt, haben einige Unternehmen weder die Zeit noch das Geld, um eine Person einzustellen, die ihre Daten sortiert und in die richtige Speicherklasse einordnet. Intelligent Auto Tiering ist eine attraktive Lösung für Unternehmen, die jährlich weniger als 100,000 USD für Speicher ausgeben \footnote{Vgl. AWS re:Invent 2019: Guidelines and design patterns for optimizing cost in Amazon S3. Minute: 21:12 \cite{AMZ16}}.
 %Ach von Jessie Felix gesagt https://www.youtube.com/watch?v=IOT41L_adSw
 %\\\\
 Die \autoref{fig:S3_IntLifeCycle} zeigt, wie Objekte in Abhängigkeit davon, ob auf sie zugegriffen wurde oder nicht, verschieben werden. 
