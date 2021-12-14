@@ -1,27 +1,30 @@
 
-@Forget-it{
-NEUE GLIEDERUNG? Überwachung, Optimierung(EC2(Zahlungs..)+S3) 
-[Grafik der Kosten On-Premise/Demand?]
-Bleibt die Abb. On-Demand? jep
-Load Balancer mit eigenem Bild
-Große der Instanzen ändern t.ly/rH5c
-Predective Scaling, nötig ?
-}
-
 @Heute {
 Nach Abgabe:+Marvin S.10 
-15.12: drucken
- Glossar, Format und Zitate(PUFFER)
+
+15.12: drucken? oder weiter machen und drucken lassen?
+Glossar, Format und Zitate(PUFFER)
 Einleitung umformulieren(Fede)
+Bitte verwenden Sie nur die Erklärung, die Ihnen Ihr
 ---------
-Handlungsempfehlungen formulieren und plazieren
+Handlungsempfehlungen formulieren und plazieren/löschen
 +Zusammenfassung-Problem:Preis IT-Infra(schwer zu finden sagte Feedpak)+spot.io?
 +Check all [Rev]s
 +, und . für Berechnung anpassen?
-14.12: Beispiel Rechnung für Trusted Advisor?
+ Beispiel Rechnung für Trusted Advisor?
 }
 
 @Done {
+
+    @Forget-it{
+        NEUE GLIEDERUNG? Überwachung, Optimierung(EC2(Zahlungs..)+S3) 
+        [Grafik der Kosten On-Premise/Demand?]
+        Bleibt die Abb. On-Demand? jep
+        Load Balancer mit eigenem Bild
+        Große der Instanzen ändern t.ly/rH5c
+        Predective Scaling, nötig ?
+        }
+14.12: Formalien, zitat und Fedes Kommentare
 13.12:  Berechnung:Int-Tiering?+Zusammenfassung
 12.12: 2.Rev(Marcel)+Speicherklasse Intro?+große Review (ok)
 !11.12:Weiter mit Review bis S.42
