@@ -55,13 +55,12 @@ Bei den EC2-Instance Saving Plans hingegen muss eine Instance-Familie in einer b
 
 %RI Configurations-Normalization https://medium.com/driven-by-code/how-truecar-saves-40-on-aws-with-ec2-reserved-instances-d0a6e0d9c08a
 \subsubsection*{EC2 Reserved Instance Marketplace}\label{sssec:RI-Marketplace}
-Sollte sich herausstellen, dass die Kapazität der reservierten Instanzen viel zu wenig oder gar nicht genutzt wird, kann diese Rechenkapazität auf dem \textit{RI Marketplace}(Marktplatz für den Kauf von reservierten Instanzen) zur Verfügung gestellt werden. Somit kann ein Teil der Investition zurückgeholt werden. Dies ist für Standard reservierten Instanzen möglich.
-Diese Instanzen werden in Spot-Instanzen umgewandelt, damit andere Nutzer sie beantragen können. Dafür sollte der Instanz-Anbieter eine Servicegebühr in Betracht ziehen. Stand November 2021 beträgt diese Gebühr 12\%.\footnote{Vgl. Amazon EC2 Reserved Instance Marketplace\cite{AMZ23}.}
+Sollte sich herausstellen, dass die Kapazität der reservierten Instanzen viel zu wenig oder gar nicht genutzt wird, kann diese Rechenkapazität auf dem \textit{RI Marketplace} (Marktplatz für den Kauf von reservierten Instanzen) zur Verfügung gestellt werden. Somit kann ein Teil der Investition zurückgeholt werden. Dies ist für Standard reservierten Instanzen möglich. Diese werden in Spot-Instanzen umgewandelt, damit andere Nutzer sie beantragen können. Dafür sollte der Instanz-Anbieter eine Servicegebühr in Betracht ziehen. Stand November 2021 beträgt diese Gebühr 12\%.\footnote{Vgl. Amazon EC2 Reserved Instance Marketplace\cite{AMZ23}.}
 
 \subsubsection*{Optionale Vorauszahlung}\label{sssec:Vorauszahlung}
-Zusätzlich gibt es bei Saving Plans und reservierten Instanzen die Option im Voraus zu zahlen. Im Gegenzug wird ein niedrigerer Gesamtpreis angeboten. AWS bietet drei verschiedene Optionen an. Diese sind eine teilweise, keine oder eine vollständige Vorauszahlung.\footnote{Vgl.  AWS Pricing Calculator\cite{AMZ17}.} Bei teilweiser Vorauszahlung ist eine Anzahlung von etwa 50\% zu leisten.
+Zusätzlich ist es bei Saving Plans und reservierten Instanzen möglich im Voraus zu zahlen. Im Gegenzug wird ein niedrigerer Gesamtpreis angeboten. AWS bietet diesbezüglich drei verschiedene Optionen an: eine teilweise, keine oder eine vollständige Vorauszahlung.\footnote{Vgl.  AWS Pricing Calculator\cite{AMZ17}.} Bei teilweiser Vorauszahlung ist eine Anzahlung von etwa 50\% zu leisten.
 \\\\
-Die \autoref{fig:EinsparungenVorauszahlung} zeigt den Vergleich zwischen den drei Optionen für Vorauszahlungen. Hier wird deutlich, dass es kaum einen Unterschied zwischen eine teilweise Vorauszahlung und keine Vorauszahlung zu machen gibt. Eine erhebliche Einsparung ergibt sich, wenn man für den gesamten Zeitraum der gebuchten Instanzen im Voraus bezahlt.
+Die \autoref{fig:EinsparungenVorauszahlung} zeigt den Vergleich zwischen den drei Vorauszahlungsoptionen für 20 Instanzen über drei Jahren im Zahlungsmodell Saving Plan. Hier wird deutlich, dass es kaum einen Unterschied zwischen einen teilweisen und keinen Vorauszahlung gibt. Eine erhebliche Einsparung ergibt sich jedoch, wenn man für den gesamten Zeitraum der gebuchten Instanzen im Voraus bezahlt.
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.6]{sources/EinsparungenVorauszahlung}\label{fig:EinsparungenVorauszahlung}\\
@@ -70,10 +69,9 @@ Die \autoref{fig:EinsparungenVorauszahlung} zeigt den Vergleich zwischen den dre
     Eigene Darstellung. Quelle: {AWS Pricing Calculator\cite{AMZ17}.}
   \end{figure}
   \\
-Die Berechnungen wurden mit dem AWS Pricing Calculator {\cite{AMZ17}} für Instanzen der Familie t4g.xlarge, in der EU (Frankfurt) und für eine Laufzeit von 3 Jahren durchgeführt. 
+Die Berechnungen wurden anhand des AWS Pricing Calculator  für Instanzen der Familie t4g.xlarge und in der Region EU (Frankfurt) durchgeführt.{\cite{AMZ17}} 
 \subsection{Spot Instanzen }\label{ssec:Spot-Instances}
-Wie in Unterkapitel \ref{sssec:RI-Marketplace} genannt bieten EC2 Spot-Instanzen die Möglichkeit aus den ungenutzten EC2-Instanzen anderer Nutzer zu profitieren. 
-Mit einem Preisvorteil von bis zu 90 \% gegenüber normalen On-Demand-Instanzen sind Spot-Instanzen ideal für fehlertolerante Anwendungen wie auf Containern ausgeführte Workloads, CI/CD, Bigdata-Anwendungen und ähnliches.
+Wie in Unterkapitel \ref{sssec:RI-Marketplace} genannt, bieten EC2 Spot-Instanzen die Möglichkeit aus den ungenutzten EC2-Instanzen anderer Nutzer zu profitieren. Mit einem Preisvorteil von bis zu 90\% gegenüber normalen On-Demand-Instanzen sind Spot-Instanzen ideal für fehlertolerante Anwendungen wie auf Containern ausgeführte Workloads, CI/CD, Bigdata-Anwendungen und ähnliches.
 
 \subsubsection*{Unterbrechbarkeit}
 Es ist zu beachten, dass Spot-Instanzen jederzeit unterbrochen werden können. Einer der Gründe ist die Preisüberschreitung der Instanz. Wenn Spot-Instanzen angefordert werden, wird einen Maximalpreis festgelegt. Ist der Preis der Spot-Instanz höher als der eingegebene Maximalpreis, ist die Spot-Instanz für die aktuelle Einstellung nicht mehr verfügbar. Ein anderes Szenario ist, wenn der Instanz Anbieter die Spot-Instanz erneut anfordert. Falls eine Spot-Instanz unterbrochen wird, benachrichtigt Amazon EC2 zwei Minuten im Voraus. Dieses Ereignis ist verfügbar auf CloudWatch, damit weitere Alarmen eingestellt werden. Diese und andere Funktionalitäten von CloudWatch werden in Kapitel \ref{kap_kostenueberwachung} näher erläutert.
@@ -111,15 +109,19 @@ Für die Nutzung von EC2-Flotten und Auto Scaling-Gruppen fallen keine zusätzli
 %[Rev]
 Instanzen in Zahlungsmodellen, die zu zeitlichen Verpflichtungen führen, bergen die Gefahr, dass die benötigte Rechenkapazität mittel- bis langfristig falsch eingeschätzt wird. Einerseits kann die reservierte Rechnerkapazität zu gering eingeschätzt werden. Als Konsequenz wird es großenteils der Rechnerkapazität mit On-Demand-Instanzen gedeckt, welche in dem Anteil der reservierten Instanzen berücksichtigt werden konnten und mit reduzierten Preisen berechnet. Andererseits, wenn zu viel Rechnerkapazität mit reservierten Instanzen reserviert und diese zu wenig gebraucht wird. Besteht die Möglichkeit, dass es die reine Nutzung von On-Demand-Instanzen eine kostengünstigere Option darstellt.
 \\\\
-Im Folgenden wird die Strategie beschrieben, dass \textit{TrueCar Inc.} verfolgt hat, um in keine der beiden oben genannten Situationen zu geraten. TrueCar Inc. ist eine Preis- und Informations-Website für Neu- und Gebrauchtwagenkäufer mit Sitz in Santa Monica, Kalifornien.\footnote{Vgl. Die Quelle dieser Informationen ist ein Artikel\cite{MED1}, der auf www medium.com veröffentlicht wurde. Dass der Artikel von TrueCar stammt, wird durch die Tatsache bestätigt, dass deren Website www.truecar.com/who-we-are/ zu dem hier erwähnten Artikel führt.}
+Im Folgenden wird näher auf die Strategie von \textit{TrueCar Inc.} eingegangen, durch dessen Anwendung beide der oben genannten Problematiken vermieden werden können.  
+%verfolgt hat, um in keine der beiden oben genannten Situationen zu geraten. 
+TrueCar Inc. ist eine Preis- und Informations-Website für Neu- und Gebrauchtwagenkäufer mit Sitz in Santa Monica, Kalifornien.\footnote{Vgl. Die Quelle dieser Informationen ist ein Artikel\cite{MED1}, der auf www medium.com veröffentlicht wurde. Dass der Artikel von TrueCar stammt, wird durch die Tatsache bestätigt, dass deren Website www.truecar.com/who-we-are/ zu dem hier erwähnten Artikel führt.}
 %https://medium.com/driven-by-code/how-truecar-saves-40-on-aws-with-ec2-reserved-instances-d0a6e0d9c08a
 Dank einer Optimierungsstrategie konnten sie ihre AWS-Kosten durch die Nutzung reservierter Instanzen um etwa 40\% senken.\footnote{Vgl. David Wang, 2019, How TrueCar Saves 40\% on AWS with EC2 Reserved Instances. O.s. \cite{MED1}.}
 \\\\
-Um Einsparungen von 40\% zu erreichen, musste das Team von TrueCar zuerst verstehen, wie AWS-Dienste wie reservierte Instanzen, Cost-Explorer, Auto-Scaling-Gruppen und Lambda Funktionen funktionieren. Damit haben sie eines der häufigsten Hindernisse überwunden, mit denen Unternehmen bei der Nutzung von Cloud-Diensten konfrontiert werden und zwar die Mangel an technisches Wissen in Bezug auf Cloud-Dienste.\footnote{Vgl. Accenture Dienstleistungen GmbH. Hohe Erwartungen an die Cloud: Hürden meistern, Mehrwert maximieren, S.11\cite{ACC1}.} Nachdem das Team von TrueCar die notwendigen Informationen, insbesondere über die reservierten Instanzen, verstanden haben, wurde die benötigte Rechenkapazität ermittelt. In dem Artikel über TrueCar wurde nicht explizit erläutert, wie die benötigte Rechnerkapazität berechnet wurde. Diese Informationen werden jedoch von Cost-Explorer bereitgestellt. Cost-Explorer bietet die Möglichkeit, die Nutzung der AWS-Diensten für die letzten 12 Monate anzuzeigen. Cost-Explorer wird in Unterkapitel~\ref{ssec:Cost-Explorer} ausführlicher behandelt.
+Um eine solche Einsparungen zu erreichen, musste das Team zuerst verstehen, wie AWS-Dienste wie reservierte Instanzen, Cost-Explorer, Auto-Scaling-Gruppen und Lambda Funktionen funktionieren. Damit haben sie eines der häufigsten Hindernisse überwunden, mit denen Unternehmen bei der Nutzung von Cloud-Diensten konfrontiert werden und zwar die Mangel an technisches Wissen in Bezug auf Cloud-Dienste.\footnote{Vgl. Accenture Dienstleistungen GmbH. Hohe Erwartungen an die Cloud: Hürden meistern, Mehrwert maximieren, S.11\cite{ACC1}.} Nachdem das Team von TrueCar die notwendigen Informationen, insbesondere über die reservierten Instanzen, verstanden haben, wurde die benötigte Rechenkapazität ermittelt. In dem Artikel über TrueCar wurde nicht explizit erläutert, wie die benötigte Rechnerkapazität berechnet wurde. Diese Informationen werden jedoch von Cost-Explorer bereitgestellt. Cost-Explorer bietet die Möglichkeit, die Nutzung der AWS-Diensten für die letzten 12 Monate anzuzeigen. Cost-Explorer wird in Unterkapitel~\ref{ssec:Cost-Explorer} ausführlicher behandelt.
 \\\\
-Die Kosten der Instanzen in On-Demand wurden mit dem von reservierten Instanzen gegenübergestellt, um den Break-Even-Point dazwischen zu finden.\footnote{Vgl. Marceil Schweitzer und Ernst Troßmann: Die Break-Even-Analyse dient als Entscheidungshilfe für das Management. Bei einer Break-even-Analyse geht es immer um eine Gegenüberstellung positiver und negativer Wirkungen von Maßnahmen, S.14.\cite{BEA}} Der Break-Even-Point bedeutet in diesem Fall, der Punkt, wo die Preise der reservierten Instanzen und die On-Demand Instanzen gleich sind. Nach diesem Punkt wird der monatliche Preis für die reservierten Instanzen sinken, bis die reservierte Kapazität verbraucht wird oder der Zeitraum für die reservierten Instanzen endet.
+Die Kosten der Instanzen in On-Demand wurden mit dem von reservierten Instanzen gegenübergestellt, um den Break-Even-Point dazwischen zu finden.\footnote{Vgl. Marceil Schweitzer und Ernst Troßmann: Die Break-Even-Analyse dient als Entscheidungshilfe für das Management. Bei einer Break-even-Analyse geht es immer um eine Gegenüberstellung positiver und negativer Wirkungen von Maßnahmen, S.14.\cite{BEA}} Der Schnittpunkt zwischen dem Preis der reservierten Instanzen und von der On-Demand Instanzen bildet den sogenannten Break-Even-Point.
+%Der Break-Even-Point bedeutet in diesem Fall, der Punkt, wo die Preise der reservierten Instanzen und die On-Demand Instanzen gleich sind. 
+Nach diesem sinke der monatliche Preis für die reservierten Instanzen, bis die reservierte Kapazität verbraucht wird oder der Zeitraum für die reservierten Instanzen endet.
 \\\\
-Wie in der Grafik der \autoref{fig:Kosten_RIvsOn-Demand_pro_Monat_TrueCar} dargestellt wird liegt der Break-Even-Point zwischen dem Monat acht und neun. Im Fall, dass der Verbrauch der Instanzen vor dem Monat auch enden würde, wäre es nicht empfehlenswert Instanzen zu reservieren, sondern nur mit On-Demand Instanzen zu arbeiten. Die Berechnung wurde für den Zeitraum von 1 Jahr durchgeführt. %[RECHNEN UND ERKLÄREN?]. 
+Wie in der Grafik der \autoref{fig:Kosten_RIvsOn-Demand_pro_Monat_TrueCar} dargestellt wird liegt der Break-Even-Point zwischen dem Monat acht und neun. Ab dem neunten Monat ist der Preis für reservierte Instanzen niedriger als der für On-Demand-Instanzen. Die Berechnung wurde für den Zeitraum von einem Jahr durchgeführt. %[RECHNEN UND ERKLÄREN?]. 
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.6]{sources/Kosten_RIvsOn-Demand_pro_Monat_TrueCar}\label{fig:Kosten_RIvsOn-Demand_pro_Monat_TrueCar}\\
@@ -131,9 +133,9 @@ In dem Prozess haben die Entwickler von TrueCar Mitarbeiter von den Buchhaltungs
 \\\\
 Mit Cost-Explorer wurden die folgenden zwei Metriken überwacht: 
 \\\\
-\textbf{RI-Coverage}, welche zeigt, wie viel der On-Demand-Instanzen durch reservierten Instanzen abgedeckt wird. Ziel ist hierbei das \textit{RI-Coverage}(Abdeckung der reservierten Instanzen) so nahe wie möglich an 100\% zu halten.
+1) Der \textbf{RI-Coverage} zeigt an, wie viel der On-Demand-Instanzen durch reservierte Instanzen abgedeckt wird. Ziel ist hierbei das \textit{RI-Coverage}(Abdeckung der reservierten Instanzen) so nahe wie möglich an 100\% zu halten.
 \\\\
-\textbf{RI-Utilization}, welche zeigt, wie viel Prozent der reservierten Instanzen verbraucht wurden. Es wird versucht die RI-Utilization nicht zu niedrig zu halten. Stattdessen sollte die Nutzung von On-Demand-Instanzen gering gehalten werden. 
+2) Die \textbf{RI-Utilization}zeigt an, wie viel Prozent der reservierten Instanzen verbraucht wurden. Hierbei wird versucht, die RI-Utilization nicht zu niedrig zu halten. Stattdessen sollte die Nutzung von On-Demand-Instanzen gering gehalten werden. 
 \\\\
 Um diese Metriken im Blick zu behalten und nicht jeden Tag den Cost-Explorer aufrufen zu müssen, wurde eine Benachrichtigung an \textit{Slack} eingerichtet.\footnote{Vgl. Slack ist eine Messaging-App für Unternehmen, o.J., o.S.\cite{SLACK}.} Dies war über die Cost-Explorer API und eine Lambda-Funktion möglich.
 \\\\
@@ -141,7 +143,7 @@ Um diese Metriken im Blick zu behalten und nicht jeden Tag den Cost-Explorer auf
 \subsection*{Vergleich der Zahlungsmodelle}
 %[Rev]
 Die folgende Tabelle fasst die Eigenschaften der Zahlungsmodellen für On-Demand-, reservierte, von Saving Plans und Spot-Instanzen zusammen und listet typische Applikationen je nach Zahlungsmodell auf.
-[Abb. VOLLSTÄNDIG?AKTUELL?]
+%[Abb. VOLLSTÄNDIG?AKTUELL?]
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.63]{sources/Vergleich_der_Zahlungsmodelle}\label{fig:Vergleich_der_Zahlungsmodelle}\\
@@ -161,12 +163,10 @@ Eigene Darstellung. Quelle: {\cite{AMZ02, AMZ07, AMZ11, AMZ19,SPOT1}}\\
 
 \newpage
 \subsubsection*{Fazit}%[Rev]
-In diesem Kapitel wurden die verschiedenen Zahlungsmodelle für EC2-Instanzen untersucht. Es wurden Hinweise für die Auswahl des richtigen Zahlungsmodells in verschiedenen Szenarien gegeben. Dies wurde erklärt, um die Preisvorteile von den Zahlungsmodellen zu nutzen. Beginnend mit dem On-Demand-Zahlungsmodell, gefolgt von Reserved Instanzen und Saving Plans. In dieser Reihenfolge sinkt der Preis und mit ihm steigt die Verpflichtung, sich langfristig zu binden. Schließlich mit Spot-Instanzen, die die niedrigsten Preise bieten, aber keine volle Verfügbarkeit sicherstellen. %In Kapitel \ref{kap_Optimierung} wird weiter auf Optimierungsmaßnahmen für EC2-Instanzen durch den Einsatz von Auto Scaling Groups eingegangen.
-\\\\
+In diesem Kapitel wurden die verschiedenen Zahlungsmodelle für EC2-Instanzen untersucht. Es wurden Hinweise für die Auswahl des richtigen Zahlungsmodells in verschiedenen Szenarien gegeben, um die Preisvorteile von den Zahlungsmodellen zu nutzen. Beginnend mit dem On-Demand-Zahlungsmodell, gefolgt von Reserved Instanzen und Saving Plans.\footnote{Für das On-Demand-Zahlungsmodell gibt es keine Kostenreduzierung, aber wie in Unterkapitel \ref{ssec:ZeitgesteuerteScal} gezeigt gibt Maßnahmen, um die Nutzung von Instanzen zu reduzieren.} In dieser Reihenfolge sinkt der Preis und mit ihm steigt die Verpflichtung, sich langfristig zu binden. Schließlich wurden Spot-Instanzen vorgestellt, die die niedrigsten Preise bieten, aber keine volle Verfügbarkeit sicherstellen. %In Kapitel \ref{kap_Optimierung} wird weiter auf Optimierungsmaßnahmen für EC2-Instanzen durch den Einsatz von Auto Scaling Groups eingegangen.
 %[EC2-Fleet]
 %En el capitulo monitoreo de costes  se mostrarán herramientas como X(CloudWatch) con las que podremos verificar si la desicion realizada fue la correcta. Para el modelo de pago On-Demand no hay ninguna redccion de los costos, pero existen medidas para aun asi reducir el uso de las instancias. Dichas medidas seran profundizadas en capitulo medidas de optimizacion
 Darüber hinaus wurde ein Anwendungsfall vorgestellt, der erhebliche Einsparungen bei der Verwendung reservierter Instanzen zeigt.
 \\\\
 Im nächsten Kapitel werden CloudWatch, Cost-Explorer und Trusted Advisor vorgestellt. Diese Werkzeuge sollen ein besseres Verständnis über die Nutzung und Kosten von AWS-Diensten, die Analyse von Metriken ermöglichen und Empfehlungen zur Kostenoptimierung geben.
-\\\\
-Für das On-Demand-Zahlungsmodell gibt es keine Kostenreduzierung, aber wie in Unterkapitel \ref{ssec:ZeitgesteuerteScal} gezeigt gibt Maßnahmen, um die Nutzung von Instanzen zu reduzieren. %Auf weitere Optimierungsmaßnahmen für EC2-Instanzen wird im Kapitel \ref{kap_Optimierung} näher eingegangen.
+%Auf weitere Optimierungsmaßnahmen für EC2-Instanzen wird im Kapitel \ref{kap_Optimierung} näher eingegangen.
