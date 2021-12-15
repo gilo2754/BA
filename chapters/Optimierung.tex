@@ -2,7 +2,7 @@
 %Seite 163
 % Wie werden die Informationen die Benutzer gezeigt und wie können sie diese manipulieren
 %[Rev]
-Die mit den Überwachungswerkzeuge gesammelte Informationen, bilden die Grundlage für die Optimierungsmaßnahmen. Sollen sich In diesem Kapitel werden die mithilfe der Werkzeuge gewonnenen Informationen genutzt, um über die am besten geeigneten Optimierungsmaßnahmen zu entscheiden.
+Die mit den Überwachungswerkzeuge gesammelte Informationen, bilden die Grundlage für die Optimierungsmaßnahmen für EC2-Instanzen und Amazon S3.
 %Wenn zum Beispiel festgestellt wird, dass Instanzen nicht ausreichend genutzt werden, können sie so konfiguriert werden, dass sie abgeschaltet werden.
 %La mayoria de las medidas de opmimizacion se centran en las instancias EC2, pues como antes mencionado representan la gran mayoria de los servicios que comprenden los gastos en nuestras facturas.
 
@@ -49,7 +49,7 @@ Ein \textit{Elastic Load Balancer} ist für die Verwaltung eingehender Anfragen 
 
 \subsubsection{Zeitgesteuerte Skalierung}\label{ssec:ZeitgesteuerteScal}
 %W-Ende für Dev und Beta
-\textbf{Nicht produktive Umgebungen}\\
+%\textbf{Nicht produktive Umgebungen}\\
 %Auch möglich damit https://aws.amazon.com/de/solutions/implementations/instance-scheduler/
 In einem On-Premise-System mache es, wenn überhaupt, einen kleinen Unterschied bei den Kosten, dass Instanzen die ganze Zeit aktiv bleiben.\footnote{Anders Lisdorf, 2021, S. 153\cite{CCB}} %\footnote{Vgl. ,Cloud Computing Basics: a Non.-Technical Introduction. Seite 153}. 
 Im Gegensatz dazu ist es bei On-Demand-Zahlungsmodelle sinnvoll Zeiträume zu definieren, in denen Instanzen abgeschaltet werden können, um deren Nutzung zu reduzieren. Bei Systemen, die nur tagsüber und unter der Woche in Betrieb sein müssen, kann dies eine Einsparung von bis zu 67\% bedeuten. Wenn zum Beispiel Test- und Beta-Umgebungen von Montag bis Freitag von 7 bis 20 Uhr laufen würden. 

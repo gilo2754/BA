@@ -213,7 +213,7 @@ Cost-Explorer liefert Informationen zur Rechtfertigung von Ausgaben aus im Vorau
 %Kunden von AWS Basic Support und AWS Developer Support können auf grundlegende Sicherheitsprüfungen und alle Prüfungen für Servicekontingente zugreifen. Kunden von AWS Business Support und AWS Enterprise Support können auf alle Prüfungen zugreifen, einschließlich Kostenoptimierung, Sicherheit, Fehlertoleranz, Leistung und Servicekontingente. 
 %was macht dieses?
 %AWS Trusted Advisor: This helps you know more about idle or underutilized resources.
-\textit{AWS Trusted Advisor} ist ein Werkzeug, das Empfehlungen zur Kostenreduzierung, Verbesserung der Systemverfügbarkeit und Erhöhung der Systemsicherheit gibt. Die Empfehlungen basieren auf Best-Practices, die im Laufe der Jahre durch die Betreuerung von AWS-Kunden gesammelt wurden und Prüfungen, die auf dem bestehenden AWS-Konto durchgeführt wurden.
+Der \textit{AWS Trusted Advisor} ist ein Werkzeug, welcher Empfehlungen zur Kostenreduzierung, Verbesserung der Systemverfügbarkeit und Erhöhung der Systemsicherheit angibt. Die Empfehlungen basieren auf Best-Practices, die im Laufe der Jahre durch die Betreuung von AWS-Kunden gesammelt wurden und Prüfungen, die auf dem bestehenden AWS-Konto durchgeführt wurden.
 In dieser Arbeit werden Empfehlungen in Bezug auf Servicekontingente und Kostenoptimierung insbesondere betrachtet, weil es sich um Empfehlungen handelt, die mit Kostenüberwachung und -optimierung zusammenhängen. Der Status von Prüfungen von Trusted Advisor sind über CloudWatch Events zugänglich. 
 \\\\
 Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfungen Stand November 2021) für Konten in den Plänen Developer und Basic Support kostenlos sind. Prüfungen für die Kategorie Servicekontingente zusätzlich sind kostenlos. Detaillierte Informationen und Empfehlungen von der Kategorien Kostenoptimierung, Performance und Fehlertoleranz sind nur zugänglich, wenn ein Business- oder Enterprise-Konto vorliegt.\footnote{Vgl. AWS: Trusted Advisor o.J. o.S.\cite{AMZ20}}
@@ -227,12 +227,12 @@ Es ist zu berücksichtigen, dass nur limitierte Sicherheitsprüfungen (6 Prüfun
       AWS Trusted Advisor Kategorien\cite{AMZ20}
 \end{figure}
 \\\\
-Die \autoref{fig:AWS_Trusted_Advisor_Kategorien} zeigt die fünf Kategorien von Trusted Advisor mit jeweils 3 Arten von Indikatoren. Die Indikatoren zeigen an, welche Prüfungen durchgeführt wurden. Grün bedeutet, dass keine Fehler oder zu prüfenden Empfehlungen vorhanden sind. Warnungen werden durch orangefarbene Indikatoren und Fehler durch rote Indikatoren angezeigt. 
+Die \autoref{fig:AWS_Trusted_Advisor_Kategorien} zeigt die fünf Kategorien von Trusted Advisor mit jeweils drei verschiedenen Indikatoren. Diese zeigen an, welche Prüfungen durchgeführt wurden. Grün bedeutet, dass keine Fehler oder zu prüfende Empfehlungen vorhanden sind. Warnungen werden durch orangefarbene Indikatoren und Fehler durch rote Indikatoren angezeigt. 
 \\\\
 Diese Empfehlungen scheinen ein angemessener Startpunkt für die Untersuchung von AWS-Diensten zu sein. Eine genauere Untersuchung erfolgt mithilfe anderer Werkzeuge wie CloudWatch oder Cost-Explorer. %[ODER?].
-Die Empfehlungen für die Kategorien Kostenoptimierung und Servicekontingente werden in der AWS-Dokumentation nur kurz beschrieben und sind in einem Basiskonto nicht zugänglich.\footnote{Vgl. AWS Support - Benutzerhandbuch. S.59-65 und S.83-94 \cite{AMZ37}} Diese Kategorien lassen sich daher in eingeschränkter Weise unter den aktuellen Umständen untersuchen.
+\footnote{Die Empfehlungen für die Kategorien Kostenoptimierung und Servicekontingente werden in der AWS-Dokumentation nur kurz beschrieben und sind in einem Basiskonto nicht zugänglich. (Vgl. AWS Support - Benutzerhandbuch. S.59-65 und S.83-94 \cite{AMZ37})} Diese Kategorien lassen sich daher in eingeschränkter Weise und unter den aktuellen Umständen untersuchen.
 %
-Es bestehen Empfehlungen für verschiedene AWS-Dienste unter anderem für EBS, Route 53, RDS und AWS Lambda. Im Folgenden werden Empfehlungen zu EC2-Instanzen gegeben, da dies der Fokus dieser Arbeit entspricht.\footnote{Empfehlungen für Amazon S3-Speichereinheiten sind im Trusted Advisor nicht verfügbar.}
+Es bestehen Empfehlungen für verschiedene AWS-Dienste, unter anderem für EBS, Route 53, RDS und AWS Lambda. Im Folgenden werden Empfehlungen zu EC2-Instanzen gegeben, da dies der Fokus dieser Arbeit entspricht.\footnote{Empfehlungen für Amazon S3-Speichereinheiten sind im Trusted Advisor nicht verfügbar.}
 %\subsection*{Kategorie Kostenoptimierung}
 %Die Empfehlungen zur Kostenoptimierung konzentrieren sich auf Möglichkeiten zur Kostensenkung. 
 %[BEISPIELE]
@@ -257,7 +257,7 @@ Dies wird eine Anpassung der Startkonfiguration für eine bessere Skalierung zur
 Die Prüfungen, die die Nutzung eines Kontingents über 80\% betragen, werden auch für \textit{On-Demand-Instanzen, reservierte Instanzen, EC2-Classic Elastic IP Addresses und EC2-VPC Elastic IP Addresses} angezeigt.
 
 \subsubsection*{Trusted-Advisor Kostenerwägungen}
-Bei der Erwägung von Trusted-Advisor ist zu berücksichtigen, ob es kosteneffizient ist, für Support-Pläne zu zahlen, da diese den Zugang zu allen Empfehlungen des Trusted Advisors ermöglichen. Eines der Ziele dieser Arbeit ist es, die Entstehung der Kosten auf eine praktikable Weise zu verstehen (Kostenüberwachung). Einschränkend lässt sich sagen, ob alle Empfehlungen von Trusted Advisor zu echten Einsparungen führen. %Dies, um Optimierungsmaßnahmen zu ermöglichen. 
+Bei der Erwägung von Trusted-Advisor ist zu berücksichtigen, ob es kosteneffizient wäre, für Support-Pläne zu zahlen, da diese den Zugang zu allen Empfehlungen des Trusted Advisors ermöglichen. Eines der Ziele dieser Arbeit ist es, die Entstehung der Kosten auf eine praktikable Weise zu verstehen (Kostenüberwachung). Einschränkend lässt sich sagen, ob alle Empfehlungen von Trusted Advisor zu echten Einsparungen führen. %Dies, um Optimierungsmaßnahmen zu ermöglichen. 
 So wäre es nicht sinnvoll, Kosten für AWS-Dienste wie Business- oder Enterprise Support zu übernehmen, wenn diese die möglichen Einsparungen übersteigen. Die Vorteile von Business- oder Enterprise Support-Plänen beschränken sich nicht auf Kosteneinsparungen und Kostenbegrenzung, sondern tragen auch zur Sicherheit und Leistung bei.\footnote{Darüber hinaus bieten beide Pläne bieten rund um die Uhr technischen Support durch AWS-Ingenieure und andere zusätzliche Dienstleistungen, auf die in dieser Arbeit nicht weiter eingegangen wird. Die Preise der Support-Pläne geben einen Hinweis darauf, ob die zu zahlende Empfehlungen von Trusted Advisor zur Kostenoptimierung und -überwachung kosteneffizient würden.} Dabei stellt sich die Frage, ob die Empfehlungen aller fünf Kategorien für die aktuelle Situation des Unternehmens benötigt werden.
 %[[Rev]Hier die Handlungen?]
 \\\\   
@@ -303,10 +303,10 @@ Am Ende circa 7,2\% von der Gesamtkosten über Cloud-Dienste.
 In diesem Kapitel wurde nachgewiesen, dass es mit CloudWatch möglich ist, Alarme auf Basis von Ereignissen einzurichten, die mit Amazon SNS oder externen E-Mail-Adressen kommunizieren. %Im nächsten Kapitel wird CloudWatch erneut behandelt. Diesmal nicht als Überwachungswerkzeug, sondern als Optimierungswerkzeug zur Erstellung von automatisierte Aktionen/Reaktionen. 
 %Dazu war es notwendig, die Rolle der von CloudWatch gesammelten Metriken zu verstehen, die die Grundlage für die Verwaltung von Aktionen wie Auto-Scaling-Gruppen bilden. 
 %Cost Explorer
-Aus dem Blickwinkel des Kostenmanagements wurde gezeigt, dass mit Cost-Explorer eine Analyse von Kosten der letzten 12 Monate, eine Einschätzung der Kosten im aktuellen Monat und eine Prognose für die nächsten Monate möglich ist. Diese Informationen dient unter anderem zur Erstellung einer operativen Budgetplanung mit genaueren Daten, da
+Zudem wurde - aus einem Blickwinkel des Kostenmanagements gezeigt, dass mit Cost-Explorer eine Kostenanalyse der letzten 12 Monate, eine Einschätzung der Kosten im aktuellen Monat und eine Prognose für die nächsten Monate möglich ist. - Diese Informationen dient unter anderem zur Erstellung einer operativen Budgetplanung mit genaueren Daten, da
 Kosten nach Tags und anderen Filtern getrennt werden können.
 %Trusted Advisor
-Darüber hinaus wurde Trusted Advisor vorgestellt, welcher konkrete Optimierungsempfehlungen gibt und warnt über Leistungsgrenzen. Dies kann mit erheblichen Kosten verbunden sein und ist daher nicht für alle Arten von Unternehmen unmittelbar attraktiv. Obwohl sich nicht alle Unternehmen die Prüfungen von Trusted Advisor leisten können, sollten die kostenlosen Empfehlungen im Überwachungs- und Optimierungsplan berücksichtigt werden.
+Darüber hinaus wurde Trusted Advisor vorgestellt, welcher konkrete Optimierungsempfehlungen gibt und warnt über Leistungsgrenzen. Dies kann mit erheblichen Kosten verbunden sein und ist daher nicht für alle Arten von Unternehmen unmittelbar attraktiv. Nun, es ist offensichtlich, dass nicht alle Unternehmen die Kosten von Trusted Advisor zahlen können, nichtsdestotrotz sollten die kostenlosen Empfehlungen im Überwachungs- und Optimierungsplan berücksichtigt werden.
 %[WAS KOMMT IN NÄCHTEN KAP.?]
 
 \begin{comment}
