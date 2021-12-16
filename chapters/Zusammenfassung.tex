@@ -1,52 +1,49 @@
 %[Rev]
 %\\Kapitelweise Kurzdarstellung der Inhalte (inklusive Referenzierung auf die \\Kapitelnummerierung) => Nach dem Motto: \textit{Was wurde wo beschrieben?}
 %\subsubsection*{Kurzdarstellung der Inhalte}
-Im Kapitel~\ref{kap_grundlagen} %Erfolgchancen der Cloud-Computing in Unternehmen.
-wurde die Bedeutung von Cloud-basierten Systemen bestätigt und verstäkt. Zum einen durch die Statistiken\cite{STA1,STA2,STA4} über die Nutzung von Cloud-Systemen weltweit. Zum anderen durch die Anzahl von Unternehmen, einschließlich Deutschland%\cite{ACC2}
-, mit erfolgreicher Implementierung von Public Cloud-basierten Systemen. Es hat sich gezeigt, dass eine erhebliche Anzahl von Unternehmen derzeit Schwierigkeiten haben, auf die Cloud umzusteigen, weil ihrer Mitarbeiter technische Qualifikation fehlen.[Zitat?] 
+Die Untersuchungen, die vorgestellten Anwendungsfälle und die durchgeführten Berechnungen bestätigen die These dieser Arbeit, dass Unternehmen, welche ihre Nutzung von Cloud-Diensten überwachen, besser in der Lage sind, Optimierungsmaßnahmen zu ergreifen und damit ihre Kosten für Cloud-Dienste reduziert werden. In der folgenden Zusammenfassung wird dies konkret aufgelistet.
 \\\\
-Kapitel~\ref{kap_zahlungsmodelle} weil EC2 den Großteil der Kosten von Cloud-Diensten ausmacht, wurden deren Zahlungsmodelle untersucht. Es hat sich gezeigt, wie das passende Zahlungsmodell für bestimmte Szenarien das geeignetste ist. Anhand einer Berechnung von Instanzen in dem Zahlungsmodell Saving PLans, wurde vorgestellt, welche Einsparungen die optionalen Vorauszahlungen erzielen. Es hat sich gezeigt, dass die Kombination von Zahlungsmodellen sich zur Kostensenkung anbietet. Dies unter Einbeziehung von EC2-Flotten für die erwartete Nutzung und On-Demand Instanzen für die variable.%ohne die Gesamtleistung der IT-Infrastruktur zu gefährden. 
+In Kapitel~\ref{kap_grundlagen} %Erfolgchancen der Cloud-Computing in Unternehmen.
+wurde die Bedeutung von Cloud-basierten Systemen bestätigt und verstäkt, zum einen durch die Statistiken %\cite{STA1,STA2,STA4} 
+über die Nutzung von Cloud-Systemen weltweit. Zum anderen durch die Anzahl von Unternehmen, einschließlich in Deutschland%\cite{ACC2}
+, mit erfolgreicher Implementierung von Public Cloud-basierten Systemen. Es hat sich gezeigt, dass eine erhebliche Anzahl von Unternehmen derzeit Schwierigkeiten haben, auf die Cloud umzusteigen, weil ihrer Mitarbeitern technische Qualifikation fehlen.
+\\\\
+In Kapitel~\ref{kap_zahlungsmodelle} wurden die Zahlungsmodelle von EC2-Instanzen untersucht. %Für unterschiedliche Szenarien eignet sich verschiedene Zahlungsmodelle. 
+Anhand einer Berechnung von Instanzen in dem Zahlungsmodell Saving Plans, wurde vorgestellt, welche Einsparungen die optionalen Vorauszahlungen erzielen. Es hat sich gezeigt, dass sich die Kombination von Zahlungsmodellen zur Kostensenkung anbietet. Dies erfolgt, wenn man für die geplante Nutzung EC2-Flotten anwendet und On-Demand Instanzen für die unvorhergesehene Nutzung einsetzt. %ohne die Gesamtleistung der IT-Infrastruktur zu gefährden. 
 %
-Wie in dem Anwendungsfall von Truecar Inc. in Unterkapitel~\ref{ssec:UseCaseTrueCar} %sind die Kosten von EC2-Instanzen von großer Relevanz in der Infrastrukturkosten. 
+In dem Anwendungsfall von Truecar Inc. im Unterkapitel~\ref{ssec:UseCaseTrueCar} %sind die Kosten von EC2-Instanzen von großer Relevanz in der Infrastrukturkosten. 
 wurde bestätigt, dass die korrekte Berechnung der künftig nötigen reservierten Instanzen und deren spätere Überwachung, erhebliche Einsparungen erzielen.
 \\\\
-Im Kapitel~\ref{kap_kostenueberwachung } wurden drei Überwachungswerkzeuge untersucht für eine bessere Überwachung von Cloud-Diensten ermöglichen. Die damit gesammelte Informationen dienen in Bereichen der Betriebswirtschaft und sollte eine bessere Kontrolle über die Kosten von Cloud-Diensten ermöglichen.
-\\\\
-Cost-Explorer hat gezeigt wie mit Berichten einen umfangreichen Überblick der Nutzung und Kosten zu verschaffen ist. Zwei vorgestellten Einsatzmöglichkeiten sind die operative Budgetplanung und Verfolgung von Lesitungskennzahlen(KPIs).
-%
-Die Metriken bei CloudWatch haben das Potenzial gezeigt, die Verfolgung von Lesitungskennzahlen zu ergänzen. Darüber hinaus die Dashboards und die Benachrichtigungen bei CloudWatch haben gezeigt, wie man in echter Zeit über den Stand der Cloud-Diensten informiert werden kann.
+In Kapitel~\ref{kap_kostenueberwachung } wurden drei Überwachungswerkzeuge untersucht, die eine bessere Überwachung von Cloud-Diensten ermöglichen. Die damit gesammelten Informationen dienen den betriebswirtschaftlichen Abteilungen der Unternehmen und gewähren eine bessere Kontrolle über die Kosten von Cloud-Diensten. Cost-Explorer verschafft einen umfangreichen Überblick der Nutzung und der Kosten. Zwei Einsatzmöglichkeiten sind die operative Budgetplanung und die Verfolgung von Leistungskennzahlen. Die Metriken bei CloudWatch dienen als Ergänzung für die Verfolgung von Leistungskennzahlen. Deren Dashboards und die Benachrichtigungen von relevanten Ereignissen haben darüber hinaus gezeigt, wie man über den Stand der Cloud-Dienste in Echtzeit informiert werden kann.
 %
 Trusted Advisor wurde aufgrund des fehlenden Zugangs zu einem Business- oder Enterprise-Plan nur eingeschränkt untersucht. 
-Auch der Dokumentation in Bezug auf Trusted Advisor was nicht ausreichend, um Berechnungen, Prüfungen oder Ähnliches durchführen zu können. Die Informationen, die gesammelt werden konnten, geben jedoch Hinweise auf die in dieser Arbeit behandelten Optimierungsmaßnahmen. Diese bestätigen, dass die hier genannten Maßnahmen in die richtige Richtung für die Kostenoptimierung von Cloud-Diensten führen. Zum Beispiel die Verwendung von reservierten Instanzen, das Abschalten von Instanzen mit geringer Auslastung und die Verwendung von Budgets mit Benachrichtigungen.
+Das Referenzhandbuch über Trusted Advisor war nicht ausreichend, um Berechnungen, Prüfungen oder Ähnliches durchführen zu können. Die Informationen, die dem Referenzhandbuch entnommen werden konnten, geben jedoch Hinweise auf die in dieser Arbeit behandelten Optimierungsmaßnahmen. %Diese bestätigen, dass die hier genannten Maßnahmen in die richtige Richtung für die Kostenoptimierung von Cloud-Diensten führen. 
+Zum Beispiel die Verwendung von reservierten Instanzen, das Abschalten von Instanzen mit geringer Auslastung und die Verwendung von Budgets mit Benachrichtigungen.
 \\\\
-Im Kapitel~\ref{kap_Optimierung} wurde anhand von definierten Arbeitszeiten mögliche Einsparungen für eine nicht-produktive Entwicklungsumgebung mit On-Demand EC2-Instanzen berechnet. Außerdem wurde erklärt, wie Auto Scaling-Gruppen, Load Balancer und Auto Scaling die Leistung einer balancierten und vertikal skalierbaren Serverinfrastruktur ermögichen können.
-\\\\
-Mit Fokus auf Amazon S3 wurde die Verschiebung von Objekten zwischen Speicherklassen mithilfe von Lebenszyklus-Konfiguration und Intelligent-Tiering vorgestellt. Für beide Optimierungsmaßnahmen wurden jeweils Berechnungen zu den möglichen Einsparungen anhand eines Anwendungsbeispiel durchgeführt.
-\\\\
+In Kapitel~\ref{kap_Optimierung} wurden anhand von definierten Arbeitszeiten mögliche Einsparungen für eine nicht-produktive Entwicklungsumgebung mit On-Demand EC2-Instanzen berechnet. Außerdem wurde erklärt, wie Auto Scaling-Gruppen und Load Balancer die Leistung einer balancierten und vertikal skalierbaren Serverinfrastruktur ermögichen können. Mit Fokus auf Amazon S3 wurde die Verschiebung von Objekten zwischen Speicherklassen mithilfe von Lebenszyklus-Konfiguration und Intelligent-Tiering vorgestellt. Für beide Optimierungsmaßnahmen wurden jeweils Berechnungen zu den möglichen Einsparungen anhand eines Anwendungsbeispiel durchgeführt.
+%\\\\
 %\subsubsection*{Rückkopplung auf die Einleitung: Wurde die Zielstellung der Arbeit und die Fragestellung zufriedenstellend beantwortet?}
-Durch die Ergebnisse der Untersuchung, die vorgestellten Anwendungsfälle und die durchgeführten Berechnungen lässt sich sagen, dass die Ziele dieser Arbeit erreicht wurden, da AWS eine Vielfalt an Werkzeuge zur Verfügung stellt. Mit denen Cloud-Nutzer in der Lage sind, Optimierungsmaßnahmen zu ergreifen und die von der Cloud-Infrastuktur verursachten Kosten zu überwachen.
+%[Ziele benennen und dass nahc meiner Untersuchung tatsächlich funktioniert ]
+%da AWS eine Vielfalt an Werkzeuge zur Verfügung stellt. Mit denen Cloud-Nutzer in der Lage sind, Optimierungsmaßnahmen zu ergreifen und die von der Cloud-Infrastuktur verursachten Kosten zu überwachen.
 \\\\
 %\subsubsection*{Kurzdarstellung Problem-Lösungsweg-Ergebnisse}
-Eines der in dieser Arbeit festgestellten Probleme war der mangelnde Wissensstand über die Entstehung von Kosten durch Cloud-Dienste, einer der Gründen dafür sein könnte, dass es sich um eine relativ neue Technologie auf dem Markt handelt.\footnote{AWS gibt es seit 2006, Azure seit 2010 und Google Cloud seit 2008. (Vgl. Anders Lisdorf, 2021, Cloud Computing Basics: a Non.-Technical Introduction, S.72, S.80 und S.91 \cite{CCB})}
+Eines der in dieser Arbeit festgestellten Probleme war der mangelnde Wissensstand über die Entstehung von Kosten durch Cloud-Dienste. Einer der Gründe dafür ist, dass es sich um eine relativ neue Technologie auf dem Markt handelt.\footnote{AWS gibt es seit 2006, Azure seit 2010 und Google Cloud seit 2008. (Vgl. Anders Lisdorf, 2021, Cloud Computing Basics: a Non.-Technical Introduction, S.72, S.80 und S.91 \cite{CCB})}
 %t.ly/5GXv
-Als Lösung für dieses Problem werden 
-Ausbildungsmaßnahmen empfohlen. Insbesondere im Bezug auf Kostenüberwachung und -optimierung. Als nächster Schritt würde folgen, die IT-Infrastruktur so einzurichten, dass die erzeugten Kosten leicht zugänglich sind, dass Grenzen für detaillierte Budgets festgelegt werden und dass die richtigen Personen darüber informiert werden, wenn Budgetgrenzen überschritten werden. Als Ergebnis hätten Unternehmen Kontrolle über Kosten, die durch nutzenden Cloud-Dienste verursach werden. Sie wären in der Lage die Innovation einer Infrastruktur voll zum Vorteil zu nutzen, die sich flexibel an die sich ständig ändernden Geschäftsanforderungen anpasst.
+Als Lösung für dieses Problem werden Ausbildungsmaßnahmen, insbesondere im Bezug auf Kostenüberwachung und -optimierung, empfohlen. Schlussendlich müsste die IT-Infrastruktur so einzurichtet werden, dass die entstehenden Kosten leicht zugänglich sind, dass Grenzen für detaillierte Budgets festgelegt, und die richtigen Personen bei Budgetüberschreitung informiert werden. Als Ergebnis hätten Unternehmen mehr Kontrolle über die Kosten, die durch die Nutzung von Cloud-Diensten verursacht werden. Sie würden von einer flexiblen Infrastruktur profitieren, die sich an ständig ändernde Geschäftsanforderungen anpassen lässt. 
 \\\\
 %\subsubsection*{Kritische Bewertung (sofern nicht bereits im Hauptteil geschehen)}
-Nur mit AWS-Diensten zu arbeiten könnte zu (Abhähigkeit von dem Cloud-Anbieter führen; dafür gibt es ein Fachbegriff), deswegen lädt Multi-Cloud ein zu eine...
+%Um eine Ab von einem Ant zu vermeiden, lädt (Framework?)Multi-Cloud ein Nur mit einem Cloud-Anbieter zu arbeiten kann dazu führen, dass von dem abhängig zu werden
+%könnte zu (Abhähigkeit von dem Cloud-Anbieter führen; dafür gibt es ein Fachbegriff), deswegen lädt Multi-Cloud ein zu eine...
 %\subsubsection*{Offene Probleme/Themen}
 %AWS-Organizations%(https://aws.amazon.com/de/organizations/?blog_multi_account_ct) 
 %, IAM, Mit Serverless können Kosten optimiert werden, möglichweise würde die Komplexität der Anwendung zunehmen.,  AWS Cost Anomalies,CloudFormation?
 %Limitationen: es konnte in dieser Arbeit nicht in der Praxis geprüft werden, ob die Maßnahmen ihre Verprechen anhalten
 %\subsubsection*{Richtung der zukünftigen/möglichen Arbeiten - Weitere Forschungen}
-Während der Entwicklung dieser Arbeit wurden S3, Spot-Instanzen, Cost-Explorer, CloudWatch und Trusted Advisor (mit Einschränkungen) mit dem kostenlosen AWS-Kontingent getestet. 
-%\\\\
-Es bleibt offen, die oben genannten Überwachungswerkzeuge anzuwenden und die entsprechenden Optimierungsmaßnahmen in einer echter IT-Infrastruktur zu ergreifen. 
-Zum Beispiel bei einer hohen Auslastung der Rechnerkapazität, die nicht vorhersehbar ist oder %bei Entwicklungumgebungen, die nach Arbeitszeiten ein- und ausgeschaltet werden können. Für
-oder bei massiven Datenspeicherung mit unterschiedlichen Zugriffsmustern.%  werden S3 intelligent-Tiering oder Policies zu testen.%so dass diese zwischen Speicherklassen verschoben werden.
+Während der Entwicklung dieser Arbeit wurden S3, Spot-Instanzen, Cost-Explorer, CloudWatch und Trusted Advisor (mit Einschränkungen) mit dem kostenlosen AWS-Kontingent getestet. Um die Ergebnisse dieser Arbeit unter realen Bedingungen zu erproben, müssten die oben genannten Überwachungswerkzeuge in einer echten IT-Infrastruktur angewendet und die entsprechenden Optimierungsmaßnahmen ergriffen werden. %Zum Beispiel bei einer hohen Auslastung der Rechnerkapazität, die nicht vorhersehbar ist oder bei massiven Datenspeicherung mit unterschiedlichen Zugriffsmustern.%bei Entwicklungumgebungen, die nach Arbeitszeiten ein- und ausgeschaltet werden können. Für
+%  werden S3 intelligent-Tiering oder Policies zu testen.%so dass diese zwischen Speicherklassen verschoben werden.
 \\\\
 %\subsubsection*{Erläuterung, warum welche Aspekte in der Arbeit nicht erläutert} 
-Es wurden zwei AWS-Dienste untersucht, um den Fokus auf die meist genutzte und representative Cloud-Dienste von AWS zu halten. Aus diesem Grund wurden Optimierungsmaßnahmen von Trusted Advisor für Datenbanken, Netzwerk, AWS-Lambda und mehr nicht berücksichtigt.
+Es wurden die zwei meist genutzten AWS-Cloud-Dienste untersucht: EC2-Instanzen und Amazon S3. Aus diesem Grund wurden Optimierungsmaßnahmen von Trusted Advisor für Datenbanken, Netzwerk, AWS-Lambda und mehr nicht berücksichtigt.
 %Die Prüfungen in Bezug auf Sicherheit, Leistung und Fehlertoleranz von Trusted Advisor wurden nicht berücksichtigt, weil...(Schon in Kapitel erklärt)
 \begin{comment}
 \subsection*{Bewusstsein in der gesamten Organisation entwickeln}
