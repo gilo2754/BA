@@ -2,16 +2,17 @@
 %Seite 163
 % Wie werden die Informationen die Benutzer gezeigt und wie können sie diese manipulieren
 %[Rev]
-Die mit den Überwachungswerkzeuge gesammelte Informationen, bilden die Grundlage für die Optimierungsmaßnahmen für EC2-Instanzen und Amazon S3.
+In diesem Kapitel werden die Optimierungsmaßnahmen für EC2-Instanzen und Amazon S3 vorgestellt. Im Abschluss, mithilfe von CloudWatch und Cost-Explorer, besteht die Möglichkeit die Effekte der Optimierungsmaßnahmen zu messen. Somit kann ein Vergleich zwischen den Kosten vor und nach der Optimierungsmaßnahmen durchgeführt werden.
+%Die mit den Überwachungswerkzeuge gesammelte Informationen, bilden die Grundlage für die Optimierungsmaßnahmen für EC2-Instanzen und Amazon S3.
 %Wenn zum Beispiel festgestellt wird, dass Instanzen nicht ausreichend genutzt werden, können sie so konfiguriert werden, dass sie abgeschaltet werden.
 %La mayoria de las medidas de opmimizacion se centran en las instancias EC2, pues como antes mencionado representan la gran mayoria de los servicios que comprenden los gastos en nuestras facturas.
 
 \subsection{EC2 Auto Scaling}
 %t.ly/CXs3 Linked In auf DE          %t.ly/1nka          %THIS!!! t.ly/vrCO
 %https://youtu.be/qYHR_V1lvNU?t=900
-Das \textit{Auto Scaling} oder die automatische Skalierung von Instanzen dient dazu die richtige Anzahl von EC2-Instanzen zur Verfügung zu haben, um die Anwendungslast dynamisch abzudecken.\footnote{Vgl. Was ist Amazon EC2 Auto Scaling? S.9\cite{AMZ31} } Diese Fähigkeit wird als \textit{horizontale Skalierung} bezeichnet.\footnote{Vgl. Die Grundbedeutung der horizontalen Skalierung ist, dass Systeme durch zusätzliche Komponenten erweitert werden. Im Gegensatz dazu bedeutet der Begriff "vertikale Skalierung", dass einer einzelnen Komponente zusätzliche Leistungsfähigkeiten und Ressourcen hinzugefügt werden. o.S.\cite{TECH1} }
+Das \textit{Auto Scaling} oder die automatische Skalierung von Instanzen dient dazu die richtige Anzahl von EC2-Instanzen zur Verfügung zu haben, um die Anwendungslast dynamisch abzudecken.\footnote{Vgl. Was ist Amazon EC2 Auto Scaling? S.9\cite{AMZ31}} Diese Fähigkeit wird als \textit{horizontale Skalierung} bezeichnet.\footnote{Vgl. Die Grundbedeutung der horizontalen Skalierung ist, dass Systeme durch zusätzliche Komponenten erweitert werden. Im Gegensatz dazu bedeutet der Begriff "vertikale Skalierung", dass einer einzelnen Komponente zusätzliche Leistungsfähigkeiten und Ressourcen hinzugefügt werden. o.S.\cite{TECH1} }
 \\\\
-Die \autoref{fig:AutoSca_Unused_Capacity} zeigt das wechselnde Verhalten einer Beispielanwendung, die vor allem unter der Woche genutzt wird. Am Wochenende sinkt die Nachfrage nach Rechnerkapazität auf weniger als 25 \% und lässt den Rest der Kapazitäten ungenutzt. 
+Die \autoref{fig:AutoSca_Unused_Capacity} zeigt das wechselnde Verhalten einer Beispielanwendung, die vor allem unter der Woche genutzt wird. Am Wochenende sinkt die Nachfrage nach Rechnerkapazität auf weniger als 25\% und lässt den Rest der Kapazitäten ungenutzt. 
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.5]{sources/AutoCap Unused Capacity}
@@ -23,7 +24,7 @@ Die \autoref{fig:AutoSca_Unused_Capacity} zeigt das wechselnde Verhalten einer B
 Die gelben Säulen stellen die tägliche genutzte Rechenkapazität dar.
 Die graue Zone entspricht ungenutzte Rechenkapazität und beträgt etwa ein Drittel der wöchentlichen Rechnerkapazität.
 \subsubsection*{Auto Scaling Group}
-Die Instanzen, die zur Deckung der erforderlichen Rechenkapazität zur Verfügung stehen, werden in einer \textit{Auto-Scaling-Gruppe (Auto Scaling Group)} zusammengefasst. Diese Gruppe von Instanzen wird in AWS als Auto-Scaling-Gruppe bezeichnet. Bei der Erstellung einer Auto-Scaling-Gruppe wird eine minimale, gewünschte und maximale Anzahl von Instanzen definiert. 
+Die Instanzen, die zur Deckung der erforderlichen Rechenkapazität zur Verfügung stehen, werden in einer \textit{Auto-Scaling-Gruppe (Auto Scaling Group)} zusammengefasst. Diese Gruppe von Instanzen wird in AWS als Auto-Scaling-Gruppe bezeichnet. Bei der Erstellung einer Auto-Scaling-Gruppe wird somit eine minimale, gewünschte und maximale Anzahl von Instanzen definiert. 
 \\\\
 Die \autoref{fig:BA Diagramme-AutoScaling and LoadBalancer.drawio} zeigt die gewünschte Instanzen einer Auto-Scaling-Gruppe, welche beim Start der Auto-Scaling-Gruppe gestartet werden. Die minimale und maximale Anzahl von Instanzen sind die Grenzwerte für die Auto-Scaling-Gruppe.  
 \begin{figure}[h]
@@ -124,7 +125,7 @@ Die Zugriffshäufigkeit und die Aufbewahrungszeit bilden somit die zwei Hauptkri
 Die Objekte werden in Behältern gespeichert, die bei AWS Buckets genannt werden. Daten werden über einen längeren Zeitraum gespeichert aufgrund der vorgeschriebenen Anforderungen oder weil per Gesetz auf die Informationen zukünftig zugegriffen werden muss.
 %\\
 Zusätzlich, wenn auf die Daten kaum zugegriffen wird, sind \textit{Glacier} und \textit{Glacier Deep Archive} passende Speicherklassen. Die richtige Speicherklasse zuwählen, stellt jedoch keine einfache Entscheidung dar. % jedoch die Umstände können sich schnell ändern. 
-Hinzu kommt, dass nicht alle Daten in einer Applikation immer die gleichen Zugriffsmuster haben. Für solche Fälle ist es möglich, Regeln zu definieren, die Dateien zwischen verschiedenen Speicherklassen in Abhängigkeit ihres Alters zu verschieben.
+Hinzu kommt, dass nicht alle Daten in einer Applikation immer die gleichen Zugriffsmuster haben. In solchen Fällen, besteht die Möglichkeit, Regeln zu definieren, die Dateien zwischen verschiedenen Speicherklassen in Abhängigkeit ihres Alters zu verschieben.
 \newpage
 \subsubsection{Lebenszyklus-Konfiguration}\label{ssec:Lebenszyklus-Konfiguration}
 Die \textit{Lebenszyklus-Konfiguration} oder \textit{lifecycle policy} ist eine Maßnahme zur Optimierung für Amazon S3-Speichereinheiten. Eine S3-Lebenszykluskonfiguration beschreibt in einer XML-Datei Regeln und Aktionen für die Verschiebung von Objekten in unterschiedliche Speicherklassen. Allerdings verursacht diese Verschiebung Kosten. Ein Beispiel von diesen Kosten und mögliche Einsparungen werden in \autoref{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} vorgestellt.
@@ -194,7 +195,7 @@ Das \textit{Intelligent-Tiering} verschiebt Objekte auf der Grundlage von Zugrif
 Die \autoref{fig:S3_IntLifeCycle} zeigt, wie Objekte in Abhängigkeit davon, ob auf sie zugegriffen wurde oder nicht, verschieben werden. 
 \begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.7]{sources/S3_IntLifeCycle}
+  \includegraphics[scale=0.6]{sources/S3_IntLifeCycle}
   \caption[Funktionsweise von Intelligent-Tiering]{}\label{fig:S3_IntLifeCycle} Funktionsweise von Intelligent-Tiering
   %{\cite{SCOUT1}}
 \end{figure}\\
@@ -205,7 +206,6 @@ Wird ein Objekt zu einem späteren Zeitpunkt aus der Ebene der seltenen Zugriffe
 %TALVEZ PARA RELLENAR UN POCO HACER UN CALCULO DE CUANTO SALDRIA SI SE USA Intelligent-Tiering para el caso de los videos
 %En comparación con Lebenszyklus-Konfiguration Intelligent-Tiering objetos son regresados al ser llamados/usados.
 %Ademas los tiempos de desplazamientos ya están definidos en Intelligent-Tiering.
-\\\\
 %Anwenfungsbeispiel?
 %Intelligent-Tiering bietet die Möglichkeit, Objekte in fünf verschiedenen Ebenen zu verschieben. 
 \subsubsection*{Anwendungsbeispiel Intelligent-Tiering} 
@@ -239,8 +239,8 @@ Darüber hinaus werden die folgenden Kosten berechnet (Blau markiert): \\
   \label{fig:INT_S3_2} Berechnung für die Verwaltung von 120 TB mit\\ AWS Pricing-Calculator für S3 Intelligent-Tiering (2).\\
   Quelle: eigene Darstellung mit AWS Pricing-Calculator \cite{AMZ17-S3}.
 \end{figure}
-\\\\
-\subsubsection*{vergleich zwischen der Intelligent-Tiering und der Lebenszyklus-Konfiguration}%[Rev]
+\newpage
+\subsubsection*{Vergleich zwischen der Intelligent-Tiering und der Lebenszyklus-Konfiguration}%[Rev]
 Bezüglich dieser Thematik muss betont werden, dass bei Intelligent-Tiering die Objekte in Ebenen von seltenen Zugriff automatisch auf eine Ebene für häufigen Zugriff zurückgegeben werden. Siehe \autoref{fig:S3_IntLifeCycle}.
 \\\\
 Ein weiterer Unterschied liegt darin, dass bei einer Lebenszyklus-Konfiguration die Tage der Verschiebung zwischen den Speicherklassen und die Speicherklassen leicht verändert werden können. Diese ist bei Intelligent-Tiering standardmäßig vorab bereits festgelegt. %Die Möglichkeit die Zeitabstand für die Verschiebung zwischen Ebenen bei Intelligent-Tiering wurde in der AWS-Dokumentation nicht gefunden. 
@@ -255,7 +255,6 @@ Grund: einmal programmiert, funktioniert es für immer.
 
 %Limitierung 
 %Quotas setzen? erweitern oder reduzieren / benachrichtigen aber auch eine Aktion durchführen 
-
 %Lambda
 
 AWS Lambda is a compute service. You can use it to run code without provisioning or managing servers. Lambda runs your code on a high-availability compute infrastructure. It operates and maintains all of the compute resources, including server and operating system maintenance, capacity provisioning and automatic scaling, code monitoring, and logging. With Lambda, you can run code for almost any type of application or backend service. 
