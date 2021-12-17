@@ -24,14 +24,14 @@ In der \autoref{fig:OnDemand_Preise} werden Preisbeispiele für die Region Ohio 
     \label{fig:OnDemand_Preise}  On-Demand Preisbeispiele von EC2-Instanzen.\footnote{\cite{AMZ02}}
   \end{figure}
 \\
-Es ist zu beachten, dass Instanzen mit denselben Eigenschaften(Instanzfamilie, Arbeitsspeicher, Netzwerkleistung usw.), aber in verschiedenen Regionen, unterschiedliche Preise haben können.
+Es ist zu beachten, dass Instanzen mit denselben Eigenschaften (Instanz-Familie, Arbeitsspeicher, Netzwerkleistung usw.), aber in verschiedenen Regionen, unterschiedliche Preise haben können.
 %WARUM IST DIESE ABB.?
 \subsection{Reservierte Instanzen und Saving Plans}
 %t.ly/JUWq
 %https://www.youtube.com/watch?v=c_zlPQimrvY
 Die Zahlungsmodelle \textit{Reservierte Instanzen} und \textit{Saving Plans} sind sich sehr ähnlich. Beide kommen mit einer gleichbleibenden  Nutzungsverpflichtung, die in US-Dollar pro Stunde gemessen wird.\footnote{Vgl. AWS-Services werden in US-Dollar abgerechnet. Zahlungen in anderen Währungen sind auch möglich. Quelle: AWS-Console in Kontoeinstellungen.} Um die reduzierten Preise  zu bekommen, müssen Verträge über ein oder drei Jahre abgeschlossen werden. 
 \\\\
-\autoref{fig:EinsparungenRISP} zeigt die möglichen Einsparungen je nach Zahlungsmodell. Die Einsparungen hängen davon ab, ob man die Instanzfamilie und die Verfügbarkeitszone später verändern kann oder nicht. Je geringer die Flexibilität für spätere Änderungen, desto höher die Einsparungen.
+\autoref{fig:EinsparungenRISP} zeigt die möglichen Einsparungen je nach Zahlungsmodell. Die Einsparungen hängen davon ab, ob man die Instanz-Familie und die Verfügbarkeitszone später verändern kann oder nicht. Je geringer die Flexibilität für spätere Änderungen, desto höher die Einsparungen.
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.8]{sources/EinsparungenRISP}\label{fig:EinsparungenRISP}\\
@@ -40,12 +40,12 @@ Die Zahlungsmodelle \textit{Reservierte Instanzen} und \textit{Saving Plans} sin
   Mögliche Einsparungen bei reservierten Instanzen and Saving Plans laut AWS.\footnote{\cite{AMZ07,AMZ11}}
 \end{figure}
 \\
-\textit{Compute Saving Plans} bieten die Flexibilität EC2-Instanzen nach Familie, Größe, Verfügbarkeitszone (AZ), Betriebssystem oder Mandant zu wechseln.\footnote{Vgl. AWS Saving Plans Pricing\cite{AMZ11}.}\footnote{Vgl. Mark Wilkins, 2021, AWS Certified Solutions Architect - Associate (SAA-C02), S.95.\cite{AWS1}.} Diese Option ist bei EC2-Instance Saving nicht möglich und daher bietet diese Alternative eine etwas höher Einsparung.
+Die \textit{Compute Saving Plans} bieten die Flexibilität \textit{die Familie, die Größe, die Verfügbarkeitszone (AZ), das Betriebssystem} oder \textit{der Mandant} von EC2-Instanzen zu wechseln.\footnote{Vgl. AWS Saving Plans Pricing\cite{AMZ11}.}\footnote{Vgl. Mark Wilkins, 2021, AWS Certified Solutions Architect - Associate (SAA-C02), S.95.\cite{AWS1}.} Diese Option ist bei \textit{EC2-Instance Saving} nicht möglich und daher bietet die zweite Option eine etwas höhere Einsparung.
 \begin{quote}
     „Bei Compute Saving Plans können Sie beispielsweise jederzeit von C4- auf M5-Instances wechseln, eine Workload von EU (Irland) nach EU (London) verlagern oder eine Workload von EC2 auf Fargate oder Lambda verschieben. Dabei zahlen Sie automatisch weiterhin den Saving Plans-Preis.”
     \footnote{Vgl. AWS Saving Plans Pricing\cite{AMZ11}.}
 \end{quote}
-Bei den EC2-Instance Saving Plans hingegen muss eine Instance-Familie in einer bestimmten Region ausgewählt werden.  Dies reduziert automatisch die Kosten für die ausgewählte Instanz-Familie in der jeweiligen Region, unabhängig von Availability Zone, Größe, Betriebssystem oder Mandant.
+Bei den EC2-Instance Saving Plans hingegen muss eine Instanz-Familie in einer bestimmten Region ausgewählt werden.  Dies reduziert automatisch die Kosten für die ausgewählte Instanz-Familie in der jeweiligen Region, unabhängig von Availability Zone, Größe, Betriebssystem oder Mandant.
 %\\Die Festlegung eines festen Stundensatzes über einen langen Zeitraum bietet die Möglichkeit, künftige Kosten zu planen[ZITAT/WIE IM BWL ERKLÄRT]WIEDER EINBLENDEN; WENN ES SINNVOLL IST.
 %-
 %Folgenden Kriterien definieren den Preis von EC2-Instanzen bei SavingPlans:
@@ -69,7 +69,7 @@ Die \autoref{fig:EinsparungenVorauszahlung} zeigt den Vergleich zwischen den dre
     Eigene Darstellung. Quelle: {AWS Pricing Calculator\cite{AMZ17}.}
   \end{figure}
   \\
-Die Berechnungen wurden anhand des AWS Pricing Calculator  für Instanzen der Familie t4g.xlarge und in der Region EU (Frankfurt) durchgeführt.{\cite{AMZ17}} 
+Die Berechnungen wurden anhand des AWS Pricing Calculator  für Instanz-Familie t4g.xlarge und in der Region EU (Frankfurt) durchgeführt.{\cite{AMZ17}} 
 \subsection{Spot Instanzen }\label{ssec:Spot-Instances}
 Wie in Unterkapitel \ref{sssec:RI-Marketplace} genannt, bieten EC2 Spot-Instanzen die Möglichkeit aus den ungenutzten EC2-Instanzen anderer Nutzer zu profitieren. Mit einem Preisvorteil von bis zu 90\% gegenüber normalen On-Demand-Instanzen sind Spot-Instanzen ideal für fehlertolerante Anwendungen wie auf Containern ausgeführte Workloads, CI/CD, Bigdata-Anwendungen und ähnliches.
 
