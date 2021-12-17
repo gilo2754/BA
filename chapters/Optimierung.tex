@@ -23,7 +23,7 @@ Die \autoref{fig:AutoSca_Unused_Capacity} zeigt das wechselnde Verhalten einer B
 Die gelben Säulen stellen die tägliche genutzte Rechenkapazität dar.
 Die graue Zone entspricht ungenutzte Rechenkapazität und beträgt etwa ein Drittel der wöchentlichen Rechnerkapazität.
 \subsubsection*{Auto Scaling Group}
-Die Instanzen, die zur Deckung der erforderlichen Rechenkapazität zur Verfügung stehen, werden in einer \textit{Auto-Scaling-Gruppe(Auto Scaling Group)} zusammengefasst. Diese Gruppe von Instanzen wird in AWS als Auto-Scaling-Gruppe bezeichnet. Bei der Erstellung einer Auto-Scaling-Gruppe wird eine minimale, gewünschte und maximale Anzahl von Instanzen definiert. 
+Die Instanzen, die zur Deckung der erforderlichen Rechenkapazität zur Verfügung stehen, werden in einer \textit{Auto-Scaling-Gruppe (Auto Scaling Group)} zusammengefasst. Diese Gruppe von Instanzen wird in AWS als Auto-Scaling-Gruppe bezeichnet. Bei der Erstellung einer Auto-Scaling-Gruppe wird eine minimale, gewünschte und maximale Anzahl von Instanzen definiert. 
 \\\\
 Die \autoref{fig:BA Diagramme-AutoScaling and LoadBalancer.drawio} zeigt die gewünschte Instanzen einer Auto-Scaling-Gruppe, welche beim Start der Auto-Scaling-Gruppe gestartet werden. Die minimale und maximale Anzahl von Instanzen sind die Grenzwerte für die Auto-Scaling-Gruppe.  
 \begin{figure}[h]
@@ -45,22 +45,20 @@ Die \autoref{fig:BA Diagramme-AutoScaling and LoadBalancer.drawio} zeigt die gew
 %[Rev]
 %https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html
 %Durch einem \textit{Elastic Load Balancer} wird den eingehenden Anwendungsverkehr automatisch auf alle laufenden EC2-Instanzen verteilt. 
-Ein \textit{Elastic Load Balancer} ist für die Verwaltung eingehender Anfragen zuständig, indem es den Datenverkehr auf alle laufenden EC2-Instanzen umleitet.\footnote{Vgl. In diesem Fall beschränkt auf den Application Load Balancer. Amazon Elastic Container Service Entwicklerhandbuch - Load Balancer-Typen - S.617\cite{AMZ39}} Dies sorgt dafür, Instanzen mit einem ausgeglichener CPU-Auslastung arbeiten. Die \autoref{fig:BA Diagramme-AutoScaling and LoadBalancer.drawio} zeigt einen Application-Load-Balancer, welcher den Datenverkehr auf die Instanzen einer Auto-Scaling-Gruppe verteilt.
+Ein \textit{Elastic Load Balancer} ist für die Verwaltung eingehender Anfragen zuständig, indem es den Datenverkehr auf alle laufenden EC2-Instanzen umleitet.\footnote{Vgl. In diesem Fall beschränkt auf den Application Load Balancer. Amazon Elastic Container Service Entwicklerhandbuch - Load Balancer-Typen - S.617\cite{AMZ39}} Dies sorgt dafür, dass die Instanzen mit einem ausgeglichener CPU-Auslastung arbeiten. Im diesem Sinne zeigt die \autoref{fig:BA Diagramme-AutoScaling and LoadBalancer.drawio} einen Application-Load-Balancer, welcher den Datenverkehr auf die Instanzen einer Auto-Scaling-Gruppe verteilt.
 
 \subsubsection{Zeitgesteuerte Skalierung}\label{ssec:ZeitgesteuerteScal}
 %W-Ende für Dev und Beta
 %\textbf{Nicht produktive Umgebungen}\\
 %Auch möglich damit https://aws.amazon.com/de/solutions/implementations/instance-scheduler/
-In einem On-Premise-System mache es, wenn überhaupt, einen kleinen Unterschied bei den Kosten, dass Instanzen die ganze Zeit aktiv bleiben.\footnote{Anders Lisdorf, 2021, S. 153\cite{CCB}} %\footnote{Vgl. ,Cloud Computing Basics: a Non.-Technical Introduction. Seite 153}. 
-Im Gegensatz dazu ist es bei On-Demand-Zahlungsmodelle sinnvoll Zeiträume zu definieren, in denen Instanzen abgeschaltet werden können, um deren Nutzung zu reduzieren. Bei Systemen, die nur tagsüber und unter der Woche in Betrieb sein müssen, kann dies eine Einsparung von bis zu 67\% bedeuten. Wenn zum Beispiel Test- und Beta-Umgebungen von Montag bis Freitag von 7 bis 20 Uhr laufen würden. 
+In einem On-Premise-System würde es, wenn überhaupt, nur einen geringen Kostenunterschied ausmachen, wenn Instanzen die ganze Zeit aktiv bleiben.\footnote{Anders Lisdorf, 2021, S. 153\cite{CCB}} %\footnote{Vgl. ,Cloud Computing Basics: a Non.-Technical Introduction. Seite 153}. 
+Im Gegensatz dazu, ist es bei On-Demand-Zahlungsmodelle sinnvoll Zeiträume zu definieren, in denen Instanzen abgeschaltet werden können, um deren Nutzung zu reduzieren. Bei Systemen, die nur tagsüber und unter der Woche in Betrieb sein müssen, kann sogar dies zu einer Einsparung von bis zu 67\% der Kosten für Instanzen führen. Im Falle, das zum Beispiel Test- und Beta-Umgebungen von Montag bis Freitag von 7 bis 20 Uhr laufen würden. 
 \\\\
-Die \autoref{fig:Einsparung_Zeitgesteuerte_Skalierung} zeigt die Kostenberechnung einer nicht produktiven Umgebung (z.B. Test, Dev oder Beta) mit On-Demand-Instanzen. Diese Umgebung wird nur von Montag bis Freitag von 7:00 bis 20:00 Uhr genutzt. In der rechten Spalte werden die Kosten für Instanzen berechnet, wenn sie immer aktiv bleiben. In der linken Spalte wurde eine Berechnung durchgeführt, bei der die Instanzen nur dann eingeschaltet werden, wenn die Instanzen nach einem Zeitplan gesteuert würden.
-\\\\
-Die Abbildung zeigt am Ende den Prozentsatz und den Betrag(in Euros) der möglichen Einsparungen, wenn die Instanzen nach einer Zeitplan steuert werden würden.
+Die \autoref{fig:Einsparung_Zeitgesteuerte_Skalierung} zeigt die Kostenberechnung einer nicht produktiven Umgebung (z.B. Test, Dev oder Beta) mit On-Demand-Instanzen. Diese Umgebung wird nur von Montag bis Freitag von 7:00 bis 20:00 Uhr genutzt. In der rechten Spalte werden die Kosten für Instanzen berechnet, wenn sie immer aktiv bleiben. In der linken Spalte wurde eine Berechnung durchgeführt, bei der die Instanzen nur dann eingeschaltet werden, wenn sie nach einem Zeitplan gesteuert würden. Darüber hinaus veranschaulicht die \autoref{fig:Einsparung_Zeitgesteuerte_Skalierung} am Ende den Prozentsatz und den Betrag (in Euros) der möglichen Einsparungen, wenn die Instanzen nach einem determinierten Zeitplan gesteuert wird.
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.6]{sources/Einsparung_Zeitgesteuerte_Skalierung}
-  \caption[Berechnung für ein nicht produktives Umgebung mit Zeitgesteuerte Skalierung]{}
+  \caption[Berechnung für ein nicht produktives Umgebung mit zeitgesteuerter Skalierung]{}
   \label{fig:Einsparung_Zeitgesteuerte_Skalierung} 
   Berechnung für ein nicht-produktive Umgebung mit zeitgesteuerter Skalierung. \\
   Quelle: Eigene Darstellung.
@@ -83,7 +81,7 @@ Quelle des Stundensatzes: AWS Pricing Calculator.\footnote{Der Stundensatz wurde
 \subsubsection{Dynamisches Auto Scaling}
 %[Rev]
 %Intro mit Beispiel
-Es kann jedoch zu schnelle und kontinuierliche Änderungen im Verhalten von Applikationen geben, häufig innerhalb von wenige Minuten. Bei solche Szenarien ist sinnvoller, Metriken zur automatischen Anpassung der Skalierung der Rechenkapazität festzulegen. Beispiele für eine veränderte Nutzung von Applikationen finden sich bei \textit{Tinder} und \textit{OkCupid}, zwei der größten Dating-Applikationen in den Vereinigten Staaten. 
+Es kann jedoch zu schnellen und kontinuierlichen Änderungen im Verhalten von Applikationen kommen, häufig innerhalb von wenige Minuten. Bei solchen Szenarien ist es daher sinnvoller, Metriken zur automatischen Anpassung der Skalierung der Rechenkapazität festzulegen. Beispiele für eine veränderte Nutzung von Applikationen finden sich bei \textit{Tinder} und \textit{OkCupid}, zwei der größten Dating-Applikationen in den Vereinigten Staaten. 
 \\\\
 Die \autoref{fig:Use_by_hour_netflix_OkCupid_tinder} zeigt die Nutzungsspitzen bei den genannten Applikationen. Dieses wechselnde Verhalten wirkt sich unmittelbar auf die zu verschiedenen Tageszeiten benötigte Rechenkapazität aus und macht eine dynamische Skalierung der Rechenkapazität passend, wenn das Ziel darin besteht, ungenutzte Cloud-Dienste abzuschalten. Als Konsequenz der Abschaltung von ungenutzten Cloud-Diensten folgt die Reduzierung von Kosten.
 \begin{figure}[h!]
@@ -96,19 +94,19 @@ Die \autoref{fig:Use_by_hour_netflix_OkCupid_tinder} zeigt die Nutzungsspitzen b
   \\Mit Touches sind die Anzahl der Klicks, Swipes oder einfachen Interaktionen mit der Applikation gemeint.
 \end{figure}
 \\
-Die für die automatische Skalierung erforderlichen Metriken wurden näher im Unterkapitel~\ref{ssec:CloudWatch} erwähnt. Eine der Metriken, die von AWS %[TELEFONAT mit Deepak von der Einheit CIS[Cloud Capgemini]]
-benutzt wird, ist die gesamte CPU-Auslastung(CPU-Utilization). 
-Um die CPU-Auslastung als Metrik zu verwenden, werden mindestens zwei Schwellenwerte definiert. Eine für die Erhöhung von Rechenkapazität, \textit{Scale-Out} genannt und eine für das Verringern von Rechenkapazität bezeichnet als \textit{Scale-In}.
+Eine der Metriken, die von AWS %[TELEFONAT mit Deepak von der Einheit CIS[Cloud Capgemini]]
+benutzt wird, ist die gesamte CPU-Auslastung (CPU-Utilization).\footnote{Die für die automatische Skalierung erforderlichen Metriken wurden bereits ausführlicher im Unterkapitel~\ref{ssec:CloudWatch} erläutert.}
+Um die CPU-Auslastung als Metrik zu verwenden, werden mindestens zwei Schwellenwerte definiert, eine für die Erhöhung von Rechenkapazität, \textit{Scale-Out} genannt und eine für das Verringern von Rechenkapazität bezeichnet als \textit{Scale-In}.
 
 \subsubsection{Manual Scaling}
 %CHECK/23.11\\
-Für die Konfiguration einer Auto-Scaling-Gruppe werden die minimale, maximale und gewünschte Anzahl von Instanzen definiert. Wenn aufgrund von Bedingungen, die in der Konfiguration einer Auto-Scaling-Gruppe nicht berücksichtigt wurden mehr oder weniger Rechenkapazität benötigt wird, ist es möglich, die Rechenkapazität manuell zu steuern. Dies geschieht, ohne dass die aktiven Instanzen unterbrochen werden.
+Für die Konfiguration einer Auto-Scaling-Gruppe werden die minimale, maximale und gewünschte Anzahl von Instanzen definiert. Wenn aufgrund von Bedingungen, die in der Konfiguration einer Auto-Scaling-Gruppe nicht berücksichtigt wurden, eine Anpassung in der Rechenkapazität benötigt wird, besteht die Möglichkeit die Rechenkapazität manuell zu steuern. Dies geschieht, ohne dass die aktiven Instanzen unterbrochen werden.
 
 \subsubsection{Predective Scaling}%Voraussagende Skalierung / 
 Voraussagende Skalierung oder Predictive Scaling auf Englisch, nutzt maschinelles Lernen, um den Kapazitätsbedarf auf der Grundlage historischer Daten von CloudWatch vorherzusagen. Mit Hilfe der Predictive Scaling kann es die Kapazität vor der erwarteten Auslastung bereitstellen, im Gegensatz zur dynamischen Skalierung, die reaktiv ist. 
 Für Instanzen, die viel Zeit für die Initialisierung benötigen, kann die Zeit zwischen dem Beginn des Nachfrageanstiegs und der Initialisierung der Instanz vermieden oder verkürzt werden.
 %[(EIGENES) DIAGRAMM?]
-Anders als Zeitgesteuerte Skalierung ist es nicht notwendig, die Verhaltensmuster der Anwendungen zu analysieren.
+Anders als zeitgesteuerte Skalierung ist es nicht notwendig, die Verhaltensmuster der Anwendungen zu analysieren.
 %[SOLLTE DAS ZITIERT WERDEN?]
 %https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-dg.pdf#ec2-auto-scaling-predictive-scaling
 
@@ -117,16 +115,16 @@ In diesem Unterkapitel werden Maßnahmen zur Speicheroptimierung für Amazon S3 
 
 \subsubsection{Auswahl der passenden Speicherklasse}%[Rev]
 Um die richtige Wahl zu treffen, müssen die Anforderungen der Applikation verstanden werden. Ärztliche Patientenakten und \textit{Instagram-Stories} sind zwei Beispiele für Daten, die nach deren Erstellung für einen Mindestzeitraum oder auf unbestimmte Zeit aufbewahrt %und nicht gelöscht 
-werden.\footnote{Vgl. Bei Instagram Stories handelt es sich um kurzen visuellen Content in der Regel Bilder oder kurze Videos, die nach 24 Stunden automatisch aus der Applikation Instagram verschwinden(Stand November 2021).\cite{IG2}} In Deutschland müssen ärztliche Patientenakten mindesten zehn Jahre aufbewahrt werden.\footnote{Vgl. Nach dem Bürgerlichen Gesetzbuch (BGB) § 630f müssen Patientenakten zehn Jahren nach Abschluss der Behandlung aufbewahrt werden, soweit nicht nach anderen Vorschriften andere Aufbewahrungsfristen bestehen. \cite{BGB}} \textit{Instagram} verwendet die von seinen Nutzern bereitgestellten Informationen, einschließlich der Metadaten von Bildern, um andere \textit{Instagram-} und \textit{Facebook}-Produkte zu empfehlen.\footnote{Vgl. Instagram macht keine genauen Angaben darüber, wie lange die Nutzerdaten aufbewahrt werden, sondern gibt nur an, dass sie so lange wie nötig aufbewahrt werden. Hilfebereich Instagram: VII. Datenspeicherung, Deaktivierung und Löschung von Konten\cite{IG3}.}
+werden.\footnote{Vgl. Bei Instagram Stories handelt es sich um einen i.d.R. kurzen visuellen Content in der Regel Bilder oder kurze Videos, die nach 24 Stunden automatisch aus der Applikation Instagram  (Stand November 2021).\cite{IG2}} In Deutschland müssen ärztliche Patientenakten mindesten zehn Jahre aufbewahrt werden.\footnote{Vgl. Nach dem Bürgerlichen Gesetzbuch (BGB) § 630f müssen Patientenakten zehn Jahren nach Abschluss der Behandlung aufbewahrt werden, soweit nicht nach anderen Vorschriften andere Aufbewahrungsfristen bestehen. \cite{BGB}} \textit{Instagram} verwendet die von seinen Nutzern bereitgestellten Informationen, einschließlich der Metadaten von Bildern, um andere \textit{Instagram-} und \textit{Facebook}-Produkte zu empfehlen.\footnote{Vgl. Instagram macht keine genauen Angaben darüber, wie lange die Nutzerdaten aufbewahrt werden, sondern gibt nur an, dass sie so lange wie nötig aufbewahrt werden. Hilfebereich Instagram: VII. Datenspeicherung, Deaktivierung und Löschung von Konten\cite{IG3}.}
 %[nicht gelöscht, sondern archiviert]Im Gegensatz dazu wird eine Instagram-Story innerhalb von 24 Stunden von der Applikation verschwinden und archiviert\footnote{Vgl. Instagram: Wann verschwindet meine Instagram Story?\cite{IG1}}.
 Die Zugriffshäufigkeit und die Aufbewahrungszeit bilden somit die zwei Hauptkriterien für die Verschiebung von Daten zwischen Speicherklassen.\footnote{Vgl. AWS: Amazon Simple Storage Service - User Guide. S.711.\cite{AMZ18}}
 \\\\
 %AWS bietet verschiedene Speicherklassen an, die sich im Preis und in der Häufigkeit des Zugriffs auf die Objekte unterscheiden. 
 %([Rev] UMFORMULIEREN :)
-Die Objekte werden in Behältern gespeichert, die Buckets genannt werden. Daten werden über einen längeren Zeitraum gespeichert aufgrund der vorgeschriebenen Anforderungen oder weil per Gesetz auf die Informationen in der Zukunft zugegriffen werden muss.
+Die Objekte werden in Behältern gespeichert, die bei AWS Buckets genannt werden. Daten werden über einen längeren Zeitraum gespeichert aufgrund der vorgeschriebenen Anforderungen oder weil per Gesetz auf die Informationen zukünftig zugegriffen werden muss.
 %\\
 Zusätzlich, wenn auf die Daten kaum zugegriffen wird, sind \textit{Glacier} und \textit{Glacier Deep Archive} passende Speicherklassen. Die richtige Speicherklasse zuwählen, stellt jedoch keine einfache Entscheidung dar. % jedoch die Umstände können sich schnell ändern. 
-Hinzu kommt, dass nicht alle Daten in einer Applikation immer die gleichen Zugriffsmuster haben. Für solche Fälle ist es möglich, Regeln zu definieren, die Dateien zwischen verschiedenen Speicherklassen abhängig von ihrem Alter verschieben.
+Hinzu kommt, dass nicht alle Daten in einer Applikation immer die gleichen Zugriffsmuster haben. Für solche Fälle ist es möglich, Regeln zu definieren, die Dateien zwischen verschiedenen Speicherklassen in Abhängigkeit ihres Alters zu verschieben.
 \newpage
 \subsubsection{Lebenszyklus-Konfiguration}\label{ssec:Lebenszyklus-Konfiguration}
 Die \textit{Lebenszyklus-Konfiguration} oder \textit{lifecycle policy} ist eine Maßnahme zur Optimierung für Amazon S3-Speichereinheiten. Eine S3-Lebenszykluskonfiguration beschreibt in einer XML-Datei Regeln und Aktionen für die Verschiebung von Objekten in unterschiedliche Speicherklassen. Allerdings verursacht diese Verschiebung Kosten. Ein Beispiel von diesen Kosten und mögliche Einsparungen werden in \autoref{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} vorgestellt.
@@ -137,7 +135,7 @@ Die \textit{Lebenszyklus-Konfiguration} oder \textit{lifecycle policy} ist eine 
 %Datenabfrage am 24.11.2
 %{\cite{AMZ09}}
 %\\
-Um konkretere Regeln zu definieren, ist es möglich Tags zu verwenden und somit eine Unterscheidung zwischen Objekten mit verschiedenen Tags zu treffen. Es ist wie in dem folgenden Beispiel möglich, alle Objekte mit dem Tag-Wert: \textit{Dev} nach 45 Tagen nach Standard Infrequent Access und nach 120 Tagen nach S3 Glacier zu verschieben.
+Um konkretere Regeln zu definieren, ist es möglich Tags zu verwenden und somit eine Unterscheidung zwischen Objekten mit verschiedenen Tags zu gewährleisten zu können. Es ist wie in dem folgenden Codebeispiel möglich, alle Objekte mit dem Tag-Wert: \textit{Dev} nach 45 Tagen nach Standard Infrequent Access und nach 120 Tagen nach S3 Glacier zu verschieben.
 \begin{lstlisting}
   <LifecycleConfiguration>
   <Rule>
@@ -169,30 +167,30 @@ Amazon Simple Storage Service - User Guide.
 \footnote{Vgl. AWS: Amazon Simple Storage Service - User Guide. S.701.\cite{AMZ18}}\\
 
 \subsubsection{Anwendungsbeispiel für eine Lebenszyklus-Konfiguration}\label{Anwendungsbeispiel-Leben-Konfig}
-Zur Veranschaulichung der Verschiebung von Objekten zwischen Speicherklassen wird der folgende Anwendungsfall vorgestellt. In diesem Fall wird der Punkt als Dezimaltrennzeichen und das Komma als Tausendertrennzeichen verwendet. 
+Zur Veranschaulichung der Verschiebung von Objekten zwischen Speicherklassen wird der folgende Anwendungsfall vorgestellt\footnote{In diesem Fall wird der Punkt als Dezimaltrennzeichen und das Komma als Tausendertrennzeichen verwendet.}. 
 \\\\
-Ein Sicherheitsunternehmen muss Sicherheitsvideos speichern, die aktuell im Summe 120 TB groß sind. Viele von ihnen werden mindestens 5 Jahre lang aufbewahrt, falls sie vor Gericht als Beweismittel dienen sollten. Ungefähr 50\% der Videos werden mindestens einmal im Monat überprüft und müssen laut Gesetz sofort zugänglich sein. Die Software des Unternehmens speichert die Videos in S3-Buckets. Jedes Video hat eine durchschnittliche Größe von 3.4 GB.
+Ein Sicherheitsunternehmen muss Sicherheitsvideos speichern, die aktuell im Summe 120 TB groß sind. Viele von ihnen werden mindestens 5 Jahre lang aufbewahrt, falls sie vor Gericht als Beweismittel dienen müssen. Ungefähr 50\% der Videos werden mindestens einmal im Monat überprüft und müssen laut Gesetz sofort zugänglich sein. Die Software des Unternehmens speichert die Videos in S3-Buckets. Jedes Video hat eine durchschnittliche Größe von 3.4 GB.
 \\\\
-Im Folgenden werden die Speicherkosten für ein Szenario berechnet, bei dem nur \textit{S3 Standard} verwendet wird. Als nächstes wird die Kombination von \textit{S3 Standard Infrequent Access, S3 Glacier} und \textit{S3 Standard} für ein zweites Szenario betrachtet, in dem die Videos je nach Alter verschoben werden. Im zweiten Szenario müssen die Kosten für die Verschiebung zwischen Speicherklassen berücksichtigt werden. Die Verschiebung erfolgt durch eine Lebenszyklus-Konfiguration wie in der Unterkapitel \ref{ssec:Lebenszyklus-Konfiguration} beschrieben. Zum besseren Verständnis wird angenommen, dass 20\% der Dateien in S3 Standard Infrequent Access und 30\% in S3 Glacier gespeichert werden.
+Im Folgenden werden die Speicherkosten für ein Szenario berechnet, bei dem nur \textit{S3 Standard} verwendet wird. Als nächstes wird die Kombination von \textit{S3 Standard Infrequent Access, S3 Glacier} und \textit{S3 Standard} für ein zweites Szenario betrachtet, in dem die Videos je nach Alter verschoben werden. Im zweiten Szenario müssen die Kosten für die Verschiebung zwischen Speicherklassen berücksichtigt werden. Die Verschiebung erfolgt durch eine Lebenszyklus-Konfiguration, wie im Unterkapitel \ref{ssec:Lebenszyklus-Konfiguration} beschrieben. Zum besseren Verständnis wird angenommen, dass 20\% der Dateien in S3 Standard Infrequent Access und 30\% in S3 Glacier gespeichert werden.
 \newpage
 \begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.75]{sources/Kostenvergleich_Nutzung_unt_Speicherklassen}
+  \includegraphics[scale=0.7]{sources/Kostenvergleich_Nutzung_unt_Speicherklassen}
   \caption[Kostenvergleich durch Nutzung von unterschiedlichen Speicherklassen]{}\label{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} 
   Kostenvergleich durch Nutzung von unterschiedlichen Speicherklassen.  
 \end{figure}
 %\\
 Quelle: Eigene Darstellung mit Stundensätze der S3-Preise.\footnote{Vgl. AWS S3 Pricing\cite{AMZ09}}
 \\\\
-Bei der Berechnung wurden die Kosten für das Verschieben von Videos zwischen Speicherklassen berücksichtigt. Anhand der Berechnungen in der \autoref{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} lässt sich erkennen, dass ein Einsparungspotenzial von rund 1,000(Eintausend) USD pro Monat besteht, indem die notwendigen Regeln aufgestellt werden, um einen Teil der Videos in anderen Speicherklassen zu verschieben, welche niedrigere Preise bieten.
+Anhand der Berechnungen in der \autoref{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} wird sichtbar, dass ein Einsparungspotenzial von rund 1,000 (Eintausend) USD pro Monat besteht.\footnote{Bei der Berechnung wurden die Kosten für das Verschieben von Videos zwischen Speicherklassen berücksichtigt.} Die notwendigen Regeln für die Verschiebung von den Videos erfolgt mit Hilfe einer Lebenszyklus-Konfiguration\footnote{Eine ähnliche Lebenszyklus-Konfiguration, wie die von Unterkapitel \ref{ssec:Lebenszyklus-Konfiguration}} und somit wird ein Teil der Videos in anderen kostengünstigeren Speicherklassen verschoben.
 %WICHTIG IST DIE GRÖSSE MEINE DATEIEN UND DIE ANZAHL.
 %weil SO WERDEN DIE PREISE FÜR VERSCHIEBUNG BERECHNET.
 %(Object size distribution )
 \newpage
 \subsubsection{Intelligent-Tiering}
-\textit{Intelligent-Tiering} verschiebt Objekte auf der Grundlage von Zugriffsmustern. Diese Speicherklasse ist ideal für Objekte mit wechselnden oder unbekannten Zugriffsmustern. Wie die Senior Product Managerin für S3 Ruhi Dang erklärt, haben einige Unternehmen weder die Zeit noch das Geld, um eine Person einzustellen, die ihre Daten sortiert und in die richtige Speicherklasse einordnet. Intelligent Auto Tiering ist eine attraktive Lösung für Unternehmen, die jährlich weniger als 100,000 USD für Speicher ausgeben. \footnote{Vgl. Ruhi Dang, 2019, AWS re:Invent 2019: Guidelines and design patterns for optimizing cost in Amazon S3. Minute: 21:12 \cite{AMZ16}}
+Das \textit{Intelligent-Tiering} verschiebt Objekte auf der Grundlage von Zugriffsmustern. Diese Speicherklasse ist ideal für Objekte mit wechselnden oder unbekannten Zugriffsmustern. Wie die Senior Product Managerin für Amazon S3 \textit{Ruhi Dang} erklärt, hätten einige Unternehmen weder die Zeit noch das Geld, um eine Person einzustellen, die ihre Daten sortiert und in die richtige Speicherklasse einordnet\footnote{Vgl. Ruhi Dang, 2019, AWS re:Invent 2019: Guidelines and design patterns for optimizing cost in Amazon S3. Minute: 20:05 \cite{AMZ16}}. Intelligent-Tiering ist eine attraktive Lösung für Unternehmen, die jährlich weniger als 100,000 USD für Speicher ausgeben. \footnote{Vgl. Ruhi Dang, 2019, AWS re:Invent 2019: Guidelines and design patterns for optimizing cost in Amazon S3. Minute: 21:12 \cite{AMZ16}}
 %Ach von Jessie Felix gesagt https://www.youtube.com/watch?v=IOT41L_adSw
-%\\\\
+\\\\
 Die \autoref{fig:S3_IntLifeCycle} zeigt, wie Objekte in Abhängigkeit davon, ob auf sie zugegriffen wurde oder nicht, verschieben werden. 
 \begin{figure}[h!]
   \centering
@@ -209,8 +207,9 @@ Wird ein Objekt zu einem späteren Zeitpunkt aus der Ebene der seltenen Zugriffe
 %Ademas los tiempos de desplazamientos ya están definidos en Intelligent-Tiering.
 \\\\
 %Anwenfungsbeispiel?
-Das in Unterkapitel \ref{Anwendungsbeispiel-Leben-Konfig} dargestellte Szenario wurde mit dem AWS Pricing-Calculator für S3 unter Verwendung der Speicherklasse S3 Intelligent-Tiering berechnet.\footnote{Vgl.  AWS Pricing Calculator S3\cite{AMZ17-S3}.}%Intelligent-Tiering bietet die Möglichkeit, Objekte in fünf verschiedenen Ebenen zu verschieben. 
-Da bei der Berechnung des Unterkapitels \ref{Anwendungsbeispiel-Leben-Konfig} eine Speicherklasse für häufigen Zugriff, eine für seltenen Zugriff und eine für Archivierung verwendet wurde, wurden für die Berechnung mit Intelligent-Tiering vergleichbare Speicherebenen ausgewählt. In diesem Fall wurden ausschließlich die Ebenen \textit{Frequent-Access, Infrequent-Access} und \textit{Instant-Archive-Access} ausgewählt. %Die Ebenen \textit{Archive-Access} und \textit{Deep-Archive-Access} wurden vernachlässigt. %nicht berücksichtigt
+%Intelligent-Tiering bietet die Möglichkeit, Objekte in fünf verschiedenen Ebenen zu verschieben. 
+\subsubsection*{Anwendungsbeispiel Intelligent-Tiering} 
+Im Folgenden wird eine Berechnung mit Intelligent-Tiering für das Szenario über die Sicherheitsvideos des Unterkapitels \ref{Anwendungsbeispiel-Leben-Konfig} durchgeführt. In diesem Fall wurden ausschließlich die Ebenen \textit{Frequent-Access, Infrequent-Access} und \textit{Instant-Archive-Access} ausgewählt.\footnote{Da bei der Berechnung des Unterkapitels \ref{Anwendungsbeispiel-Leben-Konfig} eine Speicherklasse für häufigen Zugriff, eine für seltenen Zugriff und eine für Archivierung verwendet wurde, wurden vergleichbare Speicherebenen für die Berechnung mit Intelligent-Tiering ausgewählt.} %Die Ebenen \textit{Archive-Access} und \textit{Deep-Archive-Access} wurden vernachlässigt. %nicht berücksichtigt
 \\\\
 Die Speicherzuweisung für die 120 TB in den Speicherebenen war wie folgt:\\
 Frequent-Access-Tier: 50\% \\
@@ -220,15 +219,15 @@ Instant-Archive-Access: 30\%
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.6]{sources/S3_INT_1}
-  \caption[Berechnung für die Verwaltung von 120 TB mit AWS Pricing-Calculator für S3 Intelligent-Tiering(1)]{}
-  \label{fig:INT_S3_1} Berechnung für die Verwaltung von 120 TB mit AWS Pricing-Calculator für S3 Intelligent-Tiering(1).\\
+  \caption[Berechnung für die Verwaltung von 120 TB mit AWS Pricing-Calculator für S3 Intelligent-Tiering (1)]{}
+  \label{fig:INT_S3_1} Berechnung für die Verwaltung von 120 TB mit AWS Pricing-Calculator für S3 Intelligent-Tiering f(1).\\
   Quelle: eigene Darstellung von AWS Pricing-Calculator \cite{AMZ17-S3}.
   %{\cite{SCOUT1}}
 \end{figure}
 \newpage
-In der \autoref{fig:INT_S3_2} werden die Kosten gezeigt, die durch jede Speicherebene anfallen (mit orange markiert). 
+In der \autoref{fig:INT_S3_2} werden die Kosten gezeigt, die durch jede Speicherebene anfallen (Orange markiert). 
 \\
-Darüber hinaus werden die folgenden Kosten berechnet (mit blau markiert): \\
+Darüber hinaus werden die folgenden Kosten berechnet (Blau markiert): \\
 - Überwachung und Automatisierung von 36.141 Objekten.\\
 - Leseanfragen (GET-Anfragen) von 18.070 Objekten, welche 50\% der Gesamtzahl der Videos entsprechen, wie in den Anforderungen im Unterkapitel \ref{Anwendungsbeispiel-Leben-Konfig} definiert. \\
 - Scannen von Objekten, die allen Videos und 120 TB entsprechen.
@@ -236,18 +235,18 @@ Darüber hinaus werden die folgenden Kosten berechnet (mit blau markiert): \\
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.6]{sources/S3_INT_2}
-  \caption[Berechnung für die Verwaltung von 120 TB mit AWS Pricing-Calculator für S3 Intelligent-Tiering(2)]{}
-  \label{fig:INT_S3_2} Berechnung für die Verwaltung von 120 TB mit\\ AWS Pricing-Calculator für S3 Intelligent-Tiering(2).\\
+  \caption[Berechnung für die Verwaltung von 120 TB mit AWS Pricing-Calculator für S3 Intelligent-Tiering (2)]{}
+  \label{fig:INT_S3_2} Berechnung für die Verwaltung von 120 TB mit\\ AWS Pricing-Calculator für S3 Intelligent-Tiering (2).\\
   Quelle: eigene Darstellung mit AWS Pricing-Calculator \cite{AMZ17-S3}.
 \end{figure}
 \\\\
-\subsubsection*{Unterscheidung zwischen Intelligent-Tiering und Lebenszyklus-Konfiguration}%[Rev]
-Ein Unterschied zwischen der Verwendung von Intelligent-Tiering und einer Lebenszyklus-Konfiguration besteht darin, dass bei Intelligent-Tiering die Objekte in Ebenen von seltenen Zugriff automatisch auf eine Ebene für häufigen Zugriff zurückgegeben werden. Siehe \autoref{fig:S3_IntLifeCycle}.
+\subsubsection*{vergleich zwischen der Intelligent-Tiering und der Lebenszyklus-Konfiguration}%[Rev]
+Bezüglich dieser Thematik muss betont werden, dass bei Intelligent-Tiering die Objekte in Ebenen von seltenen Zugriff automatisch auf eine Ebene für häufigen Zugriff zurückgegeben werden. Siehe \autoref{fig:S3_IntLifeCycle}.
 \\\\
-Ein weiterer Unterschied ist, dass bei einer Lebenszyklus-Konfiguration die Tage der Verschiebung zwischen den Speicherklassen und die Speicherklassen leicht verändert werden können. Dies ist standardmäßig bei Intelligent-Tiering bereits festgelegt. %Die Möglichkeit die Zeitabstand für die Verschiebung zwischen Ebenen bei Intelligent-Tiering wurde in der AWS-Dokumentation nicht gefunden. 
-\\
-Es gibt jedoch die Möglichkeit, Objekte aus Intelligent-Tiering in andere Speicherklassen zu verschieben (mit Einschränkungen), indem man eine Lebenszyklus-Konfiguration verwendet.\footnote{Vgl. AWS: Amazon Simple Storage Service - User Guide. S.724.\cite{AMZ18}} %t.ly/1CgV
-Dies gäbe die Möglichkeit, Objekte für einen längeren Zeitraum in einer bestimmten Speicherklasse aufzubewahren und Richlinien von Intelligent-Tiering zu überspringen.
+Ein weiterer Unterschied liegt darin, dass bei einer Lebenszyklus-Konfiguration die Tage der Verschiebung zwischen den Speicherklassen und die Speicherklassen leicht verändert werden können. Diese ist bei Intelligent-Tiering standardmäßig vorab bereits festgelegt. %Die Möglichkeit die Zeitabstand für die Verschiebung zwischen Ebenen bei Intelligent-Tiering wurde in der AWS-Dokumentation nicht gefunden. 
+Darüber hinaus besteht die Möglichkeit, Objekte aus Intelligent-Tiering in andere Speicherklassen zu verschieben, %(mit Einschränkungen),
+indem man eine Lebenszyklus-Konfiguration verwendet.\footnote{Vgl. AWS: Amazon Simple Storage Service - User Guide. S.724.\cite{AMZ18}} %t.ly/1CgV
+Dadurch wäre es möglich Objekte für einen längeren Zeitraum in einer bestimmten Speicherklasse aufzubewahren und Richlinien von Intelligent-Tiering zu überspringen.
 %COMMENTS
 \begin{comment}
 \subsubsection{Automatisierung mit Lambda Funktionen}
