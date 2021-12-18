@@ -66,6 +66,7 @@ Die \autoref{fig:Einsparung_Zeitgesteuerte_Skalierung} zeigt die Kostenberechnun
 \end{figure}
 \\\\
 \\\\
+\\\\
 \\\\ 
 Quelle des Stundensatzes: AWS Pricing Calculator.\footnote{Der Stundensatz wurde am 23.11.2021 mit dem AWS Pricing Calculator ermitellt für Linux Instanzen in Frankfurt mit 4vCPUs, 16 GB Arbeitsspeicher und Instanz-Familie t4g.xlarge in On-Demand-Zahlungsmodell\cite{AMZ17}.}
 % Automatisiere das Hoch- und Herunterfahren von Instanzen
@@ -211,7 +212,7 @@ Wird ein Objekt zu einem späteren Zeitpunkt aus der Ebene der seltenen Zugriffe
 \subsubsection*{Anwendungsbeispiel Intelligent-Tiering} 
 Im Folgenden wird eine Berechnung mit Intelligent-Tiering für das Szenario über die Sicherheitsvideos des Unterkapitels \ref{Anwendungsbeispiel-Leben-Konfig} durchgeführt. In diesem Fall wurden ausschließlich die Ebenen \textit{Frequent-Access, Infrequent-Access} und \textit{Instant-Archive-Access} ausgewählt.\footnote{Da bei der Berechnung des Unterkapitels \ref{Anwendungsbeispiel-Leben-Konfig} eine Speicherklasse für häufigen Zugriff, eine für seltenen Zugriff und eine für Archivierung verwendet wurde, wurden vergleichbare Speicherebenen für die Berechnung mit Intelligent-Tiering ausgewählt.} %Die Ebenen \textit{Archive-Access} und \textit{Deep-Archive-Access} wurden vernachlässigt. %nicht berücksichtigt
 \\\\
-Die Speicherzuweisung für die 120 TB in den Speicherebenen war wie folgt:\\
+Die Speicherzuweisung für die 120 TB in den Speicherebenen wurde wie folgt:\\
 Frequent-Access-Tier: 50\% \\
 Infrequent-Access-Tier: 20\%\\
 Instant-Archive-Access: 30\%
