@@ -58,7 +58,7 @@ Im Gegensatz dazu, ist es bei On-Demand-Zahlungsmodelle sinnvoll Zeiträume zu d
 Die \autoref{fig:Einsparung_Zeitgesteuerte_Skalierung} zeigt die Kostenberechnung einer nicht produktiven Umgebung (z.B. Test, Dev oder Beta) mit On-Demand-Instanzen. Diese Umgebung wird nur von Montag bis Freitag von 7:00 bis 20:00 Uhr genutzt. In der rechten Spalte werden die Kosten für Instanzen berechnet, wenn sie immer aktiv bleiben. In der linken Spalte wurde eine Berechnung durchgeführt, bei der die Instanzen nur dann eingeschaltet werden, wenn sie nach einem Zeitplan gesteuert würden. Darüber hinaus veranschaulicht die \autoref{fig:Einsparung_Zeitgesteuerte_Skalierung} am Ende den Prozentsatz und den Betrag (in Euros) der möglichen Einsparungen, wenn die Instanzen nach einem determinierten Zeitplan gesteuert wird.
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.6]{sources/Einsparung_Zeitgesteuerte_Skalierung}
+  \includegraphics[scale=0.8]{sources/Einsparung_Zeitgesteuerte_Skalierung}
   \caption[Berechnung für ein nicht produktives Umgebung mit zeitgesteuerter Skalierung]{}
   \label{fig:Einsparung_Zeitgesteuerte_Skalierung} 
   Berechnung für ein nicht-produktive Umgebung mit zeitgesteuerter Skalierung. \\
@@ -169,9 +169,9 @@ Amazon Simple Storage Service - User Guide.
 \footnote{Vgl. AWS: Amazon Simple Storage Service - User Guide. S.701.\cite{AMZ18}}\\
 
 \subsubsection{Anwendungsbeispiel für eine Lebenszyklus-Konfiguration}\label{Anwendungsbeispiel-Leben-Konfig}
-Zur Veranschaulichung der Verschiebung von Objekten zwischen Speicherklassen wird der folgende Anwendungsfall vorgestellt\footnote{In diesem Fall wird der Punkt als Dezimaltrennzeichen und das Komma als Tausendertrennzeichen verwendet.}. 
+Zur Veranschaulichung der Verschiebung von Objekten zwischen Speicherklassen wird der folgende Anwendungsfall vorgestellt.%\footnote{In diesem Fall wird der Punkt als Dezimaltrennzeichen und das Komma als Tausendertrennzeichen verwendet.}. 
 \\\\
-Ein Sicherheitsunternehmen muss Sicherheitsvideos speichern, die aktuell im Summe 120 TB groß sind. Viele von ihnen werden mindestens 5 Jahre lang aufbewahrt, falls sie vor Gericht als Beweismittel dienen müssen. Ungefähr 50\% der Videos werden mindestens einmal im Monat überprüft und müssen laut Gesetz sofort zugänglich sein. Die Software des Unternehmens speichert die Videos in S3-Buckets. Jedes Video hat eine durchschnittliche Größe von 3.4 GB.
+Ein Sicherheitsunternehmen muss Sicherheitsvideos speichern, die aktuell im Summe 120 TB groß sind. Viele von ihnen werden mindestens fünf Jahre lang aufbewahrt, falls sie vor Gericht als Beweismittel dienen müssen. Ungefähr 50\% der Videos werden mindestens einmal im Monat überprüft und müssen laut Gesetz sofort zugänglich sein. Die Software des Unternehmens speichert die Videos in S3-Buckets. Jedes Video hat eine durchschnittliche Größe von 3,4 GB.
 \\\\
 Im Folgenden werden die Speicherkosten für ein Szenario berechnet, bei dem nur \textit{S3 Standard} verwendet wird. Als nächstes wird die Kombination von \textit{S3 Standard Infrequent Access, S3 Glacier} und \textit{S3 Standard} für ein zweites Szenario betrachtet, in dem die Videos je nach Alter verschoben werden. Im zweiten Szenario müssen die Kosten für die Verschiebung zwischen Speicherklassen berücksichtigt werden. Die Verschiebung erfolgt durch eine Lebenszyklus-Konfiguration, wie im Unterkapitel \ref{ssec:Lebenszyklus-Konfiguration} beschrieben. Zum besseren Verständnis wird angenommen, dass 20\% der Dateien in S3 Standard Infrequent Access und 30\% in S3 Glacier gespeichert werden.
 \newpage
@@ -179,12 +179,12 @@ Im Folgenden werden die Speicherkosten für ein Szenario berechnet, bei dem nur 
   \centering
   \includegraphics[scale=0.7]{sources/Kostenvergleich_Nutzung_unt_Speicherklassen}
   \caption[Kostenvergleich durch Nutzung von unterschiedlichen Speicherklassen]{}\label{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} 
-  Kostenvergleich durch Nutzung von unterschiedlichen Speicherklassen.  
+  Kostenvergleich durch Nutzung von unterschiedlichen Speicherklassen. \\ 
+  Quelle: Eigene Darstellung mit Stundensätze der S3-Preise.(Vgl. AWS, 2021, AWS S3 Pricing, o.S.\cite{AMZ09})
 \end{figure}
-%\\
-Quelle: Eigene Darstellung mit Stundensätze der S3-Preise.\footnote{Vgl. AWS S3 Pricing\cite{AMZ09}}
-\\\\
-Anhand der Berechnungen in der \autoref{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} wird sichtbar, dass ein Einsparungspotenzial von rund 1,000 (Eintausend) USD pro Monat besteht.\footnote{Bei der Berechnung wurden die Kosten für das Verschieben von Videos zwischen Speicherklassen berücksichtigt.} Die notwendigen Regeln für die Verschiebung von den Videos erfolgt mit Hilfe einer Lebenszyklus-Konfiguration\footnote{Eine ähnliche Lebenszyklus-Konfiguration, wie die von Unterkapitel \ref{ssec:Lebenszyklus-Konfiguration}} und somit wird ein Teil der Videos in anderen kostengünstigeren Speicherklassen verschoben.
+\begin{flushleft}
+Anhand der Berechnungen in der \autoref{fig:Kostenvergleich_Nutzung_unt_Speicherklassen} wird sichtbar, dass ein Einsparungspotenzial von rund 1.000 (Eintausend) USD pro Monat besteht.\footnote{Bei der Berechnung wurden die Kosten für das Verschieben von Videos zwischen Speicherklassen berücksichtigt.} Die notwendigen Regeln für die Verschiebung von den Videos erfolgt mit Hilfe einer Lebenszyklus-Konfiguration\footnote{Eine ähnliche Lebenszyklus-Konfiguration, wie die von Unterkapitel \ref{ssec:Lebenszyklus-Konfiguration}} und somit wird ein Teil der Videos in anderen kostengünstigeren Speicherklassen verschoben.
+\end{flushleft}
 %WICHTIG IST DIE GRÖSSE MEINE DATEIEN UND DIE ANZAHL.
 %weil SO WERDEN DIE PREISE FÜR VERSCHIEBUNG BERECHNET.
 %(Object size distribution )
