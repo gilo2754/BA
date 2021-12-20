@@ -41,15 +41,24 @@ Infrastruktur-Komponenten wie die Server, Rechenleistung, Netzkapazitäten, Komm
 Instanzfamilien sind eine Sammlung von EC2-Instanzen, die nach dem Verhältnis von\\ Speicher, Netzwerkleistung, CPU-Größe und Speicherwerten zueinander gruppiert sind. Zum Beispiel bietet die m4-Familie von EC2 eine ausbalancierte Kombination von Rechen-, Speicher- und Netzwerkressourcen.\footnote{Vgl. Mark Wilkins, 2021, AWS Certified Solutions Architect - Associate (SAA-C02). S.95\cite{AWS1}}
 \\\\
 \textbf{Instagram-Story}\\
-Bei Instagram Stories handelt es sich um kurzen visuellen Content in der Regel Bilder oder kurze Videos, die nach 24 Stunden automatisch aus der Applikation Instagram verschwinden(Stand November 2021).\footnote{Vgl. Online Marketing: Definition von Instagram Story? o.S.\cite{IG2}}
-\begin{comment}
+Bei Instagram Stories handelt es sich um kurzen visuellen Content in der Regel Bilder oder kurze Videos, die nach 24 Stunden automatisch aus der Applikation Instagram verschwinden(Stand November 2021).\footnote{Vgl. Online Marketing, 2021, Definition von Instagram Story?, o.S.\cite{IG2}}
 \\\\
-\textbf{On-Demand}\\
-...
-horizontale und vertikale Skalierung
+%PAYG %https://www.nimbix.net/glossary/pay-go
+\textbf{Metadaten}\\
+Metadaten liefern Informationen über den Inhalt eines bestimmten Objekts. Ein Bild kann beispielsweise Metadaten enthalten, die beschreiben, wie groß das Bild ist, die Farbtiefe, die Bildauflösung, wann das Bild erstellt wurde und andere Daten. Die Metadaten eines Textdokuments können Informationen darüber enthalten, wie lang das Dokument ist, wer der Autor ist, wann das Dokument geschrieben wurde und eine kurze Zusammenfassung des Dokuments.\footnote{Vgl. Techterms Definition Metadata\cite{MET}}
 \\\\
 \textbf{On-Premise}\\
-...\\\\
+On-Premises-Software ist eine Art von Software-Bereitstellungsmodell, das über den internen Server und die Computerinfrastruktur eines Kunden installiert und betrieben wird. Sie nutzt die unternehmenseigenen Computerressourcen und erfordert nur eine lizenzierte oder gekaufte Kopie der Software von einem unabhängigen Softwareanbieter.\footnote{Vgl. Techopedia, 2021, Definition von On-Premise, o.S.\cite{OP}}
+\\\\
+\textbf{On-Demand}\\
+On-Demand-Software ist eine Art von Softwarebereitstellungsmodell, das in der Cloud-Computing-Infrastruktur eines Anbieters bereitgestellt und verwaltet wird und auf das die Nutzer bei Bedarf über das Internet zugreifen. On-Demand-Software ermöglicht es einem Nutzer/einer Organisation, Software nach einem monatlichen Abrechnungsverfahren zu abonnieren.\footnote{Vgl. Techopedia, 2021, Definition von On-Demand, o.S.\cite{OD}}
+\\\\
+\textbf{Scale-Out}\\
+Scale out ist eine Wachstumsarchitektur oder -methode, die sich auf horizontales Wachstum oder das Hinzufügen neuer Ressourcen konzentriert, anstatt die Kapazität der bestehenden Ressourcen zu erhöhen.\footnote{Vgl. Techopedia, 2017, Definition von Scale-Out, o.S.\cite{SO}}
+\begin{comment}
+\\\\
+horizontale und vertikale Skalierung
+\\\\
 \end{comment}
 \\\\
 \textbf{Region}\\
@@ -64,19 +73,18 @@ Ein \textit{Tag} (Markierung) ist eine Markierung, die einer AWS-Ressource zuord
   Beispiel für ein \textit{Tag}{\cite{AMZ26}, S.1570}.
 \end{figure}
 \\\\
-\\\\
-%PAYG %https://www.nimbix.net/glossary/pay-go
-\textbf{Metadaten}\\
-Metadaten liefern Informationen über den Inhalt eines bestimmten Objekts. Ein Bild kann beispielsweise Metadaten enthalten, die beschreiben, wie groß das Bild ist, die Farbtiefe, die Bildauflösung, wann das Bild erstellt wurde und andere Daten. Die Metadaten eines Textdokuments können Informationen darüber enthalten, wie lang das Dokument ist, wer der Autor ist, wann das Dokument geschrieben wurde und eine kurze Zusammenfassung des Dokuments.\footnote{Vgl. Techterms Definition Metadata\cite{MET}}
-\\\\
 %RI-Coverage
 %RI-Utilization
 \textbf{Startkonfiguration}\\
 Eine Startkonfiguration ist eine Instance-Konfigurationsvorlage, die eine Auto-Scaling-Gruppe zum Starten von EC2-Instances verwendet.\footnote{Vgl. Amazon EC2 Auto Scaling - Benutzerhandbuch. S.54 \cite{AMZ31}}
 %https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html
-\\\\
-%\textbf{Scale-In/Out}\\
+%\textbf{Scale-In}\\
 %\\\\\textit{Scale-Out} genannt und eine für das Verringern von Rechenkapazität bezeichnet als \textit{Scale-In}.
+\\\\
+\textbf{S3-Lebenszyklus-Konfiguration}\\
+Eine S3-Lebenszyklus-Konfiguration ist eine XML-Datei, die aus einem Satz von Regeln mit vordefinierten
+Aktionen besteht, die Amazon S3 für Objekte während ihrer Lebensdauer ausführen soll.\footnote{Vgl. AWS, 2021 Amazon Simple Storage Service - User Guide. S.723.\cite{AMZ18}}
+\\\\
 \textbf{Maschinelles Lernen}\\
 Maschinelles Lernen ist ein Teilbereich der künstlichen Intelligenz (KI). Beim maschinellen Lernen werden Algorithmen darauf trainiert, Muster und Korrelationen in großen Datensätzen zu finden und auf Basis dieser Analyse die besten Entscheidungen und Vorhersagen zu treffen. Auf diese Weise wird die Rechenkapazität von EC2-Instanzen auf der Grundlage früherer Muster vorhergesagt.\footnote{Vgl. SAP, o.J., Definition von machinellen Lernen, o.S.\cite{ML1}}
 \\\\
@@ -85,4 +93,3 @@ YAML ist eine benutzerfreundliche Daten-Serialisierungs  Sprache für alle Progr
 %Governance, Compliance ?
 %Intelligent T
 %Speicherklasse
-%Lebenszyklus-Konfiguration oder lifecycle policy
